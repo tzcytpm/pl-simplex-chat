@@ -1,0 +1,28 @@
+name: "Upload binary and update hash"
+description: "Reusable steps for multiple jobs"
+inputs:
+   bin_path:
+     required: true
+     description: "Path to binary to upload"
+   bin_name:
+     required: true
+     description: "Name of uploaded binary"
+   bin_hash:
+     required: true
+     description: "Message with SHA to include in release"
+   github_ref:
+     required: true
+     description: "Github reference"
+   github_token:
+     required: true
+     description: "Github token"
+runs:
+  using: "composite"
+  steps:
+   - name: Upload Artifacts
+     uses: actions/upload-artifact@v4
+     with:
+         name: ${{ inputs.bin_name }}
+         path: |
+             ${{ inputs.bin_path }}
+         retention-days: 1
