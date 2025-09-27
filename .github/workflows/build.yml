@@ -258,7 +258,7 @@ jobs:
 
       - name: Upload Desktop
         uses: ./.github/actions/prepare-release
-	if: matrix.should_run == true
+        if: matrix.should_run == true
         with:
           bin_path: ${{ steps.linux_desktop_build.outputs.package_path }}
           bin_name: ${{ matrix.desktop_asset_name }}
@@ -267,14 +267,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build AppImage
-	if: matrix.should_run == true
+        if: matrix.should_run == true
         shell: docker exec -t builder sh -eu {0}
         run: |
           scripts/desktop/make-appimage-linux.sh
 
       - name: Prepare AppImage
         id: linux_appimage_build
-	if: matrix.should_run == true
+        if: matrix.should_run == true
         shell: bash
         run: |
           path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/*imple*.AppImage)
@@ -282,7 +282,7 @@ jobs:
           echo "appimage_hash=$(echo SHA2-256\(simplex-desktop-x86_64.AppImage\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
       - name: Upload AppImage
-	if: matrix.should_run == true
+        if: matrix.should_run == true
         uses: ./.github/actions/prepare-release
         with:
           bin_path: ${{ steps.linux_appimage_build.outputs.appimage_path }}
