@@ -67,7 +67,7 @@ struct GroupMentionsView: View {
                             }
                         }
                             .frame(maxHeight: MEMBER_ROW_SIZE * min(MAX_VISIBLE_MEMBER_ROWS, CGFloat(filtered.count)))
-                            .background(Color(UIColor.systemBackground))
+                            .background(theme.colors.background)
 
                         if #available(iOS 16.0, *) {
                             scroll.scrollDismissesKeyboard(.never)
@@ -107,6 +107,8 @@ struct GroupMentionsView: View {
                 } else {
                     return member.memberRole >= .moderator
                 }
+            case .reports:
+                return false
             }
         case .msgContentTagContext:
             return false

@@ -19,7 +19,7 @@ import qualified Data.Aeson as J
 import qualified Data.Aeson.TH as JQ
 import qualified Data.ByteString.Char8 as B
 import qualified Data.ByteString.Lazy.Char8 as LB
-import Data.Char (toUpper)
+import Data.Char (isSpace, toUpper)
 import Data.Function (on)
 import Data.Int (Int64)
 import Data.List (groupBy, intercalate, intersperse, partition, sortOn)
@@ -68,7 +68,7 @@ import qualified Simplex.Messaging.Crypto.Ratchet as CR
 import Simplex.Messaging.Encoding
 import Simplex.Messaging.Encoding.String
 import Simplex.Messaging.Parsers (dropPrefix, taggedObjectJSON)
-import Simplex.Messaging.Protocol (AProtoServerWithAuth (..), AProtocolType, BlockingInfo (..), BlockingReason (..), ProtocolServer (..), ProtocolTypeI, SProtocolType (..), UserProtocol)
+import Simplex.Messaging.Protocol (AProtoServerWithAuth (..), AProtocolType, BlockingInfo (..), BlockingReason (..), NetworkError (..), ProtocolServer (..), ProtocolTypeI, SProtocolType (..), UserProtocol)
 import qualified Simplex.Messaging.Protocol as SMP
 import Simplex.Messaging.Transport.Client (TransportHost (..))
 import Simplex.Messaging.Util (safeDecodeUtf8, tshow)
@@ -231,6 +231,7 @@ chatResponseToView hu cfg@ChatConfig {logLevel, showReactions, testView} liveIte
   CRNetworkStatuses u statuses -> if testView then ttyUser' u $ viewNetworkStatuses statuses else []
   CRJoinedGroupMember u g m -> ttyUser u $ viewJoinedGroupMember g m
   CRMemberAccepted u g m -> ttyUser u $ viewMemberAccepted g m
+  CRMemberSupportChatRead u g m -> ttyUser u $ viewSupportChatRead g m
   CRMemberSupportChatDeleted u g m -> ttyUser u [ttyGroup' g <> ": " <> ttyMember m <> " support chat deleted"]
   CRMembersRoleUser u g members r' -> ttyUser u $ viewMemberRoleUserChanged g members r'
   CRMembersBlockedForAllUser u g members blocked -> ttyUser u $ viewMembersBlockedForAllUser g members blocked
@@ -242,6 +243,7 @@ chatResponseToView hu cfg@ChatConfig {logLevel, showReactions, testView} liveIte
   CRGroupLinkDeleted u g -> ttyUser u $ viewGroupLinkDeleted g
   CRNewMemberContact u _ g m -> ttyUser u ["contact for member " <> ttyGroup' g <> " " <> ttyMember m <> " is created"]
   CRNewMemberContactSentInv u _ct g m -> ttyUser u ["sent invitation to connect directly to member " <> ttyGroup' g <> " " <> ttyMember m]
+  CRMemberContactAccepted u ct -> ttyUser u ["contact " <> ttyContact' ct <> " is accepted, starting connection"]
   CRCallInvitations _ -> []
   CRContactConnectionDeleted u PendingContactConnection {pccConnId} -> ttyUser u ["connection :" <> sShow pccConnId <> " deleted"]
   CRNtfTokenStatus status -> ["device token status: " <> plain (smpEncode status)]
@@ -485,7 +487,7 @@ chatEventToView hu ChatConfig {logLevel, showReactions, showReceipts, testView} 
   CEvtGroupUpdated u g g' m -> ttyUser u $ viewGroupUpdated g g' m
   CEvtAcceptingGroupJoinRequestMember _ g m -> [ttyFullMember m <> ": accepting request to join group " <> ttyGroup' g <> "..."]
   CEvtNoMemberContactCreating u g m -> ttyUser u ["member " <> ttyGroup' g <> " " <> ttyMember m <> " does not have direct connection, creating"]
-  CEvtNewMemberContactReceivedInv u ct g m -> ttyUser u [ttyGroup' g <> " " <> ttyMember m <> " is creating direct contact " <> ttyContact' ct <> " with you"]
+  CEvtNewMemberContactReceivedInv u ct g m -> ttyUser u $ viewNewMemberContactReceivedInv u ct g m
   CEvtContactAndMemberAssociated u ct g m ct' -> ttyUser u $ viewContactAndMemberAssociated ct g m ct'
   CEvtCallInvitation RcvCallInvitation {user, contact, callType, sharedKey} -> ttyUser user $ viewCallInvitation contact callType sharedKey
   CEvtCallOffer {user = u, contact, callType, offer, sharedKey} -> ttyUser u $ viewCallOffer contact callType offer sharedKey
@@ -567,7 +569,7 @@ userNtf User {showNtfs, activeUser} = showNtfs || activeUser
 chatDirNtf :: User -> ChatInfo c -> CIDirection c d -> Bool -> Bool
 chatDirNtf user cInfo chatDir mention = case (cInfo, chatDir) of
   (DirectChat ct, CIDirectRcv) -> contactNtf user ct mention
-  (GroupChat g _scopeInfo, CIGroupRcv m) -> groupNtf user g mention && not (blockedByAdmin m) && showMessages (memberSettings m)
+  (GroupChat g _scopeInfo, CIGroupRcv m) -> groupNtf user g mention && not (memberBlocked m)
   _ -> True
 
 contactNtf :: User -> Contact -> Bool -> Bool
@@ -606,8 +608,8 @@ viewUsersList us =
    in if null ss then ["no users"] else ss
   where
     ldn (UserInfo User {localDisplayName = n} _) = T.toLower n
-    userInfo (UserInfo User {localDisplayName = n, profile = LocalProfile {fullName, shortDescr}, activeUser, showNtfs, viewPwdHash} count)
-      | activeUser || isNothing viewPwdHash = Just $ ttyFullName n fullName shortDescr <> infoStr
+    userInfo (UserInfo User {localDisplayName = n, profile = LocalProfile {fullName, shortDescr, peerType}, activeUser, showNtfs, viewPwdHash} count)
+      | activeUser || isNothing viewPwdHash = Just $ ttyFullName n fullName shortDescr <> infoStr <> bot
       | otherwise = Nothing
       where
         infoStr = if null info then "" else " (" <> mconcat (intersperse ", " info) <> ")"
@@ -616,6 +618,9 @@ viewUsersList us =
             <> [highlight' "hidden" | isJust viewPwdHash]
             <> ["muted" | not showNtfs]
             <> [plain ("unread: " <> show count) | count /= 0]
+        bot = case peerType of
+          Just CPTBot -> " (bot)"
+          _ -> ""
 
 viewGroupSubscribed :: GroupName -> [StyledString]
 viewGroupSubscribed g = [ttyGroup g <> ": connected to server(s)"]
@@ -1225,6 +1230,11 @@ viewMemberAccepted g m@GroupMember {memberStatus} = case memberStatus of
   GSMemPendingReview -> [ttyGroup' g <> ": " <> ttyMember m <> " accepted and pending review (will introduce moderators)"]
   _ -> [ttyGroup' g <> ": " <> ttyMember m <> " accepted"]
 
+viewSupportChatRead :: GroupInfo -> GroupMember -> [StyledString]
+viewSupportChatRead g@GroupInfo {membership = GroupMember {groupMemberId = membershipId}} m
+  | groupMemberId' m == membershipId = [ttyGroup' g <> ": support chat read"]
+  | otherwise = [ttyGroup' g <> ": " <> ttyMember m <> " support chat read"]
+
 viewMemberAcceptedByOther :: GroupInfo -> GroupMember -> GroupMember -> [StyledString]
 viewMemberAcceptedByOther g acceptingMember m@GroupMember {memberCategory, memberStatus} = case memberCategory of
   GCUserMember -> case memberStatus of
@@ -1320,8 +1330,12 @@ viewGroupMembers (Group GroupInfo {membership} members) = map groupMember . filt
       | otherwise = []
 
 viewMemberSupportChats :: GroupInfo -> [GroupMember] -> [StyledString]
-viewMemberSupportChats GroupInfo {membership} ms = support <> map groupMember ms
+viewMemberSupportChats GroupInfo {membership = membership@GroupMember {memberRole = membershipRole}, membersRequireAttention} ms =
+  memsAttention <> support <> map groupMember ms
   where
+    memsAttention
+      | membershipRole >= GRModerator = ["members require attention: " <> sShow membersRequireAttention]
+      | otherwise = []
     support = case supportChat membership of
       Just sc -> ["support: " <> chatStats sc]
       Nothing -> []
@@ -1411,6 +1425,16 @@ viewContactsMerged c1 c2 ct' =
     "use " <> ttyToContact' ct' <> highlight' "<message>" <> " to send messages"
   ]
 
+viewNewMemberContactReceivedInv :: User -> Contact -> GroupInfo -> GroupMember -> [StyledString]
+viewNewMemberContactReceivedInv user ct@Contact {localDisplayName = c} g m
+  | isTrue (autoAcceptMemberContacts user) =
+      [ttyGroup' g <> " " <> ttyMember m <> " is creating direct contact " <> ttyContact' ct <> " with you"]
+  | otherwise =
+      [ ttyGroup' g <> " " <> ttyMember m <> " requests to create direct contact with you",
+        "to accept: " <> highlight ("/accept_member_contact @" <> viewName c),
+        "to reject: " <> highlight ("/delete @" <> viewName c) <> " (the sender will NOT be notified)"
+      ]
+
 viewContactAndMemberAssociated :: Contact -> GroupInfo -> GroupMember -> Contact -> [StyledString]
 viewContactAndMemberAssociated ct g m ct' =
   [ "contact and member are merged: " <> ttyContact' ct <> ", " <> ttyGroup' g <> " " <> ttyMember m,
@@ -1418,11 +1442,24 @@ viewContactAndMemberAssociated ct g m ct' =
   ]
 
 viewUserProfile :: Profile -> [StyledString]
-viewUserProfile Profile {displayName, fullName, shortDescr} =
-  [ "user profile: " <> ttyFullName displayName fullName shortDescr,
-    "use " <> highlight' "/p <name> [<bio>]" <> " to change it",
-    "(the updated profile will be sent to all your contacts)"
+viewUserProfile Profile {displayName, fullName, shortDescr, peerType, preferences} =
+  [ "user profile: " <> ttyFullName displayName fullName shortDescr <> bot,
+    "use " <> highlight' "/p <name> [<bio>]" <> " to change it"
   ]
+    ++ viewCommands
+  where
+    viewCommands = case preferences of
+      Just Preferences {commands = Just cmds} | peerType == Just CPTBot && not (null cmds) ->
+        ("Bot commands:" : concatMap (viewCommand "") cmds)
+          ++ ["use " <> highlight' "/set bot commands ..." <> " or " <> highlight' "/delete bot commands"]
+      _ -> []
+    viewCommand indent = \case
+      CBCCommand {label, keyword, params} ->
+        [plain $ indent <> quoted label <> ":/" <> quoted (keyword <> maybe "" (" " <>) params)]
+      CBCMenu {label, commands} ->
+        (plain (indent <> quoted label <> ":{") : concatMap (viewCommand $ "  " <> indent) commands) ++ [plain $ indent <> "}"]
+    quoted s = if T.any isSpace s then "'" <> s <> "'" else s
+    bot = if peerType == Just CPTBot then " (bot)" else ""
 
 viewUserPrivacy :: User -> User -> [StyledString]
 viewUserPrivacy User {userId} User {userId = userId', localDisplayName = n', showNtfs, viewPwdHash} =
@@ -1478,11 +1515,11 @@ viewServerTestResult (AProtoServerWithAuth p _) = \case
     result
       <> [pName <> " server requires authorization to create queues, check password" | testStep == TSCreateQueue && (case testError of SMP _ SMP.AUTH -> True; _ -> False)]
       <> [pName <> " server requires authorization to upload files, check password" | testStep == TSCreateFile && (case testError of XFTP _ XFTP.AUTH -> True; _ -> False)]
-      <> ["Possibly, certificate fingerprint in " <> pName <> " server address is incorrect" | testStep == TSConnect && brokerErr]
+      <> ["Certificate fingerprint in " <> pName <> " server address does not match server certificate" | testStep == TSConnect && unknownCA]
     where
       result = [pName <> " server test failed at " <> plain (drop 2 $ show testStep) <> ", error: " <> sShow testError]
-      brokerErr = case testError of
-        BROKER _ NETWORK -> True
+      unknownCA = case testError of
+        BROKER _ (NETWORK NEUnknownCAError) -> True
         _ -> False
   _ -> [pName <> " server test passed"]
   where
@@ -2509,7 +2546,7 @@ viewChatError isCmd logLevel testView = \case
         reasonStr = case reason of
           BRSpam -> "spam"
           BRContent -> "content violates conditions of use"
-    BROKER _ NETWORK | not isCmd -> []
+    BROKER _ (NETWORK _) | not isCmd -> []
     BROKER _ TIMEOUT | not isCmd -> []
     AGENT A_DUPLICATE -> [withConnEntity <> "error: AGENT A_DUPLICATE" | logLevel == CLLDebug || isCmd]
     AGENT (A_PROHIBITED e) -> [withConnEntity <> "error: AGENT A_PROHIBITED, " <> plain e | logLevel <= CLLWarning || isCmd]

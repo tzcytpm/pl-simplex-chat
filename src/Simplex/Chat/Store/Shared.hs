@@ -46,6 +46,7 @@ import Simplex.Messaging.Crypto.Ratchet (PQEncryption (..), PQSupport (..))
 import qualified Simplex.Messaging.Crypto.Ratchet as CR
 import Simplex.Messaging.Parsers (dropPrefix, sumTypeJSON)
 import Simplex.Messaging.Protocol (SubscriptionMode (..))
+import Simplex.Messaging.Util (AnyError (..))
 import Simplex.Messaging.Version
 import UnliftIO.STM
 #if defined(dbPostgres)
@@ -148,6 +149,10 @@ data StoreError
   | SEInvalidQuote
   | SEInvalidMention
   deriving (Show, Exception)
+
+instance AnyError StoreError where
+  fromSomeException = SEInternalError . show
+  {-# INLINE fromSomeException #-}
 
 $(J.deriveJSON (sumTypeJSON $ dropPrefix "SE") ''StoreError)
 
@@ -387,12 +392,12 @@ createContact db user profile = do
   void $ createContact_ db user profile emptyChatPrefs Nothing "" Nothing currentTs
 
 createContact_ :: DB.Connection -> User -> Profile -> Preferences -> Maybe (ACreatedConnLink, Maybe SharedMsgId) -> LocalAlias -> Maybe Int64 -> UTCTime -> ExceptT StoreError IO ContactId
-createContact_ db User {userId} Profile {displayName, fullName, shortDescr, image, contactLink, preferences} ctUserPreferences prepared localAlias viaGroup currentTs =
+createContact_ db User {userId} Profile {displayName, fullName, shortDescr, image, contactLink, peerType, preferences} ctUserPreferences prepared localAlias viaGroup currentTs =
   ExceptT . withLocalDisplayName db userId displayName $ \ldn -> do
     DB.execute
       db
-      "INSERT INTO contact_profiles (display_name, full_name, short_descr, image, contact_link, user_id, local_alias, preferences, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)"
-      (displayName, fullName, shortDescr, image, contactLink, userId, localAlias, preferences, currentTs, currentTs)
+      "INSERT INTO contact_profiles (display_name, full_name, short_descr, image, contact_link, chat_peer_type, user_id, local_alias, preferences, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+      ((displayName, fullName, shortDescr, image, contactLink, peerType) :. (userId, localAlias, preferences, currentTs, currentTs))
     profileId <- insertedRowId db
     DB.execute
       db
@@ -457,19 +462,22 @@ deleteUnusedIncognitoProfileById_ db User {userId} profileId =
 
 type PreparedContactRow = (Maybe AConnectionRequestUri, Maybe AConnShortLink, Maybe SharedMsgId, Maybe SharedMsgId)
 
-type ContactRow' = (ProfileId, ContactName, Maybe Int64, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, LocalAlias, BoolInt, ContactStatus) :. (Maybe MsgFilter, Maybe BoolInt, BoolInt, Maybe Preferences, Preferences, UTCTime, UTCTime, Maybe UTCTime) :. PreparedContactRow :. (Maybe Int64, Maybe GroupMemberId, BoolInt, Maybe UIThemeEntityOverrides, BoolInt, Maybe CustomData, Maybe Int64)
+type GroupDirectInvitationRow = (Maybe ConnReqInvitation, Maybe GroupId, Maybe GroupMemberId, Maybe Int64, BoolInt)
+
+type ContactRow' = (ProfileId, ContactName, Maybe Int64, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe ChatPeerType, LocalAlias, BoolInt, ContactStatus) :. (Maybe MsgFilter, Maybe BoolInt, BoolInt, Maybe Preferences, Preferences, UTCTime, UTCTime, Maybe UTCTime) :. PreparedContactRow :. (Maybe Int64, Maybe GroupMemberId, BoolInt) :. GroupDirectInvitationRow :. (Maybe UIThemeEntityOverrides, BoolInt, Maybe CustomData, Maybe Int64)
 
 type ContactRow = Only ContactId :. ContactRow'
 
 toContact :: VersionRangeChat -> User -> [ChatTagId] -> ContactRow :. MaybeConnectionRow -> Contact
-toContact vr user chatTags ((Only contactId :. (profileId, localDisplayName, viaGroup, displayName, fullName, shortDescr, image, contactLink, localAlias, BI contactUsed, contactStatus) :. (enableNtfs_, sendRcpts, BI favorite, preferences, userPreferences, createdAt, updatedAt, chatTs) :. preparedContactRow :. (contactRequestId, contactGroupMemberId, BI contactGrpInvSent, uiThemes, BI chatDeleted, customData, chatItemTTL)) :. connRow) =
-  let profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, preferences, localAlias}
+toContact vr user chatTags ((Only contactId :. (profileId, localDisplayName, viaGroup, displayName, fullName, shortDescr, image, contactLink, peerType, localAlias, BI contactUsed, contactStatus) :. (enableNtfs_, sendRcpts, BI favorite, preferences, userPreferences, createdAt, updatedAt, chatTs) :. preparedContactRow :. (contactRequestId, contactGroupMemberId, BI contactGrpInvSent) :. groupDirectInvRow :. (uiThemes, BI chatDeleted, customData, chatItemTTL)) :. connRow) =
+  let profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, peerType, preferences, localAlias}
       activeConn = toMaybeConnection vr connRow
       chatSettings = ChatSettings {enableNtfs = fromMaybe MFAll enableNtfs_, sendRcpts = unBI <$> sendRcpts, favorite}
       incognito = maybe False connIncognito activeConn
       mergedPreferences = contactUserPreferences user userPreferences preferences incognito
       preparedContact = toPreparedContact preparedContactRow
-   in Contact {contactId, localDisplayName, profile, activeConn, viaGroup, contactUsed, contactStatus, chatSettings, userPreferences, mergedPreferences, createdAt, updatedAt, chatTs, preparedContact, contactRequestId, contactGroupMemberId, contactGrpInvSent, chatTags, chatItemTTL, uiThemes, chatDeleted, customData}
+      groupDirectInv = toGroupDirectInvitation groupDirectInvRow
+   in Contact {contactId, localDisplayName, profile, activeConn, viaGroup, contactUsed, contactStatus, chatSettings, userPreferences, mergedPreferences, createdAt, updatedAt, chatTs, preparedContact, contactRequestId, contactGroupMemberId, contactGrpInvSent, groupDirectInv, chatTags, chatItemTTL, uiThemes, chatDeleted, customData}
 
 toPreparedContact :: PreparedContactRow -> Maybe PreparedContact
 toPreparedContact (connFullLink, connShortLink, welcomeSharedMsgId, requestSharedMsgId) =
@@ -482,41 +490,46 @@ toACreatedConnLink_ (Just (ACR m cr)) csl = case csl of
   Nothing -> Just $ ACCL m $ CCLink cr Nothing
   Just (ACSL m' l) -> (\Refl -> ACCL m $ CCLink cr (Just l)) <$> testEquality m m'
 
+toGroupDirectInvitation :: GroupDirectInvitationRow -> Maybe GroupDirectInvitation
+toGroupDirectInvitation (Nothing, _, _, _, _) = Nothing
+toGroupDirectInvitation (Just groupDirectInvLink, fromGroupId_, fromGroupMemberId_, fromGroupMemberConnId_, BI groupDirectInvStartedConnection) =
+  Just $ GroupDirectInvitation {groupDirectInvLink, fromGroupId_, fromGroupMemberId_, fromGroupMemberConnId_, groupDirectInvStartedConnection}
+
 getProfileById :: DB.Connection -> UserId -> Int64 -> ExceptT StoreError IO LocalProfile
 getProfileById db userId profileId =
   ExceptT . firstRow rowToLocalProfile (SEProfileNotFound profileId) $
     DB.query
       db
       [sql|
-        SELECT cp.contact_profile_id, cp.display_name, cp.full_name, cp.short_descr, cp.image, cp.contact_link, cp.local_alias, cp.preferences -- , ct.user_preferences
+        SELECT cp.contact_profile_id, cp.display_name, cp.full_name, cp.short_descr, cp.image, cp.contact_link, cp.chat_peer_type, cp.local_alias, cp.preferences -- , ct.user_preferences
         FROM contact_profiles cp
         WHERE cp.user_id = ? AND cp.contact_profile_id = ?
       |]
       (userId, profileId)
 
-type ContactRequestRow = (Int64, ContactName, AgentInvId, Maybe ContactId, Maybe GroupId, Maybe Int64) :. (Int64, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact) :. (Maybe XContactId, PQSupport, Maybe SharedMsgId, Maybe SharedMsgId, Maybe Preferences, UTCTime, UTCTime, VersionChat, VersionChat)
+type ContactRequestRow = (Int64, ContactName, AgentInvId, Maybe ContactId, Maybe GroupId, Maybe Int64) :. (Int64, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe ChatPeerType) :. (Maybe XContactId, PQSupport, Maybe SharedMsgId, Maybe SharedMsgId, Maybe Preferences, UTCTime, UTCTime, VersionChat, VersionChat)
 
 toContactRequest :: ContactRequestRow -> UserContactRequest
-toContactRequest ((contactRequestId, localDisplayName, agentInvitationId, contactId_, businessGroupId_, userContactLinkId_) :. (profileId, displayName, fullName, shortDescr, image, contactLink) :. (xContactId, pqSupport, welcomeSharedMsgId, requestSharedMsgId, preferences, createdAt, updatedAt, minVer, maxVer)) = do
-  let profile = Profile {displayName, fullName, shortDescr, image, contactLink, preferences}
+toContactRequest ((contactRequestId, localDisplayName, agentInvitationId, contactId_, businessGroupId_, userContactLinkId_) :. (profileId, displayName, fullName, shortDescr, image, contactLink, peerType) :. (xContactId, pqSupport, welcomeSharedMsgId, requestSharedMsgId, preferences, createdAt, updatedAt, minVer, maxVer)) = do
+  let profile = Profile {displayName, fullName, shortDescr, image, contactLink, peerType, preferences}
       cReqChatVRange = fromMaybe (versionToRange maxVer) $ safeVersionRange minVer maxVer
    in UserContactRequest {contactRequestId, agentInvitationId, contactId_, businessGroupId_, userContactLinkId_, cReqChatVRange, localDisplayName, profileId, profile, xContactId, pqSupport, welcomeSharedMsgId, requestSharedMsgId, createdAt, updatedAt}
 
 userQuery :: Query
 userQuery =
   [sql|
-    SELECT u.user_id, u.agent_user_id, u.contact_id, ucp.contact_profile_id, u.active_user, u.active_order, u.local_display_name, ucp.full_name, ucp.short_descr, ucp.image, ucp.contact_link, ucp.preferences,
-      u.show_ntfs, u.send_rcpts_contacts, u.send_rcpts_small_groups, u.view_pwd_hash, u.view_pwd_salt, u.user_member_profile_updated_at, u.ui_themes
+    SELECT u.user_id, u.agent_user_id, u.contact_id, ucp.contact_profile_id, u.active_user, u.active_order, u.local_display_name, ucp.full_name, ucp.short_descr, ucp.image, ucp.contact_link, ucp.chat_peer_type, ucp.preferences,
+      u.show_ntfs, u.send_rcpts_contacts, u.send_rcpts_small_groups, u.auto_accept_member_contacts, u.view_pwd_hash, u.view_pwd_salt, u.user_member_profile_updated_at, u.ui_themes
     FROM users u
     JOIN contacts uct ON uct.contact_id = u.contact_id
     JOIN contact_profiles ucp ON ucp.contact_profile_id = uct.contact_profile_id
   |]
 
-toUser :: (UserId, UserId, ContactId, ProfileId, BoolInt, Int64, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe Preferences) :. (BoolInt, BoolInt, BoolInt, Maybe B64UrlByteString, Maybe B64UrlByteString, Maybe UTCTime, Maybe UIThemeEntityOverrides) -> User
-toUser ((userId, auId, userContactId, profileId, BI activeUser, activeOrder, displayName, fullName, shortDescr, image, contactLink, userPreferences) :. (BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, viewPwdHash_, viewPwdSalt_, userMemberProfileUpdatedAt, uiThemes)) =
-  User {userId, agentUserId = AgentUserId auId, userContactId, localDisplayName = displayName, profile, activeUser, activeOrder, fullPreferences, showNtfs, sendRcptsContacts, sendRcptsSmallGroups, viewPwdHash, userMemberProfileUpdatedAt, uiThemes}
+toUser :: (UserId, UserId, ContactId, ProfileId, BoolInt, Int64) :. (ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe ChatPeerType, Maybe Preferences) :. (BoolInt, BoolInt, BoolInt, BoolInt, Maybe B64UrlByteString, Maybe B64UrlByteString, Maybe UTCTime, Maybe UIThemeEntityOverrides) -> User
+toUser ((userId, auId, userContactId, profileId, BI activeUser, activeOrder) :. (displayName, fullName, shortDescr, image, contactLink, peerType, userPreferences) :. (BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, BI autoAcceptMemberContacts, viewPwdHash_, viewPwdSalt_, userMemberProfileUpdatedAt, uiThemes)) =
+  User {userId, agentUserId = AgentUserId auId, userContactId, localDisplayName = displayName, profile, activeUser, activeOrder, fullPreferences, showNtfs, sendRcptsContacts, sendRcptsSmallGroups, autoAcceptMemberContacts = BoolDef autoAcceptMemberContacts, viewPwdHash, userMemberProfileUpdatedAt, uiThemes}
   where
-    profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, preferences = userPreferences, localAlias = ""}
+    profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, peerType, preferences = userPreferences, localAlias = ""}
     fullPreferences = fullPreferences' userPreferences
     viewPwdHash = UserPwdHash <$> viewPwdHash_ <*> viewPwdSalt_
 
@@ -630,21 +643,21 @@ type PreparedGroupRow = (Maybe ConnReqContact, Maybe ShortLinkContact, BoolInt, 
 
 type BusinessChatInfoRow = (Maybe BusinessChatType, Maybe MemberId, Maybe MemberId)
 
-type GroupInfoRow = (Int64, GroupName, GroupName, Text, Maybe Text, Text, Maybe Text, Maybe ImageData) :. (Maybe MsgFilter, Maybe BoolInt, BoolInt, Maybe GroupPreferences, Maybe GroupMemberAdmission) :. (UTCTime, UTCTime, Maybe UTCTime, Maybe UTCTime) :. PreparedGroupRow :. BusinessChatInfoRow :. (Maybe UIThemeEntityOverrides, Maybe CustomData, Maybe Int64, Int) :. GroupMemberRow
+type GroupInfoRow = (Int64, GroupName, GroupName, Text, Maybe Text, Text, Maybe Text, Maybe ImageData) :. (Maybe MsgFilter, Maybe BoolInt, BoolInt, Maybe GroupPreferences, Maybe GroupMemberAdmission) :. (UTCTime, UTCTime, Maybe UTCTime, Maybe UTCTime) :. PreparedGroupRow :. BusinessChatInfoRow :. (Maybe UIThemeEntityOverrides, Maybe CustomData, Maybe Int64, Int, Maybe ConnReqContact) :. GroupMemberRow
 
 type GroupMemberRow = (Int64, Int64, MemberId, VersionChat, VersionChat, GroupMemberRole, GroupMemberCategory, GroupMemberStatus, BoolInt, Maybe MemberRestrictionStatus) :. (Maybe Int64, Maybe GroupMemberId, ContactName, Maybe ContactId, ProfileId) :. ProfileRow :. (UTCTime, UTCTime) :. (Maybe UTCTime, Int64, Int64, Int64, Maybe UTCTime)
 
-type ProfileRow = (ProfileId, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, LocalAlias, Maybe Preferences)
+type ProfileRow = (ProfileId, ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe ChatPeerType, LocalAlias, Maybe Preferences)
 
 toGroupInfo :: VersionRangeChat -> Int64 -> [ChatTagId] -> GroupInfoRow -> GroupInfo
-toGroupInfo vr userContactId chatTags ((groupId, localDisplayName, displayName, fullName, shortDescr, localAlias, description, image) :. (enableNtfs_, sendRcpts, BI favorite, groupPreferences, memberAdmission) :. (createdAt, updatedAt, chatTs, userMemberProfileSentAt) :. preparedGroupRow :. businessRow :. (uiThemes, customData, chatItemTTL, membersRequireAttention) :. userMemberRow) =
+toGroupInfo vr userContactId chatTags ((groupId, localDisplayName, displayName, fullName, shortDescr, localAlias, description, image) :. (enableNtfs_, sendRcpts, BI favorite, groupPreferences, memberAdmission) :. (createdAt, updatedAt, chatTs, userMemberProfileSentAt) :. preparedGroupRow :. businessRow :. (uiThemes, customData, chatItemTTL, membersRequireAttention, viaGroupLinkUri) :. userMemberRow) =
   let membership = (toGroupMember userContactId userMemberRow) {memberChatVRange = vr}
       chatSettings = ChatSettings {enableNtfs = fromMaybe MFAll enableNtfs_, sendRcpts = unBI <$> sendRcpts, favorite}
       fullGroupPreferences = mergeGroupPreferences groupPreferences
       groupProfile = GroupProfile {displayName, fullName, shortDescr, description, image, groupPreferences, memberAdmission}
       businessChat = toBusinessChatInfo businessRow
       preparedGroup = toPreparedGroup preparedGroupRow
-   in GroupInfo {groupId, localDisplayName, groupProfile, localAlias, businessChat, fullGroupPreferences, membership, chatSettings, createdAt, updatedAt, chatTs, userMemberProfileSentAt, preparedGroup, chatTags, chatItemTTL, uiThemes, customData, membersRequireAttention}
+   in GroupInfo {groupId, localDisplayName, groupProfile, localAlias, businessChat, fullGroupPreferences, membership, chatSettings, createdAt, updatedAt, chatTs, userMemberProfileSentAt, preparedGroup, chatTags, chatItemTTL, uiThemes, customData, membersRequireAttention, viaGroupLinkUri}
 
 toPreparedGroup :: PreparedGroupRow -> Maybe PreparedGroup
 toPreparedGroup = \case
@@ -673,8 +686,8 @@ toGroupMember userContactId ((groupMemberId, groupId, memberId, minVer, maxVer, 
    in GroupMember {..}
 
 rowToLocalProfile :: ProfileRow -> LocalProfile
-rowToLocalProfile (profileId, displayName, fullName, shortDescr, image, contactLink, localAlias, preferences) =
-  LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, localAlias, preferences}
+rowToLocalProfile (profileId, displayName, fullName, shortDescr, image, contactLink, peerType, localAlias, preferences) =
+  LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, peerType, localAlias, preferences}
 
 toBusinessChatInfo :: BusinessChatInfoRow -> Maybe BusinessChatInfo
 toBusinessChatInfo (Just chatType, Just businessId, Just customerId) = Just BusinessChatInfo {chatType, businessId, customerId}
@@ -690,11 +703,11 @@ groupInfoQuery =
       g.created_at, g.updated_at, g.chat_ts, g.user_member_profile_sent_at,
       g.conn_full_link_to_connect, g.conn_short_link_to_connect, g.conn_link_prepared_connection, g.conn_link_started_connection, g.welcome_shared_msg_id, g.request_shared_msg_id,
       g.business_chat, g.business_member_id, g.customer_member_id,
-      g.ui_themes, g.custom_data, g.chat_item_ttl, g.members_require_attention,
+      g.ui_themes, g.custom_data, g.chat_item_ttl, g.members_require_attention, g.via_group_link_uri,
       -- GroupMember - membership
       mu.group_member_id, mu.group_id, mu.member_id, mu.peer_chat_min_version, mu.peer_chat_max_version, mu.member_role, mu.member_category,
       mu.member_status, mu.show_messages, mu.member_restriction, mu.invited_by, mu.invited_by_group_member_id, mu.local_display_name, mu.contact_id, mu.contact_profile_id, pu.contact_profile_id,
-      pu.display_name, pu.full_name, pu.short_descr, pu.image, pu.contact_link, pu.local_alias, pu.preferences,
+      pu.display_name, pu.full_name, pu.short_descr, pu.image, pu.contact_link, pu.chat_peer_type, pu.local_alias, pu.preferences,
       mu.created_at, mu.updated_at,
       mu.support_chat_ts, mu.support_chat_items_unread, mu.support_chat_items_member_attention, mu.support_chat_items_mentions, mu.support_chat_last_msg_from_member_ts
     FROM groups g
@@ -776,13 +789,23 @@ addGroupChatTags db g@GroupInfo {groupId} = do
   chatTags <- getGroupChatTags db groupId
   pure (g :: GroupInfo) {chatTags}
 
-setViaGroupLinkHash :: DB.Connection -> GroupId -> Int64 -> IO ()
-setViaGroupLinkHash db groupId connId =
-  DB.execute
-    db
-    [sql|
-      UPDATE groups
-      SET via_group_link_uri_hash = (SELECT via_contact_uri_hash FROM connections WHERE connection_id = ?)
-      WHERE group_id = ?
-    |]
-    (connId, groupId)
+setViaGroupLinkUri :: DB.Connection -> GroupId -> Int64 -> IO ()
+setViaGroupLinkUri db groupId connId = do
+  r <-
+    DB.query
+      db
+      "SELECT via_contact_uri, via_contact_uri_hash FROM connections WHERE connection_id = ?"
+      (Only connId) :: IO [(Maybe ConnReqContact, Maybe ConnReqUriHash)]
+  forM_ (listToMaybe r) $ \(viaContactUri, viaContactUriHash) ->
+    DB.execute
+      db
+      [sql|
+        UPDATE groups
+        SET via_group_link_uri = ?, via_group_link_uri_hash = ?
+        WHERE group_id = ?
+      |]
+      (viaContactUri, viaContactUriHash, groupId)
+
+deleteConnectionRecord :: DB.Connection -> User -> Int64 -> IO ()
+deleteConnectionRecord db User {userId} cId = do
+  DB.execute db "DELETE FROM connections WHERE user_id = ? AND connection_id = ?" (userId, cId)

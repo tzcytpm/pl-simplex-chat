@@ -19,7 +19,7 @@ module Simplex.Chat.Controller where
 
 import Control.Concurrent (ThreadId)
 import Control.Concurrent.Async (Async)
-import Control.Exception (Exception, SomeException)
+import Control.Exception (Exception)
 import qualified Control.Exception as E
 import Control.Monad.Except
 import Control.Monad.IO.Unlift
@@ -88,7 +88,7 @@ import Simplex.Messaging.Protocol (AProtoServerWithAuth, AProtocolType (..), Msg
 import Simplex.Messaging.TMap (TMap)
 import Simplex.Messaging.Transport (TLS, TransportPeer (..), simplexMQVersion)
 import Simplex.Messaging.Transport.Client (SocksProxyWithAuth, TransportHost)
-import Simplex.Messaging.Util (allFinally, catchAllErrors, catchAllErrors', tryAllErrors, tryAllErrors', (<$$>))
+import Simplex.Messaging.Util (AnyError (..), catchAllErrors, (<$$>))
 import Simplex.RemoteControl.Client
 import Simplex.RemoteControl.Invitation (RCSignedInvitation, RCVerifiedInvitation)
 import Simplex.RemoteControl.Types
@@ -168,7 +168,13 @@ data RandomAgentServers = RandomAgentServers
 
 -- The hooks can be used to extend or customize chat core in mobile or CLI clients.
 data ChatHooks = ChatHooks
-  { -- preCmdHook can be used to process or modify the commands before they are processed.
+  { -- preStartHook can be used to verify some data,
+    -- It is called before chat controller is started, unless the core is started in maintenance mode.
+    preStartHook :: Maybe (ChatController -> IO ()),
+    -- postStartHook can be used to update some data after start (e.g. commands in bot or group profiles),
+    -- It is called after chat controller is started.
+    postStartHook :: Maybe (ChatController -> IO ()),
+    -- preCmdHook can be used to process or modify the commands before they are processed.
     -- This hook should be used to process CustomChatCommand.
     -- if this hook returns ChatResponse, the command processing will be skipped.
     preCmdHook :: Maybe (ChatController -> ChatCommand -> IO (Either (Either ChatError ChatResponse) ChatCommand)),
@@ -180,7 +186,7 @@ data ChatHooks = ChatHooks
   }
 
 defaultChatHooks :: ChatHooks
-defaultChatHooks = ChatHooks Nothing Nothing Nothing
+defaultChatHooks = ChatHooks Nothing Nothing Nothing Nothing Nothing
 
 data PresetServers = PresetServers
   { operators :: NonEmpty PresetOperator,
@@ -265,6 +271,8 @@ data ChatCommand
   | SetUserContactReceipts UserMsgReceiptSettings
   | APISetUserGroupReceipts UserId UserMsgReceiptSettings
   | SetUserGroupReceipts UserMsgReceiptSettings
+  | APISetUserAutoAcceptMemberContacts UserId Bool
+  | SetUserAutoAcceptMemberContacts Bool
   | APIHideUser UserId UserPwd
   | APIUnhideUser UserId UserPwd
   | APIMuteUser UserId
@@ -373,6 +381,7 @@ data ChatCommand
   | APIAddGroupShortLink GroupId
   | APICreateMemberContact GroupId GroupMemberId
   | APISendMemberContactInvitation {contactId :: ContactId, msgContent_ :: Maybe MsgContent}
+  | APIAcceptMemberContact ContactId
   | GetUserProtoServers AProtocolType
   | SetUserProtoServers AProtocolType [AProtoServerWithAuth]
   | APITestProtoServer UserId AProtoServerWithAuth
@@ -451,8 +460,8 @@ data ChatCommand
   | APIChangePreparedGroupUser GroupId UserId
   | APIConnectPreparedContact {contactId :: ContactId, incognito :: IncognitoEnabled, msgContent_ :: Maybe MsgContent}
   | APIConnectPreparedGroup GroupId IncognitoEnabled (Maybe MsgContent)
-  | APIConnect {userId :: UserId, incognito :: IncognitoEnabled, connLink_ :: Maybe ACreatedConnLink} -- Maybe is used to report link parsing failure as special error
-  | Connect IncognitoEnabled (Maybe AConnectionLink)
+  | APIConnect {userId :: UserId, incognito :: IncognitoEnabled, preparedLink_ :: Maybe ACreatedConnLink} -- Maybe is used to report link parsing failure as special error
+  | Connect {incognito :: IncognitoEnabled, connLink_ :: Maybe AConnectionLink}
   | APIConnectContactViaAddress UserId IncognitoEnabled ContactId
   | ConnectSimplex IncognitoEnabled -- UserId (not used in UI)
   | DeleteContact ContactName ChatDeleteMode
@@ -477,6 +486,7 @@ data ChatCommand
   | ForwardLocalMessage {toChatName :: ChatName, forwardedMsg :: Text}
   | SendMessage SendName Text
   | SendMemberContactMessage GroupName ContactName Text
+  | AcceptMemberContact ContactName
   | SendLiveMessage ChatName Text
   | SendMessageQuote {contactName :: ContactName, msgDir :: AMsgDirection, quotedMsg :: Text, message :: Text}
   | SendMessageBroadcast MsgContent -- UserId (not used in UI)
@@ -526,6 +536,7 @@ data ChatCommand
   | CancelFile {fileId :: FileTransferId}
   | FileStatus FileTransferId
   | ShowProfile -- UserId (not used in UI)
+  | SetBotCommands [ChatBotCommand]
   | UpdateProfile ContactName (Maybe Text) -- UserId (not used in UI)
   | UpdateProfileImage (Maybe ImageData) -- UserId (not used in UI)
   | ShowProfileImage
@@ -715,6 +726,7 @@ data ChatResponse
   | CRNetworkStatuses {user_ :: Maybe User, networkStatuses :: [ConnNetworkStatus]}
   | CRJoinedGroupMember {user :: User, groupInfo :: GroupInfo, member :: GroupMember}
   | CRMemberAccepted {user :: User, groupInfo :: GroupInfo, member :: GroupMember}
+  | CRMemberSupportChatRead {user :: User, groupInfo :: GroupInfo, member :: GroupMember}
   | CRMemberSupportChatDeleted {user :: User, groupInfo :: GroupInfo, member :: GroupMember}
   | CRMembersRoleUser {user :: User, groupInfo :: GroupInfo, members :: [GroupMember], toRole :: GroupMemberRole}
   | CRMembersBlockedForAllUser {user :: User, groupInfo :: GroupInfo, members :: [GroupMember], blocked :: Bool}
@@ -726,6 +738,7 @@ data ChatResponse
   | CRGroupLinkDeleted {user :: User, groupInfo :: GroupInfo}
   | CRNewMemberContact {user :: User, contact :: Contact, groupInfo :: GroupInfo, member :: GroupMember}
   | CRNewMemberContactSentInv {user :: User, contact :: Contact, groupInfo :: GroupInfo, member :: GroupMember}
+  | CRMemberContactAccepted {user :: User, contact :: Contact}
   | CRCallInvitations {callInvitations :: [RcvCallInvitation]}
   | CRNtfTokenStatus {status :: NtfTknStatus}
   | CRNtfToken {token :: DeviceToken, status :: NtfTknStatus, ntfMode :: NotificationsMode, ntfServer :: NtfServer}
@@ -1407,6 +1420,10 @@ data ArchiveError
   | AEFileError {file :: String, fileError :: String}
   deriving (Show, Exception)
 
+instance AnyError ChatError where
+  fromSomeException = ChatError . CEException . show
+  {-# INLINE fromSomeException #-}
+
 -- | Host (mobile) side of transport to process remote commands and forward notifications
 data RemoteCtrlSession
   = RCSessionStarting
@@ -1493,45 +1510,9 @@ setContactNetworkStatus :: Contact -> NetworkStatus -> CM' ()
 setContactNetworkStatus Contact {activeConn = Nothing} _ = pure ()
 setContactNetworkStatus Contact {activeConn = Just Connection {agentConnId}} status = chatModifyVar' connNetworkStatuses $ M.insert agentConnId status
 
-tryChatError :: CM a -> CM (Either ChatError a)
-tryChatError = tryAllErrors mkChatError
-{-# INLINE tryChatError #-}
-
-tryChatError' :: CM a -> CM' (Either ChatError a)
-tryChatError' = tryAllErrors' mkChatError
-{-# INLINE tryChatError' #-}
-
-catchChatError :: CM a -> (ChatError -> CM a) -> CM a
-catchChatError = catchAllErrors mkChatError
-{-# INLINE catchChatError #-}
-
-catchChatError' :: CM a -> (ChatError -> CM' a) -> CM' a
-catchChatError' = catchAllErrors' mkChatError
-{-# INLINE catchChatError' #-}
-
-chatFinally :: CM a -> CM b -> CM a
-chatFinally = allFinally mkChatError
-{-# INLINE chatFinally #-}
-
 onChatError :: CM a -> CM b -> CM a
-a `onChatError` onErr = a `catchChatError` \e -> onErr >> throwError e
+a `onChatError` onErr = a `catchAllErrors` \e -> onErr >> throwError e
 {-# INLINE onChatError #-}
-
-mkChatError :: SomeException -> ChatError
-mkChatError = ChatError . CEException . show
-{-# INLINE mkChatError #-}
-
-catchStoreError :: ExceptT StoreError IO a -> (StoreError -> ExceptT StoreError IO a) -> ExceptT StoreError IO a
-catchStoreError = catchAllErrors mkStoreError
-{-# INLINE catchStoreError #-}
-
-tryStoreError' :: ExceptT StoreError IO a -> IO (Either StoreError a)
-tryStoreError' = tryAllErrors' mkStoreError
-{-# INLINE tryStoreError' #-}
-
-mkStoreError :: SomeException -> StoreError
-mkStoreError = SEInternalError . show
-{-# INLINE mkStoreError #-}
 
 throwCmdError :: String -> CM a
 throwCmdError = throwError . ChatError . CECommandError

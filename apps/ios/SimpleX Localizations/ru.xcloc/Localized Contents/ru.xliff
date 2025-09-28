@@ -867,6 +867,11 @@ swipe action</note>
         <target>Разрешить прямую доставку</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Allow files and media only if your contact allows them." xml:space="preserve">
+        <source>Allow files and media only if your contact allows them.</source>
+        <target>Разрешить файлы и медиа, только если их разрешает Ваш контакт.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Allow irreversible message deletion only if your contact allows it to you. (24 hours)" xml:space="preserve">
         <source>Allow irreversible message deletion only if your contact allows it to you. (24 hours)</source>
         <target>Разрешить необратимое удаление сообщений, только если Ваш контакт разрешает это Вам. (24 часа)</target>
@@ -950,6 +955,11 @@ swipe action</note>
       <trans-unit id="Allow your contacts to send disappearing messages." xml:space="preserve">
         <source>Allow your contacts to send disappearing messages.</source>
         <target>Разрешить Вашим контактам отправлять исчезающие сообщения.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Allow your contacts to send files and media." xml:space="preserve">
+        <source>Allow your contacts to send files and media.</source>
+        <target>Разрешить Вашим контактам отправлять файлы и медиа.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Allow your contacts to send voice messages." xml:space="preserve">
@@ -1312,6 +1322,11 @@ swipe action</note>
         <target>Размытие изображений</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Bot" xml:space="preserve">
+        <source>Bot</source>
+        <target>Бот</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Both you and your contact can add message reactions." xml:space="preserve">
         <source>Both you and your contact can add message reactions.</source>
         <target>И Вы, и Ваш контакт можете добавлять реакции на сообщения.</target>
@@ -1330,6 +1345,11 @@ swipe action</note>
       <trans-unit id="Both you and your contact can send disappearing messages." xml:space="preserve">
         <source>Both you and your contact can send disappearing messages.</source>
         <target>Вы и Ваш контакт можете отправлять исчезающие сообщения.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Both you and your contact can send files and media." xml:space="preserve">
+        <source>Both you and your contact can send files and media.</source>
+        <target>Вы и Ваш контакт можете отправлять файлы и медиа.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Both you and your contact can send voice messages." xml:space="preserve">
@@ -2085,6 +2105,11 @@ This is your own one-time link!</source>
         <target>Предпочтения контакта</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Contact requests from groups" xml:space="preserve">
+        <source>Contact requests from groups</source>
+        <target>Запросы на соединение из групп</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Contact will be deleted - this cannot be undone!" xml:space="preserve">
         <source>Contact will be deleted - this cannot be undone!</source>
         <target>Контакт будет удален — это нельзя отменить!</target>
@@ -2657,6 +2682,11 @@ swipe action</note>
       <trans-unit id="Delivery receipts!" xml:space="preserve">
         <source>Delivery receipts!</source>
         <target>Отчёты о доставке!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Deprecated options" xml:space="preserve">
+        <source>Deprecated options</source>
+        <target>Удалённые настройки</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Description" xml:space="preserve">
@@ -3325,20 +3355,20 @@ chat item action</note>
         <target>Ошибка расшифровки файла</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Error deleting chat" xml:space="preserve">
+        <source>Error deleting chat</source>
+        <target>Ошибка при удалении чата с членом группы</target>
+        <note>alert title</note>
+      </trans-unit>
       <trans-unit id="Error deleting chat database" xml:space="preserve">
         <source>Error deleting chat database</source>
         <target>Ошибка при удалении данных чата</target>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="Error deleting chat with member" xml:space="preserve">
-        <source>Error deleting chat with member</source>
-        <target>Ошибка при удалении чата с членом группы</target>
-        <note>alert title</note>
-      </trans-unit>
       <trans-unit id="Error deleting chat!" xml:space="preserve">
         <source>Error deleting chat!</source>
         <target>Ошибка при удалении чата!</target>
-        <note>No comment provided by engineer.</note>
+        <note>alert title</note>
       </trans-unit>
       <trans-unit id="Error deleting connection" xml:space="preserve">
         <source>Error deleting connection</source>
@@ -3525,6 +3555,11 @@ chat item action</note>
         <target>Ошибка при отправке сообщения</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Error setting auto-accept" xml:space="preserve">
+        <source>Error setting auto-accept</source>
+        <target>Ошибка при установке автоприёма запросов</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Error setting delivery receipts!" xml:space="preserve">
         <source>Error setting delivery receipts!</source>
         <target>Ошибка настроек отчётов о доставке!</target>
@@ -3606,6 +3641,11 @@ chat item action</note>
         <note>alert message
 file error text
 snd error text</note>
+      </trans-unit>
+      <trans-unit id="Error: %@." xml:space="preserve">
+        <source>Error: %@.</source>
+        <target>Ошибка: %@.</target>
+        <note>server test error</note>
       </trans-unit>
       <trans-unit id="Error: URL is invalid" xml:space="preserve">
         <source>Error: URL is invalid</source>
@@ -3786,6 +3826,11 @@ snd error text</note>
         <target>Файлы и медиа</target>
         <note>chat feature</note>
       </trans-unit>
+      <trans-unit id="Files and media are prohibited in this chat." xml:space="preserve">
+        <source>Files and media are prohibited in this chat.</source>
+        <target>Файлы и медиа запрещены в этом чате.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Files and media are prohibited." xml:space="preserve">
         <source>Files and media are prohibited.</source>
         <target>Файлы и медиа запрещены в этой группе.</target>
@@ -3824,6 +3869,26 @@ snd error text</note>
       <trans-unit id="Find chats faster" xml:space="preserve">
         <source>Find chats faster</source>
         <target>Быстро найти чаты</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fingerprint in destination server address does not match certificate: %@." xml:space="preserve">
+        <source>Fingerprint in destination server address does not match certificate: %@.</source>
+        <target>Хэш в адресе сервера назначения не соответствует сертификату: %@.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fingerprint in forwarding server address does not match certificate: %@." xml:space="preserve">
+        <source>Fingerprint in forwarding server address does not match certificate: %@.</source>
+        <target>Хэш в адресе пересылающего сервера не соответствует сертификату: %@.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fingerprint in server address does not match certificate." xml:space="preserve">
+        <source>Fingerprint in server address does not match certificate.</source>
+        <target>Возможно, хэш сертификата в адресе сервера неверный</target>
+        <note>server test error</note>
+      </trans-unit>
+      <trans-unit id="Fingerprint in server address does not match certificate: %@." xml:space="preserve">
+        <source>Fingerprint in server address does not match certificate: %@.</source>
+        <target>Хэш в адресе сервера не соответствует сертификату: %@.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Fix" xml:space="preserve">
@@ -4486,7 +4551,7 @@ More improvements are coming soon!</source>
       <trans-unit id="Invalid link" xml:space="preserve">
         <source>Invalid link</source>
         <target>Ошибка ссылки</target>
-        <note>No comment provided by engineer.</note>
+        <note>alert title</note>
       </trans-unit>
       <trans-unit id="Invalid migration confirmation" xml:space="preserve">
         <source>Invalid migration confirmation</source>
@@ -4851,6 +4916,11 @@ This is your link for group %@!</source>
         <target>Член группы</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Member %@" xml:space="preserve">
+        <source>Member %@</source>
+        <target>Член группы %@</target>
+        <note>past/unknown group member</note>
+      </trans-unit>
       <trans-unit id="Member admission" xml:space="preserve">
         <source>Member admission</source>
         <target>Приём членов в группу</target>
@@ -4860,6 +4930,11 @@ This is your link for group %@!</source>
         <source>Member inactive</source>
         <target>Член неактивен</target>
         <note>item status text</note>
+      </trans-unit>
+      <trans-unit id="Member is deleted - can't accept request" xml:space="preserve">
+        <source>Member is deleted - can't accept request</source>
+        <target>Член группы удалён - невозможно принять запрос</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Member reports" xml:space="preserve">
         <source>Member reports</source>
@@ -5671,6 +5746,11 @@ Requires compatible VPN.</source>
         <target>Только Вы можете отправлять исчезающие сообщения.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Only you can send files and media." xml:space="preserve">
+        <source>Only you can send files and media.</source>
+        <target>Только Вы можете отправлять файлы и медиа.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Only you can send voice messages." xml:space="preserve">
         <source>Only you can send voice messages.</source>
         <target>Только Вы можете отправлять голосовые сообщения.</target>
@@ -5694,6 +5774,11 @@ Requires compatible VPN.</source>
       <trans-unit id="Only your contact can send disappearing messages." xml:space="preserve">
         <source>Only your contact can send disappearing messages.</source>
         <target>Только Ваш контакт может отправлять исчезающие сообщения.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Only your contact can send files and media." xml:space="preserve">
+        <source>Only your contact can send files and media.</source>
+        <target>Только Ваш контакт может отправлять файлы и медиа.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Only your contact can send voice messages." xml:space="preserve">
@@ -5726,10 +5811,20 @@ Requires compatible VPN.</source>
         <target>Открыть консоль</target>
         <note>authentication reason</note>
       </trans-unit>
+      <trans-unit id="Open clean link" xml:space="preserve">
+        <source>Open clean link</source>
+        <target>Открыть очищенную ссылку</target>
+        <note>alert action</note>
+      </trans-unit>
       <trans-unit id="Open conditions" xml:space="preserve">
         <source>Open conditions</source>
         <target>Открыть условия</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Open full link" xml:space="preserve">
+        <source>Open full link</source>
+        <target>Открыть полную ссылку</target>
+        <note>alert action</note>
       </trans-unit>
       <trans-unit id="Open group" xml:space="preserve">
         <source>Open group</source>
@@ -5769,6 +5864,11 @@ Requires compatible VPN.</source>
       <trans-unit id="Open to join" xml:space="preserve">
         <source>Open to join</source>
         <target>Откройте чтобы вступить</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Open to use bot" xml:space="preserve">
+        <source>Open to use bot</source>
+        <target>Откройте чтобы использовать бот</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Opening app…" xml:space="preserve">
@@ -5877,11 +5977,6 @@ Requires compatible VPN.</source>
         <source>Password to show</source>
         <target>Пароль чтобы раскрыть</target>
         <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Past member %@" xml:space="preserve">
-        <source>Past member %@</source>
-        <target>Бывший член %@</target>
-        <note>past/unknown group member</note>
       </trans-unit>
       <trans-unit id="Paste desktop address" xml:space="preserve">
         <source>Paste desktop address</source>
@@ -6041,11 +6136,6 @@ Error: %@</source>
         <source>Port</source>
         <target>Порт</target>
         <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Possibly, certificate fingerprint in server address is incorrect" xml:space="preserve">
-        <source>Possibly, certificate fingerprint in server address is incorrect</source>
-        <target>Возможно, хэш сертификата в адресе сервера неверный</target>
-        <note>server test error</note>
       </trans-unit>
       <trans-unit id="Preserve the last message draft, with attachments." xml:space="preserve">
         <source>Preserve the last message draft, with attachments.</source>
@@ -6514,6 +6604,11 @@ swipe action</note>
       <trans-unit id="Remove image" xml:space="preserve">
         <source>Remove image</source>
         <target>Удалить изображение</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Remove link tracking" xml:space="preserve">
+        <source>Remove link tracking</source>
+        <target>Удалять параметры отслеживания</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Remove member" xml:space="preserve">
@@ -7257,13 +7352,13 @@ chat item action</note>
         <target>Протокол сервера изменен.</target>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="Server requires authorization to create queues, check password" xml:space="preserve">
-        <source>Server requires authorization to create queues, check password</source>
+      <trans-unit id="Server requires authorization to create queues, check password." xml:space="preserve">
+        <source>Server requires authorization to create queues, check password.</source>
         <target>Сервер требует авторизации для создания очередей, проверьте пароль</target>
         <note>server test error</note>
       </trans-unit>
-      <trans-unit id="Server requires authorization to upload, check password" xml:space="preserve">
-        <source>Server requires authorization to upload, check password</source>
+      <trans-unit id="Server requires authorization to upload, check password." xml:space="preserve">
+        <source>Server requires authorization to upload, check password.</source>
         <target>Сервер требует авторизации для загрузки, проверьте пароль</target>
         <note>server test error</note>
       </trans-unit>
@@ -7638,6 +7733,11 @@ chat item action</note>
         <target>Аудит SimpleX протоколов от Trail of Bits.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="SimpleX relay link" xml:space="preserve">
+        <source>SimpleX relay link</source>
+        <target>Ссылка SimpleX relay</target>
+        <note>simplex link type</note>
+      </trans-unit>
       <trans-unit id="Simplified incognito mode" xml:space="preserve">
         <source>Simplified incognito mode</source>
         <target>Упрощенный режим Инкогнито</target>
@@ -7899,6 +7999,11 @@ report reason</note>
       <trans-unit id="Tap Connect to send request" xml:space="preserve">
         <source>Tap Connect to send request</source>
         <target>Нажмите Соединиться, чтобы отправить запрос</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Tap Connect to use bot" xml:space="preserve">
+        <source>Tap Connect to use bot</source>
+        <target>Нажмите Соединиться, чтобы использовать бот.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tap Create SimpleX address in the menu to create it later." xml:space="preserve">
@@ -8223,6 +8328,11 @@ It can happen because of some bug or when the connection is compromised.</source
         <target>Эта настройка применяется к сообщениям в Вашем текущем профиле чата **%@**.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="This setting is for your current profile **%@**." xml:space="preserve">
+        <source>This setting is for your current profile **%@**.</source>
+        <target>Эта настройка применяется к Вашему текущему профилю чата **%@**.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Time to disappear is set only for new contacts." xml:space="preserve">
         <source>Time to disappear is set only for new contacts.</source>
         <target>Время удаления устанавливается только для новых контактов.</target>
@@ -8309,6 +8419,11 @@ You will be prompted to complete authentication before this feature is enabled.<
         <source>To send</source>
         <target>Для оправки</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="To send commands you must be connected." xml:space="preserve">
+        <source>To send commands you must be connected.</source>
+        <target>Вы должны быть соединены, чтобы отправлять команды.</target>
+        <note>alert message</note>
       </trans-unit>
       <trans-unit id="To support instant push notifications the chat database has to be migrated." xml:space="preserve">
         <source>To support instant push notifications the chat database has to be migrated.</source>
@@ -9207,7 +9322,7 @@ Repeat join request?</source>
       <trans-unit id="You can't send messages!" xml:space="preserve">
         <source>You can't send messages!</source>
         <target>Вы не можете отправлять сообщения!</target>
-        <note>No comment provided by engineer.</note>
+        <note>alert title</note>
       </trans-unit>
       <trans-unit id="You could not be verified; please try again." xml:space="preserve">
         <source>You could not be verified; please try again.</source>
@@ -9706,11 +9821,6 @@ marked deleted chat item preview text</note>
         <source>connected</source>
         <target>соединение установлено</target>
         <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="connected directly" xml:space="preserve">
-        <source>connected directly</source>
-        <target>соединен(а) напрямую</target>
-        <note>rcv group event chat item</note>
       </trans-unit>
       <trans-unit id="connecting" xml:space="preserve">
         <source>connecting</source>
@@ -10300,6 +10410,16 @@ time to disappear</note>
         <source>request to join rejected</source>
         <target>запрос на вступление отклонён</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="requested connection" xml:space="preserve">
+        <source>requested connection</source>
+        <target>запрос на соединение</target>
+        <note>rcv group event chat item</note>
+      </trans-unit>
+      <trans-unit id="requested connection from group %@" xml:space="preserve">
+        <source>requested connection from group %@</source>
+        <target>запрос на соединение из группы %@</target>
+        <note>rcv direct event chat item</note>
       </trans-unit>
       <trans-unit id="requested to connect" xml:space="preserve">
         <source>requested to connect</source>

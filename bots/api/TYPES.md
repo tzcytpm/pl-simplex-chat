@@ -32,6 +32,7 @@ This file is generated automatically.
 - [CIReactionCount](#cireactioncount)
 - [CIStatus](#cistatus)
 - [CITimed](#citimed)
+- [ChatBotCommand](#chatbotcommand)
 - [ChatDeleteMode](#chatdeletemode)
 - [ChatError](#chaterror)
 - [ChatErrorType](#chaterrortype)
@@ -39,6 +40,7 @@ This file is generated automatically.
 - [ChatInfo](#chatinfo)
 - [ChatItem](#chatitem)
 - [ChatItemDeletion](#chatitemdeletion)
+- [ChatPeerType](#chatpeertype)
 - [ChatRef](#chatref)
 - [ChatSettings](#chatsettings)
 - [ChatStats](#chatstats)
@@ -80,8 +82,10 @@ This file is generated automatically.
 - [FormattedText](#formattedtext)
 - [FullGroupPreferences](#fullgrouppreferences)
 - [FullPreferences](#fullpreferences)
+- [Group](#group)
 - [GroupChatScope](#groupchatscope)
 - [GroupChatScopeInfo](#groupchatscopeinfo)
+- [GroupDirectInvitation](#groupdirectinvitation)
 - [GroupFeature](#groupfeature)
 - [GroupFeatureEnabled](#groupfeatureenabled)
 - [GroupInfo](#groupinfo)
@@ -117,6 +121,7 @@ This file is generated automatically.
 - [MsgFilter](#msgfilter)
 - [MsgReaction](#msgreaction)
 - [MsgReceiptStatus](#msgreceiptstatus)
+- [NetworkError](#networkerror)
 - [NewUser](#newuser)
 - [NoteFolder](#notefolder)
 - [PendingContactConnection](#pendingcontactconnection)
@@ -223,14 +228,6 @@ DECRYPT_CB:
 
 RATCHET_HEADER:
 - type: "RATCHET_HEADER"
-
-RATCHET_EARLIER:
-- type: "RATCHET_EARLIER"
-- : word32
-
-RATCHET_SKIPPED:
-- type: "RATCHET_SKIPPED"
-- : word32
 
 RATCHET_SYNC:
 - type: "RATCHET_SYNC"
@@ -347,6 +344,7 @@ UNEXPECTED:
 
 NETWORK:
 - type: "NETWORK"
+- networkError: [NetworkError](#networkerror)
 
 HOST:
 - type: "HOST"
@@ -854,6 +852,24 @@ Invalid:
 
 ---
 
+## ChatBotCommand
+
+**Discriminated union type**:
+
+Command:
+- type: "command"
+- keyword: string
+- label: string
+- params: string?
+
+Menu:
+- type: "menu"
+- label: string
+- commands: [[ChatBotCommand](#chatbotcommand)]
+
+
+---
+
 ## ChatDeleteMode
 
 **Discriminated union type**:
@@ -1205,7 +1221,9 @@ Exception:
 - "fullDelete"
 - "reactions"
 - "voice"
+- "files"
 - "calls"
+- "sessions"
 
 
 ---
@@ -1260,6 +1278,15 @@ Message deletion result.
 **Record type**:
 - deletedChatItem: [AChatItem](#achatitem)
 - toChatItem: [AChatItem](#achatitem)?
+
+
+---
+
+## ChatPeerType
+
+**Enum type**:
+- "human"
+- "bot"
 
 
 ---
@@ -1326,11 +1353,11 @@ str(chatType) + str(chatId) + ((str(chatScope)) if chatScope is not None else ''
 ```
 
 ```javascript
-self == 'contact' ? '@' : self == 'group' ? '#' : self == 'local' ? '*' : '' // JavaScript
+self == 'direct' ? '@' : self == 'group' ? '#' : self == 'local' ? '*' : '' // JavaScript
 ```
 
 ```python
-'@' if str(self) == 'contact' else '#' if str(self) == 'group' else '*' if str(self) == 'local' else '' # Python
+'@' if str(self) == 'direct' else '#' if str(self) == 'group' else '*' if str(self) == 'local' else '' # Python
 ```
 
 
@@ -1595,6 +1622,7 @@ Error:
 - contactRequestId: int64?
 - contactGroupMemberId: int64?
 - contactGrpInvSent: bool
+- groupDirectInv: [GroupDirectInvitation](#groupdirectinvitation)?
 - chatTags: [int64]
 - chatItemTTL: int64?
 - uiThemes: [UIThemeEntityOverrides](#uithemeentityoverrides)?
@@ -1685,7 +1713,10 @@ User:
 - fullDelete: [ContactUserPreference](#contactuserpreference)
 - reactions: [ContactUserPreference](#contactuserpreference)
 - voice: [ContactUserPreference](#contactuserpreference)
+- files: [ContactUserPreference](#contactuserpreference)
 - calls: [ContactUserPreference](#contactuserpreference)
+- sessions: [ContactUserPreference](#contactuserpreference)
+- commands: [[ChatBotCommand](#chatbotcommand)]?
 
 
 ---
@@ -1942,11 +1973,21 @@ Colored:
 Uri:
 - type: "uri"
 
+HyperLink:
+- type: "hyperLink"
+- showText: string?
+- linkUri: string
+
 SimplexLink:
 - type: "simplexLink"
+- showText: string?
 - linkType: [SimplexLinkType](#simplexlinktype)
 - simplexUri: string
 - smpHosts: [string]
+
+Command:
+- type: "command"
+- commandStr: string
 
 Mention:
 - type: "mention"
@@ -1982,6 +2023,8 @@ Phone:
 - simplexLinks: [RoleGroupPreference](#rolegrouppreference)
 - reports: [GroupPreference](#grouppreference)
 - history: [GroupPreference](#grouppreference)
+- sessions: [RoleGroupPreference](#rolegrouppreference)
+- commands: [[ChatBotCommand](#chatbotcommand)]
 
 
 ---
@@ -1993,7 +2036,19 @@ Phone:
 - fullDelete: [SimplePreference](#simplepreference)
 - reactions: [SimplePreference](#simplepreference)
 - voice: [SimplePreference](#simplepreference)
+- files: [SimplePreference](#simplepreference)
 - calls: [SimplePreference](#simplepreference)
+- sessions: [SimplePreference](#simplepreference)
+- commands: [[ChatBotCommand](#chatbotcommand)]
+
+
+---
+
+## Group
+
+**Record type**:
+- groupInfo: [GroupInfo](#groupinfo)
+- members: [[GroupMember](#groupmember)]
 
 
 ---
@@ -2034,6 +2089,18 @@ MemberSupport:
 
 ---
 
+## GroupDirectInvitation
+
+**Record type**:
+- groupDirectInvLink: string
+- fromGroupId_: int64?
+- fromGroupMemberId_: int64?
+- fromGroupMemberConnId_: int64?
+- groupDirectInvStartedConnection: bool
+
+
+---
+
 ## GroupFeature
 
 **Enum type**:
@@ -2046,6 +2113,7 @@ MemberSupport:
 - "simplexLinks"
 - "reports"
 - "history"
+- "sessions"
 
 
 ---
@@ -2080,6 +2148,7 @@ MemberSupport:
 - uiThemes: [UIThemeEntityOverrides](#uithemeentityoverrides)?
 - customData: JSONObject?
 - membersRequireAttention: int
+- viaGroupLinkUri: string?
 
 
 ---
@@ -2250,6 +2319,8 @@ Known:
 - simplexLinks: [RoleGroupPreference](#rolegrouppreference)?
 - reports: [GroupPreference](#grouppreference)?
 - history: [GroupPreference](#grouppreference)?
+- sessions: [RoleGroupPreference](#rolegrouppreference)?
+- commands: [[ChatBotCommand](#chatbotcommand)]?
 
 
 ---
@@ -2399,6 +2470,7 @@ Unknown:
 - image: string?
 - contactLink: string?
 - preferences: [Preferences](#preferences)?
+- peerType: [ChatPeerType](#chatpeertype)?
 - localAlias: string
 
 
@@ -2567,6 +2639,34 @@ Unknown:
 
 ---
 
+## NetworkError
+
+**Discriminated union type**:
+
+ConnectError:
+- type: "connectError"
+- connectError: string
+
+TLSError:
+- type: "tLSError"
+- tlsError: string
+
+UnknownCAError:
+- type: "unknownCAError"
+
+FailedError:
+- type: "failedError"
+
+TimeoutError:
+- type: "timeoutError"
+
+SubscribeError:
+- type: "subscribeError"
+- subscribeError: string
+
+
+---
+
 ## NewUser
 
 **Record type**:
@@ -2624,7 +2724,10 @@ Unknown:
 - fullDelete: [SimplePreference](#simplepreference)?
 - reactions: [SimplePreference](#simplepreference)?
 - voice: [SimplePreference](#simplepreference)?
+- files: [SimplePreference](#simplepreference)?
 - calls: [SimplePreference](#simplepreference)?
+- sessions: [SimplePreference](#simplepreference)?
+- commands: [[ChatBotCommand](#chatbotcommand)]?
 
 
 ---
@@ -2661,6 +2764,7 @@ Unknown:
 - image: string?
 - contactLink: string?
 - preferences: [Preferences](#preferences)?
+- peerType: [ChatPeerType](#chatpeertype)?
 
 
 ---
@@ -2809,6 +2913,10 @@ ProfileUpdated:
 - type: "profileUpdated"
 - fromProfile: [Profile](#profile)
 - toProfile: [Profile](#profile)
+
+GroupInvLinkReceived:
+- type: "groupInvLinkReceived"
+- groupProfile: [GroupProfile](#groupprofile)
 
 
 ---
@@ -3025,6 +3133,7 @@ A_QUEUE:
 - "invitation"
 - "group"
 - "channel"
+- "relay"
 
 
 ---
@@ -3601,6 +3710,7 @@ Handshake:
 - showNtfs: bool
 - sendRcptsContacts: bool
 - sendRcptsSmallGroups: bool
+- autoAcceptMemberContacts: bool
 - userMemberProfileUpdatedAt: UTCTime?
 - uiThemes: [UIThemeEntityOverrides](#uithemeentityoverrides)?
 

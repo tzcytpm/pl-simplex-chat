@@ -132,6 +132,7 @@ data User = User
     showNtfs :: Bool,
     sendRcptsContacts :: Bool,
     sendRcptsSmallGroups :: Bool,
+    autoAcceptMemberContacts :: BoolDef,
     userMemberProfileUpdatedAt :: Maybe UTCTime,
     uiThemes :: Maybe UIThemeEntityOverrides
   }
@@ -191,8 +192,14 @@ data Contact = Contact
     chatTs :: Maybe UTCTime,
     preparedContact :: Maybe PreparedContact,
     contactRequestId :: Maybe Int64,
+    -- contactGroupMemberId + contactGrpInvSent are used in conjunction for making connection request
+    -- to a group member via direct message feature
     contactGroupMemberId :: Maybe GroupMemberId,
     contactGrpInvSent :: Bool,
+    -- groupDirectInv is used for accepting connection request made via direct message feature by a group member
+    -- when auto-accept is disabled - this is the opposite side of contactGroupMemberId + contactGrpInvSent
+    -- (there is no hidden meaning in naming inconsistency)
+    groupDirectInv :: Maybe GroupDirectInvitation,
     chatTags :: [ChatTagId],
     chatItemTTL :: Maybe Int64,
     uiThemes :: Maybe UIThemeEntityOverrides,
@@ -209,6 +216,15 @@ data PreparedContact = PreparedContact
     uiConnLinkType :: ConnectionMode,
     welcomeSharedMsgId :: Maybe SharedMsgId,
     requestSharedMsgId :: Maybe SharedMsgId
+  }
+  deriving (Eq, Show)
+
+data GroupDirectInvitation = GroupDirectInvitation
+  { groupDirectInvLink :: ConnReqInvitation,
+    fromGroupId_ :: Maybe GroupId,
+    fromGroupMemberId_ :: Maybe GroupMemberId,
+    fromGroupMemberConnId_ :: Maybe Int64,
+    groupDirectInvStartedConnection :: Bool
   }
   deriving (Eq, Show)
 
@@ -470,7 +486,8 @@ data GroupInfo = GroupInfo
     chatItemTTL :: Maybe Int64,
     uiThemes :: Maybe UIThemeEntityOverrides,
     customData :: Maybe CustomData,
-    membersRequireAttention :: Int
+    membersRequireAttention :: Int,
+    viaGroupLinkUri :: Maybe ConnReqContact
   }
   deriving (Eq, Show)
 
@@ -599,7 +616,10 @@ contactUserPreferences user userPreferences contactPreferences connectedIncognit
       fullDelete = pref SCFFullDelete,
       reactions = pref SCFReactions,
       voice = pref SCFVoice,
-      calls = pref SCFCalls
+      files = pref SCFFiles,
+      calls = pref SCFCalls,
+      sessions = pref SCFSessions,
+      commands = contactPreferences >>= commands_
     }
   where
     pref :: FeatureI f => SChatFeature f -> ContactUserPreference (FeaturePreference f)
@@ -625,7 +645,8 @@ data Profile = Profile
     shortDescr :: Maybe Text, -- short description limited to 160 characters
     image :: Maybe ImageData,
     contactLink :: Maybe ConnLinkContact,
-    preferences :: Maybe Preferences
+    preferences :: Maybe Preferences,
+    peerType :: Maybe ChatPeerType
     -- fields that should not be read into this data type to prevent sending them as part of profile to contacts:
     -- - contact_profile_id
     -- - incognito
@@ -633,9 +654,32 @@ data Profile = Profile
   }
   deriving (Eq, Show)
 
+data ChatPeerType = CPTHuman | CPTBot
+  deriving (Eq, Show)
+
+instance FromJSON ChatPeerType where
+  parseJSON = textParseJSON "ChatPeerType"
+
+instance ToJSON ChatPeerType where
+  toJSON = J.String . textEncode
+  toEncoding = JE.text . textEncode
+
+instance FromField ChatPeerType where fromField = fromTextField_ textDecode
+
+instance ToField ChatPeerType where toField = toField . textEncode
+
+instance TextEncoding ChatPeerType where
+  textDecode = \case
+    "human" -> Just CPTHuman
+    "bot" -> Just CPTBot
+    _ -> Nothing
+  textEncode = \case
+    CPTHuman -> "human"
+    CPTBot -> "bot"
+
 profileFromName :: ContactName -> Profile
 profileFromName displayName =
-  Profile {displayName, fullName = "", shortDescr = Nothing, image = Nothing, contactLink = Nothing, preferences = Nothing}
+  Profile {displayName, fullName = "", shortDescr = Nothing, image = Nothing, contactLink = Nothing, preferences = Nothing, peerType = Nothing}
 
 -- check if profiles match ignoring preferences
 profilesMatch :: LocalProfile -> LocalProfile -> Bool
@@ -645,8 +689,8 @@ profilesMatch
     n1 == n2 && fn1 == fn2 && i1 == i2
 
 redactedMemberProfile :: Profile -> Profile
-redactedMemberProfile Profile {displayName, fullName, shortDescr, image} =
-  Profile {displayName, fullName, shortDescr, image, contactLink = Nothing, preferences = Nothing}
+redactedMemberProfile Profile {displayName, fullName, shortDescr, image, peerType} =
+  Profile {displayName, fullName, shortDescr, image, contactLink = Nothing, preferences = Nothing, peerType}
 
 data IncognitoProfile = NewIncognito Profile | ExistingIncognito LocalProfile
 
@@ -683,6 +727,7 @@ data LocalProfile = LocalProfile
     image :: Maybe ImageData,
     contactLink :: Maybe ConnLinkContact,
     preferences :: Maybe Preferences,
+    peerType :: Maybe ChatPeerType,
     localAlias :: LocalAlias
   }
   deriving (Eq, Show)
@@ -691,12 +736,12 @@ localProfileId :: LocalProfile -> ProfileId
 localProfileId LocalProfile {profileId} = profileId
 
 toLocalProfile :: ProfileId -> Profile -> LocalAlias -> LocalProfile
-toLocalProfile profileId Profile {displayName, fullName, shortDescr, image, contactLink, preferences} localAlias =
-  LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, preferences, localAlias}
+toLocalProfile profileId Profile {displayName, fullName, shortDescr, image, contactLink, preferences, peerType} localAlias =
+  LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, preferences, peerType, localAlias}
 
 fromLocalProfile :: LocalProfile -> Profile
-fromLocalProfile LocalProfile {displayName, fullName, shortDescr, image, contactLink, preferences} =
-  Profile {displayName, fullName, shortDescr, image, contactLink, preferences}
+fromLocalProfile LocalProfile {displayName, fullName, shortDescr, image, contactLink, preferences, peerType} =
+  Profile {displayName, fullName, shortDescr, image, contactLink, preferences, peerType}
 
 data GroupProfile = GroupProfile
   { displayName :: GroupName,
@@ -994,6 +1039,9 @@ incognitoMembershipProfile GroupInfo {membership = m@GroupMember {memberProfile}
 
 memberSecurityCode :: GroupMember -> Maybe SecurityCode
 memberSecurityCode GroupMember {activeConn} = connectionCode =<< activeConn
+
+memberBlocked :: GroupMember -> Bool
+memberBlocked m = blockedByAdmin m || not (showMessages $ memberSettings m)
 
 data NewGroupMember = NewGroupMember
   { memInfo :: MemberInfo,
@@ -1586,6 +1634,9 @@ data Connection = Connection
   }
   deriving (Eq, Show)
 
+dbConnId :: Connection -> Int64
+dbConnId Connection {connId} = connId
+
 connReady :: Connection -> Bool
 connReady Connection {connStatus} = connStatus == ConnReady || connStatus == ConnSndReady
 
@@ -1962,8 +2013,8 @@ instance ToJSON ChatVersionRange where
 
 -- This type is needed for backward compatibility of new remote controller with old remote host.
 -- See CONTRIBUTING.md
-newtype BoolDef = BoolDef Bool
-  deriving newtype (Show, ToJSON)
+newtype BoolDef = BoolDef {isTrue :: Bool}
+  deriving newtype (Eq, Show, ToJSON)
 
 instance FromJSON BoolDef where
   parseJSON v = BoolDef <$> parseJSON v
@@ -2068,6 +2119,8 @@ $(JQ.deriveJSON defaultJSON ''XFTPSndFile)
 $(JQ.deriveJSON defaultJSON ''FileTransferMeta)
 
 $(JQ.deriveJSON defaultJSON ''PreparedContact)
+
+$(JQ.deriveJSON defaultJSON ''GroupDirectInvitation)
 
 $(JQ.deriveJSON defaultJSON ''LocalFileMeta)
 

@@ -59,6 +59,8 @@ struct ChatView: View {
     @State private var ignoreLoadingRequests: Int64? = nil
     @State private var animatedScrollingInProgress: Bool = false
     @State private var showUserSupportChatSheet = false
+    @State private var showCommandsMenu = false
+    @State private var supportChatMemberInfoLinkActive = false
 
     @State private var scrollView: EndlessScrollView<MergedItem> = EndlessScrollView(frame: .zero)
 
@@ -109,6 +111,9 @@ struct ChatView: View {
                     if let groupInfo = chat.chatInfo.groupInfo, !composeState.message.isEmpty {
                         GroupMentionsView(im: im, groupInfo: groupInfo, composeState: $composeState, selectedRange: $selectedRange, keyboardVisible: $keyboardVisible)
                     }
+                    if !chat.chatInfo.menuCommands.isEmpty {
+                        CommandsMenuView(chat: chat, composeState: $composeState, selectedRange: $selectedRange, showCommandsMenu: $showCommandsMenu)
+                    }
                     FloatingButtons(im: im, theme: theme, scrollView: scrollView, chat: chat, loadingMoreItems: $loadingMoreItems, loadingTopItems: $loadingTopItems, requestedTopScroll: $requestedTopScroll, loadingBottomItems: $loadingBottomItems, requestedBottomScroll: $requestedBottomScroll, animatedScrollingInProgress: $animatedScrollingInProgress, listState: scrollView.listState, model: floatingButtonModel, reloadItems: {
                             mergedItems.boxedValue = MergedItems.create(im, revealedItems)
                             scrollView.updateItems(mergedItems.boxedValue.items)
@@ -135,6 +140,7 @@ struct ChatView: View {
                         chat: chat,
                         im: im,
                         composeState: $composeState,
+                        showCommandsMenu: $showCommandsMenu,
                         keyboardVisible: $keyboardVisible,
                         keyboardHiddenDate: $keyboardHiddenDate,
                         selectedRange: $selectedRange,
@@ -173,6 +179,28 @@ struct ChatView: View {
             if im.showLoadingProgress == chat.id {
                 ProgressView().scaleEffect(2)
             }
+            if case let .group(groupInfo, _) = chat.chatInfo,
+               case let .groupChatScopeContext(groupScopeInfo) = im.secondaryIMFilter,
+               case let .memberSupport(groupMember_) = groupScopeInfo,
+               let groupMember = groupMember_ {
+                NavigationLink(isActive: $supportChatMemberInfoLinkActive) {
+                    GroupMemberInfoView(
+                        groupInfo: groupInfo,
+                        chat: chat,
+                        groupMember: GMember(groupMember),
+                        scrollToItemId: $scrollToItemId,
+                        openedFromSupportChat: true
+                    )
+                    .navigationBarHidden(false)
+                    .modifier(BackButton(disabled: Binding.constant(false)) {
+                        supportChatMemberInfoLinkActive = false
+                    })
+                } label: {
+                    EmptyView()
+                }
+                .frame(width: 1, height: 1)
+                .hidden()
+            }
         }
         .safeAreaInset(edge: .top) {
             VStack(spacing: .zero) {
@@ -206,18 +234,20 @@ struct ChatView: View {
         .confirmationDialog(selectedChatItems?.count == 1 ? "Archive report?" : "Archive \((selectedChatItems?.count ?? 0)) reports?", isPresented: $showArchiveSelectedReports, titleVisibility: .visible) {
             Button("For me", role: .destructive) {
                 if let selected = selectedChatItems {
-                    archiveReports(chat.chatInfo, selected.sorted(), false, deletedSelectedMessages)
+                    archiveReports(chat, selected.sorted(), false, deletedSelectedMessages)
                 }
             }
             if case let ChatInfo.group(groupInfo, _) = chat.chatInfo, groupInfo.membership.memberActive {
                 Button("For all moderators", role: .destructive) {
                     if let selected = selectedChatItems {
-                        archiveReports(chat.chatInfo, selected.sorted(), true, deletedSelectedMessages)
+                        archiveReports(chat, selected.sorted(), true, deletedSelectedMessages)
                     }
                 }
             }
         }
-        .appSheet(item: $selectedMember) { member in
+        .appSheet(item: $selectedMember, onDismiss: {
+            chatModel.secondaryIM = nil
+        }) { member in
             if case let .group(groupInfo, _) = chat.chatInfo {
                 GroupMemberInfoView(
                     groupInfo: groupInfo,
@@ -330,7 +360,10 @@ struct ChatView: View {
         }
         .onChange(of: chatModel.secondaryPendingInviteeChatOpened) { opened in
             if im.secondaryIMFilter != nil && !opened {
-                dismiss()
+                Task {
+                    try? await Task.sleep(nanoseconds: 650_000000)
+                    dismiss()
+                }
             }
         }
         .onChange(of: chatModel.openAroundItemId) { openAround in
@@ -403,7 +436,7 @@ struct ChatView: View {
     private func connectInProgressView(_ s: String) -> some View {
         VStack(spacing: 0) {
             Divider()
-            
+
             HStack(spacing: 12) {
                 ProgressView()
                 Text(s)
@@ -454,7 +487,10 @@ struct ChatView: View {
                 ChatInfoToolbar(chat: chat)
                     .tint(theme.colors.primary)
             }
-            .appSheet(isPresented: $showChatInfoSheet, onDismiss: { theme = buildTheme() }) {
+            .appSheet(isPresented: $showChatInfoSheet, onDismiss: {
+                chatModel.secondaryIM = nil
+                theme = buildTheme()
+            }) {
                 GroupChatInfoView(
                     chat: chat,
                     groupInfo: Binding(
@@ -557,10 +593,16 @@ struct ChatView: View {
                 switch groupScopeInfo {
                 case let .memberSupport(groupMember_):
                     if let groupMember = groupMember_ {
-                        MemberSupportChatToolbar(groupMember: groupMember)
+                        Button {
+                            supportChatMemberInfoLinkActive = true
+                        } label: {
+                            MemberSupportChatToolbar(groupMember: groupMember)
+                        }
                     } else {
                         textChatToolbar("Chat with admins")
                     }
+                case .reports:
+                    textChatToolbar("Member reports")
                 }
             case let .msgContentTagContext(contentTag):
                 switch contentTag {
@@ -733,7 +775,7 @@ struct ChatView: View {
                 return Group {
                     if case .chatBanner = ci.content {
                         VStack {
-                            ChatBannerView(chat: chat)
+                            ChatBannerView(chat: $chat)
                                 .padding(.bottom, 90)
                                 .padding(.top, 8)
 
@@ -822,7 +864,8 @@ struct ChatView: View {
     struct ChatBannerView: View {
         @EnvironmentObject var theme: AppTheme
         @AppStorage(DEFAULT_CHAT_ITEM_ROUNDNESS) private var roundness = defaultChatItemRoundness
-        @ObservedObject var chat: Chat
+        @Binding @ObservedObject var chat: Chat
+        @State private var showSecrets: Set<Int> = []
 
         var body: some View {
             let v = VStack(spacing: 8) {
@@ -846,8 +889,8 @@ struct ChatView: View {
                 }
 
                 if let shortDescr = chat.chatInfo.shortDescr {
-                    Text(shortDescr)
-                        .font(.subheadline)
+                    let r = markdownText(shortDescr, textStyle: .subheadline, showSecrets: showSecrets, backgroundColor: theme.colors.background)
+                    msgTextResultView(r, Text(AttributedString(r.string)), showSecrets: $showSecrets, centered: true, smallFont: true)
                         .multilineTextAlignment(.center)
                         .lineLimit(4)
                         .fixedSize(horizontal: false, vertical: true)
@@ -918,10 +961,12 @@ struct ChatView: View {
                     case .inv:
                         "Tap Connect to chat"
                     case .con:
-                        "Tap Connect to send request"
+                        contact.isBot ? "Tap Connect to use bot" : "Tap Connect to send request"
                     }
                 } else if contact.nextAcceptContactRequest {
                     "Accept contact request"
+                } else if case .bot = contact.profile.peerType {
+                    "Bot"
                 } else {
                     "Your contact"
                 }
@@ -955,7 +1000,7 @@ struct ChatView: View {
         switch (chat.chatInfo) {
         case let .direct(contact):
             if !contact.sndReady && contact.active && !contact.sendMsgToConnect && !contact.nextAcceptContactRequest {
-                contact.preparedContact?.uiConnLinkType == .con
+                (contact.preparedContact?.uiConnLinkType == .con && !contact.isBot) || contact.contactGroupMemberId != nil
                 ? "contact should accept…"
                 : "connecting…"
             } else {
@@ -1873,14 +1918,14 @@ struct ChatView: View {
                 .confirmationDialog(archivingReports?.count == 1 ? "Archive report?" : "Archive \(archivingReports?.count ?? 0) reports?", isPresented: $showArchivingReports, titleVisibility: .visible) {
                     Button("For me", role: .destructive) {
                         if let reports = self.archivingReports {
-                            archiveReports(chat.chatInfo, reports.sorted(), false)
+                            archiveReports(chat, reports.sorted(), false)
                             self.archivingReports = []
                         }
                     }
                     if case let ChatInfo.group(groupInfo, _) = chat.chatInfo, groupInfo.membership.memberActive {
                         Button("For all moderators", role: .destructive) {
                             if let reports = self.archivingReports {
-                                archiveReports(chat.chatInfo, reports.sorted(), true)
+                                archiveReports(chat, reports.sorted(), true)
                                 self.archivingReports = []
                             }
                         }
@@ -2672,13 +2717,13 @@ private func deleteMessages(_ chat: Chat, _ deletingItems: [Int64], _ mode: CIDe
                 await MainActor.run {
                     for di in deletedItems {
                         if let toItem = di.toChatItem {
-                            _ = ChatModel.shared.upsertChatItem(chat.chatInfo, toItem.chatItem)
+                            _ = ChatModel.shared.upsertChatItem(chatInfo, toItem.chatItem)
                         } else {
                             ChatModel.shared.removeChatItem(chatInfo, di.deletedChatItem.chatItem)
                         }
                         let deletedItem = di.deletedChatItem.chatItem
                         if deletedItem.isActiveReport {
-                            ChatModel.shared.decreaseGroupReportsCounter(chat.chatInfo.id)
+                            ChatModel.shared.decreaseGroupReportsCounter(chatInfo.id)
                         }
                     }
                     if let updatedChatInfo = deletedItems.last?.deletedChatItem.chatInfo {
@@ -2693,8 +2738,9 @@ private func deleteMessages(_ chat: Chat, _ deletingItems: [Int64], _ mode: CIDe
     }
 }
 
-func archiveReports(_ chatInfo: ChatInfo, _ itemIds: [Int64], _ forAll: Bool, _ onSuccess: @escaping () async -> Void = {}) {
+func archiveReports(_ chat: Chat, _ itemIds: [Int64], _ forAll: Bool, _ onSuccess: @escaping () async -> Void = {}) {
     if itemIds.count > 0 {
+        let chatInfo = chat.chatInfo
         Task {
             do {
                 let deleted = try await apiDeleteReceivedReports(

@@ -38,6 +38,7 @@ module Simplex.Chat.Store.Messages
     MemberAttention (..),
     updateChatTsStats,
     setSupportChatTs,
+    setSupportChatMemberAttention,
     createNewSndChatItem,
     createNewRcvChatItem,
     createNewChatItemNoMsg,
@@ -79,6 +80,7 @@ module Simplex.Chat.Store.Messages
     setDirectChatItemRead,
     setDirectChatItemsDeleteAt,
     updateGroupChatItemsRead,
+    updateSupportChatItemsRead,
     getGroupUnreadTimedItems,
     updateGroupChatItemsReadList,
     updateGroupScopeUnreadStats,
@@ -423,14 +425,23 @@ updateChatTsStats db vr user@User {userId} chatDirection chatTs chatStats_ = cas
           | not nowRequires && didRequire -> do
               DB.execute
                 db
+#if defined(dbPostgres)
                 [sql|
                   UPDATE groups
                   SET chat_ts = ?,
-                      members_require_attention = members_require_attention - 1
+                      members_require_attention = GREATEST(0, members_require_attention - 1)
                   WHERE user_id = ? AND group_id = ?
                 |]
+#else
+                [sql|
+                  UPDATE groups
+                  SET chat_ts = ?,
+                      members_require_attention = MAX(0, members_require_attention - 1)
+                  WHERE user_id = ? AND group_id = ?
+                |]
+#endif
                 (chatTs, userId, groupId)
-              pure $ GroupChat g {membersRequireAttention = membersRequireAttention - 1, chatTs = Just chatTs} (Just $ GCSIMemberSupport (Just member'))
+              pure $ GroupChat g {membersRequireAttention = max 0 (membersRequireAttention - 1), chatTs = Just chatTs} (Just $ GCSIMemberSupport (Just member'))
           | otherwise -> do
               DB.execute
                 db
@@ -495,6 +506,21 @@ updateChatTsStats db vr user@User {userId} chatDirection chatTs chatStats_ = cas
 setSupportChatTs :: DB.Connection -> GroupMemberId -> UTCTime -> IO ()
 setSupportChatTs db groupMemberId chatTs =
   DB.execute db "UPDATE group_members SET support_chat_ts = ? WHERE group_member_id = ?" (chatTs, groupMemberId)
+
+setSupportChatMemberAttention :: DB.Connection -> VersionRangeChat -> User -> GroupInfo -> GroupMember -> Int64 -> IO (GroupInfo, GroupMember)
+setSupportChatMemberAttention db vr user g m memberAttention = do
+  m' <- updateGMAttention m
+  g' <- updateGroupMembersRequireAttention db user g m m'
+  pure (g', m')
+  where
+    updateGMAttention m@GroupMember {groupMemberId} = do
+      currentTs <- getCurrentTime
+      DB.execute
+        db
+        "UPDATE group_members SET support_chat_items_member_attention = ?, updated_at = ? WHERE group_member_id = ?"
+        (memberAttention, currentTs, groupMemberId' m)
+      m_ <- runExceptT $ getGroupMemberById db vr user groupMemberId
+      pure $ either (const m) id m_ -- Left shouldn't happen, but types require it
 
 createNewSndChatItem :: DB.Connection -> User -> ChatDirection c 'MDSnd -> SndMessage -> CIContent 'MDSnd -> Maybe (CIQuote c) -> Maybe CIForwardedFrom -> Maybe CITimed -> Bool -> UTCTime -> IO ChatItemId
 createNewSndChatItem db user chatDirection SndMessage {msgId, sharedMsgId} ciContent quotedItem itemForwarded timed live createdAt =
@@ -648,7 +674,7 @@ getChatItemQuote_ db User {userId, userContactId} chatDirection QuotedMsg {msgRe
               -- GroupMember
               m.group_member_id, m.group_id, m.member_id, m.peer_chat_min_version, m.peer_chat_max_version, m.member_role, m.member_category,
               m.member_status, m.show_messages, m.member_restriction, m.invited_by, m.invited_by_group_member_id, m.local_display_name, m.contact_id, m.contact_profile_id, p.contact_profile_id,
-              p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.local_alias, p.preferences,
+              p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.chat_peer_type, p.local_alias, p.preferences,
               m.created_at, m.updated_at,
               m.support_chat_ts, m.support_chat_items_unread, m.support_chat_items_member_attention, m.support_chat_items_mentions, m.support_chat_last_msg_from_member_ts
             FROM group_members m
@@ -1066,7 +1092,7 @@ getContactRequestChatPreviews_ db User {userId} pagination clq = case clq of
         SELECT
           cr.contact_request_id, cr.local_display_name, cr.agent_invitation_id,
           cr.contact_id, cr.business_group_id, cr.user_contact_link_id,
-          cr.contact_profile_id, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, cr.xcontact_id,
+          cr.contact_profile_id, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.chat_peer_type, cr.xcontact_id,
           cr.pq_support, cr.welcome_shared_msg_id, cr.request_shared_msg_id, p.preferences,
           cr.created_at, cr.updated_at,
           cr.peer_chat_min_version, cr.peer_chat_max_version
@@ -2010,20 +2036,46 @@ setDirectChatItemsDeleteAt db User {userId} contactId itemIds currentTs = forM i
     (deleteAt, userId, contactId, chatItemId)
   pure (chatItemId, deleteAt)
 
-updateGroupChatItemsRead :: DB.Connection -> User -> GroupInfo -> Maybe GroupChatScope -> IO ()
-updateGroupChatItemsRead db User {userId} GroupInfo {groupId, membership} scope = do
+updateGroupChatItemsRead :: DB.Connection -> User -> GroupInfo -> IO ()
+updateGroupChatItemsRead db User {userId} GroupInfo {groupId, membership} = do
   currentTs <- getCurrentTime
   DB.execute
     db
     [sql|
       UPDATE chat_items SET item_status = ?, updated_at = ?
-      WHERE user_id = ? AND group_id = ? AND item_status = ?
+      WHERE user_id = ? AND group_id = ?
+        AND item_status = ?
     |]
     (CISRcvRead, currentTs, userId, groupId, CISRcvNew)
-  case scope of
-    Nothing -> pure ()
-    Just GCSMemberSupport {groupMemberId_} -> do
-      let gmId = fromMaybe (groupMemberId' membership) groupMemberId_
+
+updateSupportChatItemsRead :: DB.Connection -> VersionRangeChat -> User -> GroupInfo -> GroupChatScopeInfo -> IO (GroupInfo, GroupMember)
+updateSupportChatItemsRead db vr user@User {userId} g@GroupInfo {groupId, membership} scopeInfo = do
+  currentTs <- getCurrentTime
+  case scopeInfo of
+    GCSIMemberSupport {groupMember_} -> do
+      DB.execute
+        db
+        [sql|
+          UPDATE chat_items SET item_status = ?, updated_at = ?
+          WHERE user_id = ? AND group_id = ?
+            AND group_scope_tag = ? AND group_scope_group_member_id IS NOT DISTINCT FROM ?
+            AND item_status = ?
+        |]
+        (CISRcvRead, currentTs, userId, groupId, GCSTMemberSupport_, groupMemberId' <$> groupMember_, CISRcvNew)
+      case groupMember_ of
+        Nothing -> do
+          membership' <- updateGMStats membership
+          pure (g {membership = membership'}, membership')
+        Just member -> do
+          member' <- updateGMStats member
+          let didRequire = gmRequiresAttention member
+              nowRequires = gmRequiresAttention member'
+          if (not nowRequires && didRequire)
+            then (,member') <$> decreaseGroupMembersRequireAttention db user g
+            else pure (g, member')
+  where
+    updateGMStats m@GroupMember {groupMemberId} = do
+      currentTs <- getCurrentTime
       DB.execute
         db
         [sql|
@@ -2033,18 +2085,34 @@ updateGroupChatItemsRead db User {userId} GroupInfo {groupId, membership} scope 
               support_chat_items_mentions = 0
           WHERE group_member_id = ?
         |]
-        (Only gmId)
+        (Only groupMemberId)
+      m_ <- runExceptT $ getGroupMemberById db vr user groupMemberId
+      pure $ either (const m) id m_ -- Left shouldn't happen, but types require it
 
-getGroupUnreadTimedItems :: DB.Connection -> User -> GroupId -> IO [(ChatItemId, Int)]
-getGroupUnreadTimedItems db User {userId} groupId =
-  DB.query
-    db
-    [sql|
-      SELECT chat_item_id, timed_ttl
-      FROM chat_items
-      WHERE user_id = ? AND group_id = ? AND item_status = ? AND timed_ttl IS NOT NULL AND timed_delete_at IS NULL
-    |]
-    (userId, groupId, CISRcvNew)
+getGroupUnreadTimedItems :: DB.Connection -> User -> GroupId -> Maybe GroupChatScope -> IO [(ChatItemId, Int)]
+getGroupUnreadTimedItems db User {userId} groupId scope =
+  case scope of
+    Nothing ->
+      DB.query
+        db
+        [sql|
+          SELECT chat_item_id, timed_ttl
+          FROM chat_items
+          WHERE user_id = ? AND group_id = ?
+            AND item_status = ? AND timed_ttl IS NOT NULL AND timed_delete_at IS NULL
+        |]
+        (userId, groupId, CISRcvNew)
+    Just GCSMemberSupport {groupMemberId_} ->
+      DB.query
+        db
+        [sql|
+          SELECT chat_item_id, timed_ttl
+          FROM chat_items
+          WHERE user_id = ? AND group_id = ?
+            AND group_scope_tag = ? AND group_scope_group_member_id IS NOT DISTINCT FROM ?
+            AND item_status = ? AND timed_ttl IS NOT NULL AND timed_delete_at IS NULL
+        |]
+        (userId, groupId, GCSTMemberSupport_, groupMemberId_, CISRcvNew)
 
 updateGroupChatItemsReadList :: DB.Connection -> VersionRangeChat -> User -> GroupInfo -> Maybe GroupChatScopeInfo -> NonEmpty ChatItemId -> ExceptT StoreError IO ([(ChatItemId, Int)], GroupInfo)
 updateGroupChatItemsReadList db vr user@User {userId} g@GroupInfo {groupId} scopeInfo_ itemIds = do
@@ -2110,14 +2178,25 @@ updateGroupScopeUnreadStats db vr user g@GroupInfo {membership} scopeInfo (unrea
       currentTs <- getCurrentTime
       DB.execute
         db
+#if defined(dbPostgres)
         [sql|
           UPDATE group_members
-          SET support_chat_items_unread = support_chat_items_unread - ?,
-              support_chat_items_member_attention = support_chat_items_member_attention - ?,
-              support_chat_items_mentions = support_chat_items_mentions - ?,
+          SET support_chat_items_unread = GREATEST(0, support_chat_items_unread - ?),
+              support_chat_items_member_attention = GREATEST(0, support_chat_items_member_attention - ?),
+              support_chat_items_mentions = GREATEST(0, support_chat_items_mentions - ?),
               updated_at = ?
           WHERE group_member_id = ?
         |]
+#else
+        [sql|
+          UPDATE group_members
+          SET support_chat_items_unread = MAX(0, support_chat_items_unread - ?),
+              support_chat_items_member_attention = MAX(0, support_chat_items_member_attention - ?),
+              support_chat_items_mentions = MAX(0, support_chat_items_mentions - ?),
+              updated_at = ?
+          WHERE group_member_id = ?
+        |]
+#endif
         (unread, unanswered, mentions, currentTs, groupMemberId)
       m_ <- runExceptT $ getGroupMemberById db vr user groupMemberId
       pure $ either (const m) id m_ -- Left shouldn't happen, but types require it
@@ -2920,7 +2999,7 @@ getGroupChatItem db User {userId, userContactId} groupId itemId = ExceptT $ do
             -- GroupMember
             m.group_member_id, m.group_id, m.member_id, m.peer_chat_min_version, m.peer_chat_max_version, m.member_role, m.member_category,
             m.member_status, m.show_messages, m.member_restriction, m.invited_by, m.invited_by_group_member_id, m.local_display_name, m.contact_id, m.contact_profile_id, p.contact_profile_id,
-            p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.local_alias, p.preferences,
+            p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.chat_peer_type, p.local_alias, p.preferences,
             m.created_at, m.updated_at,
             m.support_chat_ts, m.support_chat_items_unread, m.support_chat_items_member_attention, m.support_chat_items_mentions, m.support_chat_last_msg_from_member_ts,
             -- quoted ChatItem
@@ -2928,13 +3007,13 @@ getGroupChatItem db User {userId, userContactId} groupId itemId = ExceptT $ do
             -- quoted GroupMember
             rm.group_member_id, rm.group_id, rm.member_id, rm.peer_chat_min_version, rm.peer_chat_max_version, rm.member_role, rm.member_category,
             rm.member_status, rm.show_messages, rm.member_restriction, rm.invited_by, rm.invited_by_group_member_id, rm.local_display_name, rm.contact_id, rm.contact_profile_id, rp.contact_profile_id,
-            rp.display_name, rp.full_name, rp.short_descr, rp.image, rp.contact_link, rp.local_alias, rp.preferences,
+            rp.display_name, rp.full_name, rp.short_descr, rp.image, rp.contact_link, rp.chat_peer_type, rp.local_alias, rp.preferences,
             rm.created_at, rm.updated_at,
             rm.support_chat_ts, rm.support_chat_items_unread, rm.support_chat_items_member_attention, rm.support_chat_items_mentions, rm.support_chat_last_msg_from_member_ts,
             -- deleted by GroupMember
             dbm.group_member_id, dbm.group_id, dbm.member_id, dbm.peer_chat_min_version, dbm.peer_chat_max_version, dbm.member_role, dbm.member_category,
             dbm.member_status, dbm.show_messages, dbm.member_restriction, dbm.invited_by, dbm.invited_by_group_member_id, dbm.local_display_name, dbm.contact_id, dbm.contact_profile_id, dbp.contact_profile_id,
-            dbp.display_name, dbp.full_name, dbp.short_descr, dbp.image, dbp.contact_link, dbp.local_alias, dbp.preferences,
+            dbp.display_name, dbp.full_name, dbp.short_descr, dbp.image, dbp.contact_link, dbp.chat_peer_type, dbp.local_alias, dbp.preferences,
             dbm.created_at, dbm.updated_at,
             dbm.support_chat_ts, dbm.support_chat_items_unread, dbm.support_chat_items_member_attention, dbm.support_chat_items_mentions, dbm.support_chat_last_msg_from_member_ts
           FROM chat_items i

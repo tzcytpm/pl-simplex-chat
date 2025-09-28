@@ -17,7 +17,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.TextRange
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextDecoration
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 import androidx.compose.ui.unit.dp
@@ -41,6 +43,7 @@ import kotlinx.serialization.encoding.Encoder
 import java.io.File
 import java.net.URI
 import java.nio.file.Files
+import kotlin.math.min
 
 const val MAX_NUMBER_OF_MENTIONS = 3
 
@@ -345,6 +348,7 @@ fun ComposeView(
   chatsCtx: ChatModel.ChatsContext,
   chat: Chat,
   composeState: MutableState<ComposeState>,
+  showCommandsMenu: MutableState<Boolean>,
   attachmentOption: MutableState<AttachmentOption?>,
   showChooseAttachment: () -> Unit,
   focusRequester: FocusRequester?,
@@ -353,19 +357,24 @@ fun ComposeView(
   fun isSimplexLink(link: String): Boolean =
     link.startsWith("https://simplex.chat", true) || link.startsWith("http://simplex.chat", true)
 
-  fun getSimplexLink(parsedMsg: List<FormattedText>?): Pair<String?, Boolean> {
+  fun getMessageLinks(parsedMsg: List<FormattedText>?): Pair<String?, Boolean> {
     if (parsedMsg == null) return null to false
-    val link = parsedMsg.firstOrNull { ft -> ft.format is Format.Uri && !cancelledLinks.contains(ft.text) && !isSimplexLink(ft.text) }
     val simplexLink = parsedMsg.any { ft -> ft.format is Format.SimplexLink }
-    return link?.text to simplexLink
+    for (ft in parsedMsg) {
+      val link = ft.linkUri
+      if (link != null && !cancelledLinks.contains(link) && !isSimplexLink(link)) {
+        return link to simplexLink
+      }
+    }
+    return null to simplexLink
   }
 
   val linkUrl = rememberSaveable { mutableStateOf<String?>(null) }
   // default value parsed because of draft
-  val hasSimplexLink = rememberSaveable { mutableStateOf(getSimplexLink(parseToMarkdown(composeState.value.message.text)).second) }
+  val hasSimplexLink = rememberSaveable { mutableStateOf(getMessageLinks(parseToMarkdown(composeState.value.message.text)).second) }
   val prevLinkUrl = rememberSaveable { mutableStateOf<String?>(null) }
   val pendingLinkUrl = rememberSaveable { mutableStateOf<String?>(null) }
-  val useLinkPreviews = chatModel.controller.appPrefs.privacyLinkPreviews.get()
+  val useLinkPreviews = true
   val saveLastDraft = chatModel.controller.appPrefs.privacySaveLastDraft.get()
   val smallFont = MaterialTheme.typography.body1.copy(color = MaterialTheme.colors.onBackground)
   val textStyle = remember(MaterialTheme.colors.isLight) { mutableStateOf(smallFont) }
@@ -379,6 +388,7 @@ fun ComposeView(
         if (wait != null) delay(wait)
         val lp = getLinkPreview(url)
         if (lp != null && pendingLinkUrl.value == url) {
+          chatModel.controller.appPrefs.privacyLinkPreviewsShowAlert.set(false) // to avoid showing alert to current users, show alert in v6.5
           composeState.value = composeState.value.copy(preview = ComposePreview.CLinkPreview(lp))
           pendingLinkUrl.value = null
         } else if (pendingLinkUrl.value == url) {
@@ -391,7 +401,7 @@ fun ComposeView(
 
   fun showLinkPreview(parsedMessage: List<FormattedText>?) {
     prevLinkUrl.value = linkUrl.value
-    val linkParsed = getSimplexLink(parsedMessage)
+    val linkParsed = getMessageLinks(parsedMessage)
     linkUrl.value = linkParsed.first
     hasSimplexLink.value = linkParsed.second
     val url = linkUrl.value
@@ -483,7 +493,7 @@ fun ComposeView(
     if (!chatItems.isNullOrEmpty()) {
       chatItems.forEach { aChatItem ->
         withContext(Dispatchers.Main) {
-          chatsCtx.addChatItem(chat.remoteHostId, cInfo, aChatItem.chatItem)
+          chatsCtx.addChatItem(chat.remoteHostId, aChatItem.chatInfo, aChatItem.chatItem)
         }
       }
       return chatItems.first().chatItem
@@ -498,7 +508,7 @@ fun ComposeView(
     return when (val composePreview = composeState.value.preview) {
       is ComposePreview.CLinkPreview -> {
         val parsedMsg = parseToMarkdown(msgText)
-        val url = getSimplexLink(parsedMsg).first
+        val url = getMessageLinks(parsedMsg).first
         val lp = composePreview.linkPreview
         if (lp != null && url == lp.uri) {
           MsgContent.MCLink(msgText, preview = lp)
@@ -593,7 +603,6 @@ fun ComposeView(
   }
 
   suspend fun sendMessageAsync(text: String?, live: Boolean, ttl: Int?): List<ChatItem>? {
-    val cInfo = chat.chatInfo
     val cs = composeState.value
     var sent: List<ChatItem>?
     var lastMessageFailedToSend: ComposeState? = null
@@ -859,24 +868,70 @@ fun ComposeView(
     }
   }
 
+  fun sanitizeMessage(parsedMsg: List<FormattedText>): Triple<String, List<FormattedText>, Int?> {
+    var pos = 0
+    var updatedMsg = ""
+    var sanitizedPos: Int? = null
+    val updatedParsedMsg = parsedMsg.map { ft ->
+      var updated = ft
+      when(ft.format) {
+        is Format.Uri -> {
+          val sanitized = parseSanitizeUri(ft.text, safe = true)?.uriInfo?.sanitized
+          if (sanitized != null) {
+            updated = FormattedText(text = sanitized, format = Format.Uri())
+            pos += updated.text.count()
+            sanitizedPos = pos
+          }
+        }
+        is Format.HyperLink -> {
+          val sanitized = parseSanitizeUri(ft.format.linkUri, safe = true)?.uriInfo?.sanitized
+          if (sanitized != null) {
+            val updatedText = if (ft.format.showText == null) sanitized else "[${ft.format.showText}]($sanitized)"
+            updated = FormattedText(text = updatedText, format = Format.HyperLink(showText = ft.format.showText, linkUri = sanitized))
+            pos += updated.text.count()
+            sanitizedPos = pos
+          }
+        }
+        else ->
+          pos += ft.text.count()
+      }
+      updatedMsg += updated.text
+      updated
+    }
+    return Triple(updatedMsg, updatedParsedMsg, sanitizedPos)
+  }
+
   fun onMessageChange(s: ComposeMessage) {
-    val parsedMessage = parseToMarkdown(s.text)
-    composeState.value = composeState.value.copy(message = s, parsedMessage = parsedMessage ?: FormattedText.plain(s.text))
+    var parsedMessage = parseToMarkdown(s.text)
+    if (chatModel.controller.appPrefs.privacySanitizeLinks.get() && parsedMessage != null) {
+      val (updatedMsg, updatedParsedMsg, sanitizedPos) = sanitizeMessage(parsedMessage)
+      if (sanitizedPos == null) {
+        composeState.value = composeState.value.copy(message = s, parsedMessage = parsedMessage)
+      } else {
+        val pos = min(updatedMsg.count(), if (sanitizedPos < s.selection.start) s.selection.start else sanitizedPos)
+        val message = s.copy(text = updatedMsg, selection = TextRange(pos))
+        composeState.value = composeState.value.copy(message = message, parsedMessage = updatedParsedMsg)
+        parsedMessage = updatedParsedMsg
+      }
+    } else {
+      composeState.value = composeState.value.copy(message = s, parsedMessage = parsedMessage ?: FormattedText.plain(s.text))
+    }
     if (isShortEmoji(s.text)) {
       textStyle.value = if (s.text.codePoints().count() < 4) largeEmojiFont else mediumEmojiFont
     } else {
       textStyle.value = smallFont
-      if (composeState.value.linkPreviewAllowed) {
+      if (composeState.value.linkPreviewAllowed && chatModel.controller.appPrefs.privacyLinkPreviews.get()) {
         if (s.text.isNotEmpty()) {
           showLinkPreview(parsedMessage)
         } else {
           resetLinkPreview()
           hasSimplexLink.value = false
+          composeState.value = composeState.value.copy(preview = ComposePreview.NoPreview)
         }
-      } else if (s.text.isNotEmpty() && !chat.groupFeatureEnabled(GroupFeature.SimplexLinks)) {
-        hasSimplexLink.value = getSimplexLink(parsedMessage).second
       } else {
-        hasSimplexLink.value = false
+        resetLinkPreview()
+        hasSimplexLink.value = s.text.isNotEmpty() && !chat.groupFeatureEnabled(GroupFeature.SimplexLinks) && getMessageLinks(parsedMessage).second
+        if (composeState.value.linkPreviewAllowed) composeState.value = composeState.value.copy(preview = ComposePreview.NoPreview)
       }
     }
   }
@@ -1065,6 +1120,22 @@ fun ComposeView(
   val nextSendGrpInv = rememberUpdatedState(chat.nextSendGrpInv)
 
   @Composable
+  fun CommandsButton() {
+    val commandsEnabled = chat.chatInfo.sendMsgEnabled && chat.chatInfo.menuCommands.isNotEmpty()
+    IconButton(
+      onClick = { showCommandsMenu.value = !showCommandsMenu.value },
+      enabled = commandsEnabled
+    ) {
+      Box(
+        modifier = Modifier.size(28.dp).clip(CircleShape),
+        contentAlignment = Alignment.Center
+      ) {
+        Text("//", style = MaterialTheme.typography.h3.copy(fontStyle = FontStyle.Italic, color = if (commandsEnabled) MaterialTheme.colors.primary else MaterialTheme.colors.secondary))
+      }
+    }
+  }
+
+  @Composable
   fun AttachmentButton() {
     val isGroupAndProhibitedFiles =
       chatsCtx.secondaryContextFilter == null
@@ -1087,7 +1158,6 @@ fun ComposeView(
           && !nextSendGrpInv.value
     IconButton(
       attachmentClicked,
-      Modifier.padding(start = 3.dp, end = 1.dp, bottom = if (appPlatform.isAndroid) 2.sp.toDp() else 5.sp.toDp() * fontSizeSqrtMultiplier),
       enabled = attachmentEnabled
     ) {
       Icon(
@@ -1098,6 +1168,24 @@ fun ComposeView(
           .size(28.dp)
           .clip(CircleShape)
       )
+    }
+  }
+
+  @Composable
+  fun AttachmentAndCommandsButtons() {
+    val cInfo = chat.chatInfo
+    Row(
+      Modifier.padding(start = 3.dp, end = 1.dp, bottom = if (appPlatform.isAndroid) 2.sp.toDp() else 5.sp.toDp() * fontSizeSqrtMultiplier),
+      horizontalArrangement = Arrangement.spacedBy((-8).dp)
+    ) {
+      val msg = composeState.value.message.text.trim()
+      val showAttachment = cInfo !is ChatInfo.Direct || cInfo.contact.profile.peerType != ChatPeerType.Bot || cInfo.featureEnabled(ChatFeature.Files)
+      if (cInfo.useCommands && (!showAttachment || msg.isEmpty() || msg.startsWith("/"))) {
+        CommandsButton()
+      }
+      if (showAttachment) {
+        AttachmentButton()
+      }
     }
   }
 
@@ -1248,6 +1336,7 @@ fun ComposeView(
         SimpleButtonIconEnded(
           text = stringResource(MR.strings.compose_view_connect),
           icon = painterResource(icon),
+          style = MaterialTheme.typography.body2,
           color = if (composeState.value.inProgress) MaterialTheme.colors.secondary else MaterialTheme.colors.primary,
           disabled = composeState.value.inProgress,
           click = { withApi { sendRequest() } }
@@ -1279,7 +1368,7 @@ fun ComposeView(
         )
         Text(
           text,
-          style = MaterialTheme.typography.caption,
+          style = MaterialTheme.typography.body2,
           color = if (composeState.value.inProgress) MaterialTheme.colors.secondary else MaterialTheme.colors.primary
         )
       }
@@ -1432,7 +1521,7 @@ fun ComposeView(
           ContextSendMessageToConnect(generalGetString(MR.strings.compose_send_direct_message_to_connect))
           Divider()
           Row(Modifier.padding(end = 8.dp), verticalAlignment = Alignment.Bottom) {
-            AttachmentButton()
+            AttachmentAndCommandsButtons()
             SendMsgView_(
               disableSendButton = disableSendButton,
               sendToConnect = { withApi { sendMemberContactInvitation() } }
@@ -1452,11 +1541,19 @@ fun ComposeView(
               connect = { withApi { sendConnectPreparedContact() } }
             )
           ConnectionMode.Con ->
-            SendContactRequestView(
-              disableSendButton = disableSendButton,
-              icon = MR.images.ic_person_add_filled,
-              sendRequest = { showSendConnectPreparedContactAlert() }
-            )
+            if (chat.chatInfo.contact.isBot) {
+              ConnectButtonView(
+                text = stringResource(MR.strings.compose_view_connect),
+                icon = MR.images.ic_bolt_filled,
+                connect = { withApi { sendConnectPreparedContact() } }
+              )
+            } else {
+              SendContactRequestView(
+                disableSendButton = disableSendButton,
+                icon = MR.images.ic_person_add_filled,
+                sendRequest = { showSendConnectPreparedContactAlert() }
+              )
+            }
         }
       } else if (
         chat.chatInfo is ChatInfo.Direct
@@ -1467,9 +1564,19 @@ fun ComposeView(
           rhId = rhId,
           contactRequestId = chat.chatInfo.contact.contactRequestId
         )
+      } else if (
+        chat.chatInfo is ChatInfo.Direct
+        && chat.chatInfo.contact.nextAcceptContactRequest
+        && chat.chatInfo.contact.groupDirectInv != null
+      ) {
+        ComposeContextMemberContactActionsView(
+          rhId = rhId,
+          contact = chat.chatInfo.contact,
+          groupDirectInv = chat.chatInfo.contact.groupDirectInv
+        )
       } else {
         Row(Modifier.padding(end = 8.dp), verticalAlignment = Alignment.Bottom) {
-          AttachmentButton()
+          AttachmentAndCommandsButtons()
           SendMsgView_(disableSendButton = disableSendButton)
         }
       }

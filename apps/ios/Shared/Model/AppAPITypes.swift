@@ -18,6 +18,7 @@ enum ChatCommand: ChatCmdProtocol {
     case setAllContactReceipts(enable: Bool)
     case apiSetUserContactReceipts(userId: Int64, userMsgReceiptSettings: UserMsgReceiptSettings)
     case apiSetUserGroupReceipts(userId: Int64, userMsgReceiptSettings: UserMsgReceiptSettings)
+    case apiSetUserAutoAcceptMemberContacts(userId: Int64, enable: Bool)
     case apiHideUser(userId: Int64, viewPwd: String)
     case apiUnhideUser(userId: Int64, viewPwd: String)
     case apiMuteUser(userId: Int64)
@@ -83,6 +84,7 @@ enum ChatCommand: ChatCmdProtocol {
     case apiAddGroupShortLink(groupId: Int64)
     case apiCreateMemberContact(groupId: Int64, groupMemberId: Int64)
     case apiSendMemberContactInvitation(contactId: Int64, msg: MsgContent)
+    case apiAcceptMemberContact(contactId: Int64)
     case apiTestProtoServer(userId: Int64, server: String)
     case apiGetServerOperators
     case apiSetServerOperators(operators: [ServerOperator])
@@ -198,6 +200,8 @@ enum ChatCommand: ChatCmdProtocol {
             case let .apiSetUserGroupReceipts(userId, userMsgReceiptSettings):
                 let umrs = userMsgReceiptSettings
                 return "/_set receipts groups \(userId) \(onOff(umrs.enable)) clear_overrides=\(onOff(umrs.clearOverrides))"
+            case let .apiSetUserAutoAcceptMemberContacts(userId, enable):
+                return "/_set accept member contacts \(userId) \(onOff(enable))"
             case let .apiHideUser(userId, viewPwd): return "/_hide user \(userId) \(encodeJSON(viewPwd))"
             case let .apiUnhideUser(userId, viewPwd): return "/_unhide user \(userId) \(encodeJSON(viewPwd))"
             case let .apiMuteUser(userId): return "/_mute user \(userId)"
@@ -273,6 +277,7 @@ enum ChatCommand: ChatCmdProtocol {
             case let .apiAddGroupShortLink(groupId): return "/_short link #\(groupId)"
             case let .apiCreateMemberContact(groupId, groupMemberId): return "/_create member contact #\(groupId) \(groupMemberId)"
             case let .apiSendMemberContactInvitation(contactId, mc): return "/_invite member contact @\(contactId) \(mc.cmdString)"
+            case let .apiAcceptMemberContact(contactId): return "/_accept member contact @\(contactId)"
             case let .apiTestProtoServer(userId, server): return "/_server test \(userId) \(server)"
             case .apiGetServerOperators: return "/_operators"
             case let .apiSetServerOperators(operators): return "/_operators \(encodeJSON(operators))"
@@ -391,6 +396,7 @@ enum ChatCommand: ChatCmdProtocol {
             case .setAllContactReceipts: return "setAllContactReceipts"
             case .apiSetUserContactReceipts: return "apiSetUserContactReceipts"
             case .apiSetUserGroupReceipts: return "apiSetUserGroupReceipts"
+            case .apiSetUserAutoAcceptMemberContacts: return "apiSetUserAutoAcceptMemberContacts"
             case .apiHideUser: return "apiHideUser"
             case .apiUnhideUser: return "apiUnhideUser"
             case .apiMuteUser: return "apiMuteUser"
@@ -457,6 +463,7 @@ enum ChatCommand: ChatCmdProtocol {
             case .apiAddGroupShortLink: return "apiAddGroupShortLink"
             case .apiCreateMemberContact: return "apiCreateMemberContact"
             case .apiSendMemberContactInvitation: return "apiSendMemberContactInvitation"
+            case .apiAcceptMemberContact: return "apiAcceptMemberContact"
             case .apiTestProtoServer: return "apiTestProtoServer"
             case .apiGetServerOperators: return "apiGetServerOperators"
             case .apiSetServerOperators: return "apiSetServerOperators"
@@ -567,6 +574,8 @@ enum ChatCommand: ChatCmdProtocol {
             } else {
                 "(_support)"
             }
+        case .reports:
+            "(reports, prohibited)" // can't use surrogate Reports scope
         }
     }
 
@@ -903,6 +912,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
     case leftMemberUser(user: UserRef, groupInfo: GroupInfo)
     case groupMembers(user: UserRef, group: SimpleXChat.Group)
     case memberAccepted(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
+    case memberSupportChatRead(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
     case memberSupportChatDeleted(user: UserRef, groupInfo: GroupInfo, member: GroupMember)
     case membersRoleUser(user: UserRef, groupInfo: GroupInfo, members: [GroupMember], toRole: GroupMemberRole)
     case membersBlockedForAllUser(user: UserRef, groupInfo: GroupInfo, members: [GroupMember], blocked: Bool)
@@ -912,6 +922,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
     case groupLinkDeleted(user: UserRef, groupInfo: GroupInfo)
     case newMemberContact(user: UserRef, contact: Contact, groupInfo: GroupInfo, member: GroupMember)
     case newMemberContactSentInv(user: UserRef, contact: Contact, groupInfo: GroupInfo, member: GroupMember)
+    case memberContactAccepted(user: UserRef, contact: Contact)
     // receiving file responses
     case rcvFileAccepted(user: UserRef, chatItem: AChatItem)
     case rcvFileAcceptedSndCancelled(user: UserRef, rcvFileTransfer: RcvFileTransfer)
@@ -951,6 +962,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
         case .leftMemberUser: "leftMemberUser"
         case .groupMembers: "groupMembers"
         case .memberAccepted: "memberAccepted"
+        case .memberSupportChatRead: "memberSupportChatRead"
         case .memberSupportChatDeleted: "memberSupportChatDeleted"
         case .membersRoleUser: "membersRoleUser"
         case .membersBlockedForAllUser: "membersBlockedForAllUser"
@@ -960,6 +972,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
         case .groupLinkDeleted: "groupLinkDeleted"
         case .newMemberContact: "newMemberContact"
         case .newMemberContactSentInv: "newMemberContactSentInv"
+        case .memberContactAccepted: "memberContactAccepted"
         case .rcvFileAccepted: "rcvFileAccepted"
         case .rcvFileAcceptedSndCancelled: "rcvFileAcceptedSndCancelled"
         case .standaloneFileInfo: "standaloneFileInfo"
@@ -995,6 +1008,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
         case let .leftMemberUser(u, groupInfo): return withUser(u, String(describing: groupInfo))
         case let .groupMembers(u, group): return withUser(u, String(describing: group))
         case let .memberAccepted(u, groupInfo, member): return withUser(u, "groupInfo: \(groupInfo)\nmember: \(member)")
+        case let .memberSupportChatRead(u, groupInfo, member): return withUser(u, "groupInfo: \(groupInfo)\nmember: \(member)")
         case let .memberSupportChatDeleted(u, groupInfo, member): return withUser(u, "groupInfo: \(groupInfo)\nmember: \(member)")
         case let .membersRoleUser(u, groupInfo, members, toRole): return withUser(u, "groupInfo: \(groupInfo)\nmembers: \(members)\ntoRole: \(toRole)")
         case let .membersBlockedForAllUser(u, groupInfo, members, blocked): return withUser(u, "groupInfo: \(groupInfo)\nmember: \(members)\nblocked: \(blocked)")
@@ -1004,6 +1018,7 @@ enum ChatResponse2: Decodable, ChatAPIResult {
         case let .groupLinkDeleted(u, groupInfo): return withUser(u, String(describing: groupInfo))
         case let .newMemberContact(u, contact, groupInfo, member): return withUser(u, "contact: \(contact)\ngroupInfo: \(groupInfo)\nmember: \(member)")
         case let .newMemberContactSentInv(u, contact, groupInfo, member): return withUser(u, "contact: \(contact)\ngroupInfo: \(groupInfo)\nmember: \(member)")
+        case let .memberContactAccepted(u, contact): return withUser(u, "contact: \(contact)")
         case let .rcvFileAccepted(u, chatItem): return withUser(u, String(describing: chatItem))
         case .rcvFileAcceptedSndCancelled: return noDetails
         case let .standaloneFileInfo(fileMeta): return String(describing: fileMeta)
@@ -1975,13 +1990,13 @@ struct ProtocolTestFailure: Decodable, Error, Equatable {
         let err = String.localizedStringWithFormat(NSLocalizedString("Test failed at step %@.", comment: "server test failure"), testStep.text)
         switch testError {
         case .SMP(_, .AUTH):
-            return err + " " + NSLocalizedString("Server requires authorization to create queues, check password", comment: "server test error")
+            return err + " " + NSLocalizedString("Server requires authorization to create queues, check password.", comment: "server test error")
         case .XFTP(.AUTH):
-            return err + " " + NSLocalizedString("Server requires authorization to upload, check password", comment: "server test error")
-        case .BROKER(_, .NETWORK):
-            return err + " " + NSLocalizedString("Possibly, certificate fingerprint in server address is incorrect", comment: "server test error")
+            return err + " " + NSLocalizedString("Server requires authorization to upload, check password.", comment: "server test error")
+        case .BROKER(_, .NETWORK(.unknownCAError)):
+            return err + " " + NSLocalizedString("Fingerprint in server address does not match certificate.", comment: "server test error")
         default:
-            return err
+            return err + " " + String.localizedStringWithFormat(NSLocalizedString("Error: %@.", comment: "server test error"), String(describing: testError))
         }
     }
 }

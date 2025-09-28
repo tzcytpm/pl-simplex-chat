@@ -117,6 +117,7 @@ testOpts =
       autoAcceptFileSize = 0,
       muteNotifications = True,
       markRead = True,
+      createBot = Nothing,
       maintenance = False
     }
 
@@ -532,6 +533,7 @@ smpServerCfg =
       dailyBlockQueueQuota = 20,
       messageExpiration = Just defaultMessageExpiration,
       expireMessagesOnStart = False,
+      expireMessagesOnSend = False,
       idleQueueInterval = defaultIdleQueueInterval,
       notificationExpiration = defaultNtfExpiration,
       inactiveClientExpiration = Just defaultInactiveClientExpiration,
@@ -603,6 +605,8 @@ xftpServerConfig =
       logStatsStartTime = 0,
       serverStatsLogFile = "tests/tmp/xftp-server-stats.daily.log",
       serverStatsBackupFile = Nothing,
+      prometheusInterval = Nothing,
+      prometheusMetricsFile = "tests/xftp-server-metrics.txt",
       controlPort = Nothing,
       transportConfig = mkTransportServerConfig True (Just alpnSupportedXFTPhandshakes) False,
       responseDelay = 0

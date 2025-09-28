@@ -40,6 +40,7 @@ module Simplex.Chat.Store.Profiles
     updateAllContactReceipts,
     updateUserContactReceipts,
     updateUserGroupReceipts,
+    updateUserAutoAcceptMemberContacts,
     updateUserProfile,
     setUserProfileContactLink,
     getUserContactProfiles,
@@ -129,17 +130,18 @@ createUserRecord :: DB.Connection -> AgentUserId -> Profile -> Bool -> ExceptT S
 createUserRecord db auId p activeUser = createUserRecordAt db auId p activeUser =<< liftIO getCurrentTime
 
 createUserRecordAt :: DB.Connection -> AgentUserId -> Profile -> Bool -> UTCTime -> ExceptT StoreError IO User
-createUserRecordAt db (AgentUserId auId) Profile {displayName, fullName, shortDescr, image, preferences = userPreferences} activeUser currentTs =
+createUserRecordAt db (AgentUserId auId) Profile {displayName, fullName, shortDescr, image, peerType, preferences = userPreferences} activeUser currentTs =
   checkConstraint SEDuplicateName . liftIO $ do
     when activeUser $ DB.execute_ db "UPDATE users SET active_user = 0"
     let showNtfs = True
         sendRcptsContacts = True
         sendRcptsSmallGroups = True
+        autoAcceptMemberContacts = False
     order <- getNextActiveOrder db
     DB.execute
       db
-      "INSERT INTO users (agent_user_id, local_display_name, active_user, active_order, contact_id, show_ntfs, send_rcpts_contacts, send_rcpts_small_groups, created_at, updated_at) VALUES (?,?,?,?,0,?,?,?,?,?)"
-      (auId, displayName, BI activeUser, order, BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, currentTs, currentTs)
+      "INSERT INTO users (agent_user_id, local_display_name, active_user, active_order, contact_id, show_ntfs, send_rcpts_contacts, send_rcpts_small_groups, auto_accept_member_contacts, created_at, updated_at) VALUES (?,?,?,?,0,?,?,?,?,?,?)"
+      (auId, displayName, BI activeUser, order, BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, BI autoAcceptMemberContacts, currentTs, currentTs)
     userId <- insertedRowId db
     DB.execute
       db
@@ -147,8 +149,8 @@ createUserRecordAt db (AgentUserId auId) Profile {displayName, fullName, shortDe
       (displayName, displayName, userId, currentTs, currentTs)
     DB.execute
       db
-      "INSERT INTO contact_profiles (display_name, full_name, short_descr, image, user_id, preferences, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?)"
-      (displayName, fullName, shortDescr, image, userId, userPreferences, currentTs, currentTs)
+      "INSERT INTO contact_profiles (display_name, full_name, short_descr, image, chat_peer_type, user_id, preferences, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?)"
+      (displayName, fullName, shortDescr, image, peerType, userId, userPreferences, currentTs, currentTs)
     profileId <- insertedRowId db
     DB.execute
       db
@@ -156,7 +158,7 @@ createUserRecordAt db (AgentUserId auId) Profile {displayName, fullName, shortDe
       (profileId, displayName, userId, BI True, currentTs, currentTs, currentTs)
     contactId <- insertedRowId db
     DB.execute db "UPDATE users SET contact_id = ? WHERE user_id = ?" (contactId, userId)
-    pure $ toUser $ (userId, auId, contactId, profileId, BI activeUser, order, displayName, fullName, shortDescr, image, Nothing, userPreferences) :. (BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, Nothing, Nothing, Nothing, Nothing)
+    pure $ toUser $ (userId, auId, contactId, profileId, BI activeUser, order) :. (displayName, fullName, shortDescr, image, Nothing, peerType, userPreferences) :. (BI showNtfs, BI sendRcptsContacts, BI sendRcptsSmallGroups, BI autoAcceptMemberContacts, Nothing, Nothing, Nothing, Nothing)
 
 -- TODO [mentions]
 getUsersInfo :: DB.Connection -> IO [UserInfo]
@@ -291,6 +293,10 @@ updateUserGroupReceipts db User {userId} UserMsgReceiptSettings {enable, clearOv
   DB.execute db "UPDATE users SET send_rcpts_small_groups = ? WHERE user_id = ?" (BI enable, userId)
   when clearOverrides $ DB.execute_ db "UPDATE groups SET send_rcpts = NULL"
 
+updateUserAutoAcceptMemberContacts :: DB.Connection -> User -> Bool -> IO ()
+updateUserAutoAcceptMemberContacts db User {userId} autoAccept =
+  DB.execute db "UPDATE users SET auto_accept_member_contacts = ? WHERE user_id = ?" (BI autoAccept, userId)
+
 updateUserProfile :: DB.Connection -> User -> Profile -> ExceptT StoreError IO User
 updateUserProfile db user p'
   | displayName == newName = liftIO $ do
@@ -344,14 +350,14 @@ getUserContactProfiles db User {userId} =
     <$> DB.query
       db
       [sql|
-        SELECT display_name, full_name, short_descr, image, contact_link, preferences
+        SELECT display_name, full_name, short_descr, image, contact_link, chat_peer_type, preferences
         FROM contact_profiles
         WHERE user_id = ?
       |]
       (Only userId)
   where
-    toContactProfile :: (ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe Preferences) -> Profile
-    toContactProfile (displayName, fullName, shortDescr, image, contactLink, preferences) = Profile {displayName, fullName, shortDescr, image, contactLink, preferences}
+    toContactProfile :: (ContactName, Text, Maybe Text, Maybe ImageData, Maybe ConnLinkContact, Maybe ChatPeerType, Maybe Preferences) -> Profile
+    toContactProfile (displayName, fullName, shortDescr, image, contactLink, peerType, preferences) = Profile {displayName, fullName, shortDescr, image, contactLink, peerType, preferences}
 
 createUserContactLink :: DB.Connection -> User -> ConnId -> CreatedLinkContact -> SubscriptionMode -> ExceptT StoreError IO ()
 createUserContactLink db User {userId} agentConnId (CCLink cReq shortLink) subMode =

@@ -24,6 +24,7 @@ import Data.Maybe (fromMaybe)
 import Data.String
 import qualified Data.Text as T
 import Simplex.Chat.Controller (ChatConfig (..), ChatController (..))
+import Simplex.Chat.Markdown (viewName)
 import Simplex.Chat.Messages.CIContent (e2eInfoNoPQText, e2eInfoPQText)
 import Simplex.Chat.Protocol
 import Simplex.Chat.Store.Direct (getContact)
@@ -78,7 +79,7 @@ businessProfile :: Profile
 businessProfile = mkProfile "biz" "Biz Inc" Nothing
 
 mkProfile :: T.Text -> T.Text -> Maybe ImageData -> Profile
-mkProfile displayName descr image = Profile {displayName, fullName = "", shortDescr = Just descr, image, contactLink = Nothing, preferences = defaultPrefs}
+mkProfile displayName descr image = Profile {displayName, fullName = "", shortDescr = Just descr, image, contactLink = Nothing, peerType = Nothing, preferences = defaultPrefs}
 
 it :: HasCallStack => String -> (TestParams -> Expectation) -> SpecWith (Arg (TestParams -> Expectation))
 it name test =
@@ -699,7 +700,6 @@ showActiveUser :: HasCallStack => TestCC -> String -> Expectation
 showActiveUser cc name = do
   cc <## ("user profile: " <> name)
   cc <## "use /p <name> [<bio>] to change it"
-  cc <## "(the updated profile will be sent to all your contacts)"
 
 connectUsersNoShortLink :: HasCallStack => TestCC -> TestCC -> IO ()
 connectUsersNoShortLink cc1 cc2 = connectUsers_ cc1 cc2 True
@@ -724,7 +724,7 @@ connectUsers_ cc1 cc2 noShortLink = do
 showName :: TestCC -> IO String
 showName (TestCC ChatController {currentUser} _ _ _ _ _) = do
   Just User {localDisplayName, profile = LocalProfile {fullName, shortDescr}} <- readTVarIO currentUser
-  pure . T.unpack $ localDisplayName <> optionalFullName localDisplayName fullName shortDescr
+  pure . T.unpack $ viewName localDisplayName <> optionalFullName localDisplayName fullName shortDescr
 
 createGroup2 :: HasCallStack => String -> TestCC -> TestCC -> IO ()
 createGroup2 gName cc1 cc2 = createGroup2' gName cc1 (cc2, GRAdmin) True

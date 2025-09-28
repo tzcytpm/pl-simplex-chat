@@ -16,8 +16,7 @@ module Simplex.Chat.Store.Connections
     getConnectionEntityViaShortLink,
     getContactConnEntityByConnReqHash,
     getConnectionsToSubscribe,
-    unsetConnectionToSubscribe,
-    deleteConnectionRecord,
+    unsetConnectionToSubscribe
   )
 where
 
@@ -100,9 +99,9 @@ getConnectionEntity db vr user@User {userId, userContactId} agentConnId = do
               created_at, security_code, security_code_verified_at, pq_support, pq_encryption, pq_snd_enabled, pq_rcv_enabled, auth_err_counter, quota_err_counter,
               conn_chat_version, peer_chat_min_version, peer_chat_max_version
             FROM connections
-            WHERE user_id = ? AND agent_conn_id = ?
+            WHERE user_id = ? AND agent_conn_id = ? AND conn_status != ?
           |]
-          (userId, agentConnId)
+          (userId, agentConnId, ConnDeleted)
     getContactRec_ :: Int64 -> Connection -> ExceptT StoreError IO Contact
     getContactRec_ contactId c = ExceptT $ do
       chatTags <- getDirectChatTags db contactId
@@ -111,22 +110,24 @@ getConnectionEntity db vr user@User {userId, userContactId} agentConnId = do
           db
           [sql|
             SELECT
-              c.contact_profile_id, c.local_display_name, c.via_group, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.local_alias, c.contact_used, c.contact_status, c.enable_ntfs, c.send_rcpts, c.favorite,
+              c.contact_profile_id, c.local_display_name, c.via_group, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.chat_peer_type, p.local_alias, c.contact_used, c.contact_status, c.enable_ntfs, c.send_rcpts, c.favorite,
               p.preferences, c.user_preferences, c.created_at, c.updated_at, c.chat_ts, c.conn_full_link_to_connect, c.conn_short_link_to_connect, c.welcome_shared_msg_id, c.request_shared_msg_id, c.contact_request_id,
-              c.contact_group_member_id, c.contact_grp_inv_sent, c.ui_themes, c.chat_deleted, c.custom_data, c.chat_item_ttl
+              c.contact_group_member_id, c.contact_grp_inv_sent, c.grp_direct_inv_link, c.grp_direct_inv_from_group_id, c.grp_direct_inv_from_group_member_id, c.grp_direct_inv_from_member_conn_id, c.grp_direct_inv_started_connection,
+              c.ui_themes, c.chat_deleted, c.custom_data, c.chat_item_ttl
             FROM contacts c
             JOIN contact_profiles p ON c.contact_profile_id = p.contact_profile_id
-            WHERE c.user_id = ? AND c.contact_id = ? AND c.deleted = 0
+            WHERE c.user_id = ? AND c.contact_id = ? AND c.contact_status = ? AND c.deleted = 0
           |]
-          (userId, contactId)
+          (userId, contactId, CSActive)
     toContact' :: Int64 -> Connection -> [ChatTagId] -> ContactRow' -> Contact
-    toContact' contactId conn chatTags ((profileId, localDisplayName, viaGroup, displayName, fullName, shortDescr, image, contactLink, localAlias, BI contactUsed, contactStatus) :. (enableNtfs_, sendRcpts, BI favorite, preferences, userPreferences, createdAt, updatedAt, chatTs) :. preparedContactRow :. (contactRequestId, contactGroupMemberId, BI contactGrpInvSent, uiThemes, BI chatDeleted, customData, chatItemTTL)) =
-      let profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, preferences, localAlias}
+    toContact' contactId conn chatTags ((profileId, localDisplayName, viaGroup, displayName, fullName, shortDescr, image, contactLink, peerType, localAlias, BI contactUsed, contactStatus) :. (enableNtfs_, sendRcpts, BI favorite, preferences, userPreferences, createdAt, updatedAt, chatTs) :. preparedContactRow :. (contactRequestId, contactGroupMemberId, BI contactGrpInvSent) :. groupDirectInvRow :. (uiThemes, BI chatDeleted, customData, chatItemTTL)) =
+      let profile = LocalProfile {profileId, displayName, fullName, shortDescr, image, contactLink, peerType, preferences, localAlias}
           chatSettings = ChatSettings {enableNtfs = fromMaybe MFAll enableNtfs_, sendRcpts = unBI <$> sendRcpts, favorite}
           mergedPreferences = contactUserPreferences user userPreferences preferences $ connIncognito conn
           activeConn = Just conn
           preparedContact = toPreparedContact preparedContactRow
-       in Contact {contactId, localDisplayName, profile, activeConn, viaGroup, contactUsed, contactStatus, chatSettings, userPreferences, mergedPreferences, createdAt, updatedAt, chatTs, preparedContact, contactRequestId, contactGroupMemberId, contactGrpInvSent, chatTags, chatItemTTL, uiThemes, chatDeleted, customData}
+          groupDirectInv = toGroupDirectInvitation groupDirectInvRow
+       in Contact {contactId, localDisplayName, profile, activeConn, viaGroup, contactUsed, contactStatus, chatSettings, userPreferences, mergedPreferences, createdAt, updatedAt, chatTs, preparedContact, contactRequestId, contactGroupMemberId, contactGrpInvSent, groupDirectInv, chatTags, chatItemTTL, uiThemes, chatDeleted, customData}
     getGroupAndMember_ :: Int64 -> Connection -> ExceptT StoreError IO (GroupInfo, GroupMember)
     getGroupAndMember_ groupMemberId c = do
       gm <-
@@ -142,17 +143,17 @@ getConnectionEntity db vr user@User {userId, userContactId} agentConnId = do
                   g.created_at, g.updated_at, g.chat_ts, g.user_member_profile_sent_at,
                   g.conn_full_link_to_connect, g.conn_short_link_to_connect, g.conn_link_prepared_connection, g.conn_link_started_connection, g.welcome_shared_msg_id, g.request_shared_msg_id,
                   g.business_chat, g.business_member_id, g.customer_member_id,
-                  g.ui_themes, g.custom_data, g.chat_item_ttl, g.members_require_attention,
+                  g.ui_themes, g.custom_data, g.chat_item_ttl, g.members_require_attention, g.via_group_link_uri,
                   -- GroupInfo {membership}
                   mu.group_member_id, mu.group_id, mu.member_id, mu.peer_chat_min_version, mu.peer_chat_max_version, mu.member_role, mu.member_category,
                   mu.member_status, mu.show_messages, mu.member_restriction, mu.invited_by, mu.invited_by_group_member_id, mu.local_display_name, mu.contact_id, mu.contact_profile_id, pu.contact_profile_id,
                   -- GroupInfo {membership = GroupMember {memberProfile}}
-                  pu.display_name, pu.full_name, pu.short_descr, pu.image, pu.contact_link, pu.local_alias, pu.preferences,
+                  pu.display_name, pu.full_name, pu.short_descr, pu.image, pu.contact_link, pu.chat_peer_type, pu.local_alias, pu.preferences,
                   mu.created_at, mu.updated_at,
                   mu.support_chat_ts, mu.support_chat_items_unread, mu.support_chat_items_member_attention, mu.support_chat_items_mentions, mu.support_chat_last_msg_from_member_ts,
                   -- from GroupMember
                   m.group_member_id, m.group_id, m.member_id, m.peer_chat_min_version, m.peer_chat_max_version, m.member_role, m.member_category, m.member_status, m.show_messages, m.member_restriction,
-                  m.invited_by, m.invited_by_group_member_id, m.local_display_name, m.contact_id, m.contact_profile_id, p.contact_profile_id, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.local_alias, p.preferences,
+                  m.invited_by, m.invited_by_group_member_id, m.local_display_name, m.contact_id, m.contact_profile_id, p.contact_profile_id, p.display_name, p.full_name, p.short_descr, p.image, p.contact_link, p.chat_peer_type, p.local_alias, p.preferences,
                   m.created_at, m.updated_at,
                   m.support_chat_ts, m.support_chat_items_unread, m.support_chat_items_member_attention, m.support_chat_items_mentions, m.support_chat_last_msg_from_member_ts
                 FROM group_members m
@@ -162,8 +163,9 @@ getConnectionEntity db vr user@User {userId, userContactId} agentConnId = do
                 JOIN group_members mu ON g.group_id = mu.group_id
                 JOIN contact_profiles pu ON pu.contact_profile_id = COALESCE(mu.member_profile_id, mu.contact_profile_id)
                 WHERE m.group_member_id = ? AND g.user_id = ? AND mu.contact_id = ?
+                  AND mu.member_status NOT IN (?,?,?)
               |]
-              (groupMemberId, userId, userContactId)
+              (groupMemberId, userId, userContactId, GSMemRemoved, GSMemLeft, GSMemGroupDeleted)
       liftIO $ bitraverse (addGroupChatTags db) pure gm
     toGroupAndMember :: Connection -> GroupInfoRow :. GroupMemberRow -> (GroupInfo, GroupMember)
     toGroupAndMember c (groupInfoRow :. memberRow) =
@@ -270,7 +272,3 @@ getConnectionsToSubscribe db vr = do
 
 unsetConnectionToSubscribe :: DB.Connection -> IO ()
 unsetConnectionToSubscribe db = DB.execute_ db "UPDATE connections SET to_subscribe = 0 WHERE to_subscribe = 1"
-
-deleteConnectionRecord :: DB.Connection -> User -> Int64 -> IO ()
-deleteConnectionRecord db User {userId} cId = do
-  DB.execute db "DELETE FROM connections WHERE user_id = ? AND connection_id = ?" (userId, cId)

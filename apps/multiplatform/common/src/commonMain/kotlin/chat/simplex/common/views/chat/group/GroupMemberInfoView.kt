@@ -34,7 +34,7 @@ import chat.simplex.common.views.newchat.*
 import chat.simplex.common.views.usersettings.SettingsActionItem
 import chat.simplex.common.model.GroupInfo
 import chat.simplex.common.platform.*
-import chat.simplex.common.views.chatlist.openLoadedChat
+import chat.simplex.common.views.chatlist.openDirectChat
 import chat.simplex.res.MR
 import dev.icerock.moko.resources.StringResource
 import kotlinx.datetime.Clock
@@ -49,14 +49,19 @@ fun GroupMemberInfoView(
   connectionStats: ConnectionStats?,
   connectionCode: String?,
   chatModel: ChatModel,
+  openedFromSupportChat: Boolean,
   close: () -> Unit,
   closeAll: () -> Unit, // Close all open windows up to ChatView
 ) {
+  KeyChangeEffect(chat.simplex.common.platform.chatModel.chatId.value) {
+    ModalManager.end.closeModals()
+  }
   BackHandler(onBack = close)
   val chat = chatModel.chats.value.firstOrNull { ch -> ch.id == chatModel.chatId.value && ch.remoteHostId == rhId }
   val connStats = remember { mutableStateOf(connectionStats) }
   val developerTools = chatModel.controller.appPrefs.developerTools.get()
   var progressIndicator by remember { mutableStateOf(false) }
+  val scope = rememberCoroutineScope()
 
   fun syncMemberConnection() {
     withBGApi {
@@ -86,12 +91,10 @@ fun GroupMemberInfoView(
       developerTools,
       connectionCode,
       getContactChat = { chatModel.getContactChat(it) },
-      openDirectChat = {
-        withBGApi {
-          apiLoadMessages(chatModel.chatsContext, rhId, ChatType.Direct, it, ChatPagination.Initial(ChatPagination.INITIAL_COUNT))
-          if (chatModel.getContactChat(it) != null) {
-            closeAll()
-          }
+      openDirectChat = { contactId ->
+        scope.launch {
+          openDirectChat(rhId, contactId)
+          closeAll()
         }
       },
       createMemberContact = {
@@ -104,7 +107,7 @@ fun GroupMemberInfoView(
               withContext(Dispatchers.Main) {
                 chatModel.chatsContext.addChat(memberChat)
               }
-              openLoadedChat(memberChat)
+              openDirectChat(rhId, memberContact.contactId)
               closeAll()
               chatModel.setContactNetworkStatus(memberContact, NetworkStatus.Connected())
             }
@@ -226,7 +229,8 @@ fun GroupMemberInfoView(
             )
           }
         }
-      }
+      },
+      openedFromSupportChat = openedFromSupportChat
     )
 
     if (progressIndicator) {
@@ -292,6 +296,7 @@ fun GroupMemberInfoLayout(
   syncMemberConnection: () -> Unit,
   syncMemberConnectionForce: () -> Unit,
   verifyClicked: () -> Unit,
+  openedFromSupportChat: Boolean
 ) {
   val cStats = connStats.value
   fun knownDirectChat(contactId: Long): Pair<Chat, Contact>? {
@@ -441,6 +446,7 @@ fun GroupMemberInfoLayout(
     if (member.memberActive) {
       SectionView {
         if (
+          !openedFromSupportChat &&
           groupInfo.membership.memberRole >= GroupMemberRole.Moderator &&
           (member.memberRole < GroupMemberRole.Moderator || member.supportChat != null)
         ) {
@@ -925,6 +931,7 @@ fun PreviewGroupMemberInfoLayout() {
       syncMemberConnection = {},
       syncMemberConnectionForce = {},
       verifyClicked = {},
+      openedFromSupportChat = false,
     )
   }
 }

@@ -558,6 +558,9 @@ swipe action */
 "Allow downgrade" = "Consenti downgrade";
 
 /* No comment provided by engineer. */
+"Allow files and media only if your contact allows them." = "Consenti file e contenuti multimediali solo se il tuo contatto li consente.";
+
+/* No comment provided by engineer. */
 "Allow irreversible message deletion only if your contact allows it to you. (24 hours)" = "Consenti l'eliminazione irreversibile dei messaggi solo se il contatto la consente a te. (24 ore)";
 
 /* No comment provided by engineer. */
@@ -607,6 +610,9 @@ swipe action */
 
 /* No comment provided by engineer. */
 "Allow your contacts to send disappearing messages." = "Permetti ai tuoi contatti di inviare messaggi a tempo.";
+
+/* No comment provided by engineer. */
+"Allow your contacts to send files and media." = "Consenti ai tuoi contatti di inviare file e contenuti multimediali.";
 
 /* No comment provided by engineer. */
 "Allow your contacts to send voice messages." = "Permetti ai tuoi contatti di inviare messaggi vocali.";
@@ -862,6 +868,9 @@ marked deleted chat item preview text */
 "bold" = "grassetto";
 
 /* No comment provided by engineer. */
+"Bot" = "Bot";
+
+/* No comment provided by engineer. */
 "Both you and your contact can add message reactions." = "Sia tu che il tuo contatto potete aggiungere reazioni ai messaggi.";
 
 /* No comment provided by engineer. */
@@ -872,6 +881,9 @@ marked deleted chat item preview text */
 
 /* No comment provided by engineer. */
 "Both you and your contact can send disappearing messages." = "Sia tu che il tuo contatto potete inviare messaggi a tempo.";
+
+/* No comment provided by engineer. */
+"Both you and your contact can send files and media." = "Sia tu che il tuo contatto potete inviare file e contenuti multimediali.";
 
 /* No comment provided by engineer. */
 "Both you and your contact can send voice messages." = "Sia tu che il tuo contatto potete inviare messaggi vocali.";
@@ -1275,9 +1287,6 @@ set passcode view */
 /* No comment provided by engineer. */
 "Connected desktop" = "Desktop connesso";
 
-/* rcv group event chat item */
-"connected directly" = "si è connesso/a direttamente";
-
 /* No comment provided by engineer. */
 "Connected servers" = "Server connessi";
 
@@ -1412,6 +1421,9 @@ set passcode view */
 
 /* No comment provided by engineer. */
 "Contact preferences" = "Preferenze del contatto";
+
+/* No comment provided by engineer. */
+"Contact requests from groups" = "Richieste di contatto dai gruppi";
 
 /* No comment provided by engineer. */
 "contact should accept…" = "il contatto dovrebbe accettare…";
@@ -1789,6 +1801,9 @@ swipe action */
 
 /* No comment provided by engineer. */
 "Delivery receipts!" = "Ricevute di consegna!";
+
+/* No comment provided by engineer. */
+"Deprecated options" = "Opzioni deprecate";
 
 /* No comment provided by engineer. */
 "Description" = "Descrizione";
@@ -2251,12 +2266,12 @@ chat item action */
 "Error decrypting file" = "Errore decifrando il file";
 
 /* alert title */
+"Error deleting chat" = "Errore di eliminazione della chat con il membro";
+
+/* alert title */
 "Error deleting chat database" = "Errore nell'eliminazione del database della chat";
 
 /* alert title */
-"Error deleting chat with member" = "Errore di eliminazione della chat con il membro";
-
-/* No comment provided by engineer. */
 "Error deleting chat!" = "Errore nell'eliminazione della chat!";
 
 /* No comment provided by engineer. */
@@ -2369,6 +2384,9 @@ chat item action */
 
 /* No comment provided by engineer. */
 "Error sending message" = "Errore nell'invio del messaggio";
+
+/* No comment provided by engineer. */
+"Error setting auto-accept" = "Errore impostando l'accettazione automatica";
 
 /* No comment provided by engineer. */
 "Error setting delivery receipts!" = "Errore nell'impostazione delle ricevute di consegna!";
@@ -2529,6 +2547,9 @@ snd error text */
 "Files and media" = "File e multimediali";
 
 /* No comment provided by engineer. */
+"Files and media are prohibited in this chat." = "File e contenuti multimediali sono vietati in questa chat.";
+
+/* No comment provided by engineer. */
 "Files and media are prohibited." = "File e contenuti multimediali sono vietati in questo gruppo.";
 
 /* No comment provided by engineer. */
@@ -2551,6 +2572,9 @@ snd error text */
 
 /* No comment provided by engineer. */
 "Find chats faster" = "Trova le chat più velocemente";
+
+/* server test error */
+"Fingerprint in server address does not match certificate." = "Probabilmente l'impronta del certificato nell'indirizzo del server è sbagliata";
 
 /* No comment provided by engineer. */
 "Fix" = "Correggi";
@@ -2978,7 +3002,7 @@ snd error text */
 /* No comment provided by engineer. */
 "Invalid display name!" = "Nome da mostrare non valido!";
 
-/* No comment provided by engineer. */
+/* alert title */
 "Invalid link" = "Link non valido";
 
 /* No comment provided by engineer. */
@@ -3236,6 +3260,9 @@ snd error text */
 /* No comment provided by engineer. */
 "Member" = "Membro";
 
+/* past/unknown group member */
+"Member %@" = "Membro %@";
+
 /* profile update event chat item */
 "member %@ changed to %@" = "il membro %1$@ è diventato %2$@";
 
@@ -3250,6 +3277,9 @@ snd error text */
 
 /* item status text */
 "Member inactive" = "Membro inattivo";
+
+/* No comment provided by engineer. */
+"Member is deleted - can't accept request" = "Il membro è eliminato - impossibile accettare la richiesta";
 
 /* chat feature */
 "Member reports" = "Segnalazioni dei membri";
@@ -3794,6 +3824,9 @@ new chat action */
 "Only you can send disappearing messages." = "Solo tu puoi inviare messaggi a tempo.";
 
 /* No comment provided by engineer. */
+"Only you can send files and media." = "Solo tu puoi inviare file e contenuti multimediali.";
+
+/* No comment provided by engineer. */
 "Only you can send voice messages." = "Solo tu puoi inviare messaggi vocali.";
 
 /* No comment provided by engineer. */
@@ -3807,6 +3840,9 @@ new chat action */
 
 /* No comment provided by engineer. */
 "Only your contact can send disappearing messages." = "Solo il tuo contatto può inviare messaggi a tempo.";
+
+/* No comment provided by engineer. */
+"Only your contact can send files and media." = "Solo il tuo contatto può inviare file e contenuti multimediali.";
 
 /* No comment provided by engineer. */
 "Only your contact can send voice messages." = "Solo il tuo contatto può inviare messaggi vocali.";
@@ -3823,8 +3859,14 @@ new chat action */
 /* authentication reason */
 "Open chat console" = "Apri la console della chat";
 
+/* alert action */
+"Open clean link" = "Apri link pulito";
+
 /* No comment provided by engineer. */
 "Open conditions" = "Apri le condizioni";
+
+/* alert action */
+"Open full link" = "Apri link completo";
 
 /* new chat action */
 "Open group" = "Apri gruppo";
@@ -3852,6 +3894,9 @@ new chat action */
 
 /* No comment provided by engineer. */
 "Open to join" = "Apri per entrare";
+
+/* No comment provided by engineer. */
+"Open to use bot" = "Apri per usare il bot";
 
 /* No comment provided by engineer. */
 "Opening app…" = "Apertura dell'app…";
@@ -3921,9 +3966,6 @@ new chat action */
 
 /* No comment provided by engineer. */
 "Password to show" = "Password per mostrare";
-
-/* past/unknown group member */
-"Past member %@" = "Membro passato %@";
 
 /* No comment provided by engineer. */
 "Paste desktop address" = "Incolla l'indirizzo desktop";
@@ -4035,9 +4077,6 @@ new chat action */
 
 /* No comment provided by engineer. */
 "Port" = "Porta";
-
-/* server test error */
-"Possibly, certificate fingerprint in server address is incorrect" = "Probabilmente l'impronta del certificato nell'indirizzo del server è sbagliata";
 
 /* No comment provided by engineer. */
 "Preserve the last message draft, with attachments." = "Conserva la bozza dell'ultimo messaggio, con gli allegati.";
@@ -4336,6 +4375,9 @@ swipe action */
 "Remove image" = "Rimuovi immagine";
 
 /* No comment provided by engineer. */
+"Remove link tracking" = "Rimuovi il tracciamento del link";
+
+/* No comment provided by engineer. */
 "Remove member" = "Rimuovi membro";
 
 /* No comment provided by engineer. */
@@ -4424,6 +4466,12 @@ swipe action */
 
 /* No comment provided by engineer. */
 "request to join rejected" = "richiesta di entrare rifiutata";
+
+/* rcv group event chat item */
+"requested connection" = "connessione richiesta";
+
+/* rcv direct event chat item */
+"requested connection from group %@" = "connessione richiesta dal gruppo %@";
 
 /* chat list item title */
 "requested to connect" = "richiesto di connettersi";
@@ -4832,10 +4880,10 @@ chat item action */
 "server queue info: %@\n\nlast received msg: %@" = "info coda server: %1$@\n\nultimo msg ricevuto: %2$@";
 
 /* server test error */
-"Server requires authorization to create queues, check password" = "Il server richiede l'autorizzazione di creare code, controlla la password";
+"Server requires authorization to create queues, check password." = "Il server richiede l'autorizzazione di creare code, controlla la password";
 
 /* server test error */
-"Server requires authorization to upload, check password" = "Il server richiede l'autorizzazione per il caricamento, controllare la password";
+"Server requires authorization to upload, check password." = "Il server richiede l'autorizzazione per il caricamento, controllare la password";
 
 /* No comment provided by engineer. */
 "Server test failed!" = "Test del server fallito!";
@@ -5066,6 +5114,9 @@ chat item action */
 /* No comment provided by engineer. */
 "SimpleX protocols reviewed by Trail of Bits." = "Protocolli di SimpleX esaminati da Trail of Bits.";
 
+/* simplex link type */
+"SimpleX relay link" = "Link del relay SimpleX";
+
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Modalità incognito semplificata";
 
@@ -5219,6 +5270,9 @@ report reason */
 
 /* No comment provided by engineer. */
 "Tap Connect to send request" = "Tocca Connetti per inviare la richiesta";
+
+/* No comment provided by engineer. */
+"Tap Connect to use bot" = "Tocca Connetti per usare il bot";
 
 /* No comment provided by engineer. */
 "Tap Create SimpleX address in the menu to create it later." = "Tocca Crea indirizzo SimpleX nel menu per crearlo più tardi.";
@@ -5434,6 +5488,9 @@ report reason */
 "This setting applies to messages in your current chat profile **%@**." = "Questa impostazione si applica ai messaggi del profilo di chat attuale **%@**.";
 
 /* No comment provided by engineer. */
+"This setting is for your current profile **%@**." = "Questa impostazione è per il tuo profilo attuale **%@**.";
+
+/* No comment provided by engineer. */
 "Time to disappear is set only for new contacts." = "Il tempo di scomparsa è impostato solo per i contatti nuovi.";
 
 /* No comment provided by engineer. */
@@ -5483,6 +5540,9 @@ report reason */
 
 /* No comment provided by engineer. */
 "To send" = "Per inviare";
+
+/* alert message */
+"To send commands you must be connected." = "Per inviare comandi devi essere connesso/a.";
 
 /* No comment provided by engineer. */
 "To support instant push notifications the chat database has to be migrated." = "Per supportare le notifiche push istantanee, il database della chat deve essere migrato.";
@@ -6093,7 +6153,7 @@ report reason */
 /* alert message */
 "You can view your reports in Chat with admins." = "Puoi vedere le tue segnalazioni nella chat con gli amministratori.";
 
-/* No comment provided by engineer. */
+/* alert title */
 "You can't send messages!" = "Non puoi inviare messaggi!";
 
 /* chat item text */

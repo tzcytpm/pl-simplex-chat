@@ -98,6 +98,7 @@
   <string name="simplex_link_invitation">SimpleX one-time invitation</string>
   <string name="simplex_link_group">SimpleX group link</string>
   <string name="simplex_link_channel">SimpleX channel link</string>
+  <string name="simplex_link_relay">SimpleX relay link</string>
   <string name="simplex_link_connection">via %1$s</string>
   <string name="simplex_link_mode">SimpleX links</string>
   <string name="simplex_link_mode_description">Description</string>
@@ -145,15 +146,18 @@
   <!-- API Error Responses - SimpleXAPI.kt -->
   <string name="connection_timeout">Connection timeout</string>
   <string name="connection_error">Connection error</string>
+  <string name="network_error_unknown_ca">Fingerprint in server address does not match certificate: %1$s.</string>
   <string name="network_error_desc">Please check your network connection with %1$s and try again.</string>
   <string name="network_error_broker_host_desc">Server address is incompatible with network settings: %1$s.</string>
   <string name="network_error_broker_version_desc">Server version is incompatible with your app: %1$s.</string>
   <string name="private_routing_timeout">Private routing timeout</string>
   <string name="private_routing_error">Private routing error</string>
   <string name="private_routing_no_session">No private routing session</string>
+  <string name="smp_proxy_error_unknown_ca">Fingerprint in forwarding server address does not match certificate: %1$s.</string>
   <string name="smp_proxy_error_connecting">Error connecting to forwarding server %1$s. Please try later.</string>
   <string name="smp_proxy_error_broker_host">Forwarding server address is incompatible with network settings: %1$s.</string>
   <string name="smp_proxy_error_broker_version">Forwarding server version is incompatible with network settings: %1$s.</string>
+  <string name="proxy_destination_error_unknown_ca">Fingerprint in destination server address does not match certificate: %1$s.</string>
   <string name="proxy_destination_error_failed_to_connect">Forwarding server %1$s failed to connect to destination server %2$s. Please try later.</string>
   <string name="proxy_destination_error_broker_host">Destination server address of %1$s is incompatible with forwarding server %2$s settings.</string>
   <string name="proxy_destination_error_broker_version">Destination server version of %1$s is incompatible with forwarding server %2$s.</string>
@@ -166,7 +170,8 @@
   <string name="error_adding_members">Error adding member(s)</string>
   <string name="error_joining_group">Error joining group</string>
   <string name="error_accepting_member">Error accepting member</string>
-  <string name="error_deleting_member_support_chat">Error deleting chat with member</string>
+  <string name="error_marking_member_support_chat_read">Error marking read</string>
+  <string name="error_deleting_member_support_chat">Error deleting chat</string>
   <string name="cannot_receive_file">Cannot receive file</string>
   <string name="sender_cancelled_file_transfer">Sender cancelled file transfer.</string>
   <string name="file_not_approved_title">Unknown servers!</string>
@@ -199,9 +204,9 @@
   <string name="error_aborting_address_change">Error aborting address change</string>
   <string name="error_synchronizing_connection">Error synchronizing connection</string>
   <string name="error_smp_test_failed_at_step">Test failed at step %s.</string>
-  <string name="error_smp_test_server_auth">Server requires authorization to create queues, check password</string>
-  <string name="error_xftp_test_server_auth">Server requires authorization to upload, check password</string>
-  <string name="error_smp_test_certificate">Possibly, certificate fingerprint in server address is incorrect</string>
+  <string name="error_smp_test_server_auth">Server requires authorization to create queues, check password.</string>
+  <string name="error_xftp_test_server_auth">Server requires authorization to upload, check password.</string>
+  <string name="error_smp_test_certificate">Fingerprint in server address does not match certificate.</string>
   <string name="error_setting_address">Error setting address</string>
   <string name="error_alert_title">Error</string>
   <string name="smp_server_test_connect">Connect</string>
@@ -449,6 +454,7 @@
   <string name="no_chats_found">No chats found</string>
   <string name="contact_tap_to_connect">Tap to Connect</string>
   <string name="open_to_connect">Open to connect</string>
+  <string name="open_to_use_bot">Open to use bot</string>
   <string name="open_to_accept">Open to accept</string>
   <string name="contact_should_accept">contact should accept…</string>
   <string name="connect_with_contact_name_question">Connect with %1$s?</string>
@@ -489,8 +495,10 @@
   <!-- ChatBannerView -->
   <string name="chat_banner_connect_to_chat">Tap Connect to chat</string>
   <string name="chat_banner_send_request_to_connect">Tap Connect to send request</string>
+  <string name="chat_banner_connect_to_use_bot">Tap Connect to use bot</string>
   <string name="chat_banner_accept_contact_request">Accept contact request</string>
   <string name="chat_banner_your_contact">Your contact</string>
+  <string name="chat_banner_bot">Bot</string>
   <string name="chat_banner_join_group">Tap Join group</string>
   <string name="chat_banner_your_group">Your group</string>
   <string name="chat_banner_group">Group</string>
@@ -562,6 +570,7 @@
   <string name="you_are_observer">you are observer</string>
   <string name="reviewed_by_admins">reviewed by admins</string>
   <string name="cant_send_message_member_has_old_version">member has old version</string>
+  <string name="cant_send_commands_alert_text">To send commands you must be connected.</string>
 
   <!-- Images - chat.simplex.app.views.chat.item.CIImageView.kt -->
   <string name="image_descr">Image</string>
@@ -731,6 +740,9 @@
   <string name="accept_contact_request">Accept contact request</string>
   <string name="reject_contact_request">Reject contact request</string>
   <string name="the_sender_will_not_be_notified">The sender will NOT be notified.</string>
+
+  <!-- ComposeContextMemberContactActionsView.kt -->
+  <string name="member_is_deleted_cant_accept_request">Member is deleted - can\'t accept request</string>
 
   <!-- Clear Chat - ChatListNavLinkView.kt -->
   <string name="clear_chat_question">Clear chat?</string>
@@ -1065,6 +1077,7 @@
   <string name="debug_logs">Enable logs</string>
   <string name="developer_options">Database IDs and Transport isolation option.</string>
   <string name="developer_options_section">Developer options</string>
+  <string name="deprecated_options_section">Deprecated options</string>
   <string name="show_internal_errors">Show internal errors</string>
   <string name="show_slow_api_calls">Show slow API calls</string>
   <string name="shutdown_alert_question">Shutdown?</string>
@@ -1361,6 +1374,7 @@
   <string name="app_will_ask_to_confirm_unknown_file_servers">The app will ask to confirm downloads from unknown file servers (except .onion or when SOCKS proxy is enabled).</string>
   <string name="without_tor_or_vpn_ip_address_will_be_visible_to_file_servers">Without Tor or VPN, your IP address will be visible to file servers.</string>
   <string name="send_link_previews">Send link previews</string>
+  <string name="sanitize_links_toggle">Remove link tracking</string>
   <string name="privacy_show_last_messages">Show last messages</string>
   <string name="privacy_message_draft">Message draft</string>
   <string name="full_backup">App data backup</string>
@@ -1395,6 +1409,7 @@
   <string name="empty_chat_profile_is_created">An empty chat profile with the provided name is created, and the app opens as usual.</string>
   <string name="if_you_enter_passcode_data_removed">If you enter this passcode when opening the app, all app data will be irreversibly removed!</string>
   <string name="set_passcode">Set passcode</string>
+  <string name="this_setting_is_for_your_current_profile">This setting is for your current profile</string>
   <string name="receipts_section_description">These settings are for your current profile</string>
   <string name="receipts_section_description_1">They can be overridden in contact and group settings.</string>
   <string name="receipts_section_contacts">Contacts</string>
@@ -1426,6 +1441,8 @@
   <string name="privacy_chat_list_open_links_ask">Ask</string>
   <string name="privacy_chat_list_open_web_link_question">Open web link?</string>
   <string name="privacy_chat_list_open_web_link">Open link</string>
+  <string name="privacy_chat_list_open_full_web_link">Open full link</string>
+  <string name="privacy_chat_list_open_clean_web_link">Open clean link</string>
 
   <!-- Settings sections -->
   <string name="settings_section_title_you">YOU</string>
@@ -1438,6 +1455,7 @@
   <string name="settings_section_title_chats">CHATS</string>
   <string name="settings_section_title_files">FILES</string>
   <string name="settings_section_title_delivery_receipts">SEND DELIVERY RECEIPTS TO</string>
+  <string name="settings_section_title_contact_requests_from_groups">CONTACT REQUESTS FROM GROUPS</string>
   <string name="settings_restart_app">Restart</string>
   <string name="settings_shutdown">Shutdown</string>
   <string name="settings_developer_tools">Developer tools</string>
@@ -1646,6 +1664,7 @@
 
   <!-- Direct event chat items -->
   <string name="rcv_direct_event_contact_deleted">deleted contact</string>
+  <string name="rcv_direct_event_group_inv_link_received">requested connection from group %1$s</string>
 
   <!-- Group event chat items -->
   <string name="rcv_group_event_member_added">invited %1$s</string>
@@ -1662,7 +1681,7 @@
   <string name="rcv_group_event_group_deleted">deleted group</string>
   <string name="rcv_group_event_updated_group_profile">updated group profile</string>
   <string name="rcv_group_event_invited_via_your_group_link">invited via your group link</string>
-  <string name="rcv_group_event_member_created_contact">connected directly</string>
+  <string name="rcv_group_event_member_created_contact">requested connection</string>
   <string name="rcv_group_event_new_member_pending_review">New member wants to join the group.</string>
   <string name="snd_group_event_changed_member_role">you changed role of %s to %s</string>
   <string name="snd_group_event_changed_role_for_yourself">you changed role for yourself to %s</string>
@@ -1745,7 +1764,7 @@
   <string name="group_member_status_connecting">connecting</string>
   <string name="group_member_status_unknown_short">unknown</string>
 
-  <string name="past_member_vName">Past member %1$s</string>
+  <string name="past_member_vName">Member %1$s</string>
 
   <!-- AddGroupMembersView.kt -->
   <string name="no_contacts_to_add">No contacts to add</string>
@@ -2151,6 +2170,9 @@
   <string name="allow_your_contacts_to_send_voice_messages">Allow your contacts to send voice messages.</string>
   <string name="allow_voice_messages_only_if">Allow voice messages only if your contact allows them.</string>
   <string name="prohibit_sending_voice_messages">Prohibit sending voice messages.</string>
+  <string name="allow_your_contacts_to_send_files_and_media">Allow your contacts to send files and media.</string>
+  <string name="allow_files_and_media_only_if">Allow files and media only if your contact allows them.</string>
+  <string name="prohibit_sending_files_and_media">Prohibit sending files and media.</string>
   <string name="allow_your_contacts_adding_message_reactions">Allow your contacts adding message reactions.</string>
   <string name="allow_message_reactions_only_if">Allow message reactions only if your contact allows them.</string>
   <string name="prohibit_message_reactions">Prohibit message reactions.</string>
@@ -2169,6 +2191,10 @@
   <string name="only_you_can_send_voice">Only you can send voice messages.</string>
   <string name="only_your_contact_can_send_voice">Only your contact can send voice messages.</string>
   <string name="voice_prohibited_in_this_chat">Voice messages are prohibited in this chat.</string>
+  <string name="both_you_and_your_contact_can_send_files">Both you and your contact can send files and media.</string>
+  <string name="only_you_can_send_files">Only you can send files and media.</string>
+  <string name="only_your_contact_can_send_files">Only your contact can send files and media.</string>
+  <string name="files_prohibited_in_this_chat">Files and media are prohibited in this chat.</string>
   <string name="both_you_and_your_contact_can_add_message_reactions">Both you and your contact can add message reactions.</string>
   <string name="only_you_can_add_message_reactions">Only you can add message reactions.</string>
   <string name="only_your_contact_can_add_message_reactions">Only your contact can add message reactions.</string>

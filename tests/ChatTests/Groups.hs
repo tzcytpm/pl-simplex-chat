@@ -18,6 +18,7 @@ import Control.Concurrent.Async (concurrently_)
 import Control.Monad (forM_, void, when)
 import Data.Bifunctor (second)
 import qualified Data.ByteString.Char8 as B
+import Data.Int (Int64)
 import Data.List (intercalate, isInfixOf)
 import qualified Data.Map.Strict as M
 import qualified Data.Text as T
@@ -112,6 +113,7 @@ chatGroupTests = do
     it "accept member - only moderators review" testGLinkReviewMember
     it "accept member - host approval, then moderators review" testGLinkApproveThenReviewMember
     it "delete pending approval member" testGLinkDeletePendingApprovalMember
+    it "admin that joined via link introduces member for moderator review" testGLinkReviewIntroduce
   describe "group link connection plan" $ do
     it "ok to connect; known group" testPlanGroupLinkKnown
     it "own group link" testPlanGroupLinkOwn
@@ -147,6 +149,8 @@ chatGroupTests = do
     it "share incognito profile" testMemberContactIncognito
     it "sends and updates profile when creating contact" testMemberContactProfileUpdate
     it "re-create member contact after deletion, many groups" testRecreateMemberContactManyGroups
+    it "manually accept contact with group member" testMemberContactAccept
+    it "manually accept contact with group member incognito" testMemberContactAcceptIncognito
   describe "group message forwarding" $ do
     it "forward messages between invitee and introduced (x.msg.new)" testGroupMsgForward
     it "forward reports to moderators, don't forward to members (x.msg.new, MCReport)" testGroupMsgForwardReport
@@ -158,6 +162,9 @@ chatGroupTests = do
     it "forward role change (x.grp.mem.role)" testGroupMsgForwardChangeRole
     it "forward new member announcement (x.grp.mem.new)" testGroupMsgForwardNewMember
     it "forward member leaving (x.grp.leave)" testGroupMsgForwardLeave
+    it "forward member removal (x.grp.mem.del)" testGroupMsgForwardMemberRemoval
+    it "forward admin removal (x.grp.mem.del, relay forwards it was removed)" testGroupMsgForwardAdminRemoval
+    it "forward group deletion (x.grp.del)" testGroupMsgForwardGroupDeletion
   describe "group history" $ do
     it "text messages" testGroupHistory
     it "history is sent when joining via group link" testGroupHistoryGroupLink
@@ -207,9 +214,13 @@ chatGroupTests = do
     it "should forward group wide message (x.grp.info) to all members, including in review" testScopedSupportForwardAll
     it "should not forward messages between support scopes" testScopedSupportDontForwardBetweenScopes
     it "should forward file inside support scope" testScopedSupportForwardFile
+    it "should forward member removal in support scope in review (x.grp.mem.del)" testScopedSupportForwardMemberRemoval
+    it "should forward admin removal in support scope in review (x.grp.mem.del, relay forwards it was removed)" testScopedSupportForwardAdminRemoval
+    it "should forward group deletion in support scope in review (x.grp.del)" testScopedSupportForwardGroupDeletion
     it "should send messages to admins and members" testSupportCLISendCommand
     it "should correctly maintain unread stats for support chats on reading chat items" testScopedSupportUnreadStatsOnRead
     it "should correctly maintain unread stats for support chats on deleting chat items" testScopedSupportUnreadStatsOnDelete
+    it "should correct member attention stat for support chat on opening it" testScopedSupportUnreadStatsCorrectOnOpen
 
 testGroupCheckMessages :: HasCallStack => TestParams -> IO ()
 testGroupCheckMessages =
@@ -437,6 +448,9 @@ testNewGroupIncognito :: HasCallStack => TestParams -> IO ()
 testNewGroupIncognito =
   testChat2 aliceProfile bobProfile $
     \alice bob -> do
+      bob ##> "/set accept member contacts on"
+      bob <## "ok"
+
       connectUsers alice bob
 
       -- alice creates group with incognito membership
@@ -846,6 +860,9 @@ testGroupDeleteInvitedContact :: HasCallStack => TestParams -> IO ()
 testGroupDeleteInvitedContact =
   testChat2 aliceProfile bobProfile $
     \alice bob -> do
+      bob ##> "/set accept member contacts on"
+      bob <## "ok"
+
       connectUsers alice bob
       alice ##> "/g team"
       alice <## "group #team is created"
@@ -3378,6 +3395,108 @@ testGLinkDeletePendingApprovalMember =
   where
     cfg = testCfg {chatHooks = defaultChatHooks {acceptMember = Just (\_ _ _ -> pure $ Right (GAPendingApproval, GRObserver))}}
 
+testGLinkReviewIntroduce :: HasCallStack => TestParams -> IO ()
+testGLinkReviewIntroduce =
+  testChat5 aliceProfile bobProfile cathProfile danProfile eveProfile $
+    \alice bob cath dan eve -> do
+      createGroup3' "team" alice (bob, GRMember) (cath, GRModerator)
+
+      alice ##> "/create link #team"
+      gLink <- getGroupLink alice "team" GRMember True
+      dan ##> ("/c " <> gLink)
+      dan <## "connection request sent!"
+      alice <## "dan (Daniel): accepting request to join group #team..."
+      concurrentlyN_
+        [ alice <## "#team: dan joined the group",
+          do
+            dan <## "#team: joining the group..."
+            dan <## "#team: you joined the group"
+            dan <###
+              [ "#team: member bob (Bob) is connected",
+                "#team: member cath (Catherine) is connected"
+              ],
+          do
+            bob <## "#team: alice added dan (Daniel) to the group (connecting...)"
+            bob <## "#team: new member dan is connected",
+          do
+            cath <## "#team: alice added dan (Daniel) to the group (connecting...)"
+            cath <## "#team: new member dan is connected"
+        ]
+
+      alice ##> "/mr team dan admin"
+      concurrentlyN_
+        [ alice <## "#team: you changed the role of dan to admin",
+          bob <## "#team: alice changed the role of dan from member to admin",
+          cath <## "#team: alice changed the role of dan from member to admin",
+          dan <## "#team: alice changed your role from member to admin"
+        ]
+
+      alice ##> "/set admission review #team all"
+      alice <## "changed member admission rules"
+      concurrentlyN_
+        [ do
+            bob <## "alice updated group #team:"
+            bob <## "changed member admission rules",
+          do
+            cath <## "alice updated group #team:"
+            cath <## "changed member admission rules",
+          do
+            dan <## "alice updated group #team:"
+            dan <## "changed member admission rules"
+        ]
+
+      dan ##> "/create link #team"
+      gLinkDan <- getGroupLink dan "team" GRMember True
+      eve ##> ("/c " <> gLinkDan)
+      eve <## "connection request sent!"
+      dan <## "eve (Eve): accepting request to join group #team..."
+      concurrentlyN_
+        [ dan <## "#team: eve connected and pending review",
+          eve
+            <### [ "#team: dan accepted you to the group, pending review",
+                   "#team: joining the group...",
+                   "#team: you joined the group, connecting to group moderators for admission to group",
+                   "#team: member alice (Alice) is connected",
+                   "#team: member cath (Catherine) is connected"
+                 ],
+          do
+            alice <## "#team: dan added eve (Eve) to the group (connecting and pending review...), use /_accept member #1 5 <role> to accept member"
+            alice <## "#team: new member eve is connected and pending review, use /_accept member #1 5 <role> to accept member",
+          do
+            cath <## "#team: dan added eve (Eve) to the group (connecting and pending review...), use /_accept member #1 5 <role> to accept member"
+            cath <## "#team: new member eve is connected and pending review, use /_accept member #1 5 <role> to accept member"
+        ]
+
+      -- owner accepts new member
+      alice ##> "/_accept member #1 5 member"
+      concurrentlyN_
+        [ alice <## "#team: eve accepted",
+          dan <## "#team: alice accepted eve to the group (will introduce remaining members)",
+          cath <## "#team: alice accepted eve to the group",
+          eve
+            <### [ "#team: you joined the group",
+                   "#team: member bob (Bob) is connected"
+                 ],
+          do
+            bob <## "#team: dan added eve (Eve) to the group (connecting...)"
+            bob <## "#team: new member eve is connected"
+        ]
+
+      alice #> "#team 1"
+      [bob, cath, dan, eve] *<# "#team alice> 1"
+
+      bob #> "#team 2"
+      [alice, cath, dan, eve] *<# "#team bob> 2"
+
+      cath #> "#team 3"
+      [alice, bob, dan, eve] *<# "#team cath> 3"
+
+      dan #> "#team 4"
+      [alice, bob, cath, eve] *<# "#team dan> 4"
+
+      eve #> "#team 5"
+      [alice, bob, cath, dan] *<# "#team eve> 5"
+
 testPlanGroupLinkKnown :: HasCallStack => TestParams -> IO ()
 testPlanGroupLinkKnown =
   testChat2 aliceProfile bobProfile $
@@ -4144,6 +4263,11 @@ testMemberContactMessage :: HasCallStack => TestParams -> IO ()
 testMemberContactMessage =
   testChat3 aliceProfile bobProfile cathProfile $
     \alice bob cath -> do
+      bob ##> "/set accept member contacts on"
+      bob <## "ok"
+      cath ##> "/set accept member contacts on"
+      cath <## "ok"
+
       createGroup3 "team" alice bob cath
 
       -- alice and bob delete contacts, connect
@@ -4211,6 +4335,9 @@ testMemberContactNoMessage :: HasCallStack => TestParams -> IO ()
 testMemberContactNoMessage =
   testChat3 aliceProfile bobProfile cathProfile $
     \alice bob cath -> do
+      cath ##> "/set accept member contacts on"
+      cath <## "ok"
+
       createGroup3 "team" alice bob cath
 
       -- bob and cath connect
@@ -4245,6 +4372,9 @@ testMemberContactProhibitedRepeatInv :: HasCallStack => TestParams -> IO ()
 testMemberContactProhibitedRepeatInv =
   testChat3 aliceProfile bobProfile cathProfile $
     \alice bob cath -> do
+      cath ##> "/set accept member contacts on"
+      cath <## "ok"
+
       createGroup3 "team" alice bob cath
 
       bob ##> "/_create member contact #1 3"
@@ -4273,6 +4403,9 @@ testMemberContactInvitedConnectionReplaced ps = do
   withNewTestChat ps "alice" aliceProfile $ \alice -> do
     withNewTestChat ps "bob" bobProfile $ \bob -> do
       withNewTestChat ps "cath" cathProfile $ \cath -> do
+        bob ##> "/set accept member contacts on"
+        bob <## "ok"
+
         createGroup3 "team" alice bob cath
 
         alice ##> "/d bob"
@@ -4343,6 +4476,9 @@ testMemberContactIncognito :: HasCallStack => TestParams -> IO ()
 testMemberContactIncognito =
   testChat3 aliceProfile bobProfile cathProfile $
     \alice bob cath -> do
+      cath ##> "/set accept member contacts on"
+      cath <## "ok"
+
       -- create group, bob joins incognito
       threadDelay 100000
       alice ##> "/g team"
@@ -4433,6 +4569,9 @@ testMemberContactProfileUpdate :: HasCallStack => TestParams -> IO ()
 testMemberContactProfileUpdate =
   testChat3 aliceProfile bobProfile cathProfile $
     \alice bob cath -> do
+      cath ##> "/set accept member contacts on"
+      cath <## "ok"
+
       createGroup3 "team" alice bob cath
 
       bob ##> "/p rob Rob"
@@ -4501,6 +4640,9 @@ testRecreateMemberContactManyGroups :: HasCallStack => TestParams -> IO ()
 testRecreateMemberContactManyGroups =
   testChat2 aliceProfile bobProfile $
     \alice bob -> do
+      bob ##> "/set accept member contacts on"
+      bob <## "ok"
+
       connectUsers alice bob
       createGroup2' "team" alice (bob, GRAdmin) False
       createGroup2' "club" alice (bob, GRAdmin) False
@@ -4569,6 +4711,149 @@ testRecreateMemberContactManyGroups =
       bob ##> "@#club alice 4"
       bob <# "@alice 4"
       alice <# "bob> 4"
+
+testMemberContactAccept :: HasCallStack => TestParams -> IO ()
+testMemberContactAccept =
+  testChat3 aliceProfile bobProfile cathProfile $
+    \alice bob cath -> do
+      createGroup3 "team" alice bob cath
+
+      -- bob and cath connect
+      bob ##> "/_create member contact #1 3"
+      bob <## "contact for member #team cath is created"
+
+      bob ##> "/_invite member contact @3"
+      bob <## "sent invitation to connect directly to member #team cath"
+      cath <## "#team bob requests to create direct contact with you"
+      cath <## "to accept: /accept_member_contact @bob"
+      cath <## "to reject: /delete @bob (the sender will NOT be notified)"
+
+      cath #$> ("/_get chat @3 count=1", chat, [(0, "requested connection from group team")])
+
+      cath ##> "/accept_member_contact @bob"
+      cath <## "contact bob is accepted, starting connection"
+      concurrently_
+        (bob <## "cath (Catherine): contact is connected")
+        (cath <## "bob (Bob): contact is connected")
+
+      bob <##> cath
+
+      -- if group is deleted, bob and cath keep contact with each other
+      alice ##> "/d #team"
+      concurrentlyN_
+        [ alice <## "#team: you deleted the group",
+          do
+            bob <## "#team: alice deleted the group"
+            bob <## "use /d #team to delete the local copy of the group",
+          do
+            cath <## "#team: alice deleted the group"
+            cath <## "use /d #team to delete the local copy of the group"
+        ]
+
+      bob <##> cath
+
+testMemberContactAcceptIncognito :: HasCallStack => TestParams -> IO ()
+testMemberContactAcceptIncognito =
+  testChat3 aliceProfile bobProfile cathProfile $
+    \alice bob cath -> do
+      -- create group, bob joins incognito
+      alice ##> "/g team"
+      alice <## "group #team is created"
+      alice <## "to add members use /a team <name> or /create link #team"
+      alice ##> "/create link #team"
+      gLink <- getGroupLink alice "team" GRMember True
+      bob ##> ("/c i " <> gLink)
+      bobIncognito <- getTermLine bob
+      bob <## "connection request sent incognito!"
+      alice <## (bobIncognito <> ": accepting request to join group #team...")
+      concurrentlyN_
+        [ alice <## ("#team: " <> bobIncognito <> " joined the group"),
+          do
+            bob <## "#team: joining the group..."
+            bob <## ("#team: you joined the group incognito as " <> bobIncognito)
+        ]
+      -- cath joins incognito
+      cath ##> ("/c i " <> gLink)
+      cathIncognito <- getTermLine cath
+      cath <## "connection request sent incognito!"
+      alice <## (cathIncognito <> ": accepting request to join group #team...")
+      concurrentlyN_
+        [ alice <## ("#team: " <> cathIncognito <> " joined the group"),
+          do
+            cath <## "#team: joining the group..."
+            cath <## ("#team: you joined the group incognito as " <> cathIncognito)
+            cath <## ("#team: member " <> bobIncognito <> " is connected"),
+          do
+            bob <## ("#team: alice added " <> cathIncognito <> " to the group (connecting...)")
+            bob <## ("#team: new member " <> cathIncognito <> " is connected")
+        ]
+
+      threadDelay 1000000
+
+      -- bob and cath connect
+      bob ##> "/_create member contact #1 3"
+      bob <## ("contact for member #team " <> cathIncognito <> " is created")
+
+      bob ##> "/_invite member contact @2"
+      bob <## ("sent invitation to connect directly to member #team " <> cathIncognito)
+      cath <## ("#team " <> bobIncognito <> " requests to create direct contact with you")
+      cath <## ("to accept: /accept_member_contact @" <> bobIncognito)
+      cath <## ("to reject: /delete @" <> bobIncognito <> " (the sender will NOT be notified)")
+
+      -- check correct incognito profiles are used
+      bob @@@ [("@" <> cathIncognito, "chat banner"), ("#team", "connected")]
+
+      bob ##> ("/i " <> cathIncognito)
+      bob <## "contact ID: 2"
+      bob <##. "receiving messages via"
+      bob <## ("you've shared incognito profile with this contact: " <> bobIncognito)
+      bob <## "connection not verified, use /code command to see security code"
+      bob <## currentChatVRangeInfo
+
+      cath @@@ [("@" <> bobIncognito, "requested connection from group team"), ("#team", "started direct connection with you")]
+      cath #$> ("/_get chat @2 count=1", chat, [(0, "requested connection from group team")])
+
+      cath ##> ("/i " <> bobIncognito)
+      cath <## "contact ID: 2"
+      cath <## ("you've shared incognito profile with this contact: " <> cathIncognito)
+      cath <## "connection not verified, use /code command to see security code"
+      cath <## currentChatVRangeInfo
+
+      -- accept connection
+      cath ##> ("/accept_member_contact @" <> bobIncognito)
+      cath <## ("contact " <> bobIncognito <> " is accepted, starting connection")
+      _ <- getTermLine bob
+      _ <- getTermLine cath
+      concurrentlyN_
+        [ do
+            bob <## (cathIncognito <> ": contact is connected, your incognito profile for this contact is " <> bobIncognito)
+            bob <## ("use /i " <> cathIncognito <> " to print out this incognito profile again"),
+          do
+            cath <## (bobIncognito <> ": contact is connected, your incognito profile for this contact is " <> cathIncognito)
+            cath <## ("use /i " <> bobIncognito <> " to print out this incognito profile again")
+        ]
+
+      bob ?#> ("@" <> cathIncognito <> " hi")
+      cath ?<# (bobIncognito <> "> hi")
+      cath ?#> ("@" <> bobIncognito <> " hey")
+      bob ?<# (cathIncognito <> "> hey")
+
+      -- if group is deleted, bob and cath keep contact with each other
+      alice ##> "/d #team"
+      concurrentlyN_
+        [ alice <## "#team: you deleted the group",
+          do
+            bob <## "#team: alice deleted the group"
+            bob <## "use /d #team to delete the local copy of the group",
+          do
+            cath <## "#team: alice deleted the group"
+            cath <## "use /d #team to delete the local copy of the group"
+        ]
+
+      bob ?#> ("@" <> cathIncognito <> " hi")
+      cath ?<# (bobIncognito <> "> hi")
+      cath ?#> ("@" <> bobIncognito <> " hey")
+      bob ?<# (cathIncognito <> "> hey")
 
 testGroupMsgForward :: HasCallStack => TestParams -> IO ()
 testGroupMsgForward =
@@ -4880,6 +5165,108 @@ testGroupMsgForwardLeave =
       bob <## "use /d #team to delete the group"
       alice <## "#team: bob left the group"
       cath <## "#team: bob left the group"
+
+testGroupMsgForwardMemberRemoval :: HasCallStack => TestParams -> IO ()
+testGroupMsgForwardMemberRemoval =
+  testChat3 aliceProfile bobProfile cathProfile $
+    \alice bob cath -> do
+      createGroup3' "team" alice (bob, GRAdmin) (cath, GRMember)
+      setupGroupForwarding alice bob cath
+
+      -- remove member
+      bob ##> "/rm team cath"
+      concurrentlyN_
+        [ bob <## "#team: you removed cath from the group",
+          alice <## "#team: bob removed cath from the group",
+          do
+            cath <## "#team: bob removed you from the group"
+            cath <## "use /d #team to delete the group"
+        ]
+      bob #> "#team hi"
+      concurrently_
+        (alice <# "#team bob> hi")
+        (cath </)
+      alice #> "#team hello"
+      concurrently_
+        (bob <# "#team alice> hello")
+        (cath </)
+      cath ##> "#team hello"
+      cath <## "bad chat command: not current member"
+
+testGroupMsgForwardAdminRemoval :: HasCallStack => TestParams -> IO ()
+testGroupMsgForwardAdminRemoval =
+  testChat3 aliceProfile bobProfile cathProfile $
+    \alice bob cath -> do
+      createGroup3' "team" alice (bob, GROwner) (cath, GRMember)
+      setupGroupForwarding alice bob cath
+
+      -- alice forwards messages between bob and cath
+      bob #> "#team hi there"
+      alice <# "#team bob> hi there"
+      cath <# "#team bob> hi there [>>]"
+
+      cath #> "#team hey"
+      alice <# "#team cath> hey"
+      bob <# "#team cath> hey [>>]"
+
+      -- if alice is removed, she forwards message of her own removal
+      bob ##> "/rm team alice"
+      concurrentlyN_
+        [ bob <## "#team: you removed alice from the group",
+          do
+            alice <## "#team: bob removed you from the group"
+            alice <## "use /d #team to delete the group",
+          cath <## "#team: bob removed alice from the group"
+        ]
+
+      -- there is no forwarding admin anymore between bob and cath, so messages don't get delivered
+      -- (this is not a desired behavior, just a test demonstration/proof of current implementation)
+      bob #> "#team hi"
+      concurrently_
+        (cath </)
+        (alice </)
+      cath #> "#team hello"
+      concurrently_
+        (bob </)
+        (alice </)
+      alice ##> "#team hello"
+      alice <## "bad chat command: not current member"
+
+testGroupMsgForwardGroupDeletion :: HasCallStack => TestParams -> IO ()
+testGroupMsgForwardGroupDeletion =
+  testChat3 aliceProfile bobProfile cathProfile $
+    \alice bob cath -> do
+      createGroup3' "team" alice (bob, GROwner) (cath, GRMember)
+      setupGroupForwarding alice bob cath
+
+      -- alice forwards messages between bob and cath
+      bob #> "#team hi there"
+      alice <# "#team bob> hi there"
+      cath <# "#team bob> hi there [>>]"
+
+      cath #> "#team hey"
+      alice <# "#team cath> hey"
+      bob <# "#team cath> hey [>>]"
+
+      -- if bob deletes the group, alice forwards it to cath
+      bob ##> "/d #team"
+      concurrentlyN_
+        [ bob <## "#team: you deleted the group",
+          do
+            alice <## "#team: bob deleted the group"
+            alice <## "use /d #team to delete the local copy of the group",
+          do
+            cath <## "#team: bob deleted the group"
+            cath <## "use /d #team to delete the local copy of the group"
+        ]
+
+      alice ##> "/groups"
+      alice <## "#team (group deleted, delete local copy: /d #team)"
+      bob ##> "/groups"
+      bob <## "you have no groups!"
+      bob <## "to create: /g <name>"
+      cath ##> "/groups"
+      cath <## "#team (group deleted, delete local copy: /d #team)"
 
 testGroupHistory :: HasCallStack => TestParams -> IO ()
 testGroupHistory =
@@ -7047,8 +7434,10 @@ testScopedSupportManyModerators =
     cath #$> ("/_get chat #1(_support:3) count=100", chat, [])
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 0"
     dan <## "bob (Bob) (id 3): unread: 0, require attention: 0, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 0, require attention: 0, mentions: 0"
@@ -7299,6 +7688,172 @@ testScopedSupportForwardFile =
             ]
     dan <## "completed receiving file 1 (test.jpg) from bob"
 
+testScopedSupportForwardMemberRemoval :: HasCallStack => TestParams -> IO ()
+testScopedSupportForwardMemberRemoval =
+  testChat5 aliceProfile bobProfile cathProfile danProfile eveProfile $
+    \alice bob cath dan eve -> do
+      createGroup4 "team" alice (bob, GRAdmin) (cath, GRMember) (dan, GRModerator)
+      setupReviewForward alice bob cath dan eve
+
+      -- bob removes eve, eve and dan receive member removal message
+      bob ##> "/_remove #1 5"
+      concurrentlyN_
+        [ bob <## "#team: you removed eve from the group",
+          alice <## "#team: bob removed eve from the group",
+          dan <## "#team: bob removed eve from the group",
+          do
+            eve <## "#team: bob removed you from the group"
+            eve <## "use /d #team to delete the group"
+        ]
+
+      alice ##> "#team (support: eve) hi"
+      alice <## "bad chat command: support member not current or pending"
+      bob ##> "#team (support: eve) hi"
+      bob <## "bad chat command: support member not current or pending"
+      dan ##> "#team (support: eve) hi"
+      dan <## "bad chat command: support member not current or pending"
+      eve ##> "/groups"
+      eve <## "#team (you are removed, delete local copy: /d #team)"
+
+setupReviewForward :: TestCC -> TestCC -> TestCC -> TestCC -> TestCC -> IO ()
+setupReviewForward alice bob cath dan eve = do
+  alice ##> "/set admission review #team all"
+  alice <## "changed member admission rules"
+  concurrentlyN_
+    [ do
+        bob <## "alice updated group #team:"
+        bob <## "changed member admission rules",
+      do
+        cath <## "alice updated group #team:"
+        cath <## "changed member admission rules",
+      do
+        dan <## "alice updated group #team:"
+        dan <## "changed member admission rules"
+    ]
+
+  alice ##> "/create link #team"
+  gLink <- getGroupLink alice "team" GRMember True
+  eve ##> ("/c " <> gLink)
+  eve <## "connection request sent!"
+  alice <## "eve (Eve): accepting request to join group #team..."
+  concurrentlyN_
+    [ alice <## "#team: eve connected and pending review",
+      eve
+        <### [ "#team: alice accepted you to the group, pending review",
+                "#team: joining the group...",
+                "#team: you joined the group, connecting to group moderators for admission to group",
+                "#team: member bob (Bob) is connected",
+                "#team: member dan (Daniel) is connected"
+              ],
+      do
+        bob <## "#team: alice added eve (Eve) to the group (connecting and pending review...), use /_accept member #1 5 <role> to accept member"
+        bob <## "#team: new member eve is connected and pending review, use /_accept member #1 5 <role> to accept member",
+      do
+        dan <## "#team: alice added eve (Eve) to the group (connecting and pending review...), use /_accept member #1 5 <role> to accept member"
+        dan <## "#team: new member eve is connected and pending review, use /_accept member #1 5 <role> to accept member"
+    ]
+
+  setupGroupForwarding alice bob eve
+  setupGroupForwarding alice bob dan
+
+  -- alice forwards messages between bob and eve, bob and dan
+  eve #> "#team (support) 3"
+  [alice, dan] *<# "#team (support: eve) eve> 3"
+  bob <# "#team (support: eve) eve> 3 [>>]"
+
+  dan #> "#team (support: eve) 4"
+  alice <# "#team (support: eve) dan> 4"
+  bob <# "#team (support: eve) dan> 4 [>>]"
+  eve <# "#team (support) dan> 4"
+
+  bob #> "#team (support: eve) 5"
+  alice <# "#team (support: eve) bob> 5"
+  dan <# "#team (support: eve) bob> 5 [>>]"
+  eve <# "#team (support) bob> 5 [>>]"
+
+testScopedSupportForwardAdminRemoval :: HasCallStack => TestParams -> IO ()
+testScopedSupportForwardAdminRemoval =
+  testChat5 aliceProfile bobProfile cathProfile danProfile eveProfile $
+    \alice bob cath dan eve -> do
+      createGroup4 "team" alice (bob, GROwner) (cath, GRMember) (dan, GRModerator)
+      setupReviewForward alice bob cath dan eve
+
+      -- bob removes eve, eve and dan receive member removal message
+      bob ##> "/rm team alice"
+      concurrentlyN_
+        [ bob <## "#team: you removed alice from the group",
+          do
+            alice <## "#team: bob removed you from the group"
+            alice <## "use /d #team to delete the group",
+          cath <## "#team: bob removed alice from the group",
+          dan <## "#team: bob removed alice from the group",
+          eve <## "#team: bob removed alice from the group"
+        ]
+
+      -- there is no forwarding admin anymore between bob and cath,
+      -- so messages between bob and eve, bob and dan don't get delivered
+      -- (this is not a desired behavior, just a test demonstration/proof of current implementation)
+      eve #> "#team (support) hi"
+      concurrentlyN_
+        [ dan <# "#team (support: eve) eve> hi",
+          (bob </),
+          (alice </)
+        ]
+
+      dan #> "#team (support: eve) hey"
+      concurrentlyN_
+        [ eve <# "#team (support) dan> hey",
+          (bob </),
+          (alice </)
+        ]
+
+      bob #> "#team (support: eve) hello"
+      concurrentlyN_
+        [ (eve </),
+          (dan </),
+          (alice </)
+        ]
+
+      alice ##> "/groups"
+      alice <## "#team (you are removed, delete local copy: /d #team)"
+
+testScopedSupportForwardGroupDeletion :: HasCallStack => TestParams -> IO ()
+testScopedSupportForwardGroupDeletion =
+  testChat5 aliceProfile bobProfile cathProfile danProfile eveProfile $
+    \alice bob cath dan eve -> do
+      createGroup4 "team" alice (bob, GROwner) (cath, GRMember) (dan, GRModerator)
+      setupReviewForward alice bob cath dan eve
+
+      -- if bob deletes the group, alice forwards it to eve and dan
+      bob ##> "/d #team"
+      concurrentlyN_
+        [ bob <## "#team: you deleted the group",
+          do
+            alice <## "#team: bob deleted the group"
+            alice <## "use /d #team to delete the local copy of the group",
+          do
+            cath <## "#team: bob deleted the group"
+            cath <## "use /d #team to delete the local copy of the group",
+          do
+            dan <## "#team: bob deleted the group"
+            dan <## "use /d #team to delete the local copy of the group",
+          do
+            eve <## "#team: bob deleted the group"
+            eve <## "use /d #team to delete the local copy of the group"
+        ]
+
+      alice ##> "/groups"
+      alice <## "#team (group deleted, delete local copy: /d #team)"
+      bob ##> "/groups"
+      bob <## "you have no groups!"
+      bob <## "to create: /g <name>"
+      cath ##> "/groups"
+      cath <## "#team (group deleted, delete local copy: /d #team)"
+      dan ##> "/groups"
+      dan <## "#team (group deleted, delete local copy: /d #team)"
+      eve ##> "/groups"
+      eve <## "#team (group deleted, delete local copy: /d #team)"
+
 testSupportCLISendCommand :: HasCallStack => TestParams -> IO ()
 testSupportCLISendCommand =
   testChat2 aliceProfile bobProfile $ \alice bob -> do
@@ -7337,8 +7892,10 @@ testScopedSupportUnreadStatsOnRead =
     dan <# "#team (support: bob) alice> 3"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 0"
     dan <## "bob (Bob) (id 3): unread: 1, require attention: 0, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 1, require attention: 0, mentions: 0"
@@ -7348,8 +7905,10 @@ testScopedSupportUnreadStatsOnRead =
     [alice, dan] *<# "#team (support: bob) bob> 4"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 1, require attention: 1, mentions: 0"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 2, require attention: 1, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 1, require attention: 0, mentions: 0"
@@ -7362,9 +7921,11 @@ testScopedSupportUnreadStatsOnRead =
     bob <# "#team (support) dan> 5"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 2, require attention: 0, mentions: 0"
     -- In test "answering" doesn't reset unanswered, but in UI items would be marked read on opening chat
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 2, require attention: 1, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 2, require attention: 0, mentions: 0"
@@ -7377,8 +7938,10 @@ testScopedSupportUnreadStatsOnRead =
     bob <# "#team (support) dan> @alice 6"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 3, require attention: 0, mentions: 1"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 2, require attention: 1, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 3, require attention: 0, mentions: 0"
@@ -7393,8 +7956,10 @@ testScopedSupportUnreadStatsOnRead =
     dan <# "#team (support: bob) bob> @alice 7"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 4, require attention: 1, mentions: 2"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 3, require attention: 2, mentions: 0"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 3, require attention: 0, mentions: 0"
@@ -7407,8 +7972,10 @@ testScopedSupportUnreadStatsOnRead =
     dan <# "#team (support: bob) bob!> @dan 8"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 5, require attention: 2, mentions: 2"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 4, require attention: 3, mentions: 1"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 3, require attention: 0, mentions: 0"
@@ -7416,11 +7983,13 @@ testScopedSupportUnreadStatsOnRead =
     alice #$> ("/_read chat items #1(_support:2) " <> aliceMentionedByDanItemId, id, "items read for chat")
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 4, require attention: 2, mentions: 1"
 
     alice #$> ("/_read chat items #1(_support:2) " <> aliceMentionedByBobItemId, id, "items read for chat")
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 3, require attention: 1, mentions: 0"
 
     threadDelay 1000000
@@ -7431,23 +8000,30 @@ testScopedSupportUnreadStatsOnRead =
     bob <# "#team (support) dan!> @bob 9"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 4, require attention: 0, mentions: 0"
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 1"
     dan <## "bob (Bob) (id 3): unread: 4, require attention: 3, mentions: 1"
     bob ##> "/member support chats #team"
     bob <## "support: unread: 4, require attention: 0, mentions: 1"
 
-    alice #$> ("/_read chat #1(_support:2)", id, "ok")
+    alice ##> "/_read chat #1(_support:2)"
+    alice <## "#team: bob support chat read"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
 
-    dan #$> ("/_read chat #1(_support:3)", id, "ok")
+    dan ##> "/_read chat #1(_support:3)"
+    dan <## "#team: bob support chat read"
 
     dan ##> "/member support chats #team"
+    dan <## "members require attention: 0"
     dan <## "bob (Bob) (id 3): unread: 0, require attention: 0, mentions: 0"
 
-    bob #$> ("/_read chat #1(_support)", id, "ok")
+    bob ##> "/_read chat #1(_support)"
+    bob <## "#team: support chat read"
 
     bob ##> "/member support chats #team"
     bob <## "support: unread: 0, require attention: 0, mentions: 0"
@@ -7478,12 +8054,90 @@ testScopedSupportUnreadStatsOnDelete =
     msgIdBob <- lastItemId bob
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
     alice <## "bob (Bob) (id 2): unread: 1, require attention: 1, mentions: 0"
 
     bob #$> ("/_delete item #1(_support) " <> msgIdBob <> " broadcast", id, "message deleted")
     alice <# "#team (support: bob) bob> [deleted] 1"
 
     alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
+    alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
+  where
+    opts =
+      testOpts
+        { markRead = False
+        }
+
+testScopedSupportUnreadStatsCorrectOnOpen :: HasCallStack => TestParams -> IO ()
+testScopedSupportUnreadStatsCorrectOnOpen =
+  testChatOpts2 opts aliceProfile bobProfile $ \alice bob -> do
+    createGroup2 "team" alice bob
+
+    bob #> "#team (support) 1"
+    alice <# "#team (support: bob) bob> 1"
+
+    bob #> "#team (support) 2"
+    alice <# "#team (support: bob) bob> 2"
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
+    alice <## "bob (Bob) (id 2): unread: 2, require attention: 2, mentions: 0"
+
+    alice ##> "/_read chat #1(_support:2)"
+    alice <## "#team: bob support chat read"
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
+    alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
+
+    bob #> "#team (support) 3"
+    alice <# "#team (support: bob) bob> 3"
+
+    bob #> "#team (support) 4"
+    alice <# "#team (support: bob) bob> 4"
+
+    bob #> "#team (support) 5"
+    alice <# "#team (support: bob) bob> 5"
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
+    alice <## "bob (Bob) (id 2): unread: 3, require attention: 3, mentions: 0"
+
+    -- opening chat should correct group_members.support_chat_items_member_attention value if it got out of sync
+    void $ withCCTransaction alice $ \db ->
+      DB.execute db "UPDATE group_members SET support_chat_items_member_attention=100 WHERE group_member_id=?" (Only (2 :: Int64))
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
+    alice <## "bob (Bob) (id 2): unread: 3, require attention: 100, mentions: 0"
+
+    alice #$> ("/_get chat #1(_support:2) count=100", chat, [(0, "1"), (0, "2"), (0, "3"), (0, "4"), (0, "5")])
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
+    alice <## "bob (Bob) (id 2): unread: 3, require attention: 3, mentions: 0"
+
+    alice ##> "/_read chat #1(_support:2)"
+    alice <## "#team: bob support chat read"
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
+    alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
+
+    -- opening chat should also correct groups.members_require_attention value if corrected member no longer requires attention
+    void $ withCCTransaction alice $ \db -> do
+      DB.execute db "UPDATE group_members SET support_chat_items_member_attention=100 WHERE group_member_id=?" (Only (2 :: Int64))
+      DB.execute db "UPDATE groups SET members_require_attention=1 WHERE group_id=?" (Only (1 :: Int64))
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 1"
+    alice <## "bob (Bob) (id 2): unread: 0, require attention: 100, mentions: 0"
+
+    alice #$> ("/_get chat #1(_support:2) count=100", chat, [(0, "1"), (0, "2"), (0, "3"), (0, "4"), (0, "5")])
+
+    alice ##> "/member support chats #team"
+    alice <## "members require attention: 0"
     alice <## "bob (Bob) (id 2): unread: 0, require attention: 0, mentions: 0"
   where
     opts =

@@ -33,7 +33,7 @@ data APIType
 data APITypeDef = APITypeDef {typeName' :: String, typeDef :: APITypeDefinition}
 
 data APITypeDefinition
-  = ATDRecord (NonEmpty APIRecordField)
+  = ATDRecord [APIRecordField]
   | ATDUnion (NonEmpty ATUnionMember)
   | ATDEnum (NonEmpty String)
 
@@ -44,10 +44,6 @@ data APIRecordField = APIRecordField {fieldName' :: String, typeInfo :: APIType}
 data ATUnionMember = ATUnionMember {memberTag :: String, memberFields :: [APIRecordField]}
 
 newtype PrimitiveType = PT String
-
--- data PrimitiveType = PTBool | PTString StringFormat | PTInt | PTInt64 | PTWord32 | PTDouble
-
-data StringFormat = SFTimestamp | SFBase64 | SFSimpleXLink | SFServerAddr | SFHexColor
 
 pattern TBool :: String
 pattern TBool = "bool"
@@ -61,8 +57,20 @@ pattern TInt = "int"
 pattern TInt64 :: String
 pattern TInt64 = "int64"
 
+pattern TWord32 :: String
+pattern TWord32 = "word32"
+
+pattern TDouble :: String
+pattern TDouble = "double"
+
+pattern TJSONObject :: String
+pattern TJSONObject = "JSONObject"
+
+pattern TUTCTime :: String
+pattern TUTCTime = "UTCTime"
+
 primitiveTypes :: [ConsName]
-primitiveTypes = [TBool, TString, TInt, TInt64, "word32", "double", "JSONObject", "UTCTime"]
+primitiveTypes = [TBool, TString, TInt, TInt64, TWord32, TDouble, TJSONObject, TUTCTime]
 
 data SumTypeInfo = STI {typeName :: String, recordTypes :: [RecordTypeInfo]}
   deriving (Show)
@@ -142,11 +150,8 @@ toTypeInfo tr =
       args = typeRepArgs tr
       name = tyConName tc
    in case name of
-        "List" -> case args of
-          [elemTr]
-            | elemTr == typeRep (Proxy @Char) -> TIType (ST TString [])
-            | otherwise -> TIArray {elemType = toTypeInfo elemTr, nonEmpty = False}
-          _ -> TIType (simpleType tr)
+        "List" -> listType args
+        "ListDef" -> listType args
         "NonEmpty" -> case args of
           [elemTr] -> TIArray {elemType = toTypeInfo elemTr, nonEmpty = True}
           _ -> TIType (simpleType tr)
@@ -158,6 +163,11 @@ toTypeInfo tr =
           _ -> TIType (simpleType tr)
         _ -> TIType (simpleType tr)
   where
+    listType = \case
+      [elemTr]
+        | elemTr == typeRep (Proxy @Char) -> TIType (ST TString [])
+        | otherwise -> TIArray {elemType = toTypeInfo elemTr, nonEmpty = False}
+      _ -> TIType (simpleType tr)
     simpleType tr' = primitiveToLower $ case tyConName (typeRepTyCon tr') of
       "AgentUserId" -> ST TInt64 []
       "Integer" -> ST TInt64 []
@@ -170,6 +180,7 @@ toTypeInfo tr =
       "FormatColor" -> ST "Color" []
       "CustomData" -> ST "JSONObject" []
       "KeyMap" -> ST "JSONObject" []
+      "Value" -> ST "JSONObject" []
       "CIQDirection" -> ST "CIDirection" []
       "SendRef" -> ST "ChatRef" []
       t
@@ -207,8 +218,10 @@ toTypeInfo tr =
       ]
     simplePrefTypes =
       [ "CallsPreference",
+        "FilesPreference",
         "FullDeletePreference",
         "ReactionsPreference",
+        "SessionsPreference",
         "VoicePreference"
       ]
     groupPrefTypes =
@@ -221,5 +234,6 @@ toTypeInfo tr =
       [ "DirectMessagesGroupPreference",
         "VoiceGroupPreference",
         "FilesGroupPreference",
+        "SessionsGroupPreference",
         "SimplexLinksGroupPreference"
       ]

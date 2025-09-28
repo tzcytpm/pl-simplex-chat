@@ -45,7 +45,7 @@ struct ComposeState {
     var voiceMessageRecordingState: VoiceMessageRecordingState
     var inProgress = false
     var progressByTimeout = false
-    var useLinkPreviews: Bool = UserDefaults.standard.bool(forKey: DEFAULT_PRIVACY_LINK_PREVIEWS)
+    var useLinkPreviews = true
     var mentions: MentionedMembers = [:]
 
     init(
@@ -323,15 +323,16 @@ struct ComposeView: View {
     @ObservedObject var chat: Chat
     @ObservedObject var im: ItemsModel
     @Binding var composeState: ComposeState
+    @Binding var showCommandsMenu: Bool
     @Binding var keyboardVisible: Bool
     @Binding var keyboardHiddenDate: Date
     @Binding var selectedRange: NSRange
     var disabledText: LocalizedStringKey? = nil
 
-    @State var linkUrl: URL? = nil
+    @State var linkUrl: String? = nil
     @State var hasSimplexLink: Bool = false
-    @State var prevLinkUrl: URL? = nil
-    @State var pendingLinkUrl: URL? = nil
+    @State var prevLinkUrl: String? = nil
+    @State var pendingLinkUrl: String? = nil
     @State var cancelledLinks: Set<String> = []
 
     @Environment(\.colorScheme) private var colorScheme
@@ -352,6 +353,8 @@ struct ComposeView: View {
     @UserDefault(DEFAULT_PRIVACY_SAVE_LAST_DRAFT) private var saveLastDraft = true
     @UserDefault(DEFAULT_TOOLBAR_MATERIAL) private var toolbarMaterial = ToolbarMaterial.defaultMaterial
     @AppStorage(GROUP_DEFAULT_INCOGNITO, store: groupDefaults) private var incognitoDefault = false
+    @AppStorage(GROUP_DEFAULT_PRIVACY_SANITIZE_LINKS, store: groupDefaults) private var privacySanitizeLinks = false
+    @State private var updatingCompose = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -410,18 +413,7 @@ struct ComposeView: View {
 
             if chat.chatInfo.groupInfo?.nextConnectPrepared == true {
                 if chat.chatInfo.groupInfo?.businessChat == nil {
-                    Button(action: connectPreparedGroup) {
-                        ZStack(alignment: .trailing) {
-                            Label("Join group", systemImage: "person.2.fill")
-                                .frame(maxWidth: .infinity)
-                            if composeState.progressByTimeout {
-                                ProgressView()
-                                    .padding()
-                            }
-                        }
-                    }
-                    .frame(height: 60)
-                    .disabled(composeState.inProgress)
+                    connectButtonView("Join group", icon: "person.2.fill", connect: connectPreparedGroup)
                 } else {
                     sendContactRequestView(disableSendButton, icon: "briefcase.fill", sendRequest: connectPreparedGroup)
                 }
@@ -429,33 +421,30 @@ struct ComposeView: View {
                 contextSendMessageToConnect("Send direct message to connect")
                 Divider()
                 HStack (alignment: .center) {
-                    attachmentButton().disabled(true)
+                    attachmentAndCommandsButtons().disabled(true)
                     sendMessageView(disableSendButton, sendToConnect: sendMemberContactInvitation)
                 }
                 .padding(.horizontal, 12)
-            } else if contact?.nextConnectPrepared == true, let linkType = contact?.preparedContact?.uiConnLinkType {
+            } else if let contact,
+                      contact.nextConnectPrepared == true,
+                      let linkType = contact.preparedContact?.uiConnLinkType {
                 switch linkType {
                 case .inv:
-                    Button(action: sendConnectPreparedContact) {
-                        ZStack(alignment: .trailing) {
-                            Label("Connect", systemImage: "person.fill.badge.plus")
-                                .frame(maxWidth: .infinity)
-                            if composeState.progressByTimeout {
-                                ProgressView()
-                                    .padding()
-                            }
-                        }
-                    }
-                    .frame(height: 60)
-                    .disabled(composeState.inProgress)
+                    connectButtonView("Connect", icon: "person.fill.badge.plus", connect: sendConnectPreparedContact)
                 case .con:
-                    sendContactRequestView(disableSendButton, icon: "person.fill.badge.plus", sendRequest: sendConnectPreparedContactRequest)
+                    if contact.isBot {
+                        connectButtonView("Connect", icon: "bolt.fill", connect: sendConnectPreparedContact)
+                    } else {
+                        sendContactRequestView(disableSendButton, icon: "person.fill.badge.plus", sendRequest: sendConnectPreparedContactRequest)
+                    }
                 }
             } else if contact?.nextAcceptContactRequest == true, let crId = contact?.contactRequestId {
                 ContextContactRequestActionsView(contactRequestId: crId)
+            } else if let ct = contact, ct.nextAcceptContactRequest, let groupDirectInv = ct.groupDirectInv {
+                ContextMemberContactActionsView(contact: ct, groupDirectInv: groupDirectInv)
             } else {
                 HStack (alignment: .center) {
-                    attachmentButton()
+                    attachmentAndCommandsButtons()
                     sendMessageView(disableSendButton)
                 }
                 .padding(.horizontal, 12)
@@ -467,19 +456,40 @@ struct ComposeView: View {
                 .ignoresSafeArea(.all, edges: .bottom)
         }
         .onChange(of: composeState.message) { msg in
-            let parsedMsg = parseSimpleXMarkdown(msg)
-            composeState = composeState.copy(parsedMessage: parsedMsg ?? FormattedText.plain(msg))
-            if composeState.linkPreviewAllowed {
-                if msg.count > 0 {
+            if updatingCompose {
+                updatingCompose = false
+                return
+            }
+            var parsedMsg = parseSimpleXMarkdown(msg)
+            if privacySanitizeLinks, let parsed = parsedMsg {
+                let r = sanitizeMessage(parsed)
+                if let sanitizedPos = r.sanitizedPos {
+                    updatingCompose = true
+                    composeState = composeState.copy(message: r.message, parsedMessage: r.parsedMsg)
+                    if sanitizedPos < selectedRange.location {
+                        selectedRange = NSRange(location: sanitizedPos, length: 0)
+                    }
+                    parsedMsg = r.parsedMsg
+                } else {
+                    composeState = composeState.copy(parsedMessage: parsedMsg)
+                }
+            } else {
+                composeState = composeState.copy(parsedMessage: parsedMsg ?? FormattedText.plain(msg))
+            }
+            if composeState.linkPreviewAllowed && UserDefaults.standard.bool(forKey: DEFAULT_PRIVACY_LINK_PREVIEWS) {
+                if !msg.isEmpty {
                     showLinkPreview(parsedMsg)
                 } else {
                     resetLinkPreview()
                     hasSimplexLink = false
+                    composeState = composeState.copy(preview: .noPreview)
                 }
-            } else if msg.count > 0 && !chat.groupFeatureEnabled(.simplexLinks) {
-                (_, hasSimplexLink) = getSimplexLink(parsedMsg)
             } else {
-                hasSimplexLink = false
+                resetLinkPreview()
+                hasSimplexLink = !msg.isEmpty && !chat.groupFeatureEnabled(.simplexLinks) && getMessageLinks(parsedMsg).hasSimplexLink
+                if composeState.linkPreviewAllowed {
+                    composeState = composeState.copy(preview: .noPreview)
+                }
             }
         }
         .onChange(of: chat.chatInfo.sendMsgEnabled) { sendEnabled in
@@ -633,6 +643,21 @@ struct ComposeView: View {
         }
     }
 
+    private func connectButtonView(_ label: LocalizedStringKey, icon: String, connect: @escaping () -> Void) -> some View {
+        Button(action: connect) {
+            ZStack(alignment: .trailing) {
+                Label(label, systemImage: icon)
+                    .frame(maxWidth: .infinity)
+                if composeState.progressByTimeout {
+                    ProgressView()
+                        .padding()
+                }
+            }
+        }
+        .frame(height: 60)
+        .disabled(composeState.inProgress)
+    }
+
     private func sendContactRequestView(_ disableSendButton: Bool, icon: String, sendRequest: @escaping () -> Void) -> some View {
         HStack (alignment: .center) {
             sendMessageView(
@@ -701,6 +726,35 @@ struct ComposeView: View {
         }
     }
 
+    @ViewBuilder private func attachmentAndCommandsButtons() -> some View {
+        let msg = composeState.message.trimmingCharacters(in: .whitespaces)
+        let showAttachment = chat.chatInfo.contact?.profile.peerType != .bot || chat.chatInfo.featureEnabled(.files)
+        let showCommands = chat.chatInfo.useCommands && (!showAttachment || msg.isEmpty || msg.starts(with: "/"))
+        if showCommands {
+            commandsButton()
+        }
+        if showAttachment {
+            attachmentButton()
+                .padding(.trailing, 3)
+                .if(showCommands) { v in v.padding(.leading, 3) }
+        }
+    }
+
+    private func commandsButton() -> some View {
+        Button {
+            showCommandsMenu.toggle()
+        } label: {
+            Text(verbatim: "//")
+                .font(.title3)
+                .italic()
+                .contentShape(Rectangle())
+        }
+        .disabled(!chat.chatInfo.sendMsgEnabled || chat.chatInfo.menuCommands.isEmpty)
+        .frame(width: 25, height: 25)
+        .tint(theme.colors.primary)
+        .padding(.bottom, 2)
+    }
+
     @ViewBuilder private func attachmentButton() -> some View {
         let b = Button {
             showChooseSource = true
@@ -712,12 +766,11 @@ struct ComposeView: View {
             .frame(width: 25, height: 25)
             .tint(theme.colors.primary)
         if im.secondaryIMFilter == nil,
-           case let .group(g, _) = chat.chatInfo,
-           !g.fullGroupPreferences.files.on(for: g.membership) {
+           !chat.chatInfo.featureEnabled(.files) {
             b.disabled(true).onTapGesture {
                 AlertManager.shared.showAlertMsg(
                     title: "Files and media prohibited!",
-                    message: "Only group owners can enable files and media."
+                    message: chat.chatInfo.groupInfo == nil ? nil : "Only group owners can enable files and media."
                 )
             }
         } else {
@@ -748,7 +801,6 @@ struct ComposeView: View {
         }
     }
 
-    // TODO [short links] different messages for business
     private func sendConnectPreparedContactRequest() {
         hideKeyboard()
         let empty = composeState.whitespaceOnly
@@ -816,7 +868,7 @@ struct ComposeView: View {
         switch (composeState.preview) {
         case let .linkPreview(linkPreview: linkPreview):
             if let parsedMsg = parseSimpleXMarkdown(msgText),
-               let url = getSimplexLink(parsedMsg).url,
+               let url = getMessageLinks(parsedMsg).url,
                let linkPreview = linkPreview,
                url == linkPreview.uri {
                 return .link(text: msgText, preview: linkPreview)
@@ -1419,7 +1471,7 @@ struct ComposeView: View {
 
     private func showLinkPreview(_ parsedMsg: [FormattedText]?) {
         prevLinkUrl = linkUrl
-        (linkUrl, hasSimplexLink) = getSimplexLink(parsedMsg)
+        (linkUrl, hasSimplexLink) = getMessageLinks(parsedMsg)
         if let url = linkUrl {
             if url != composeState.linkPreview?.uri && url != pendingLinkUrl {
                 pendingLinkUrl = url
@@ -1436,39 +1488,38 @@ struct ComposeView: View {
         }
     }
 
-    private func getSimplexLink(_ parsedMsg: [FormattedText]?) -> (url: URL?, hasSimplexLink: Bool) {
+    private func getMessageLinks(_ parsedMsg: [FormattedText]?) -> (url: String?, hasSimplexLink: Bool) {
         guard let parsedMsg else { return (nil, false) }
-        let url: URL? = if let uri = parsedMsg.first(where: { ft in
-            ft.format == .uri && !cancelledLinks.contains(ft.text) && !isSimplexLink(ft.text)
-        }) {
-            URL(string: uri.text)
-        } else {
-            nil
-        }
         let simplexLink = parsedMsgHasSimplexLink(parsedMsg)
-        return (url, simplexLink)
+        for ft in parsedMsg {
+            if let link = ft.linkUri, !cancelledLinks.contains(link) && !isSimplexLink(link) {
+                return (link, simplexLink)
+            }
+        }
+        return (nil, simplexLink)
     }
 
     private func isSimplexLink(_ link: String) -> Bool {
-        link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat")
+        link.starts(with: "https://simplex.chat") || link.starts(with: "http://simplex.chat") || link.starts(with: "simplex:/")
     }
 
     private func cancelLinkPreview() {
-        if let pendingLink = pendingLinkUrl?.absoluteString {
+        if let pendingLink = pendingLinkUrl {
             cancelledLinks.insert(pendingLink)
         }
-        if let uri = composeState.linkPreview?.uri.absoluteString {
+        if let uri = composeState.linkPreview?.uri {
             cancelledLinks.insert(uri)
         }
         pendingLinkUrl = nil
         composeState = composeState.copy(preview: .noPreview)
     }
 
-    private func loadLinkPreview(_ url: URL) {
-        if pendingLinkUrl == url {
+    private func loadLinkPreview(_ urlStr: String) {
+        if pendingLinkUrl == urlStr, let url = URL(string: urlStr) {
             composeState = composeState.copy(preview: .linkPreview(linkPreview: nil))
             getLinkPreview(url: url) { linkPreview in
-                if let linkPreview, pendingLinkUrl == url {
+                if let linkPreview, pendingLinkUrl == urlStr {
+                    privacyLinkPreviewsShowAlertGroupDefault.set(false) // to avoid showing alert to current users, show alert in v6.5
                     composeState = composeState.copy(preview: .linkPreview(linkPreview: linkPreview))
                 } else {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -1488,32 +1539,31 @@ struct ComposeView: View {
     }
 }
 
-struct ComposeView_Previews: PreviewProvider {
-    static var previews: some View {
-        let chat = Chat(chatInfo: ChatInfo.sampleData.direct, chatItems: [])
-        let im = ItemsModel.shared
-        @State var composeState = ComposeState(message: "hello")
-        @State var selectedRange = NSRange()
-
-        return Group {
-            ComposeView(
-                chat: chat,
-                im: im,
-                composeState: $composeState,
-                keyboardVisible: Binding.constant(true),
-                keyboardHiddenDate: Binding.constant(Date.now),
-                selectedRange: $selectedRange
-            )
-            .environmentObject(ChatModel())
-            ComposeView(
-                chat: chat,
-                im: im,
-                composeState: $composeState,
-                keyboardVisible: Binding.constant(true),
-                keyboardHiddenDate: Binding.constant(Date.now),
-                selectedRange: $selectedRange
-            )
-            .environmentObject(ChatModel())
+func sanitizeMessage(_ parsedMsg: [FormattedText]) -> (message: String, parsedMsg: [FormattedText], sanitizedPos: Int?) {
+    var pos: Int = 0
+    var updatedMsg = ""
+    var sanitizedPos: Int? = nil
+    let updatedParsedMsg = parsedMsg.map { ft in
+        var updated = ft
+        switch ft.format {
+        case .uri:
+            if let sanitized = parseSanitizeUri(ft.text, safe: true)?.uriInfo?.sanitized {
+                updated = FormattedText(text: sanitized, format: .uri)
+                pos += updated.text.count
+                sanitizedPos = pos
+            }
+        case let .hyperLink(text, uri):
+            if let sanitized = parseSanitizeUri(uri, safe: true)?.uriInfo?.sanitized {
+                let updatedText = if let text { "[\(text)](\(sanitized))" } else { sanitized }
+                updated = FormattedText(text: updatedText, format: .hyperLink(showText: text, linkUri: sanitized))
+                pos += updated.text.count
+                sanitizedPos = pos
+            }
+        default:
+            pos += ft.text.count
         }
+        updatedMsg += updated.text
+        return updated
     }
+    return (message: updatedMsg, parsedMsg: updatedParsedMsg, sanitizedPos: sanitizedPos)
 }

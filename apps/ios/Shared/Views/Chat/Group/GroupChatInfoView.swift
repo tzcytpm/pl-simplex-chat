@@ -34,6 +34,7 @@ struct GroupChatInfoView: View {
     @AppStorage(DEFAULT_DEVELOPER_TOOLS) private var developerTools = false
     @State private var searchText: String = ""
     @FocusState private var searchFocussed
+    @State private var showSecrets: Set<Int> = []
 
     enum GroupChatInfoViewAlert: Identifiable {
         case deleteGroupAlert
@@ -97,7 +98,7 @@ struct GroupChatInfoView: View {
                             memberSupportButton()
                         }
                         if groupInfo.canModerate {
-                            GroupReportsChatNavLink(chat: chat, scrollToItemId: $scrollToItemId)
+                            GroupReportsChatNavLink(chat: chat, groupInfo: groupInfo, scrollToItemId: $scrollToItemId)
                         }
                         if groupInfo.membership.memberActive
                             && (groupInfo.membership.memberRole < .moderator || groupInfo.membership.supportChat != nil) {
@@ -253,10 +254,11 @@ struct GroupChatInfoView: View {
                     .padding(.bottom, 2)
             }
             if let descr = cInfo.shortDescr?.trimmingCharacters(in: .whitespacesAndNewlines), descr != "" {
-                Text(descr)
-                    .font(.subheadline)
+                let r = markdownText(descr, textStyle: .subheadline, showSecrets: showSecrets, backgroundColor: theme.colors.background)
+                msgTextResultView(r, Text(AttributedString(r.string)), showSecrets: $showSecrets, centered: true, smallFont: true)
                     .multilineTextAlignment(.center)
                     .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -610,15 +612,19 @@ struct GroupChatInfoView: View {
     }
 
     struct GroupReportsChatNavLink: View {
-        @EnvironmentObject var chatModel: ChatModel
-        @EnvironmentObject var theme: AppTheme
-        @State private var navLinkActive = false
         @ObservedObject var chat: Chat
+        @EnvironmentObject var theme: AppTheme
+        var groupInfo: GroupInfo
+        @EnvironmentObject var chatModel: ChatModel
         @Binding var scrollToItemId: ChatItem.ID?
+        @State private var navLinkActive = false
 
         var body: some View {
             NavigationLink(isActive: $navLinkActive) {
-                SecondaryChatView(chat: chat, scrollToItemId: $scrollToItemId)
+                SecondaryChatView(
+                    chat: Chat(chatInfo: .group(groupInfo: groupInfo, groupChatScope: .reports), chatItems: [], chatStats: ChatStats()),
+                    scrollToItemId: $scrollToItemId
+                )
             } label: {
                 HStack {
                     Label {

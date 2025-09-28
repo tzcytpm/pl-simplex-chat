@@ -42,7 +42,7 @@ import Simplex.Messaging.Agent.Protocol
 import Simplex.Messaging.Client
 import Simplex.Messaging.Crypto.File
 import Simplex.Messaging.Parsers (dropPrefix, fstToLower)
-import Simplex.Messaging.Protocol (BlockingInfo (..), BlockingReason (..), CommandError (..), ErrorType (..), ProxyError (..))
+import Simplex.Messaging.Protocol (BlockingInfo (..), BlockingReason (..), CommandError (..), ErrorType (..), NetworkError (..), ProxyError (..))
 import Simplex.Messaging.Transport
 import Simplex.RemoteControl.Types
 import System.Console.ANSI.Types (Color (..))
@@ -83,7 +83,7 @@ toTypeDef acc@(!visited, !typeDefs) (STI typeName allConstrs, jsonEncoding, cons
                 [RecordTypeInfo {fieldInfos}] ->
                   let fields = fromMaybe (error $ "Record type without fields: " <> typeName) $ L.nonEmpty fieldInfos
                       ((visited', typeDefs'), fields') = mapAccumL (toAPIField_ typeName) (S.insert typeName visited, typeDefs) fields
-                      td = APITypeDef typeName $ ATDRecord fields'
+                      td = APITypeDef typeName $ ATDRecord $ L.toList fields'
                     in ((S.insert typeName visited', M.insert typeName td typeDefs'), Just td)
                 _ -> error $ "Record type with " <> show (length constrs) <> " constructors: " <> typeName
               STUnion -> if length constrs > 1 then toUnionType constrs else unionError constrs
@@ -199,7 +199,7 @@ chatTypesDocsData =
     (sti @(ContactUserPreference SimplePreference), STRecord, "", [], "", ""),
     (sti @(CreatedConnLink 'CMContact), STRecord, "", [], Param "connFullLink" <> Optional "" (" " <> Param "$0") "connShortLink", ""),
     (sti @AddressSettings, STRecord, "", [], "", ""),
-    (sti @AgentCryptoError, STUnion, "", [], "", ""),
+    (sti @AgentCryptoError, STUnion, "", ["RATCHET_EARLIER", "RATCHET_SKIPPED"], "", ""), -- TODO add fields to types
     (sti @AgentErrorType, STUnion, "", [], "", ""),
     (sti @AutoAccept, STRecord, "", [], "", ""),
     (sti @BlockingInfo, STRecord, "", [], "", ""),
@@ -207,15 +207,17 @@ chatTypesDocsData =
     (sti @BrokerErrorType, STUnion, "", [], "", ""),
     (sti @BusinessChatInfo, STRecord, "", [], "", ""),
     (sti @BusinessChatType, STEnum, "BC", [], "", ""),
+    (sti @ChatBotCommand, STUnion, "CBC", [], "", ""),
     (sti @ChatDeleteMode, STUnion, "CDM", [], Param "type" <> Choice "self" [("messages", "")] (OnOffParam "notify" "notify" (Just True)), ""),
     (sti @ChatError, STUnion, "Chat", ["ChatErrorDatabase", "ChatErrorRemoteHost", "ChatErrorRemoteCtrl"], "", ""),
     (sti @ChatErrorType, STUnion, "CE", ["CEContactNotFound", "CEServerProtocol", "CECallState", "CEInvalidChatMessage"], "", ""),
     (sti @ChatFeature, STEnum, "CF", [], "", ""),
     (sti @ChatItemDeletion, STRecord, "", [], "", "Message deletion result."),
+    (sti @ChatPeerType, STEnum, "CPT", [], "", ""),
     (sti @ChatRef, STRecord, "", [], Param "chatType" <> Param "chatId" <> Optional "" (Param "$0") "chatScope", "Used in API commands. Chat scope can only be passed with groups."),
     (sti @ChatSettings, STRecord, "", [], "", ""),
     (sti @ChatStats, STRecord, "", [], "", ""),
-    (sti @ChatType, STEnum, "CT", ["CTContactRequest", "CTContactConnection"], Choice "self" [("contact", "@"), ("group", "#"), ("local", "*")] "", ""),
+    (sti @ChatType, STEnum, "CT", ["CTContactRequest", "CTContactConnection"], Choice "self" [("direct", "@"), ("group", "#"), ("local", "*")] "", ""),
     (sti @ChatWallpaper, STRecord, "", [], "", ""),
     (sti @ChatWallpaperScale, STEnum, "CWS", [], "", ""),
     (sti @CICallStatus, STEnum, "CISCall", [], "", ""),
@@ -255,10 +257,11 @@ chatTypesDocsData =
     (sti @FileProtocol, (STEnum' $ consLower "FP"), "", [], "", ""),
     (sti @FileStatus, STEnum, "FS", [], "", ""),
     (sti @FileTransferMeta, STRecord, "", [], "", ""),
-    (sti @Format, STUnion, "", [], "", ""),
+    (sti @Format, STUnion, "", ["Unknown"], "", ""),
     (sti @FormattedText, STRecord, "", [], "", ""),
     (sti @FullGroupPreferences, STRecord, "", [], "", ""),
     (sti @FullPreferences, STRecord, "", [], "", ""),
+    (sti @Group, STRecord, "", [], "", ""),
     (sti @GroupChatScope, STUnion1, "GCS", [], "(_support" <> Optional "" (":" <> Param "$0") "groupMemberId_" <> ")", ""),
     (sti @GroupChatScopeInfo, STUnion1, "GCSI", [], "", ""),
     (sti @GroupFeature, STEnum, "GF", [], "", ""),
@@ -296,12 +299,14 @@ chatTypesDocsData =
     (sti @MsgFilter, STEnum, "MF", [], "", ""),
     (sti @MsgReaction, STUnion, "MR", [], "", ""),
     (sti @MsgReceiptStatus, STEnum, "MR", [], "", ""),
+    (sti @NetworkError, STUnion, "NE", [], "", ""),
     (sti @NewUser, STRecord, "", [], "", ""),
     (sti @NoteFolder, STRecord, "", [], "", ""),
     (sti @PendingContactConnection, STRecord, "", [], "", ""),
     (sti @PrefEnabled, STRecord, "", [], "", ""),
     (sti @Preferences, STRecord, "", [], "", ""),
     (sti @PreparedContact, STRecord, "", [], "", ""),
+    (sti @GroupDirectInvitation, STRecord, "", [], "", ""),
     (sti @PreparedGroup, STRecord, "", [], "", ""),
     (sti @Profile, STRecord, "", [], "", ""),
     (sti @ProxyClientError, STUnion, "Proxy", [], "", ""),
@@ -355,7 +360,6 @@ chatTypesDocsData =
     -- (sti @ChatName, STRecord, "", [], "", ""),
     -- (sti @ChatPagination, STRecord, "CP", [], "", ""),
     -- (sti @ConnectionStats, STRecord, "", [], "", ""),
-    -- (sti @Group, STRecord, "", [], "", ""),
     -- (sti @GroupSndStatus, STUnion, "GSS", [], "", ""),
     -- (sti @MemberDeliveryStatus, STRecord, "", [], "", ""),
     -- (sti @MemberReaction, STRecord, "", [], "", ""),
@@ -391,11 +395,13 @@ deriving instance Generic BlockingReason
 deriving instance Generic BrokerErrorType
 deriving instance Generic BusinessChatInfo
 deriving instance Generic BusinessChatType
+deriving instance Generic ChatBotCommand
 deriving instance Generic ChatDeleteMode
 deriving instance Generic ChatError
 deriving instance Generic ChatErrorType
 deriving instance Generic ChatFeature
 deriving instance Generic ChatItemDeletion
+deriving instance Generic ChatPeerType
 deriving instance Generic ChatRef
 deriving instance Generic ChatSettings
 deriving instance Generic ChatStats
@@ -443,6 +449,7 @@ deriving instance Generic Format
 deriving instance Generic FormattedText
 deriving instance Generic FullGroupPreferences
 deriving instance Generic FullPreferences
+deriving instance Generic Group
 deriving instance Generic GroupChatScope
 deriving instance Generic GroupChatScopeInfo
 deriving instance Generic GroupFeature
@@ -486,12 +493,14 @@ deriving instance Generic MsgErrorType
 deriving instance Generic MsgFilter
 deriving instance Generic MsgReaction
 deriving instance Generic MsgReceiptStatus
+deriving instance Generic NetworkError
 deriving instance Generic NewUser
 deriving instance Generic NoteFolder
 deriving instance Generic PendingContactConnection
 deriving instance Generic PrefEnabled
 deriving instance Generic Preferences
 deriving instance Generic PreparedContact
+deriving instance Generic GroupDirectInvitation
 deriving instance Generic PreparedGroup
 deriving instance Generic Profile
 deriving instance Generic ProxyClientError

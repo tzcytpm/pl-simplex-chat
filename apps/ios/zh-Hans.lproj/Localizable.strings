@@ -1215,9 +1215,6 @@ set passcode view */
 /* No comment provided by engineer. */
 "Connected desktop" = "已连接的桌面";
 
-/* rcv group event chat item */
-"connected directly" = "已直连";
-
 /* No comment provided by engineer. */
 "Connected servers" = "已连接的服务器";
 
@@ -2154,7 +2151,7 @@ chat item action */
 /* alert title */
 "Error deleting chat database" = "删除聊天数据库错误";
 
-/* No comment provided by engineer. */
+/* alert title */
 "Error deleting chat!" = "删除聊天错误！";
 
 /* No comment provided by engineer. */
@@ -2443,6 +2440,9 @@ snd error text */
 
 /* No comment provided by engineer. */
 "Find chats faster" = "更快地查找聊天记录";
+
+/* server test error */
+"Fingerprint in server address does not match certificate." = "服务器地址中的证书指纹可能不正确";
 
 /* No comment provided by engineer. */
 "Fix" = "修复";
@@ -2861,7 +2861,7 @@ snd error text */
 /* No comment provided by engineer. */
 "Invalid display name!" = "无效的显示名！";
 
-/* No comment provided by engineer. */
+/* alert title */
 "Invalid link" = "无效链接";
 
 /* No comment provided by engineer. */
@@ -3742,9 +3742,6 @@ new chat action */
 /* No comment provided by engineer. */
 "Password to show" = "显示密码";
 
-/* past/unknown group member */
-"Past member %@" = "前任成员 %@";
-
 /* No comment provided by engineer. */
 "Paste desktop address" = "粘贴桌面地址";
 
@@ -3831,9 +3828,6 @@ new chat action */
 
 /* No comment provided by engineer. */
 "Polish interface" = "波兰语界面";
-
-/* server test error */
-"Possibly, certificate fingerprint in server address is incorrect" = "服务器地址中的证书指纹可能不正确";
 
 /* No comment provided by engineer. */
 "Preserve the last message draft, with attachments." = "保留最后的消息草稿及其附件。";
@@ -4484,10 +4478,10 @@ chat item action */
 "server queue info: %@\n\nlast received msg: %@" = "服务器队列信息： %1$@\n\n上次收到的消息： %2$@";
 
 /* server test error */
-"Server requires authorization to create queues, check password" = "服务器需要授权才能创建队列，检查密码";
+"Server requires authorization to create queues, check password." = "服务器需要授权才能创建队列，检查密码";
 
 /* server test error */
-"Server requires authorization to upload, check password" = "服务器需要授权来上传，检查密码";
+"Server requires authorization to upload, check password." = "服务器需要授权来上传，检查密码";
 
 /* No comment provided by engineer. */
 "Server test failed!" = "服务器测试失败！";
@@ -5510,7 +5504,7 @@ chat item action */
 /* alert message */
 "You can view invitation link again in connection details." = "您可以在连接详情中再次查看邀请链接。";
 
-/* No comment provided by engineer. */
+/* alert title */
 "You can't send messages!" = "您无法发送消息！";
 
 /* chat item text */
