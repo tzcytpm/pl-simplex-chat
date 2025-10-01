@@ -281,7 +281,7 @@ jobs:
         run: |
           path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/*imple*.AppImage)
           echo "appimage_path=$path" >> $GITHUB_OUTPUT
-          echo "appimage_hash=$(echo SHA2-256\(simplex-desktop-x86_64.AppImage\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
+          echo "appimage_hash=$(echo SHA2-256\(${{ matrix.desktop_app_image_name }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
       - name: Upload AppImage
         if: matrix.should_run == true
