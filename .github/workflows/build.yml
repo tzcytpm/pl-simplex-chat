@@ -124,13 +124,13 @@ jobs:
             ghc: ${{ needs.variables.outputs.GHC_VER }}
             cli_asset_name: simplex-chat-ubuntu-22_04-x86-64
             desktop_asset_name: simplex-desktop-ubuntu-22_04-x86_64.deb
-	    desktop_app_image_name: simplex-desktop-ubuntu-22_04-x86_64.AppImage
+            desktop_app_image_name: simplex-desktop-ubuntu-22_04-x86_64.AppImage
             should_run: true
           - os: 24.04
             ghc: ${{ needs.variables.outputs.GHC_VER }}
             cli_asset_name: simplex-chat-ubuntu-24_04-x86-64
             desktop_asset_name: simplex-desktop-ubuntu-24_04-x86_64.deb
-	    desktop_app_image_name: simplex-desktop-ubuntu-24_04-x86_64.AppImage
+            desktop_app_image_name: simplex-desktop-ubuntu-24_04-x86_64.AppImage
             should_run: true
     steps:
       - name: Checkout Code
