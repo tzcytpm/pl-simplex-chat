@@ -249,7 +249,7 @@ jobs:
 
       - name: Prepare Desktop
         id: linux_desktop_build
-        if: startsWith(github.ref, 'refs/tags/v') && matrix.should_run == true
+        if: matrix.should_run == true
         shell: bash
         run: |
           path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/deb/simplex_amd64.deb )
@@ -286,7 +286,7 @@ jobs:
         uses: ./.github/actions/prepare-release
         with:
           bin_path: ${{ steps.linux_appimage_build.outputs.appimage_path }}
-          bin_name: "simplex-desktop-x86_64.AppImage"
+          bin_name: "simplex-desktop-${{ matrix.arch }}.AppImage"
           bin_hash: ${{ steps.linux_appimage_build.outputs.appimage_hash }}
           github_ref: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
