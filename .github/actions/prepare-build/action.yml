@@ -31,7 +31,6 @@ runs:
         cabal-version: ${{ inputs.cabal_ver }}
 
     - name: Setup Java
-      if: startsWith(inputs.github_ref, 'refs/tags/v')
       uses: actions/setup-java@v3
       with:
         distribution: 'corretto'
