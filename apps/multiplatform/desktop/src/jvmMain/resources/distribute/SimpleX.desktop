@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=SimpleX Chat
+Name=PL-XChat
 Comment=Private and secure open-source messenger - no user IDs (not even random numbers)
 Exec=/opt/simplex/bin/simplex
 Icon=/opt/simplex/lib/simplex
