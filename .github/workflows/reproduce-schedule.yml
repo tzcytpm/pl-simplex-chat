@@ -2,8 +2,15 @@ name: Reproduce latest release
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * *' # every day at 02:00 night
+   inputs:
+      mode:
+        description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
+        required: true
+        default: nightly
+        type: choice
+        options:
+          - nightly
+          - release
 
 jobs:
   reproduce:
