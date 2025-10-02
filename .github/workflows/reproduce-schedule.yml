@@ -11,6 +11,7 @@ on:
         options:
           - nightly
           - release
+          - stable
 
 jobs:
   reproduce:
