@@ -77,7 +77,7 @@ enabledSimplexChatSMPServers =
   ]
 -}
 enabledSimplexChatSMPServers =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.devp"]
+  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev"]
 
 -- Please note: if any servers are removed from this list, they MUST be added to allPresetServers.
 -- Otherwise previously created short links won't work.
