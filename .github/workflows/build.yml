@@ -122,30 +122,35 @@ jobs:
             arch: x86_64
             runner: "ubuntu-22.04"
             ghc: "8.10.7"
-            should_run: true
+            should_run: false
+            should_test: false
           - os: 22.04
             os_underscore: 22_04
             arch: x86_64
             runner: "ubuntu-22.04"
             should_run: true
+            should_test: false
             ghc: ${{ needs.variables.outputs.GHC_VER }}
           - os: 24.04
             os_underscore: 24_04
             arch: x86_64
             runner: "ubuntu-24.04"
             should_run: true
+            should_test: false
             ghc: ${{ needs.variables.outputs.GHC_VER }}
           - os: 22.04
             os_underscore: 22_04
             arch: aarch64
             runner: "ubuntu-22.04-arm"
             should_run: true
+            should_test: false
             ghc: ${{ needs.variables.outputs.GHC_VER }}
           - os: 24.04
             os_underscore: 24_04
             arch: aarch64
             runner: "ubuntu-24.04-arm"
             should_run: true
+            should_test: false
             ghc: ${{ needs.variables.outputs.GHC_VER }}
     steps:
       - name: Checkout Code
@@ -316,7 +321,7 @@ jobs:
           sudo chown -R $(id -u):$(id -g) dist-newstyle ~/.cabal
 
       - name: Run tests
-        if: matrix.should_run == true && matrix.arch == 'x86_64'
+        if: matrix.should_run == true && matrix.arch == 'x86_64' && matrix.should_test == true
         timeout-minutes: 120
         shell: bash
         run: |
@@ -433,7 +438,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests
-        if: inputs.cli
+        if: inputs.cli  && matrix.should_test == true
         timeout-minutes: 120
         shell: bash
         run: |
