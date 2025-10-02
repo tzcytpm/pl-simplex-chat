@@ -85,6 +85,8 @@ enabledSimplexChatSMPServers =
 -- !!! Also, if any servers need to be added, shortLinkPresetServers will need to be be split to two,
 -- so that option used for restoring links is updated earlier, for backward/forward compatibility.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
+disabledSimplexChatSMPServers =
+  [ "smp://u2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU=@smp4.simplex.im,o5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion"]
 {-
 disabledSimplexChatSMPServers =
   [ "smp://u2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU=@smp4.simplex.im,o5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion",
@@ -102,6 +104,8 @@ fluxSMPServers = map (presetServer' True) (L.toList fluxSMPServers_)
 -- !!! Also, if any servers need to be added, shortLinkPresetServers will need to be be split to two,
 -- so that option used for restoring links is updated earlier, for backward/forward compatibility.
 fluxSMPServers_ :: NonEmpty SMPServer
+fluxSMPServers_ =
+  [ "smp://xQW_ufMkGE20UrTlBl8QqceG1tbuylXhr9VOLPyRJmw=@smp1.simplexonflux.com,qb4yoanyl4p7o33yrknv4rs6qo7ugeb2tu2zo66sbebezs4cpyosarid.onion"]
 {-
 fluxSMPServers_ =
   [ "smp://xQW_ufMkGE20UrTlBl8QqceG1tbuylXhr9VOLPyRJmw=@smp1.simplexonflux.com,qb4yoanyl4p7o33yrknv4rs6qo7ugeb2tu2zo66sbebezs4cpyosarid.onion",
