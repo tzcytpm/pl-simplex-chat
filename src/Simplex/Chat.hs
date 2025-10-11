@@ -90,7 +90,7 @@ defaultChatConfig =
       -- to have a different set of servers on the receiving end and on the sending end.
       -- To preserve backward compatibility receiving end should update before the sending.
       shortLinkPresetServers = allPresetServers,
-      presetDomains = [".simplex.im", ".simplexonflux.com"],
+      presetDomains = [".simplex.im", ".privateline.dev"],
       tbqSize = 1024,
       fileChunkSize = 15780, -- do not change
       xftpDescrPartSize = 14000,
