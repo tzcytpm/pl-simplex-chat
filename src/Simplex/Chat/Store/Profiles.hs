@@ -605,7 +605,7 @@ insertProtocolServer db p User {userId} ts srv@UserServer {server, preset, teste
   DB.execute
     db
     [sql|
-      INSERT INTO protocol_servers
+      INSERT OR IGNORE INTO protocol_servers
         (protocol, host, port, key_hash, basic_auth, preset, tested, enabled, user_id, created_at, updated_at)
       VALUES (?,?,?,?,?,?,?,?,?,?,?)
     |]
