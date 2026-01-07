@@ -6,7 +6,7 @@ on:
       mode:
         description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
         required: true
-        default: nightly
+        default: release
         type: choice
         options:
           - nightly
@@ -374,6 +374,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prepare build
+        if: matrix.should_run == true
         uses: ./.github/actions/prepare-build
         with:
           java_ver: ${{ needs.variables.outputs.JAVA_VER }}
@@ -382,9 +383,11 @@ jobs:
           github_ref: ${{ github.ref }}
 
       - name: Install OpenSSL
+        if: matrix.should_run == true
         run: brew install openssl@3.0
 
       - name: Prepare cabal.project.local
+        if: matrix.should_run == true
         shell: bash
         run: |
           echo "ignore-project: False"                                                    >> cabal.project.local
