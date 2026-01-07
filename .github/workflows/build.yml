@@ -367,6 +367,8 @@ jobs:
             cli_asset_name: simplex-chat-macos-x86-64
             desktop_asset_name: simplex-desktop-macos-x86_64.dmg
             openssl_dir: "/usr/local/opt"
+            should_run: true
+            should_test: true
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -416,8 +418,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Desktop
-        id: mac_desktop_build && matrix.should_run == true
-        if: inputs.macos
+        id: mac_desktop_build
+        if: inputs.macos && matrix.should_run == true
         shell: bash
         env:
           APPLE_SIMPLEX_SIGNING_KEYCHAIN: ${{ secrets.APPLE_SIMPLEX_SIGNING_KEYCHAIN }}
