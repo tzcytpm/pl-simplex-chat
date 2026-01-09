@@ -21,10 +21,10 @@ operatorSimpleXChat :: NewServerOperator
 operatorSimpleXChat =
   ServerOperator
     { operatorId = DBNewEntity
-    , operatorTag = Just OTSimplex
+    , operatorTag = Just OTPLX-Chat
     , tradeName = "PL X-Chat"
     , legalName = Just "PrivateLine"
-    , serverDomains = ["privateline.dev"]
+    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = allRoles
@@ -37,9 +37,9 @@ operatorFlux =
   ServerOperator
     { operatorId = DBNewEntity
     , operatorTag = Just OTFlux
-    , tradeName = "Flux (disabled)"
+    , tradeName = "Flux PLX-Chat"
     , legalName = Just "InFlux Technologies Limited"
-    , serverDomains = ["privateline.dev"]
+    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = ServerRoles { storage = False, proxy = True }
@@ -64,7 +64,9 @@ simplexChatSMPServers =
 -- Enabled SMP list (NonEmpty) — your server only.
 enabledSimplexChatSMPServers :: NonEmpty SMPServer
 enabledSimplexChatSMPServers =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev" ]
+  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
+    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
+  ]
 
 -- Keep a minimal disabled list (not referenced anywhere else).
 -- It uses the same SMP URL just to satisfy NonEmpty if other modules import the symbol.
@@ -82,7 +84,9 @@ fluxXFTPServers :: [NewUserServer 'PXFTP]
 fluxXFTPServers =
   map
     (presetServer True)
-    [ "xftp://yTjqu2fauO7hJJQSQFAByuIkpGqw9kGTp8jJSggICUg=@xftp01.privateline.dev" ]
+    [ "xftp://yTjqu2fauO7hJJQSQFAByuIkpGqw9kGTp8jJSggICUg=@xftp01.privateline.dev",
+      "xftp://aZwVipWbvypsXDxu6aLpmRBNyOzqXiVBtA77tq9K068=@xftp02.privateline.dev:8443"
+    ]
 
 -- Keep these symbols for compatibility but make them inert:
 fluxSMPServers :: [NewUserServer 'PSMP]
@@ -90,4 +94,6 @@ fluxSMPServers = map (presetServer' True) (L.toList fluxSMPServers_)
 
 fluxSMPServers_ :: NonEmpty SMPServer
 fluxSMPServers_ =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev" ]
+  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
+    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
+  ]
