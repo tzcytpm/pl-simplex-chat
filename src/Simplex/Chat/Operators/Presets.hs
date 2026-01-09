@@ -41,7 +41,7 @@ operatorFlux =
     , legalName = Just "InFlux Technologies Limited"
     , serverDomains = ["privateline.dev"]
     , conditionsAcceptance = CARequired Nothing
-    , enabled = False
+    , enabled = True
     , smpRoles = ServerRoles { storage = False, proxy = True }
     , xftpRoles = ServerRoles { storage = False, proxy = True }
     }
@@ -70,8 +70,8 @@ enabledSimplexChatSMPServers =
 -- It uses the same SMP URL just to satisfy NonEmpty if other modules import the symbol.
 -- We do NOT include it in allPresetServers nor simplexChatSMPServers to avoid duplicates.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
-disabledSimplexChatSMPServers =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev" ]
+simplexChatSMPServersDisabled =
+  map (presetServer' False) (L.toList enabledSimplexChatSMPServers)
 
 -- =====================================================================
 -- XFTP servers (ONLY your private one)
