@@ -24,7 +24,7 @@ operatorSimpleXChat =
     , operatorTag = Just OTPLX-Chat
     , tradeName = "PL X-Chat"
     , legalName = Just "PrivateLine"
-    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", ]
+    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = allRoles
@@ -39,7 +39,7 @@ operatorFlux =
     , operatorTag = Just OTFlux
     , tradeName = "Flux PLX-Chat"
     , legalName = Just "InFlux Technologies Limited"
-    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", ]
+    , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = ServerRoles { storage = False, proxy = True }
