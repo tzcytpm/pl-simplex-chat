@@ -21,8 +21,8 @@ operatorSimpleXChat :: NewServerOperator
 operatorSimpleXChat =
   ServerOperator
     { operatorId = DBNewEntity
-    , operatorTag = Just OTPLX-Chat
-    , tradeName = "PL X-Chat"
+    , operatorTag = Just OTPlex
+    , tradeName = "SMP PLX-Chat"
     , legalName = Just "PrivateLine"
     , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
