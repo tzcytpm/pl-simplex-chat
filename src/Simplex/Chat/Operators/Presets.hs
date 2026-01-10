@@ -41,7 +41,7 @@ operatorFlux =
     , legalName = Just "InFlux Technologies Limited"
     , serverDomains = ["smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
-    , enabled = True
+    , enabled = False
     , smpRoles = ServerRoles { storage = False, proxy = True }
     , xftpRoles = ServerRoles { storage = False, proxy = True }
     }
@@ -73,7 +73,9 @@ enabledSimplexChatSMPServers =
 -- We do NOT include it in allPresetServers nor simplexChatSMPServers to avoid duplicates.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
 disabledSimplexChatSMPServers =
-  map (presetServer' False) (L.toList enabledSimplexChatSMPServers)
+  disabledSimplexChatSMPServers =
+  [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.dev"
+  ]
 
 -- =====================================================================
 -- XFTP servers (ONLY your private one)
