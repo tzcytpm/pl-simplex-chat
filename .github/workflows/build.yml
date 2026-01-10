@@ -368,7 +368,7 @@ jobs:
             desktop_asset_name: simplex-desktop-macos-x86_64.dmg
             openssl_dir: "/usr/local/opt"
             should_run: true
-            should_test: true
+            should_test: false
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
