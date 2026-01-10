@@ -73,7 +73,6 @@ enabledSimplexChatSMPServers =
 -- We do NOT include it in allPresetServers nor simplexChatSMPServers to avoid duplicates.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
 disabledSimplexChatSMPServers =
-  disabledSimplexChatSMPServers =
   [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.dev"
   ]
 
