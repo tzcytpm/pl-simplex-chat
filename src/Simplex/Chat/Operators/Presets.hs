@@ -72,7 +72,7 @@ enabledSimplexChatSMPServers =
 -- It uses the same SMP URL just to satisfy NonEmpty if other modules import the symbol.
 -- We do NOT include it in allPresetServers nor simplexChatSMPServers to avoid duplicates.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
-simplexChatSMPServersDisabled =
+disabledSimplexChatSMPServers =
   map (presetServer' False) (L.toList enabledSimplexChatSMPServers)
 
 -- =====================================================================
