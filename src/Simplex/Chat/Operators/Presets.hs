@@ -64,8 +64,8 @@ simplexChatSMPServers =
 -- Enabled SMP list (NonEmpty) — your server only.
 enabledSimplexChatSMPServers :: NonEmpty SMPServer
 enabledSimplexChatSMPServers =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
-    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
+  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev:5223",
+    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev:5223"
   ]
 
 -- Keep a minimal disabled list (not referenced anywhere else).
@@ -95,6 +95,5 @@ fluxSMPServers = map (presetServer' True) (L.toList fluxSMPServers_)
 
 fluxSMPServers_ :: NonEmpty SMPServer
 fluxSMPServers_ =
-  [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
-    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
+  [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
   ]
