@@ -24,7 +24,7 @@ operatorSimpleXChat =
     , operatorTag = Just OTSimplex
     , tradeName = "Smp PLX-Chat"
     , legalName = Just "PrivateLine"
-    , serverDomains = ["155.130.217.70", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
+    , serverDomains = ["smp01.privateline.io", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = allRoles
@@ -38,8 +38,8 @@ operatorFlux =
     { operatorId = DBNewEntity
     , operatorTag = Just OTFlux
     , tradeName = "Files PLX-Chat"
-    , legalName = Just "InFlux Technologies Limited"
-    , serverDomains = ["155.130.217.70", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
+    , legalName = Just "Privateline"
+    , serverDomains = ["smp01.privateline.io", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = ServerRoles { storage = False, proxy = True }
@@ -65,7 +65,7 @@ simplexChatSMPServers =
 enabledSimplexChatSMPServers :: NonEmpty SMPServer
 enabledSimplexChatSMPServers =
   [ 
-    "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=@155.130.217.70"
+    "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=@smp01.privateline.io"
   ]
 
 -- Keep a minimal disabled list (not referenced anywhere else).
@@ -74,8 +74,6 @@ enabledSimplexChatSMPServers =
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
 disabledSimplexChatSMPServers =
   [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.dev",
-    "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
-    "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
   ]
 
 -- =====================================================================
@@ -86,7 +84,7 @@ disabledSimplexChatSMPServers =
 fluxXFTPServers :: [NewUserServer 'PXFTP]
 fluxXFTPServers =
   presetServer True <$>
-    [ "xftp://oJH7jdmfSr4C9fC8ONYIFNabnP_VatrHvjxq8nNXtMc=@155.130.217.70"
+    [ "xftp://oJH7jdmfSr4C9fC8ONYIFNabnP_VatrHvjxq8nNXtMc=@smp01.privateline.io"
     ]
 
 -- Keep these symbols for compatibility but make them inert:
