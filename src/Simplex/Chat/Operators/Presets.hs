@@ -66,7 +66,7 @@ enabledSimplexChatSMPServers :: NonEmpty SMPServer
 enabledSimplexChatSMPServers =
   [ "smp://V9fPXJhPw2Jv_CaJeUwUj_gsjhaXOQIa-p27TtZ3ToQ=@smpx01.privateline.dev",
     "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev",
-    "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=:Z9vpwbJ3LSizgSXLyaXoDsx3@155.130.217.70"
+    "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=@155.130.217.70"
   ]
 
 -- Keep a minimal disabled list (not referenced anywhere else).
