@@ -41,7 +41,7 @@ operatorFlux =
     , legalName = Just "InFlux Technologies Limited"
     , serverDomains = ["155.130.217.70", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
-    , enabled = true
+    , enabled = True
     , smpRoles = ServerRoles { storage = False, proxy = True }
     , xftpRoles = ServerRoles { storage = False, proxy = True }
     }
