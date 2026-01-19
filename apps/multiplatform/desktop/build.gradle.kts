@@ -55,12 +55,12 @@ compose {
           //, TargetFormat.AppImage // Gradle doesn't sync on Mac with it
         )
         linux {
-          iconFile.set(project.file("src/jvmMain/resources/distribute/simplex.png"))
+          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.png"))
           appCategory = "Messenger"
         }
         windows {
-          packageName = "SimpleX"
-          iconFile.set(project.file("src/jvmMain/resources/distribute/simplex.ico"))
+          packageName = "PLX-Chat"
+          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.ico"))
           console = false
           perUserInstall = false
           dirChooser = true
@@ -68,8 +68,8 @@ compose {
           upgradeUuid = "CC9EFBC8-AFFF-40D8-BB69-FCD7CE99EFB9"
         }
         macOS {
-          packageName = "SimpleX"
-          iconFile.set(project.file("src/jvmMain/resources/distribute/simplex.icns"))
+          packageName = "PLX-Chat"
+          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.icns"))
           appCategory = "public.app-category.social-networking"
           bundleID = "chat.simplex.app"
           val identity = rootProject.extra["desktop.mac.signing.identity"] as String?
@@ -92,9 +92,9 @@ compose {
         }
         val os = System.getProperty("os.name", "generic").toDefaultLowerCase()
         if (os.contains("mac") || os.contains("win")) {
-          packageName = "SimpleX"
+          packageName = "PLX-Chat"
         } else {
-          packageName = "simplex"
+          packageName = "plx-chat"
         }
         // Packaging requires to have version like MAJOR.MINOR.PATCH
         var adjustedVersion = rootProject.extra["desktop.version_name"] as String
