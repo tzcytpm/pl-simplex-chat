@@ -4,8 +4,8 @@ import java.io.File
 import java.util.*
 
 private val home = System.getProperty("user.home")
-private val unixConfigPath = (System.getenv("XDG_CONFIG_HOME") ?: "$home/.config") + "/plxchat"
-private val unixDataPath = (System.getenv("XDG_DATA_HOME") ?: "$home/.local/share") + "/plxchat"
+private val unixConfigPath = (System.getenv("XDG_CONFIG_HOME") ?: "$home/.config") + "/plx-chat"
+private val unixDataPath = (System.getenv("XDG_DATA_HOME") ?: "$home/.local/share") + "/plx-chat"
 val desktopPlatform = detectDesktopPlatform()
 
 enum class DesktopPlatform(val libExtension: String, val configPath: String, val dataPath: String, val githubAssetName: String) {
