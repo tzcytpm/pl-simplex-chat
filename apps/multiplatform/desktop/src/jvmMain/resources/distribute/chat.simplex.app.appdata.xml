@@ -4,7 +4,7 @@
   <launchable type="desktop-id">chat.simplex.app.desktop</launchable>
   <metadata_license>FSFAP</metadata_license>
   <project_license>AGPL-3.0</project_license>
-  <name>SimpleX</name>
+  <name>PLX-Chat</name>
   <summary>Private and secure open-source messenger - no user IDs (not even random numbers)</summary>
 
   <description>
