@@ -1597,9 +1597,9 @@ let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
     .simplex: ServerOperatorInfo(
         description: [
             "Privateline X-Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or identity keys.",
-            "Privateline X-Chat Ltd develops the communication software for SimpleX network."
+            "Privateline X-Chat Ltd develops the communication software for Privateline network."
         ],
-        website: URL(string: "https://simplex.chat")!,
+        website: URL(string: "https://privateline.io")!,
         logo: "decentralized",
         largeLogo: "logo",
         logoDarkMode: "decentralized-light",
