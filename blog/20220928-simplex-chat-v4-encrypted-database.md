@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v4.0 with encrypted database is released"
+title: "Privateline X-Chat v4.0 with encrypted database is released"
 date: 2022-09-28
 image: images/20220928-passphrase.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20220928.html
 permalink: "/blog/20220928-simplex-chat-v4-encrypted-database.html"
 ---
 
-# SimpleX Chat v4 with encrypted local database is released
+# Privateline X-Chat v4 with encrypted local database is released
 
 **Published:** Sep 28, 2022
 
@@ -18,7 +18,7 @@ permalink: "/blog/20220928-simplex-chat-v4-encrypted-database.html"
 - [support for self-hosted WebRTC ICE servers](#self-hosted-webrtc-ice-servers).
 - [improved stability of creating new connections: more reliable groups, files and contacts](#improved-stability-of-creating-new-connections).
 - [deleting files and media](#deleting-files-and-media).
-- [For developers - TypeScript SDK for integrating with SimpleX Chat](#for-developers---typescript-sdk-for-integrating-with-simplex-chat) (e.g., chat bots or chat assistants).
+- [For developers - TypeScript SDK for integrating with Privateline X-Chat](#for-developers---typescript-sdk-for-integrating-with-simplex-chat) (e.g., chat bots or chat assistants).
 - animated images in Android app.
 - disable messages per contact / group in terminal app (it is already supported in mobile apps).
 
@@ -38,9 +38,9 @@ Other new features since v3:
 
 <img src="./images/20220928-passphrase.png" width="330">
 
-SimpleX Chat focus has always been on protecting messages in delivery, not when they are stored on the device. This release changes it - now all messages that you receive and send are stored on the device encrypted with [SQLCipher](https://github.com/sqlcipher/sqlcipher).
+Privateline X-Chat focus has always been on protecting messages in delivery, not when they are stored on the device. This release changes it - now all messages that you receive and send are stored on the device encrypted with [SQLCipher](https://github.com/sqlcipher/sqlcipher).
 
-**Please note**: If you are already using SimpleX Chat, your database will remain unencrypted until you enter the passphrase via the app settings. You have to remember the passphrase you choose, as there is no way to recover it if it is lost.
+**Please note**: If you are already using Privateline X-Chat, your database will remain unencrypted until you enter the passphrase via the app settings. You have to remember the passphrase you choose, as there is no way to recover it if it is lost.
 
 By default your passphrase will be stored securely on the device (in KeyChain on iOS or encrypted with the key stored in TPM, if available, on Android) - it is only accessible to the app, and only on one device. Storing passphrase is required for instant notifications to work. In this case, if you lose the passphrase, the app will continue to work, but you will not be able to change the passphrase and to migrate your user profile to another device.
 
@@ -50,13 +50,13 @@ For additional security of your messages you also have the option to remove the 
 
 <img src="./images/20220928-ice-servers.png" width="330">
 
-You could make audio and video calls via SimpleX Chat WebRTC servers since [v3](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#end-to-end-encrypted-audiovideo-calls) - that meant that our servers could observe your IP addresses. This release adds configuration to use your own STUN/TURN servers, helping you protect your privacy.
+You could make audio and video calls via Privateline X-Chat WebRTC servers since [v3](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#end-to-end-encrypted-audiovideo-calls) - that meant that our servers could observe your IP addresses. This release adds configuration to use your own STUN/TURN servers, helping you protect your privacy.
 
 See [this guide](https://github.com/simplex-chat/simplex-chat/blob/stable/docs/WEBRTC.md) to learn how to deploy your own `coturn` server and to configure the mobile apps to use it.
 
 ### Improved stability of creating new connections
 
-Secret groups made SimpleX Chat much more useful, but because SimpleX groups are completely decentralized and for them to work each member should connect to all other members, sometimes these connections fail and the group becomes fragmented - some members do not receive all messages. That was more common for larger groups, as the number of required member connections is O(n^2) of the group size.
+Secret groups made Privateline X-Chat much more useful, but because SimpleX groups are completely decentralized and for them to work each member should connect to all other members, sometimes these connections fail and the group becomes fragmented - some members do not receive all messages. That was more common for larger groups, as the number of required member connections is O(n^2) of the group size.
 
 The reason for that problem was that some network operations required for group connections were not retried. This release improves stability of all network operations - receiving messages, making new contact connections, receiving files and connecting to members in the groups you join.
 
@@ -66,13 +66,13 @@ The reason for that problem was that some network operations required for group 
 
 While the database with messages and all contacts is now encrypted, the files you receive and send are not (we are planning to improve it later). To protect the security of the files we have added an option to delete all files from the app storage - just make sure not to do it before the files you send are delivered to the recipients, or they won't receive them.
 
-### For developers - TypeScript SDK for integrating with SimpleX Chat
+### For developers - TypeScript SDK for integrating with Privateline X-Chat
 
-It's been quite some time since it's been possible to create a chat-bot using SimpleX Chat as a library - but you had to either write Haskell code or use foreign function interface in any other language.
+It's been quite some time since it's been possible to create a chat-bot using Privateline X-Chat as a library - but you had to either write Haskell code or use foreign function interface in any other language.
 
-With v4 we are announcing [TypeScript SimpleX Chat Client SDK](https://github.com/simplex-chat/simplex-chat/tree/stable/packages/simplex-chat-client/typescript) that you can use to create any integrations with SimpleX Chat CLI.
+With v4 we are announcing [TypeScript Privateline X-Chat Client SDK](https://github.com/simplex-chat/simplex-chat/tree/stable/packages/simplex-chat-client/typescript) that you can use to create any integrations with Privateline X-Chat CLI.
 
-You can run SimpleX Chat CLI as a local WebSockets server on any port, we use 5225 here:
+You can run Privateline X-Chat CLI as a local WebSockets server on any port, we use 5225 here:
 
 ```bash
 simplex-chat -p 5225
@@ -80,9 +80,9 @@ simplex-chat -p 5225
 
 Then you can create a JavaScript or TypeScript application that would connect to it and control it via a simple WebSocket API. TypeScript SDK defines all necessary types and convenience functions to use in your applications. See this [sample bot](https://github.com/simplex-chat/simplex-chat/blob/stable/packages/simplex-chat-client/typescript/examples/squaring-bot.js) and README page.
 
-SimpleX Chat API allows you to:
+Privateline X-Chat API allows you to:
 
-- create and change user profile (although in most cases you would do it manually, via SimpleX Chat terminal app).
+- create and change user profile (although in most cases you would do it manually, via Privateline X-Chat terminal app).
 - create and accept invitations or connect with the contacts.
 - create and manage long-term user address, accepting connection requests from the code or automatically.
 - create, join and manage groups - this can be used, for example, to connect two different people who connected to chat-bot.
@@ -95,7 +95,7 @@ Some possible applications you can create:
 - language translation bots,
 - etc.
 
-As SimpleX Chat protocols provide strong encryption and authorization of the connections, you could use it not only in various communication scenarios, but also to remotely control any equipment where high level of security is required, for example:
+As Privateline X-Chat protocols provide strong encryption and authorization of the connections, you could use it not only in various communication scenarios, but also to remotely control any equipment where high level of security is required, for example:
 
 - smart home automation,
 - network services,
@@ -124,7 +124,7 @@ It is planned for October, and if there are no major issues we will publish this
 
 This is a major expense for use - over $20,000 - I would really appreciate if you could help us cover some part of this cost with the donations.
 
-Our promise to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations of the clients and the servers. We will be establishing a legal framework this year to ensure that it doesn't change if the ownership of SimpleX Chat Ltd changes at any future point.
+Our promise to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations of the clients and the servers. We will be establishing a legal framework this year to ensure that it doesn't change if the ownership of Privateline X-Chat Ltd changes at any future point.
 
 Please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
 
@@ -139,4 +139,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

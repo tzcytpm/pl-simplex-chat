@@ -1,6 +1,6 @@
 # Blog
 
-4 févr. 2023 [SimpleX Chat v4.5 publié](../../20230103-simplex-chat-v4.4-disappearing-messages.md)
+4 févr. 2023 [Privateline X-Chat v4.5 publié](../../20230103-simplex-chat-v4.4-disappearing-messages.md)
 
 - profils de chat multiples.
 - brouillon de message.
@@ -10,7 +10,7 @@
 
 Nous avons également ajouté [l'interface en italien](#french-language-interface), grâce à nos utilisateurs et à Weblate !
 
-3 janv. 2023 [SimpleX Chat v4.4 publié](../../20230103-simplex-chat-v4.4-disappearing-messages.md)
+3 janv. 2023 [Privateline X-Chat v4.4 publié](../../20230103-simplex-chat-v4.4-disappearing-messages.md)
 
 - messages éphèméres.
 - messages "en direct" (dynamique).
@@ -19,7 +19,7 @@ Nous avons également ajouté [l'interface en italien](#french-language-interfac
 
 Nous avons également ajouté [l'interface en français](#french-language-interface), grâce à nos utilisateurs et à Weblate !
 
-6 déc. 2022 [SimpleX Chat : révision et sortie de la v4.3](../../20221206-simplex-chat-v4.3-voice-messages.md)
+6 déc. 2022 [Privateline X-Chat : révision et sortie de la v4.3](../../20221206-simplex-chat-v4.3-voice-messages.md)
 
 Critiques de novembre :
 
@@ -39,7 +39,7 @@ Sortie de la v4.3 :
 
 _"Avez-vous été audité ou devons-nous simplement vous ignorer ?"_
 
-SimpleX Chat a été audité par [Trail of Bits](https://www.trailofbits.com/about), 4 problèmes ont été identifiés, et 3 d'entre eux sont corrigés dans la version 4.2.
+Privateline X-Chat a été audité par [Trail of Bits](https://www.trailofbits.com/about), 4 problèmes ont été identifiés, et 3 d'entre eux sont corrigés dans la version 4.2.
 
 Le nouveau site web est en ligne : https://simplex.chat
 
@@ -57,7 +57,7 @@ Sortie de la v4.2 :
 - support pour les serveurs WebRTC ICE auto-hébergés
 - amélioration de la stabilité de la création de nouvelles connexions : groupes, fichiers et contacts plus fiables
 - suppression des fichiers et des médias - par sécurité et pour économiser de l'espace de stockage
-- Pour les développeurs - TypeScript SDK pour l'intégration avec SimpleX Chat
+- Pour les développeurs - TypeScript SDK pour l'intégration avec Privateline X-Chat
 - support des images animées dans l'application Android
 - Interface utilisateur en allemand pour les applications mobiles
 
@@ -98,18 +98,18 @@ L'audit d'implémentation est prévu pour Octobre !
 
 11 mai 2022 [Publication de la v2.0 - envoi d'images et de fichiers dans les applications mobiles](../../20220511-simplex-chat-v2-images-files.md)
 
-04 avr. 2022 [Notifications instantanées pour les applications mobiles SimpleX Chat](../../20220404-simplex-chat-instant-notifications.md)
+04 avr. 2022 [Notifications instantanées pour les applications mobiles Privateline X-Chat](../../20220404-simplex-chat-instant-notifications.md)
 
 08 mars 2022 [Applications mobiles pour iOS et Android](../../20220308-simplex-chat-mobile-apps.md)
 
-14 févr. 2022. [SimpleX Chat : rejoignez notre version bêta publique pour iOS](../../20220214-simplex-chat-ios-public-beta.md)
+14 févr. 2022. [Privateline X-Chat : rejoignez notre version bêta publique pour iOS](../../20220214-simplex-chat-ios-public-beta.md)
 
-12 janv. 2022. [SimpleX Chat v1 : la plateforme de chat et d'application la plus privée et la plus sécurisée](../../20220112-simplex-chat-v1-released.md)
+12 janv. 2022. [Privateline X-Chat v1 : la plateforme de chat et d'application la plus privée et la plus sécurisée](../../20220112-simplex-chat-v1-released.md)
 
-08 déc. 2021. [Sortie de SimpleX Chat v0.5 : la première plateforme de chat 100% privée par définition - aucun accès à votre graphe de connexions](../../20211208-simplex-chat-v0.5-released.md)
+08 déc. 2021. [Sortie de Privateline X-Chat v0.5 : la première plateforme de chat 100% privée par définition - aucun accès à votre graphe de connexions](../../20211208-simplex-chat-v0.5-released.md)
 
-14 septembre 2021. [SimpleX Chat v0.4 publié : chat open-source qui utilise un protocole de routage de messages préservant la confidentialité](../../20210914-simplex-chat-v0.4-released.md)
+14 septembre 2021. [Privateline X-Chat v0.4 publié : chat open-source qui utilise un protocole de routage de messages préservant la confidentialité](../../20210914-simplex-chat-v0.4-released.md)
 
 12 mai 2021. [Prototype de chat SimpleX](../../20210512-simplex-chat-terminal-ui.md)
 
-22 oct. 2020. [SimpleX Chat](../../20201022-simplex-chat.md)
+22 oct. 2020. [Privateline X-Chat](../../20201022-simplex-chat.md)

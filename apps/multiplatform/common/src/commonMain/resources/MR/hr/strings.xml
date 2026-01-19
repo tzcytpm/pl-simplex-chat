@@ -1294,7 +1294,7 @@
     <string name="servers_info_previously_connected_servers_section_header">Prethodno povezani serveri</string>
     <string name="chunks_downloaded">Komadi su preuzeti</string>
     <string name="disable_automatic_deletion_question">Onemogućiti automatsko brisanje poruka?</string>
-    <string name="thank_you_for_installing_simplex">Hvala Vam što ste instalirali SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Hvala Vam što ste instalirali Privateline X-Chat!</string>
     <string name="smp_servers_test_some_failed">Neki serveri nisu prošli test:</string>
     <string name="operator_info_title">Mrežni operator</string>
     <string name="migrate_to_device_try_again">Možete pokušati ponovo.</string>
@@ -1314,7 +1314,7 @@
     <string name="migrate_from_device_check_connection_and_try_again">Proverite internet vezu i pokušajte ponovo</string>
     <string name="servers_info_missing">Bez Informacija, pokušajte ponovo da učitate</string>
     <string name="chunks_deleted">Komadi su odstranjeni</string>
-    <string name="ntf_channel_calls">SimpleX Chat pozivi</string>
+    <string name="ntf_channel_calls">Privateline X-Chat pozivi</string>
     <string name="xftp_servers">XFTP serveri</string>
     <string name="network_and_servers">Mreža i serveri</string>
     <string name="configure_ICE_servers">Podesite ICE servere</string>
@@ -1352,7 +1352,7 @@
     <string name="privacy_media_blur_radius_strong">Intenzivno</string>
     <string name="delete_message_mark_deleted_warning">Poruka će biti označena za ostranjivanje. Primaoci će moći da otkriju ovu poruku.</string>
     <string name="privacy_and_security">Privatnost i bezbednost</string>
-    <string name="ntf_channel_messages">SimpleX Chat poruke</string>
+    <string name="ntf_channel_messages">Privateline X-Chat poruke</string>
     <string name="migrate_from_device_try_again">Možete pokušati ponovo.</string>
     <string name="migrate_from_device_error_saving_settings">Greška pri čuvanju podešavanja</string>
     <string name="v4_6_group_welcome_message_descr">Postavi poruku koja će biti prikazana novim članovima!</string>
@@ -1470,7 +1470,7 @@
     <string name="v5_2_fix_encryption">Zadržati Vaše konekcije</string>
     <string name="migrate_to_device_title">Migriraj ovde</string>
     <string name="connect_plan_connect_via_link">Povezati se pomoću linka?</string>
-    <string name="install_simplex_chat_for_terminal">Instaliraj SimpleX Chat za terminal</string>
+    <string name="install_simplex_chat_for_terminal">Instaliraj Privateline X-Chat za terminal</string>
     <string name="network_smp_web_port_toggle">Koristiti web port</string>
     <string name="only_you_can_make_calls">Samo Vi možete da upućujete pozive.</string>
     <string name="app_check_for_updates_button_open">Otvoriti lokaciju datoteke</string>

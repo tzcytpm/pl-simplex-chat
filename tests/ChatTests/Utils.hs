@@ -327,7 +327,7 @@ groupFeatures_ dir =
     ((dir, "Message reactions: on"), Nothing, Nothing),
     ((dir, "Voice messages: on"), Nothing, Nothing),
     ((dir, "Files and media: on"), Nothing, Nothing),
-    ((dir, "SimpleX links: on"), Nothing, Nothing),
+    ((dir, "PrivatelineX links: on"), Nothing, Nothing),
     ((dir, "Member reports: on"), Nothing, Nothing),
     ((dir, "Recent history: on"), Nothing, Nothing)
   ]
@@ -345,7 +345,7 @@ businessGroupFeatures'' dir =
     ((dir, "Message reactions: on"), Nothing, Nothing),
     ((dir, "Voice messages: on"), Nothing, Nothing),
     ((dir, "Files and media: on"), Nothing, Nothing),
-    ((dir, "SimpleX links: on"), Nothing, Nothing),
+    ((dir, "PrivatelineX links: on"), Nothing, Nothing),
     ((dir, "Member reports: off"), Nothing, Nothing),
     ((dir, "Recent history: on"), Nothing, Nothing)
   ]

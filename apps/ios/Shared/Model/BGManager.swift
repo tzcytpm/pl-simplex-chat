@@ -3,7 +3,7 @@
 //  SimpleX
 //
 //  Created by Evgeny Poberezkin on 08/02/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import Foundation

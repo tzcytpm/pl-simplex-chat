@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Evgeny on 03/08/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -13,10 +13,10 @@ import Yams
 let colorModesLocalized: [LocalizedStringKey] = ["System", "Light", "Dark"]
 let colorModesNames: [DefaultThemeMode?] = [nil, DefaultThemeMode.light, DefaultThemeMode.dark]
 
-let darkThemesLocalized: [LocalizedStringKey] = ["Dark", "SimpleX", "Black"]
+let darkThemesLocalized: [LocalizedStringKey] = ["Dark", "PrivatelineX", "Black"]
 let darkThemesNames: [String] = [DefaultTheme.DARK.themeName, DefaultTheme.SIMPLEX.themeName, DefaultTheme.BLACK.themeName]
 
-let darkThemesWithoutBlackLocalized: [LocalizedStringKey] = ["Dark", "SimpleX"]
+let darkThemesWithoutBlackLocalized: [LocalizedStringKey] = ["Dark", "PrivatelineX"]
 let darkThemesWithoutBlackNames: [String] = [DefaultTheme.DARK.themeName, DefaultTheme.SIMPLEX.themeName]
 
 let appSettingsURL = URL(string: UIApplication.openSettingsURLString)!

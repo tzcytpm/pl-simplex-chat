@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Diogo Cunha on 13/11/2024.
-//  Copyright © 2024 SimpleX Chat. All rights reserved.
+//  Copyright © 2024 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -31,7 +31,7 @@ struct AddressCreationCard: View {
                     .frame(width: envelopeSize, height: envelopeSize)
                     .foregroundColor(.accentColor)
                 VStack(alignment: .leading) {
-                    Text("Your SimpleX address")
+                    Text("Your PrivatelineX address")
                         .font(.title3)
                     Spacer()
                     Text("How to use it") + textSpace + Text(Image(systemName: "info.circle")).foregroundColor(theme.colors.secondary)
@@ -61,8 +61,8 @@ struct AddressCreationCard: View {
         .frame(height: dynamicSize(userFont).rowHeight)
         .alert(isPresented: $showAddressCreationAlert) {
             Alert(
-                title: Text("SimpleX address"),
-                message: Text("Tap Create SimpleX address in the menu to create it later."),
+                title: Text("PrivatelineX address"),
+                message: Text("Tap Create PrivatelineX address in the menu to create it later."),
                 dismissButton: .default(Text("Ok")) {
                     withAnimation {
                         addressCreationCardShown = true
@@ -73,7 +73,7 @@ struct AddressCreationCard: View {
         .sheet(isPresented: $showAddressSheet) {
             NavigationView {
                 UserAddressView(autoCreate: true)
-                    .navigationTitle("SimpleX address")
+                    .navigationTitle("PrivatelineX address")
                     .navigationBarTitleDisplayMode(.large)
                     .modifier(ThemedBackground(grouped: true))
             }

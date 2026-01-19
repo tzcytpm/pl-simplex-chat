@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**e2e versleuteld** video gesprek";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Meer privé**: bekijk elke 20 minuten nieuwe berichten. Apparaattoken wordt gedeeld met de SimpleX Chat-server, maar niet hoeveel contacten of berichten u heeft.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Meer privé**: bekijk elke 20 minuten nieuwe berichten. Apparaattoken wordt gedeeld met de Privateline X-Chat-server, maar niet hoeveel contacten of berichten u heeft.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Meest privé**: gebruik geen SimpleX Chat-notificatie server, controleer berichten regelmatig op de achtergrond (afhankelijk van hoe vaak u de app gebruikt).";
+"**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Meest privé**: gebruik geen Privateline X-Chat-notificatie server, controleer berichten regelmatig op de achtergrond (afhankelijk van hoe vaak u de app gebruikt).";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**Let op**: als u dezelfde database op twee apparaten gebruikt, wordt de decodering van berichten van uw verbindingen verbroken, als veiligheidsmaatregel.";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Let op**: u kunt het wachtwoord NIET herstellen of wijzigen als u het kwijtraakt.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Aanbevolen**: apparaattoken en meldingen worden naar de SimpleX Chat-meldingsserver gestuurd, maar niet de berichtinhoud, -grootte of van wie het afkomstig is.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." = "**Aanbevolen**: apparaattoken en meldingen worden naar de Privateline X-Chat-meldingsserver gestuurd, maar niet de berichtinhoud, -grootte of van wie het afkomstig is.";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**Link scannen/plakken**: om verbinding te maken via een link die u hebt ontvangen.";
@@ -257,7 +257,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>Hoi!</p>\n<p><a href=\"%@\">Maak verbinding met mij via SimpleX Chat</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Privateline X-Chat</a></p>" = "<p>Hoi!</p>\n<p><a href=\"%@\">Maak verbinding met mij via Privateline X-Chat</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~staking~";
@@ -332,7 +332,7 @@ time interval */
 "About operators" = "Over operatoren";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "Over SimpleX Chat";
+"About Privateline X-Chat" = "Over Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "hier boven, kies dan:";
@@ -880,7 +880,7 @@ marked deleted chat item preview text */
 "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "Via chatprofiel (standaard) of [via verbinding](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).";
 
 /* No comment provided by engineer. */
-"By using SimpleX Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Door SimpleX Chat te gebruiken, gaat u ermee akkoord:\n- alleen legale content te versturen in openbare groepen.\n- andere gebruikers te respecteren – geen spam.";
+"By using Privateline X-Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Door Privateline X-Chat te gebruiken, gaat u ermee akkoord:\n- alleen legale content te versturen in openbare groepen.\n- andere gebruikers te respecteren – geen spam.";
 
 /* No comment provided by engineer. */
 "call" = "bellen";
@@ -1219,7 +1219,7 @@ set passcode view */
 "Connect to desktop" = "Verbinden met desktop";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "maak verbinding met SimpleX Chat-ontwikkelaars.";
+"connect to Privateline X-Chat developers." = "maak verbinding met Privateline X-Chat-ontwikkelaars.";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "Maak sneller verbinding met je vrienden.";
@@ -1228,7 +1228,7 @@ set passcode view */
 "Connect to yourself?\nThis is your own one-time link!" = "Verbinding maken met jezelf?\nDit is uw eigen eenmalige link!";
 
 /* new chat sheet title */
-"Connect to yourself?\nThis is your own SimpleX address!" = "Verbinding maken met jezelf?\nDit is uw eigen SimpleX adres!";
+"Connect to yourself?\nThis is your own PrivatelineX address!" = "Verbinding maken met jezelf?\nDit is uw eigen SimpleX adres!";
 
 /* new chat sheet title */
 "Connect via contact address" = "Verbinding maken via contactadres";
@@ -1453,7 +1453,7 @@ set passcode view */
 "Create queue" = "Maak een wachtrij";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "Maak een SimpleX adres aan";
+"Create PrivatelineX address" = "Maak een SimpleX adres aan";
 
 /* No comment provided by engineer. */
 "Create your profile" = "Maak je profiel aan";
@@ -1797,10 +1797,10 @@ swipe action */
 "Device" = "Apparaat";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Apparaatverificatie is uitgeschakeld. SimpleX Vergrendelen uitschakelen.";
+"Device authentication is disabled. Turning off PrivatelineX Lock." = "Apparaatverificatie is uitgeschakeld. SimpleX Vergrendelen uitschakelen.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Apparaatverificatie is niet ingeschakeld. Je kunt SimpleX Vergrendelen inschakelen via Instellingen zodra je apparaatverificatie hebt ingeschakeld.";
+"Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." = "Apparaatverificatie is niet ingeschakeld. Je kunt SimpleX Vergrendelen inschakelen via Instellingen zodra je apparaatverificatie hebt ingeschakeld.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "verschillende migratie in de app/database: %@ / %@";
@@ -1833,7 +1833,7 @@ swipe action */
 "Disable for all" = "Uitschakelen voor iedereen";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "SimpleX Vergrendelen uitschakelen";
+"Disable PrivatelineX Lock" = "PrivatelineX Vergrendelen uitschakelen";
 
 /* No comment provided by engineer. */
 "disabled" = "uitgeschakeld";
@@ -2002,7 +2002,7 @@ chat item action */
 "Enable self-destruct passcode" = "Zelfvernietigings wachtwoord inschakelen";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "SimpleX Vergrendelen inschakelen";
+"Enable PrivatelineX Lock" = "PrivatelineX Vergrendelen inschakelen";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "Schakel TCP keep-alive in";
@@ -2529,7 +2529,7 @@ snd error text */
 "For console" = "Voor console";
 
 /* No comment provided by engineer. */
-"For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." = "Als uw contactpersoon bijvoorbeeld berichten ontvangt via een SimpleX Chat-server, worden deze door uw app via een Flux-server verzonden.";
+"For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server." = "Als uw contactpersoon bijvoorbeeld berichten ontvangt via een Privateline X-Chat-server, worden deze door uw app via een Flux-server verzonden.";
 
 /* No comment provided by engineer. */
 "For me" = "Voor mij";
@@ -2877,7 +2877,7 @@ snd error text */
 "Initial role" = "Initiële rol";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "Installeer [SimpleX Chat voor terminal](https://github.com/simplex-chat/simplex-chat)";
+"Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "Installeer [Privateline X-Chat voor terminal](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Direct";
@@ -3084,7 +3084,7 @@ snd error text */
 "left" = "is vertrokken";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Laten we praten in SimpleX Chat";
+"Let's talk in Privateline X-Chat" = "Laten we praten in Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "Light" = "Licht";
@@ -4508,7 +4508,7 @@ chat item action */
 "Search bar accepts invitation links." = "Zoekbalk accepteert uitnodigingslinks.";
 
 /* No comment provided by engineer. */
-"Search or paste SimpleX link" = "Zoeken of plak een SimpleX link";
+"Search or paste PrivatelineX link" = "Zoeken of plak een PrivatelineX link";
 
 /* network option */
 "sec" = "sec";
@@ -4812,13 +4812,13 @@ chat item action */
 "Share profile" = "Profiel delen";
 
 /* No comment provided by engineer. */
-"Share SimpleX address on social media." = "Deel het SimpleX-adres op sociale media.";
+"Share PrivatelineX address on social media." = "Deel het SimpleX-adres op sociale media.";
 
 /* No comment provided by engineer. */
 "Share this 1-time invite link" = "Deel deze eenmalige uitnodigingslink";
 
 /* No comment provided by engineer. */
-"Share to SimpleX" = "Delen op SimpleX";
+"Share to PrivatelineX" = "Delen op PrivatelineX";
 
 /* No comment provided by engineer. */
 "Share with contacts" = "Delen met contacten";
@@ -4854,67 +4854,67 @@ chat item action */
 "Show:" = "Toon:";
 
 /* No comment provided by engineer. */
-"SimpleX" = "SimpleX";
+"PrivatelineX" = "PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "SimpleX adres";
+"PrivatelineX address" = "PrivatelineX adres";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "SimpleX adres";
+"PrivatelineX Address" = "PrivatelineX adres";
 
 /* No comment provided by engineer. */
-"SimpleX address and 1-time links are safe to share via any messenger." = "SimpleX-adressen en eenmalige links kunnen veilig worden gedeeld via elke messenger.";
+"PrivatelineX address and 1-time links are safe to share via any messenger." = "PrivatelineX-adressen en eenmalige links kunnen veilig worden gedeeld via elke messenger.";
 
 /* No comment provided by engineer. */
-"SimpleX address or 1-time link?" = "SimpleX adres of eenmalige link?";
+"PrivatelineX address or 1-time link?" = "PrivatelineX adres of eenmalige link?";
 
 /* alert title */
-"SimpleX address settings" = "Instellingen automatisch accepteren";
+"PrivatelineX address settings" = "Instellingen automatisch accepteren";
 
 /* simplex link type */
-"SimpleX channel link" = "SimpleX channel link";
+"PrivatelineX channel link" = "PrivatelineX channel link";
 
 /* No comment provided by engineer. */
-"SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." = "Simplex-chat en flux hebben een overeenkomst gemaakt om door flux geëxploiteerde servers in de app op te nemen.";
+"Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app." = "Simplex-chat en flux hebben een overeenkomst gemaakt om door flux geëxploiteerde servers in de app op te nemen.";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "De beveiliging van SimpleX Chat is gecontroleerd door Trail of Bits.";
+"Privateline X-Chat security was audited by Trail of Bits." = "De beveiliging van Privateline X-Chat is gecontroleerd door Trail of Bits.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX contact adres";
+"PrivatelineX contact address" = "PrivatelineX contact adres";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX versleuteld bericht of verbindingsgebeurtenis";
+"PrivatelineX encrypted message or connection event" = "PrivatelineX versleuteld bericht of verbindingsgebeurtenis";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX groep link";
+"PrivatelineX group link" = "PrivatelineX groep link";
 
 /* chat feature */
-"SimpleX links" = "SimpleX links";
+"PrivatelineX links" = "PrivatelineX links";
 
 /* No comment provided by engineer. */
-"SimpleX links are prohibited." = "SimpleX-links zijn niet toegestaan.";
+"PrivatelineX links are prohibited." = "PrivatelineX-links zijn niet toegestaan.";
 
 /* No comment provided by engineer. */
-"SimpleX links not allowed" = "SimpleX-links zijn niet toegestaan";
+"PrivatelineX links not allowed" = "PrivatelineX-links zijn niet toegestaan";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "SimpleX Vergrendelen";
+"PrivatelineX Lock" = "PrivatelineX Vergrendelen";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "SimpleX Vergrendel modus";
+"PrivatelineX Lock mode" = "PrivatelineX Vergrendel modus";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "SimpleX vergrendeling niet ingeschakeld!";
+"PrivatelineX Lock not enabled!" = "PrivatelineX vergrendeling niet ingeschakeld!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "SimpleX Vergrendelen ingeschakeld";
+"PrivatelineX Lock turned on" = "PrivatelineX Vergrendelen ingeschakeld";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "Eenmalige SimpleX uitnodiging";
+"PrivatelineX one-time invitation" = "Eenmalige SimpleX uitnodiging";
 
 /* No comment provided by engineer. */
-"SimpleX protocols reviewed by Trail of Bits." = "SimpleX-protocollen beoordeeld door Trail of Bits.";
+"PrivatelineX protocols reviewed by Trail of Bits." = "PrivatelineX-protocollen beoordeeld door Trail of Bits.";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Vereenvoudigde incognitomodus";
@@ -5014,7 +5014,7 @@ report reason */
 "Stop sharing address?" = "Stop met het delen van adres?";
 
 /* authentication reason */
-"Stop SimpleX" = "Stop SimpleX";
+"Stop PrivatelineX" = "Stop PrivatelineX";
 
 /* No comment provided by engineer. */
 "Stopping chat" = "Chat stoppen";
@@ -5041,7 +5041,7 @@ report reason */
 "Subscriptions ignored" = "Subscriptions genegeerd";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Ondersteuning van SimpleX Chat";
+"Support Privateline X-Chat" = "Ondersteuning van Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "Switch audio and video during the call." = "Wisselen tussen audio en video tijdens het gesprek.";
@@ -5065,7 +5065,7 @@ report reason */
 "Tap button " = "Tik op de knop ";
 
 /* No comment provided by engineer. */
-"Tap Create SimpleX address in the menu to create it later." = "Tik op SimpleX-adres maken in het menu om het later te maken.";
+"Tap Create PrivatelineX address in the menu to create it later." = "Tik op SimpleX-adres maken in het menu om het later te maken.";
 
 /* No comment provided by engineer. */
 "Tap to activate profile." = "Tik hier om profiel te activeren.";
@@ -5122,7 +5122,7 @@ report reason */
 "Tests failed!" = "Testen mislukt!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Bedankt voor het installeren van SimpleX Chat!";
+"Thank you for installing Privateline X-Chat!" = "Bedankt voor het installeren van Privateline X-Chat!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Dank aan de gebruikers - [draag bij via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -5287,7 +5287,7 @@ report reason */
 "To protect timezone, image/voice files use UTC." = "Om de tijdzone te beschermen, gebruiken afbeeldings-/spraakbestanden UTC.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Schakel SimpleX Vergrendelen om uw informatie te beschermen.\nU wordt gevraagd de authenticatie te voltooien voordat deze functie wordt ingeschakeld.";
+"To protect your information, turn on PrivatelineX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Schakel SimpleX Vergrendelen om uw informatie te beschermen.\nU wordt gevraagd de authenticatie te voltooien voordat deze functie wordt ingeschakeld.";
 
 /* No comment provided by engineer. */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "Om uw IP-adres te beschermen, gebruikt privéroutering uw SMP-servers om berichten te bezorgen.";
@@ -5545,7 +5545,7 @@ report reason */
 "Use servers" = "Gebruik servers";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "SimpleX Chat servers gebruiken?";
+"Use Privateline X-Chat servers?" = "Privateline X-Chat servers gebruiken?";
 
 /* No comment provided by engineer. */
 "Use SOCKS proxy" = "Gebruik SOCKS proxy";
@@ -5572,7 +5572,7 @@ report reason */
 "Username" = "Gebruikersnaam";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "Gebruik SimpleX Chat servers.";
+"Using Privateline X-Chat servers." = "Gebruik Privateline X-Chat servers.";
 
 /* No comment provided by engineer. */
 "v%@" = "v%@";
@@ -5884,7 +5884,7 @@ report reason */
 "You can still view conversation with %@ in the list of chats." = "Je kunt het gesprek met %@ nog steeds bekijken in de lijst met chats.";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "Je kunt SimpleX Vergrendeling aanzetten via Instellingen.";
+"You can turn on PrivatelineX Lock via Settings." = "Je kunt SimpleX Vergrendeling aanzetten via Instellingen.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "U kunt markdown gebruiken voor opmaak in berichten:";
@@ -6079,5 +6079,5 @@ report reason */
 "Your settings" = "Uw instellingen";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "Uw SimpleX adres";
+"Your PrivatelineX address" = "Uw SimpleX adres";
 

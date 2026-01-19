@@ -30,7 +30,7 @@
     <string name="accept_contact_button">Onayla</string>
     <string name="accept_connection_request__question">Bağlantı isteği kabul edilsin mi?</string>
     <string name="learn_more_about_address">SimpleX Adresi Hakkında</string>
-    <string name="about_simplex_chat">SimpleX Chat Hakkında</string>
+    <string name="about_simplex_chat">Privateline X-Chat Hakkında</string>
     <string name="about_simplex">SimpleX Hakkında</string>
     <string name="accept_call_on_lock_screen">Yanıtla</string>
     <string name="abort_switch_receiving_address">Adres değişikliğini iptal et</string>
@@ -713,7 +713,7 @@
     <string name="invalid_contact_link">Geçersiz link!</string>
     <string name="invalid_QR_code">Geçersiz QR kodu</string>
     <string name="smp_servers_invalid_address">Geçersiz sunucu adresi!</string>
-    <string name="install_simplex_chat_for_terminal">Terminal için SimpleX Chat\'i yükleyin</string>
+    <string name="install_simplex_chat_for_terminal">Terminal için Privateline X-Chat\'i yükleyin</string>
     <string name="icon_descr_call_connecting">Aramaya bağlanılıyor</string>
     <string name="integrity_msg_bad_hash">kötü mesaj hash\'i</string>
     <string name="alert_title_msg_bad_hash">Kötü mesaj hash\'i</string>
@@ -786,7 +786,7 @@
     <string name="your_SMP_servers">SMP sunucularınız</string>
     <string name="your_XFTP_servers">XFTP sunucularınız</string>
     <string name="configure_ICE_servers">ICE sunucularını yapılandır</string>
-    <string name="email_invite_subject">Hadi SimpleX Chat\'te konuşalım</string>
+    <string name="email_invite_subject">Hadi Privateline X-Chat\'te konuşalım</string>
     <string name="your_profile_is_stored_on_device_and_shared_only_with_contacts_simplex_cannot_see_it">Profiliniz cihazınızda saklanır ve sadece kişilerinizle paylaşılır. SimpleX sunucuları profilinizi göremez.</string>
     <string name="integrity_msg_bad_id">kötü mesaj kimliği</string>
     <string name="your_privacy">Gizliliğiniz</string>
@@ -887,7 +887,7 @@
     <string name="contact_sent_large_file">Kişiniz desteklenen maksimum boyuttan (%1$s) daha büyük bir dosya gönderdi.</string>
     <string name="video_will_be_received_when_contact_completes_uploading">Kişiniz yüklemeyi tamamladığında video alınacaktır.</string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[Ayrıca bağlantıya tıklayarak da bağlanabilirsiniz. Eğer bağlantı tarayıcda açılırsa, <b>mobil uygulamada aç</b> seçeneğine tıklayın.]]></string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Soru sormak ve güncellemeleri almak için <font color="#0088ff">SimpleX Chat geliştiricilerine bağlanabilirsiniz</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Soru sormak ve güncellemeleri almak için <font color="#0088ff">Privateline X-Chat geliştiricilerine bağlanabilirsiniz</font>.]]></string>
     <string name="you_can_hide_or_mute_user_profile">Bir kullanıcının profilini gizleyebilir veya sessize alabilirsiniz - menü için basılı tutun.</string>
     <string name="you_must_use_the_most_recent_version_of_database">Sohbet veritabanınızın en son sürümünü SADECE bir cihazda kullanmalısınız, aksi takdirde bazı kişilerden daha fazla mesaj alamayabilirsiniz.</string>
     <string name="wrong_passphrase">Yanlış veritabanı parolası</string>
@@ -944,7 +944,7 @@
     <string name="periodic_notifications">Periyodik bildirimler</string>
     <string name="periodic_notifications_disabled">Periyodik bildirimler devre dışı</string>
     <string name="enter_passphrase_notification_desc">Bildirimleri almak için lütfen veri tabanı parolasını girin</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Bilgilerinizi korumak için SimpleX Lock özelliğini açın.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Bilgilerinizi korumak için PrivatelineX Lock özelliğini açın.
 \nBu özellik etkinleştirilmeden önce kimlik doğrulamayı tamamlamanız istenecektir.</string>
     <string name="la_notice_turn_on">Aç</string>
     <string name="la_please_remember_to_store_password">Hatırlayın veya güvenli bir şekilde saklayın - kaybolan bir parolayı kurtarmanın bir yolu yoktur!</string>
@@ -966,7 +966,7 @@
     <string name="this_string_is_not_a_connection_link">Bu dize bir bağlantı linki değil!</string>
     <string name="rate_the_app">Uygulamaya puan verin</string>
     <string name="to_reveal_profile_enter_password">Gizli profilinizi ortaya çıkarmak için, Sohbet profilleriniz sayfasındaki arama alanına tam bir parola girin.</string>
-    <string name="open_simplex_chat_to_accept_call">Aramayı kabul etmek için SimpleX Chat\'i açın</string>
+    <string name="open_simplex_chat_to_accept_call">Aramayı kabul etmek için Privateline X-Chat\'i açın</string>
     <string name="status_no_e2e_encryption">uçtan uca şifreleme yok</string>
     <string name="call_connection_peer_to_peer">eşler arası</string>
     <string name="icon_descr_call_pending_sent">Bekleyen arama</string>
@@ -1080,7 +1080,7 @@
     <string name="chat_with_the_founder">Sorularınızı ve fikirlerinizi gönderin</string>
     <string name="delete_files_and_media_desc">Bu eylem geri alınamaz - tüm alınan ve gönderilen dosyalar ve medyalar silinecek. Düşük çözünürlükteki resimlar kalacaktır.</string>
     <string name="encrypt_local_files">Yerel dosyaları şifrele</string>
-    <string name="ntf_channel_calls">SimpleX Chat aramaları</string>
+    <string name="ntf_channel_calls">Privateline X-Chat aramaları</string>
     <string name="v5_3_new_desktop_app">Yeni masaüstü uygulaması!</string>
     <string name="v5_3_new_interface_languages">6 yeni arayüz dili</string>
     <string name="notification_preview_mode_contact_desc">Sadece kişiyi göster</string>
@@ -1089,7 +1089,7 @@
     <string name="only_your_contact_can_send_voice">Sadece senin kişin sesli mesaj gönderebilir.</string>
     <string name="in_developing_desc">Bu özellik henüz desteklenmiyor. Bir sonraki sürümü deneyin.</string>
     <string name="open_on_mobile_and_scan_qr_code"><![CDATA[Mobile uygulamadan <i>Masaüstünden kullan</i> seçeneğini aç ve karekodu okut.]]></string>
-    <string name="thank_you_for_installing_simplex">SimpleX Chat\'i yüklediğiniz için teşekkürler!</string>
+    <string name="thank_you_for_installing_simplex">Privateline X-Chat\'i yüklediğiniz için teşekkürler!</string>
     <string name="skip_inviting_button">Üyeleri davet etmeyi atla</string>
     <string name="connect_plan_already_connecting">Zaten bağlanılıyor!</string>
     <string name="icon_descr_send_message">Mesaj Gönder</string>
@@ -1116,8 +1116,8 @@
     <string name="system_restricted_background_in_call_desc">Uygulama arka planda 1 dakika kaldıktan sonra kapatılabilir.</string>
     <string name="text_field_set_contact_placeholder">Kişi ismini ayarla…</string>
     <string name="send_us_an_email">Bize e-posta gönder</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat\'in güvenliği Trail of Bits tarafından denetlenmiştir.</string>
-    <string name="simplex_service_notification_title">SimpleX Chat hizmeti</string>
+    <string name="v4_2_security_assessment_desc">Privateline X-Chat\'in güvenliği Trail of Bits tarafından denetlenmiştir.</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat hizmeti</string>
     <string name="is_verified">%s onaylı</string>
     <string name="password_to_show">Göserilecek parola</string>
     <string name="incognito_info_allows">Tek bir sohbet profilinde, aralarında herhangi bir veri paylaşımı olmadan birden fazla anonim bağlantı kurmaya izin verir.</string>
@@ -1131,7 +1131,7 @@
     <string name="this_device_name">Bu cihazın ismi</string>
     <string name="smp_server_test_upload_file">Dosya yükle</string>
     <string name="network_use_onion_hosts_required">Gerekli</string>
-    <string name="ntf_channel_messages">SimpleX Chat mesajlar</string>
+    <string name="ntf_channel_messages">Privateline X-Chat mesajlar</string>
     <string name="share_link">Bağlantı paylaş</string>
     <string name="icon_descr_simplex_team">SimpleX Ekibi</string>
     <string name="rcv_group_event_3_members_connected">%s, %s ve %s bağlandı</string>
@@ -1269,7 +1269,7 @@
     <string name="rcv_direct_event_contact_deleted">silinmiş kişi</string>
     <string name="network_option_tcp_connection_timeout">TCP bağlantısı zaman aşımına uğradı</string>
     <string name="mtr_error_different">uygulama/veritabanı içinde farklı değişim: %s / %s</string>
-    <string name="using_simplex_chat_servers">SimpleX Chat serverları kullanılıyor.</string>
+    <string name="using_simplex_chat_servers">Privateline X-Chat serverları kullanılıyor.</string>
     <string name="smp_servers_preset_add">Ön ayarlı sunucular ekle</string>
     <string name="secret_text">gizli</string>
     <string name="receipts_groups_disable_for_all">Bütün gruplar için devre dışı bırak</string>
@@ -1328,7 +1328,7 @@
     <string name="notification_new_contact_request">Yeni bağlantı isteği</string>
     <string name="unlink_desktop_question">Bilgisayarla bağlantıyı kes?</string>
     <string name="camera_not_available">Kamera hazır değil</string>
-    <string name="use_simplex_chat_servers__question">SimpleX Chat sunucularını kullan?</string>
+    <string name="use_simplex_chat_servers__question">Privateline X-Chat sunucularını kullan?</string>
     <string name="linked_desktop_options">Bağlanmış bilgisayar ayarları</string>
     <string name="developer_options">Veritabanı kimlikleri ve Taşıma izolasyonu seçeneği.</string>
     <string name="network_option_ping_count">PING sayısı</string>
@@ -2269,7 +2269,7 @@
     <string name="member_support">Üyelerle sohbetler</string>
     <string name="onboarding_notifications_mode_off_desc_short">Arkaplan servisi yok</string>
     <string name="onboarding_conditions_accept">Kabul Et</string>
-    <string name="onboarding_conditions_by_using_you_agree">SimpleX Chat\'i kullanarak şunları kabul etmiş olursunuz:\n- genel gruplarda sadece yasal içerik göndermeyi.\n- diğer kullanıcılara saygı göstermeyi - spam yapmamayı.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Privateline X-Chat\'i kullanarak şunları kabul etmiş olursunuz:\n- genel gruplarda sadece yasal içerik göndermeyi.\n- diğer kullanıcılara saygı göstermeyi - spam yapmamayı.</string>
     <string name="onboarding_conditions_configure_server_operators">Sunucu operatörlerini yapılandırma</string>
     <string name="leave_chat_question">Sohbetten çıkılsın mı?</string>
     <string name="group_member_role_moderator">yönetici</string>
@@ -2367,7 +2367,7 @@
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Gizlilik politikası ve kullanım koşulları.</string>
     <string name="onboarding_network_operators_review_later">Daha sonra incele</string>
     <string name="onboarding_choose_server_operators">Sunucu operatörleri</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat ve Flux, Flux tarafından işletilen sunucuların uygulamaya dahil edilmesi konusunda bir anlaşma yaptı.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat ve Flux, Flux tarafından işletilen sunucuların uygulamaya dahil edilmesi konusunda bir anlaşma yaptı.</string>
     <string name="privacy_chat_list_open_links">Sohbet listesinden bağlantıları aç</string>
     <string name="privacy_chat_list_open_links_yes">Evet</string>
     <string name="privacy_chat_list_open_web_link_question">Web bağlantısını açmak ister misiniz?</string>

@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 28.11.2023.
-//  Copyright © 2023 SimpleX Chat. All rights reserved.
+//  Copyright © 2023 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -623,7 +623,7 @@ private struct ConnectView: View {
                         } else {
                             alert = .newChatSomeAlert(alert: SomeAlert(
                                 alert: mkAlert(title: "Invalid link", message: "The text you pasted is not a SimpleX link."),
-                                id: "pasteLinkView: code is not a SimpleX link"
+                                id: "pasteLinkView: code is not a PrivatelineX link"
                             ))
                         }
                     }
@@ -655,7 +655,7 @@ private struct ConnectView: View {
             } else {
                 alert = .newChatSomeAlert(alert: SomeAlert(
                     alert: mkAlert(title: "Invalid QR code", message: "The code you scanned is not a SimpleX link QR code."),
-                    id: "processQRCode: code is not a SimpleX link"
+                    id: "processQRCode: code is not a PrivatelineX link"
                 ))
             }
         case let .failure(e):
@@ -1279,7 +1279,7 @@ func planAndConnect(
                         logger.debug("planAndConnect, .contactAddress, .ownLink")
                         await MainActor.run {
                             showAskCurrentOrIncognitoProfileSheet(
-                                title: NSLocalizedString("Connect to yourself?\nThis is your own SimpleX address!", comment: "new chat sheet title"),
+                                title: NSLocalizedString("Connect to yourself?\nThis is your own PrivatelineX address!", comment: "new chat sheet title"),
                                 actionStyle: .destructive,
                                 connectionLink: connectionLink,
                                 connectionPlan: connectionPlan,

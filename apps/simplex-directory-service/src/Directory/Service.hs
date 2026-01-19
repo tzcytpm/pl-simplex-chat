@@ -127,7 +127,7 @@ welcomeGetOpts = do
   appDir <- getAppUserDataDirectory "simplex"
   opts@DirectoryOpts {coreOptions, testing, superUsers, adminUsers, ownersGroup} <- getDirectoryOpts appDir "simplex_directory_service"
   unless testing $ do
-    putStrLn $ "SimpleX Directory Service Bot v" ++ versionNumber
+    putStrLn $ "PrivatelineX Directory Service Bot v" ++ versionNumber
     printDbOpts coreOptions
     putStrLn $ knownContacts "superuser" superUsers
     putStrLn $ knownContacts "admin user" adminUsers

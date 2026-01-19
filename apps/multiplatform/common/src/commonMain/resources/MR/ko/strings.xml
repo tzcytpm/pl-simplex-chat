@@ -131,7 +131,7 @@
     <string name="share_one_time_link">일회용 초대 링크 생성</string>
     <string name="create_address">주소 생성</string>
     <string name="chat_item_ttl_day">1일</string>
-    <string name="about_simplex_chat">SimpleX Chat에 대하여</string>
+    <string name="about_simplex_chat">Privateline X-Chat에 대하여</string>
     <string name="color_primary">강조</string>
     <string name="accept_call_on_lock_screen">응답</string>
     <string name="accept_connection_request__question">연결 요청을 수락하시겠습니까\?</string>
@@ -547,7 +547,7 @@
     <string name="incognito_info_allows">하나의 프로필로 여러 사람과 연락할 필요 없이 무수히 많은 익명 프로필로 연락할 수 있어요.</string>
     <string name="immune_to_spam_and_abuse">스팸 방지</string>
     <string name="ignore">무시하기</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">SimpleX Chat 초대 링크를 받으면 브라우저에서 참여할 수 있어요 :</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Privateline X-Chat 초대 링크를 받으면 브라우저에서 참여할 수 있어요 :</string>
     <string name="image_descr_link_preview">링크 미리보기 이미지</string>
     <string name="image_descr_qr_code">QR 코드</string>
     <string name="icon_descr_simplex_team">SimpleX 팀</string>
@@ -582,7 +582,7 @@
     <string name="incognito_random_profile">내 무작위 프로필</string>
     <string name="incoming_audio_call">음성 전화 옴</string>
     <string name="is_not_verified">%s은(는) 인증되지 않았어요.</string>
-    <string name="install_simplex_chat_for_terminal">터미널용 SimpleX Chat를 설치하세요</string>
+    <string name="install_simplex_chat_for_terminal">터미널용 Privateline X-Chat를 설치하세요</string>
     <string name="incoming_video_call">영상 통화 옴</string>
     <string name="invalid_migration_confirmation">잘못된 이전 확인</string>
     <string name="join_group_incognito_button">익명 모드로 참여</string>
@@ -674,8 +674,8 @@
     <string name="periodic_notifications">주기적 알림</string>
     <string name="periodic_notifications_desc">주기적으로 새 메시지를 확인해요 — 하루에 몇 퍼센트의 배터리를 사용할 거예요. 푸시 알림을 사용하지 않아요 — 기기의 데이터가 서버로 전송되지 않아요.</string>
     <string name="periodic_notifications_disabled">주기적 알림이 비활성화되었어요.</string>
-    <string name="ntf_channel_calls">SimpleX Chat 통화</string>
-    <string name="ntf_channel_messages">SimpleX Chat 메시지</string>
+    <string name="ntf_channel_calls">Privateline X-Chat 통화</string>
+    <string name="ntf_channel_messages">Privateline X-Chat 메시지</string>
     <string name="observer_cant_send_message_desc">그룹 관리자에게 문의해 주세요.</string>
     <string name="observer_cant_send_message_title">메시지를 보낼 수 없습니다!</string>
     <string name="ok">OK</string>
@@ -715,7 +715,7 @@
     <string name="onboarding_notifications_mode_subtitle">설정을 통해 나중에 변경할 수 있어요.</string>
     <string name="onboarding_notifications_mode_title">비공개 알림</string>
     <string name="reject">거절</string>
-    <string name="open_simplex_chat_to_accept_call">SimpleX Chat을 열어 전화 받기</string>
+    <string name="open_simplex_chat_to_accept_call">Privateline X-Chat을 열어 전화 받기</string>
     <string name="open_verb">열기</string>
     <string name="protect_app_screen">앱 잠금</string>
     <string name="personal_welcome">%1$s님, 환영합니다!</string>
@@ -947,7 +947,7 @@
     <string name="whats_new">새로운 기능</string>
     <string name="whats_new_read_more">더 보기</string>
     <string name="v4_2_security_assessment">보안 평가</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat 보안은 Trail of Bits에 의해 감사되었습니다.</string>
+    <string name="v4_2_security_assessment_desc">Privateline X-Chat 보안은 Trail of Bits에 의해 감사되었습니다.</string>
     <string name="connect_plan_already_connecting">이미 연결 중입니다!</string>
     <string name="n_other_file_errors">%1$d개 기타 파일 오류.</string>
     <string name="forward_files_not_accepted_desc">%1$d개 파일이 다운로드되지 않았습니다.</string>
@@ -1394,7 +1394,7 @@
     <string name="compose_message_placeholder">메시지</string>
     <string name="message_servers">메시지 서버</string>
     <string name="update_network_smp_proxy_mode_question">메시지 라우팅 모드</string>
-    <string name="email_invite_body">안녕하세요!\nSimpleX Chat 초대장이 도착했습니다: %s</string>
+    <string name="email_invite_body">안녕하세요!\nPrivateline X-Chat 초대장이 도착했습니다: %s</string>
     <string name="agent_internal_error_title">내부 오류</string>
     <string name="invalid_name">잘못된 이름입니다!</string>
     <string name="invalid_file_link">유효하지 않은 링크</string>
@@ -1450,7 +1450,7 @@
     <string name="turn_off_battery_optimization"><![CDATA[다음 대화 상자에서 <b>허용</b>을 선택하면 알림을 즉시 받을 수 있습니다.]]></string>
     <string name="system_restricted_background_warn"><![CDATA[알림을 활성화하려면 <b>앱 설정에서 앱 배터리 사용량</b> / <b>제한 없음</b> 을 선택하십시오.]]></string>
     <string name="remote_host_error_inactive"><![CDATA[모바일 <b>%s</b> 이 현재 비활성화됨]]></string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#0088ff">SimpleX Chat 개발자에게 연결하여 질문하고 업데이트를 받을 수 있습니다</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#0088ff">Privateline X-Chat 개발자에게 연결하여 질문하고 업데이트를 받을 수 있습니다</font>.]]></string>
     <string name="remote_host_was_disconnected_toast"><![CDATA[모바일 <b>%s</b> 이 연결 끊김]]></string>
     <string name="open_on_mobile_and_scan_qr_code"><![CDATA[모바일 앱 <i>에서 데스크톱에서</i> 사용을 열고 QR 코드를 스캔합니다.]]></string>
     <string name="remote_host_error_timeout"><![CDATA[모바일에 연결하는 동안 시간이 초과했습니다 <b>%s</b>]]></string>

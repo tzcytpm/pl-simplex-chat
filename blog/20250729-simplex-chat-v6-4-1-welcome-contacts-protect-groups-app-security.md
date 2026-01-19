@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v6.4.1: welcome your contacts, review members to protect groups, and more."
+title: "Privateline X-Chat v6.4.1: welcome your contacts, review members to protect groups, and more."
 date: 2025-07-29
 previewBody: blog_previews/20250729.html
 image: images/20250729-join2.png
@@ -8,7 +8,7 @@ imageBottom: true
 permalink: "/blog/20250729-simplex-chat-v6-4-1-welcome-contacts-protect-groups-app-security.html"
 ---
 
-# SimpleX Chat v6.4.1: welcome your contacts, review members to protect groups, and more.
+# Privateline X-Chat v6.4.1: welcome your contacts, review members to protect groups, and more.
 
 **Published:** Jul 29, 2025
 
@@ -42,7 +42,7 @@ When you tap Open new chat you can decide which profile to use to connect or if 
 
 This way, the conversation with your friends starts even before they connect to you!
 
-For previously created SimpleX addresses and group links you have an option to upgrade. The links will become short, and will include profile information into link data. Old long links will continue to work, so you won't lose any contacts or members during the upgrade.
+For previously created PrivatelineX addresses and group links you have an option to upgrade. The links will become short, and will include profile information into link data. Old long links will continue to work, so you won't lose any contacts or members during the upgrade.
 
 These links are now short enough to be shared in your social media profiles - they are less than 80 characters.
 
@@ -132,7 +132,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -148,4 +148,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

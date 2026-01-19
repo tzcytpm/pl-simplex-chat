@@ -10,7 +10,7 @@
     <string name="chat_item_ttl_month">1ヶ月</string>
     <string name="about_simplex">SimpleXについて</string>
     <string name="a_plus_b">a + b</string>
-    <string name="about_simplex_chat">SimpleX Chatについて</string>
+    <string name="about_simplex_chat">Privateline X-Chatについて</string>
     <string name="color_primary">アクセントカラー</string>
     <string name="accept_contact_button">承諾</string>
     <string name="accept_connection_request__question">接続リクエストを承認しますか？</string>
@@ -183,7 +183,7 @@
     <string name="clear_chat_menu_action">消す</string>
     <string name="image_will_be_received_when_contact_is_online">連絡先がオンラインになったら受信されます。しばらくお待ちください。</string>
     <string name="v4_4_verify_connection_security_desc">連絡先とセキュリティコードを確認</string>
-    <string name="install_simplex_chat_for_terminal">ターミナル版の SimpleX Chat をインストール</string>
+    <string name="install_simplex_chat_for_terminal">ターミナル版の Privateline X-Chat をインストール</string>
     <string name="v4_3_improved_server_configuration">サーバ設定の向上</string>
     <string name="v4_3_improved_privacy_and_security">プライバシーとセキュリティ強化</string>
     <string name="settings_section_title_incognito">シークレットモード</string>
@@ -236,7 +236,7 @@
     <string name="delete_group_menu_action">削除</string>
     <string name="incoming_audio_call">音声通話着信</string>
     <string name="button_delete_contact">連絡先を削除</string>
-    <string name="open_simplex_chat_to_accept_call">通話を受けるには SimpleX Chat を開きます。</string>
+    <string name="open_simplex_chat_to_accept_call">通話を受けるには Privateline X-Chat を開きます。</string>
     <string name="deleted_description">削除完了</string>
     <string name="delete_files_and_media_for_all_users">全チャットプロフィールのファイルを削除</string>
     <string name="full_deletion">全員分を削除</string>
@@ -502,7 +502,7 @@
     <string name="create_group">シークレットグループを作成する</string>
     <string name="only_stored_on_members_devices">(グループのメンバーのみに保存されてます)</string>
     <string name="desktop_scan_QR_code_from_app_via_scan_QR_code"><![CDATA[💻 デスクトップ： <b>「QRコードを読み取る」</b>経由でアプリに表示されるQRコードを読み取る]]></string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">SimpleX Chat の招待リンクをもらったら、ブラウザで開けます：</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Privateline X-Chat の招待リンクをもらったら、ブラウザで開けます：</string>
     <string name="mobile_tap_open_in_mobile_app_then_tap_connect_in_app"><![CDATA[📱 携帯： <b>「アプリで開く」</b>をタップし、 アプリ内で<b>「接続」</b>をタップする。]]></string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">拒否しても、相手には知らされません。</string>
     <string name="reject_contact_button">拒否</string>
@@ -674,7 +674,7 @@
     <string name="error_smp_test_server_auth">このサーバで待ち行列を作るには認証が必要です。パスワードをご確認ください。</string>
     <string name="la_notice_title_simplex_lock">SimpleXロック</string>
     <string name="enter_passphrase_notification_desc">通知を受けるには、データベースのパスフレーズを入力してください。</string>
-    <string name="simplex_service_notification_title">SimpleX Chat サービス</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat サービス</string>
     <string name="auth_simplex_lock_turned_on">SimpleXロック：オン</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">起動時、または非アクティブ状態で30秒が経った後に戻ると、認証する必要となります。</string>
     <string name="share_verb">共有する</string>
@@ -691,7 +691,7 @@
     <string name="send_live_message_desc">ライブメッセージを送信 (入力しながら宛先の画面で更新される)</string>
     <string name="to_share_with_your_contact">(連絡先に共有)</string>
     <string name="connect_via_link_or_qr_from_clipboard_or_in_person">(クリップボードから読み込むか、貼り付ける)</string>
-    <string name="thank_you_for_installing_simplex">SimpleX Chatをご利用いただきありがとうございます！</string>
+    <string name="thank_you_for_installing_simplex">Privateline X-Chatをご利用いただきありがとうございます！</string>
     <string name="use_camera_button">カメラ</string>
     <string name="you_accepted_connection">接続を承認しました</string>
     <string name="you_invited_a_contact">連絡先に招待を送りました</string>
@@ -786,13 +786,13 @@
     <string name="voice_messages_are_prohibited">このグループでは音声メッセージが使用禁止です。</string>
     <string name="v4_2_security_assessment">セキュリティ評価</string>
     <string name="whats_new">新着情報</string>
-    <string name="v4_2_security_assessment_desc">SimpleX ChatはTrail of Bitsによるセキュリティ監査を受けました。</string>
+    <string name="v4_2_security_assessment_desc">Privateline X-ChatはTrail of Bitsによるセキュリティ監査を受けました。</string>
     <string name="v4_2_auto_accept_contact_requests_desc">歓迎メッセージを追加できます。</string>
     <string name="v4_5_italian_interface_descr">ユーザーの皆様に感謝いたします！Weblateにて貢献できます！</string>
     <string name="v4_4_verify_connection_security">接続のセキュリティを確認</string>
     <string name="error_smp_test_failed_at_step">テストが次のステップで失敗しました：%s</string>
-    <string name="ntf_channel_messages">SimpleX Chatメッセージ</string>
-    <string name="ntf_channel_calls">SimpleX Chat通話</string>
+    <string name="ntf_channel_messages">Privateline X-Chatメッセージ</string>
+    <string name="ntf_channel_calls">Privateline X-Chat通話</string>
     <string name="settings_notification_preview_mode_title">プレビューを表示</string>
     <string name="notifications_mode_periodic">定期的に更新</string>
     <string name="notifications_mode_off">アプリがアクティブ時に通知を受ける</string>
@@ -842,7 +842,7 @@
     <string name="contact_sent_large_file">相手が上限を超える容量のファイルを送ろうとしました (%1$s)。</string>
     <string name="voice_messages_prohibited">音声メッセージは使用禁止です！</string>
     <string name="add_contact_or_create_group">新しいチャットを始める</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#0088ff">SimpleX Chatの開発者と繋がれば、質問したり、速報を受けたりすることができます</font>。]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[<font color="#0088ff">Privateline X-Chatの開発者と繋がれば、質問したり、速報を受けたりすることができます</font>。]]></string>
     <string name="to_start_a_new_chat_help_header">新しいチャットを始めるには</string>
     <string name="chat_help_tap_button">ボタンをタップ</string>
     <string name="unmute_chat">ミュート解除</string>
@@ -852,8 +852,8 @@
     <string name="your_chat_profiles">チャットプロフィール</string>
     <string name="smp_servers_scan_qr">サーバのQRコードを読み込む</string>
     <string name="smp_servers_test_some_failed">テストに失敗したサーバがあります：</string>
-    <string name="use_simplex_chat_servers__question">SimpleX Chatサーバを使いますか？</string>
-    <string name="using_simplex_chat_servers">SimpleX Chatサーバを使用中。</string>
+    <string name="use_simplex_chat_servers__question">Privateline X-Chatサーバを使いますか？</string>
+    <string name="using_simplex_chat_servers">Privateline X-Chatサーバを使用中。</string>
     <string name="share_link">リンクを送る</string>
     <string name="core_simplexmq_version">simplexmq: バージョン%s (%2s)</string>
     <string name="callstate_waiting_for_answer">応答を待機中…</string>
@@ -1086,7 +1086,7 @@
     <string name="you_can_hide_or_mute_user_profile">ユーザープロフィールを非表示またはミュートすることができます（名前を長押し）。</string>
     <string name="v4_6_group_moderation">グループのモデレーション</string>
     <string name="email_invite_body">こんにちは！
-\nSimpleX Chatの招待が届いています: %s</string>
+\nPrivateline X-Chatの招待が届いています: %s</string>
     <string name="v4_6_group_welcome_message">グループのウェルカムメッセージ</string>
     <string name="tap_to_activate_profile">タップでプロフィールを切り替え</string>
     <string name="profile_password">プロフィールのパスワード</string>
@@ -1971,7 +1971,7 @@
     <string name="debug_logs">ログを有効化</string>
     <string name="onboarding_notifications_mode_periodic_desc_short">メッセージ受信を10分毎に確認します</string>
     <string name="onboarding_notifications_mode_service_desc_short">バックグラウンドでアプリが常時動作します</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX ChatとFluxは、Fluxが運営するサーバをアプリに組み込むことに合意しました。</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-ChatとFluxは、Fluxが運営するサーバをアプリに組み込むことに合意しました。</string>
     <string name="operator_review_conditions">利用条件をレビュー</string>
     <string name="network_preset_servers_title">プリセットサーバ</string>
     <string name="operator_conditions_accepted">利用条件を承諾</string>
@@ -2017,7 +2017,7 @@
     <string name="onboarding_conditions_configure_server_operators">サーバオペレータの設定</string>
     <string name="onboarding_conditions_accept">承諾</string>
     <string name="onboarding_conditions_private_chats_not_accessible">サーバオペレータは、プライベートチャット・グループ・連絡先にはアクセスできません。</string>
-    <string name="onboarding_conditions_by_using_you_agree">SimpleX Chat を利用することで、以下の事項に同意したものと見なされます：\n- パブリックグループでは合法なコンテンツのみを送信すること。\n- 他のユーザを尊重すること、またスパムメッセージを送信しないこと。</string>
+    <string name="onboarding_conditions_by_using_you_agree">Privateline X-Chat を利用することで、以下の事項に同意したものと見なされます：\n- パブリックグループでは合法なコンテンツのみを送信すること。\n- 他のユーザを尊重すること、またスパムメッセージを送信しないこと。</string>
     <string name="connect_plan_open_chat">チャットを開く</string>
     <string name="connect_plan_open_new_chat">新しいチャットを開始</string>
     <string name="connect_plan_open_new_group">新しいグループを開始</string>

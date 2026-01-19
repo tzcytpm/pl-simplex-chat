@@ -68,7 +68,7 @@
     <string name="call_already_ended">Oproep al beëindigd!</string>
     <string name="chat_item_ttl_month">1 maand</string>
     <string name="about_simplex">Over SimpleX</string>
-    <string name="about_simplex_chat">Over SimpleX Chat</string>
+    <string name="about_simplex_chat">Over Privateline X-Chat</string>
     <string name="above_then_preposition_continuation">hier boven, dan:</string>
     <string name="users_delete_all_chats_deleted">Alle chats en berichten worden verwijderd, dit kan niet ongedaan worden gemaakt!</string>
     <string name="clear_chat_warning">Alle berichten worden verwijderd, dit kan niet ongedaan worden gemaakt! De berichten worden ALLEEN voor jou verwijderd.</string>
@@ -395,7 +395,7 @@
     <string name="notification_preview_new_message">nieuw bericht</string>
     <string name="icon_descr_image_snd_complete">Afbeelding verzonden</string>
     <string name="live_message">Live bericht!</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Als je een uitnodiging link voor SimpleX Chat hebt ontvangen, kun je deze in je browser openen:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Als je een uitnodiging link voor Privateline X-Chat hebt ontvangen, kun je deze in je browser openen:</string>
     <string name="onboarding_notifications_mode_subtitle">Hoe dit de batterij beïnvloedt</string>
     <string name="join_group_question">Deelnemen aan groep\?</string>
     <string name="icon_descr_add_members">Nodig leden uit</string>
@@ -498,7 +498,7 @@
     <string name="notifications">Meldingen</string>
     <string name="invalid_contact_link">Ongeldige link!</string>
     <string name="smp_servers_invalid_address">Ongeldig server adres!</string>
-    <string name="install_simplex_chat_for_terminal">Installeer SimpleX Chat voor terminal</string>
+    <string name="install_simplex_chat_for_terminal">Installeer Privateline X-Chat voor terminal</string>
     <string name="how_to">Hoe</string>
     <string name="how_to_use_your_servers">Hoe u uw servers gebruikt</string>
     <string name="network_and_servers">Netwerk &amp; servers</string>
@@ -543,7 +543,7 @@
     <string name="paste_the_link_you_received">Plak de link die je hebt ontvangen</string>
     <string name="onboarding_notifications_mode_periodic">Periodiek</string>
     <string name="open_verb">Open</string>
-    <string name="open_simplex_chat_to_accept_call">Open SimpleX Chat om de oproep te accepteren</string>
+    <string name="open_simplex_chat_to_accept_call">Open Privateline X-Chat om de oproep te accepteren</string>
     <string name="call_connection_peer_to_peer">peer-to-peer</string>
     <string name="notifications_will_be_hidden">Meldingen worden alleen afgeleverd totdat de app stopt!</string>
     <string name="restore_passphrase_not_found_desc">Wachtwoord niet gevonden in de Keychain, voer deze handmatig in. Dit kan zijn gebeurd als u de gegevens van de app hebt hersteld met een back-up tool. Als dit niet het geval is, neem dan contact op met de ontwikkelaars.</string>
@@ -622,11 +622,11 @@
     <string name="smp_server_test_secure_queue">Veilige wachtrij</string>
     <string name="database_initialization_error_desc">De database werkt niet goed. Tik voor meer informatie</string>
     <string name="enter_passphrase_notification_desc">Voer het wachtwoord van de database in om meldingen te ontvangen</string>
-    <string name="simplex_service_notification_title">SimpleX Chat service</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat service</string>
     <string name="simplex_service_notification_text">Berichten ontvangen…</string>
     <string name="notification_preview_mode_message_desc">Toon contact en bericht</string>
     <string name="notification_preview_mode_contact_desc">Toon alleen contact</string>
-    <string name="ntf_channel_messages">SimpleX Chat berichten</string>
+    <string name="ntf_channel_messages">Privateline X-Chat berichten</string>
     <string name="auth_simplex_lock_turned_on">SimpleX Vergrendelen ingeschakeld</string>
     <string name="auth_stop_chat">Stop chat</string>
     <string name="reply_verb">Antwoord</string>
@@ -694,7 +694,7 @@
     <string name="smp_servers_test_server">Server test</string>
     <string name="rate_the_app">Beoordeel de app</string>
     <string name="smp_servers_use_server">Gebruik server</string>
-    <string name="using_simplex_chat_servers">Gebruik SimpleX Chat servers.</string>
+    <string name="using_simplex_chat_servers">Gebruik Privateline X-Chat servers.</string>
     <string name="smp_servers_your_server_address">Uw server adres</string>
     <string name="smp_servers_your_server">Uw server</string>
     <string name="network_session_mode_transport_isolation">Transport isolation</string>
@@ -816,7 +816,7 @@
     <string name="you_will_join_group">Je maakt verbinding met alle groepsleden.</string>
     <string name="notifications_mode_off">Uitvoeren bij geopende app</string>
     <string name="settings_notification_preview_mode_title">Toon voorbeeld</string>
-    <string name="ntf_channel_calls">SimpleX Chat oproepen</string>
+    <string name="ntf_channel_calls">Privateline X-Chat oproepen</string>
     <string name="notifications_mode_periodic">Start periodiek</string>
     <string name="voice_message">Spraakbericht</string>
     <string name="voice_message_send_text">Spraakbericht…</string>
@@ -827,7 +827,7 @@
     <string name="send_verb">Verstuur</string>
     <string name="send_live_message_desc">Stuur een live bericht, het wordt bijgewerkt voor de ontvanger(s) terwijl u het typt</string>
     <string name="to_share_with_your_contact">(om te delen met uw contact)</string>
-    <string name="thank_you_for_installing_simplex">Bedankt voor het installeren van SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Bedankt voor het installeren van Privateline X-Chat!</string>
     <string name="use_camera_button">Camera</string>
     <string name="smp_servers_use_server_for_new_conn">Gebruik voor nieuwe verbindingen</string>
     <string name="star_on_github">Star on GitHub</string>
@@ -848,7 +848,7 @@
     <string name="first_platform_without_user_ids">Geen gebruikers-ID\'s.</string>
     <string name="prohibit_direct_messages">Verbied het sturen van directe berichten naar leden.</string>
     <string name="prohibit_sending_voice">Verbieden het verzenden van spraak berichten.</string>
-    <string name="v4_2_security_assessment_desc">De beveiliging van SimpleX Chat is gecontroleerd door Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">De beveiliging van Privateline X-Chat is gecontroleerd door Trail of Bits.</string>
     <string name="v4_2_auto_accept_contact_requests_desc">Met optioneel welkom bericht.</string>
     <string name="v4_3_voice_messages">Spraak berichten</string>
     <string name="v4_3_irreversible_message_deletion_desc">Uw contacten kunnen volledige verwijdering van berichten toestaan.</string>
@@ -887,10 +887,10 @@
     <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Om de privacy te verbeteren, <b>draait SimpleX op de achtergrond</b> in plaats van pushmeldingen te gebruiken.]]></string>
     <string name="chat_preferences_you_allow">Jij staat toe</string>
     <string name="you_are_invited_to_group">Je bent uitgenodigd voor de groep</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[U kunt <font color="#0088ff">verbinding maken met SimpleX Chat ontwikkelaars om vragen te stellen en updates te ontvangen</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[U kunt <font color="#0088ff">verbinding maken met Privateline X-Chat ontwikkelaars om vragen te stellen en updates te ontvangen</font>.]]></string>
     <string name="connection_error_auth_desc">Tenzij uw contact de verbinding heeft verwijderd of deze link al is gebruikt, kan het een bug zijn. Meld het alstublieft.
 \nOm verbinding te maken, vraagt u uw contact om een andere verbinding link te maken en te controleren of u een stabiele netwerkverbinding heeft.</string>
-    <string name="use_simplex_chat_servers__question">SimpleX Chat servers gebruiken\?</string>
+    <string name="use_simplex_chat_servers__question">Privateline X-Chat servers gebruiken\?</string>
     <string name="voice_messages_are_prohibited">Spraak berichten zijn niet toegestaan.</string>
     <string name="personal_welcome">Welkom %1$s!</string>
     <string name="you_can_start_chat_via_setting_or_by_restarting_the_app">U kunt de chat starten via app Instellingen / Database of door de app opnieuw op te starten.</string>
@@ -1115,13 +1115,13 @@
     <string name="stop_sharing">Stop met delen</string>
     <string name="stop_sharing_address">Stop met het delen van adres\?</string>
     <string name="invite_friends">Nodig vrienden uit</string>
-    <string name="email_invite_subject">Laten we praten in SimpleX Chat</string>
+    <string name="email_invite_subject">Laten we praten in Privateline X-Chat</string>
     <string name="save_auto_accept_settings">Sla instellingen voor automatisch accepteren op</string>
     <string name="save_settings_question">Instellingen opslaan\?</string>
     <string name="enter_welcome_message_optional">Voer welkom bericht in... (optioneel)</string>
     <string name="dont_create_address">Maak geen adres aan</string>
     <string name="email_invite_body">Hoi!
-\nMaak verbinding met mij via SimpleX Chat: %s</string>
+\nMaak verbinding met mij via Privateline X-Chat: %s</string>
     <string name="you_can_create_it_later">U kan het later maken</string>
     <string name="share_address">Adres delen</string>
     <string name="enter_welcome_message">Welkom bericht invoeren…</string>
@@ -2182,7 +2182,7 @@
     <string name="v6_2_improved_chat_navigation">Verbeterde chatnavigatie</string>
     <string name="v6_2_network_decentralization">Netwerk decentralisatie</string>
     <string name="v6_2_network_decentralization_descr">De tweede vooraf ingestelde operator in de app!</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Als uw contactpersoon bijvoorbeeld berichten ontvangt via een SimpleX Chat-server, worden deze door uw app via een Flux-server verzonden.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Als uw contactpersoon bijvoorbeeld berichten ontvangt via een Privateline X-Chat-server, worden deze door uw app via een Flux-server verzonden.</string>
     <string name="v6_2_network_decentralization_enable_flux">Schakel Flux in bij Netwerk- en serverinstellingen voor betere privacy van metagegevens.</string>
     <string name="message_deleted_or_not_received_error_title">Geen bericht</string>
     <string name="appearance_app_toolbars">App-werkbalken</string>
@@ -2374,7 +2374,7 @@
     <string name="restore_passphrase_can_not_be_read_desc">Wachtwoord in Keystore kan niet worden gelezen. Dit kan zijn gebeurd na een systeemupdate die niet compatibel is met de app. Als dit niet het geval is, neem dan contact op met de ontwikkelaars.</string>
     <string name="group_member_status_pending_approval_short">in behandeling</string>
     <string name="onboarding_conditions_accept">Accepteer</string>
-    <string name="onboarding_conditions_by_using_you_agree">Door SimpleX Chat te gebruiken, gaat u ermee akkoord:\n- alleen legale content te versturen in openbare groepen.\n- andere gebruikers te respecteren – geen spam.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Door Privateline X-Chat te gebruiken, gaat u ermee akkoord:\n- alleen legale content te versturen in openbare groepen.\n- andere gebruikers te respecteren – geen spam.</string>
     <string name="simplex_link_channel">SimpleX channel link</string>
     <string name="link_requires_newer_app_version_please_upgrade">Voor deze link is een nieuwere app-versie vereist. Werk de app bij of vraag je contactpersoon om een compatibele link te sturen.</string>
     <string name="full_link_button_text">Volledige link</string>

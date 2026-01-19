@@ -3,7 +3,7 @@ title: Privacy & security
 ---
 # Privacy and Security
 
-SimpleX Chat default configuration aims to balance privacy, security and convenience. You may want to change the default options.
+Privateline X-Chat default configuration aims to balance privacy, security and convenience. You may want to change the default options.
 
 This page lists all the features and options that affect privacy and security.
 
@@ -15,7 +15,7 @@ These settings are available in the [Privacy & Security settings](./app-settings
 
 <img src="../../blog/images/20230103-verification.png" width="288">
 
-While SimpleX Chat always establishes connection via link passed via an independent channel, so it is already more protected than other apps, there are scenarios when the invitation links can be substituted in transit (MITM attack). To protect against such attacks, you should verify the security code with your contacts:
+While Privateline X-Chat always establishes connection via link passed via an independent channel, so it is already more protected than other apps, there are scenarios when the invitation links can be substituted in transit (MITM attack). To protect against such attacks, you should verify the security code with your contacts:
 
 - open the conversation with the contact
 - tap the contact name on top of the conversation

@@ -1,13 +1,13 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v5.4 - link mobile and desktop apps via quantum resistant protocol, and much better groups."
+title: "Privateline X-Chat v5.4 - link mobile and desktop apps via quantum resistant protocol, and much better groups."
 date: 2023-11-25
 previewBody: blog_previews/20231125.html
 image: images/20231125-mobile2.png
 permalink: "/blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.html"
 ---
 
-# SimpleX Chat v5.4 - link mobile and desktop apps via quantum resistant protocol, and much better groups.
+# Privateline X-Chat v5.4 - link mobile and desktop apps via quantum resistant protocol, and much better groups.
 
 **Published:** Nov 25, 2023
 
@@ -109,7 +109,7 @@ Group owners now have an option to prohibit sending files and media. This can be
 
 ## Better calls
 
-Calls in SimpleX Chat still require a lot of work to become stable, but this version improved the speed of connecting calls, and they should work for more users.
+Calls in Privateline X-Chat still require a lot of work to become stable, but this version improved the speed of connecting calls, and they should work for more users.
 
 We also added screen sharing in video calls to desktop app.
 
@@ -141,7 +141,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -155,4 +155,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

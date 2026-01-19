@@ -1,16 +1,16 @@
 ---
 layout: layouts/article.html
-title: "SimpleX announces SimpleX Chat mobile apps for iOS and Android"
+title: "PrivatelineX announces Privateline X-Chat mobile apps for iOS and Android"
 date: 2022-03-08
 preview: Brand new mobile apps with battle-tested Haskell core.
 permalink: "/blog/20220308-simplex-chat-mobile-apps.html"
 ---
 
-# SimpleX announces SimpleX Chat mobile apps for iOS and Android
+# SimpleX announces Privateline X-Chat mobile apps for iOS and Android
 
 **Published:** March 8, 2022
 
-## SimpleX Chat is the first chat platform that is 100% private by design - it has no access to your connections graph
+## Privateline X-Chat is the first chat platform that is 100% private by design - it has no access to your connections graph
 
 We have now released iPhone and Android apps to [Apple AppStore](https://apps.apple.com/us/app/simplex-chat/id1605771084) and [Google Play Store](https://play.google.com/store/apps/details?id=chat.simplex.app), [APK for Android](https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex.apk) is also available for direct download.
 
@@ -28,7 +28,7 @@ Further details on platform objectives and technical design are available [in Si
 
 ## Why we are building it
 
-Evgeny (SimpleX Chat founder): I have been working on this platform for a long time to provide a place where all people can communicate freely with each other, without fear of persecution because of what they said and who they are connected with. Not sharing information about your connections is very important, particularly for people living in oppressive regimes. Because of the terrible conflict between Russia and Ukraine, people of both countries – I have friends and family there – could be at risk when sharing their opinions or just from being connected to people who were prosecuted. Every messenger app that knows who you are can end up sharing all of your connections with undesirable third parties, either as a result of a court order or as a result of attack - so even Signal, which has strong encryption, cannot protect your connection graph. I hope our messenger can help people living in the oppressive regimes to express their opinions without fear and risk of prosecution.
+Evgeny (Privateline X-Chat founder): I have been working on this platform for a long time to provide a place where all people can communicate freely with each other, without fear of persecution because of what they said and who they are connected with. Not sharing information about your connections is very important, particularly for people living in oppressive regimes. Because of the terrible conflict between Russia and Ukraine, people of both countries – I have friends and family there – could be at risk when sharing their opinions or just from being connected to people who were prosecuted. Every messenger app that knows who you are can end up sharing all of your connections with undesirable third parties, either as a result of a court order or as a result of attack - so even Signal, which has strong encryption, cannot protect your connection graph. I hope our messenger can help people living in the oppressive regimes to express their opinions without fear and risk of prosecution.
 
 ## Huge thanks to our testers!
 
@@ -68,7 +68,7 @@ Once you install the app, you can connect to anybody:
 - export and import of the chat database.
 - "reply to message" - feature allowing you to quote the message you are replying to.
 - localization - we will let you know once you can contribute the translations to your languages.
-- configuring your servers in the apps - this will be released this week, both for iOS and Android. By default the apps are using SimpleX Chat servers, but you will be able to configure your own and still be connected to other users who use our app with our servers.
+- configuring your servers in the apps - this will be released this week, both for iOS and Android. By default the apps are using Privateline X-Chat servers, but you will be able to configure your own and still be connected to other users who use our app with our servers.
 - user profile images.
 - sending images and files - image preview will be sent via the servers, so it can be asynchronous, and large files/full resolution images via WebRTC, so both devices will have to be online.
 

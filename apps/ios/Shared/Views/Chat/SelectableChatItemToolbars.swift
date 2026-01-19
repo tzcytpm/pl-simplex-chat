@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Stanislav Dmitrenko on 30.07.2024.
-//  Copyright © 2024 SimpleX Chat. All rights reserved.
+//  Copyright © 2024 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI

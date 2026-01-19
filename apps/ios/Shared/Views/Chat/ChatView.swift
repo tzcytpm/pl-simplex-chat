@@ -3,7 +3,7 @@
 //  SimpleX
 //
 //  Created by Evgeny Poberezkin on 27/01/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -934,7 +934,7 @@ struct ChatView: View {
                         contact.profile.contactLink
                     }
                     if let connLink {
-                        return ("SimpleX address", connLink)
+                        return ("PrivatelineX address", connLink)
                     }
                 }
             case let .group(groupInfo, _):

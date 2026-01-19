@@ -1,4 +1,4 @@
-# Porting SimpleX Chat to mobile
+# Porting Privateline X-Chat to mobile
 
 ## Background and motivation
 
@@ -12,7 +12,7 @@ See [overview](https://github.com/simplex-chat/simplexmq/blob/master/protocol/ov
   User's Computer                 Internet                    Third-Party Server
 ------------------     |   ----------------------     |   -------------------------
                        |                              |
-   SimpleX Chat        |                              |
+   Privateline X-Chat        |                              |
                        |                              |
 +----------------+     |                              |
 |    Chat App    |     |                              |

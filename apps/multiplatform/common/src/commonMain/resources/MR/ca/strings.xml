@@ -313,7 +313,7 @@
     <string name="accept_feature">Accepta</string>
     <string name="v5_3_new_interface_languages">6 noves llengües d\'interfície</string>
     <string name="abort_switch_receiving_address_confirm">Cancel·la</string>
-    <string name="about_simplex_chat">Quant a SimpleX Chat</string>
+    <string name="about_simplex_chat">Quant a Privateline X-Chat</string>
     <string name="v5_6_safer_groups_descr">Els administradors poden blocar un membre per a tothom.</string>
     <string name="servers_info_subscriptions_connections_subscribed">Connexions actives</string>
     <string name="send_disappearing_message_5_minutes">5 minuts</string>
@@ -326,7 +326,7 @@
     <string name="delete_contact_question">Voleu suprimir el contacte?</string>
     <string name="share_text_disappears_at">Desapareixerà a: %s</string>
     <string name="auth_device_authentication_is_disabled_turning_off">L\'autenticació del dispositiu està desactivada. S\'està desactivant el bloqueig SimpleX.</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">L\'autenticació del dispositiu no està activada. Podeu activar SimpleX Lock mitjançant Configuració, un cop hàgiu activat l\'autenticació del dispositiu.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">L\'autenticació del dispositiu no està activada. Podeu activar PrivatelineX Lock mitjançant Configuració, un cop hàgiu activat l\'autenticació del dispositiu.</string>
     <string name="send_receipts_disabled">desactivat</string>
     <string name="connect_plan_you_are_already_connected_with_vName"><![CDATA[Ja esteu connectat amb <b>%1$s</b>.]]></string>
     <string name="connect_plan_you_are_already_connecting_to_vName"><![CDATA[Ja us esteu connectant a <b>%1$s</b>.]]></string>
@@ -547,7 +547,7 @@
     <string name="chunks_downloaded">Blocs descarregats</string>
     <string name="error_saving_file">Error en desar el fitxer</string>
     <string name="switch_receiving_address_question">Canviar l\'adreça de recepció?</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Podeu <font color="#0088ff">connectar amb els desenvolupadors de SimpleX Chat per fer qualsevol pregunta i rebre actualitzacions</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Podeu <font color="#0088ff">connectar amb els desenvolupadors de Privateline X-Chat per fer qualsevol pregunta i rebre actualitzacions</font>.]]></string>
     <string name="you_can_also_connect_by_clicking_the_link"><![CDATA[També us podeu connectar fent clic a l\'enllaç. Si s\'obre al navegador, feu clic al botó <b>Obre a l\'aplicació mòbil</b>.]]></string>
     <string name="error_saving_ICE_servers">Error en desar els servidors ICE</string>
     <string name="network_proxy_incorrect_config_title">Error en desar el servidor intermediari</string>
@@ -735,7 +735,7 @@
     <string name="theme_dark">Fosc</string>
     <string name="create_your_profile">Creeu el vostre perfil</string>
     <string name="icon_descr_edited">editat</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat i Flux han acordat incloure els servidors operats per Flux a l\'aplicació.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat i Flux han acordat incloure els servidors operats per Flux a l\'aplicació.</string>
     <string name="simplex_address_or_1_time_link">Voleu compartir l\'adreça de SimpleX o un enllaç d\'un sol ús?</string>
     <string name="toolbar_settings">Configuració</string>
     <string name="settings_shutdown">Tanca</string>
@@ -782,7 +782,7 @@
     <string name="hide_dev_options">Amaga:</string>
     <string name="theme_simplex">SimpleX</string>
     <string name="v4_2_security_assessment_desc">La seguretat de SimpleX chat ha estat auditada per Trail of Bits.</string>
-    <string name="email_invite_subject">Parlem a SimpleX Chat</string>
+    <string name="email_invite_subject">Parlem a Privateline X-Chat</string>
     <string name="invalid_name">El nom no és vàlid!</string>
     <string name="italic_text">cursiva</string>
     <string name="make_private_connection">Crea una connexió privada</string>
@@ -960,7 +960,7 @@
     <string name="exit_without_saving">Sortir sense desar</string>
     <string name="hidden_profile_password">Contrasenya de perfil amagada</string>
     <string name="permissions_required">Concedir permisos</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Per exemple, si el vostre contacte rep missatges mitjançant un servidor SimpleX Chat, la vostra aplicació els lliurarà mitjançant un servidor Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Per exemple, si el vostre contacte rep missatges mitjançant un servidor Privateline X-Chat, la vostra aplicació els lliurarà mitjançant un servidor Flux.</string>
     <string name="icon_descr_flip_camera">Gira la càmera</string>
     <string name="enabled_self_destruct_passcode">Activar codi d\'autodestrucció</string>
     <string name="receipts_contacts_title_enable">Activar els rebuts?</string>
@@ -1010,7 +1010,7 @@
     <string name="wallpaper_preview_hello_alice">Bona tarda!</string>
     <string name="migrate_from_device_exported_file_doesnt_exist">El fitxer exportat no existeix</string>
     <string name="v5_7_forward">Reenvia i desa missatges</string>
-    <string name="email_invite_body">Hola!\nConnecteu-vos amb mi mitjançant SimpleX Chat: %s</string>
+    <string name="email_invite_body">Hola!\nConnecteu-vos amb mi mitjançant Privateline X-Chat: %s</string>
     <string name="settings_experimental_features">Característiques experimentals</string>
     <string name="alert_text_encryption_renegotiation_failed">La renegociació del xifratge ha fallat.</string>
     <string name="conn_event_ratchet_sync_allowed">renegociació de xifratge permesa</string>
@@ -1649,7 +1649,7 @@
     <string name="la_notice_title_simplex_lock">Bloqueig SimpleX</string>
     <string name="la_lock_mode">Mode de Bloqueig SimpleX</string>
     <string name="la_lock_mode_system">Autenticació del sistema</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Per protegir la vostra informació activeu SimpleX Lock.\nSe us demanarà que completeu l\'autenticació abans que aquesta funció estigui habilitada.</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Per protegir la vostra informació activeu PrivatelineX Lock.\nSe us demanarà que completeu l\'autenticació abans que aquesta funció estigui habilitada.</string>
     <string name="la_notice_turn_on">Activar</string>
     <string name="la_could_not_be_verified">No has pogut ser verificat; si us plau, torna-ho a provar.</string>
     <string name="la_please_remember_to_store_password">Recordeu-la o emmagatzemeu-la de manera segura: no hi ha manera de recuperar una contrasenya perduda!</string>
@@ -1780,7 +1780,7 @@
     <string name="to_start_a_new_chat_help_header">Per iniciar un xat nou</string>
     <string name="chat_help_tap_button">Toqueu el botó</string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">Si decideixes rebutjar, el remitent NO rebrà notificació.</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Si heu rebut l\'enllaç d\'invitació de SimpleX Chat, podeu obrir-lo al vostre navegador:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Si heu rebut l\'enllaç d\'invitació de Privateline X-Chat, podeu obrir-lo al vostre navegador:</string>
     <string name="reject_contact_button">Rebutjar</string>
     <string name="to_connect_via_link_title">Per connectar-se mitjançant enllaç</string>
     <string name="image_descr_link_preview">vista prèvia de l\'enllaç</string>
@@ -1864,7 +1864,7 @@
     <string name="how_to">Com</string>
     <string name="how_to_use_your_servers">Com utilitzar els vostres servidors</string>
     <string name="enter_one_ICE_server_per_line">Servidors ICE (un per línia)</string>
-    <string name="install_simplex_chat_for_terminal">Instal·lar SimpleX Chat per al terminal</string>
+    <string name="install_simplex_chat_for_terminal">Instal·lar Privateline X-Chat per al terminal</string>
     <string name="ensure_ICE_server_address_are_correct_format_and_unique">Assegureu-vos que les adreces del servidor WebRTC ICE estiguin en el format correcte, que estiguin separades per línies i que no estiguin duplicades.</string>
     <string name="rate_the_app">Valoreu l\'aplicació</string>
     <string name="reset_all_hints">Restablir totes les pistes</string>
@@ -1936,7 +1936,7 @@
     <string name="onboarding_choose_server_operators">Operadors de servidor</string>
     <string name="setup_database_passphrase">Configura la contrasenya de la base de dades</string>
     <string name="use_random_passphrase">Utilitzar contrasenya aleatòria</string>
-    <string name="open_simplex_chat_to_accept_call">Obrir SimpleX Chat per acceptar la trucada</string>
+    <string name="open_simplex_chat_to_accept_call">Obrir Privateline X-Chat per acceptar la trucada</string>
     <string name="relay_server_protects_ip">El servidor de retransmissió protegeix la vostra adreça IP, però pot veure la durada de la trucada.</string>
     <string name="webrtc_ice_servers">Servidors WebRTC ICE</string>
     <string name="your_ice_servers">Servidors ICE</string>
@@ -2166,7 +2166,7 @@
     <string name="smp_server">Servidor SMP</string>
     <string name="custom_time_unit_seconds">segons</string>
     <string name="migrate_from_device_start_chat">Inicia un xat</string>
-    <string name="simplex_link_invitation">"Invitació d\'un sol ús per  SimpleX"</string>
+    <string name="simplex_link_invitation">"Invitació d\'un sol ús per  PrivatelineX"</string>
     <string name="file_not_approved_descr">Sense Tor o una VPN, la vostra adreça serà visible per als següents relays XFTP: %1$s.</string>
     <string name="possible_slow_function_title">Funció lenta</string>
     <string name="group_preview_you_are_invited">Estat convidats(des) a un grup</string>
@@ -2341,7 +2341,7 @@
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Política de privadesa i condicions d\'ús.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Els xats privats, els grups i els vostres contactes no són accessibles per als operadors de servidor.</string>
     <string name="onboarding_conditions_accept">Acceptar</string>
-    <string name="onboarding_conditions_by_using_you_agree">En utilitzar SimpleX Chat accepteu:\n- enviar només contingut legal en grups públics.\n- Respectar els altres usuaris, sense correu brossa.</string>
+    <string name="onboarding_conditions_by_using_you_agree">En utilitzar Privateline X-Chat accepteu:\n- enviar només contingut legal en grups públics.\n- Respectar els altres usuaris, sense correu brossa.</string>
     <string name="onboarding_conditions_configure_server_operators">Configurar els operadors de servidor</string>
     <string name="simplex_link_channel">Enllaç al canal SimpleX</string>
     <string name="link_requires_newer_app_version_please_upgrade">Aquest enllaç requereix una versió de l\'aplicació més recent. Actualitzeu l\'aplicació o demaneu al vostre contacte que enviï un enllaç compatible.</string>

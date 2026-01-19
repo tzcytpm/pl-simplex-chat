@@ -12,7 +12,7 @@
     <string name="network_enable_socks_info">Přistupovat k serverům přes SOCKS proxy na portu %d\? Před povolením této možnosti musí být spuštěna proxy.</string>
     <string name="accept_feature">Přijmout</string>
     <string name="allow_your_contacts_to_send_disappearing_messages">Povolit svým kontaktům odesílat mizící zprávy.</string>
-    <string name="about_simplex_chat">O SimpleX Chat</string>
+    <string name="about_simplex_chat">O Privateline X-Chat</string>
     <string name="smp_servers_add_to_another_device">Přidat do jiného zařízení</string>
     <string name="allow_verb">Povolit</string>
     <string name="allow_voice_messages_question">Povolit hlasové zprávy\?</string>
@@ -252,7 +252,7 @@
     <string name="icon_descr_audio_call">audio hovor</string>
     <string name="settings_audio_video_calls">Audio a video hovory</string>
     <string name="call_on_lock_screen">Hovory na uzamčené obrazovce:</string>
-    <string name="open_simplex_chat_to_accept_call">Otevřete SimpleX Chat pro přijetí hovoru</string>
+    <string name="open_simplex_chat_to_accept_call">Otevřete Privateline X-Chat pro přijetí hovoru</string>
     <string name="allow_accepting_calls_from_lock_screen">Povolte volání ze zamčené obrazovky prostřednictvím Nastavení.</string>
     <string name="open_verb">Otevřít</string>
     <string name="icon_descr_audio_on">Zvuk zapnut</string>
@@ -326,14 +326,14 @@
     <string name="enter_passphrase_notification_desc">Chcete-li dostávat oznámení, zadejte přístupovou frázi do databáze.</string>
     <string name="database_initialization_error_title">Nelze načíst databázi</string>
     <string name="hide_notification">Skrýt</string>
-    <string name="ntf_channel_calls">Volání SimpleX Chat</string>
+    <string name="ntf_channel_calls">Volání Privateline X-Chat</string>
     <string name="notification_preview_new_message">nová zpráva</string>
     <string name="notification_new_contact_request">Žádost o nový kontakt</string>
     <string name="delete_message_cannot_be_undone_warning">Zpráva bude smazána - nelze to vzít zpět!</string>
     <string name="confirm_verb">Potvrdit</string>
     <string name="send_us_an_email">Pošlete nám e-mail</string>
     <string name="chat_lock">Zámek SimpleX</string>
-    <string name="install_simplex_chat_for_terminal">Instalovat SimpleX Chat terminál</string>
+    <string name="install_simplex_chat_for_terminal">Instalovat Privateline X-Chat terminál</string>
     <string name="star_on_github">Hvězdu na GitHubu</string>
     <string name="rate_the_app">Ohodnoťte aplikaci</string>
     <string name="your_SMP_servers">Vaše servery SMP</string>
@@ -386,9 +386,9 @@
     <string name="your_current_profile">Váš současný profil</string>
     <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Pro zvýšení soukromí, <b>SimpleX běží na pozadí</b> místo používání oznámení.]]></string>
     <string name="periodic_notifications">Pravidelná oznámení</string>
-    <string name="simplex_service_notification_title">SimpleX Chat služba</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat služba</string>
     <string name="simplex_service_notification_text">Příjem zpráv…</string>
-    <string name="ntf_channel_messages">Zprávy SimpleX Chat</string>
+    <string name="ntf_channel_messages">Zprávy Privateline X-Chat</string>
     <string name="settings_notification_preview_mode_title">Zobrazení náhledu</string>
     <string name="settings_notification_preview_title">Náhled oznámení</string>
     <string name="notifications_mode_off">Spuštěna při otevřené aplikaci</string>
@@ -400,7 +400,7 @@
     <string name="la_notice_turn_on">Zapněte funkci</string>
     <string name="auth_simplex_lock_turned_on">Zámek SimpleX zapnut</string>
     <string name="auth_unlock">Odemknout</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek SimpleX Lock zapnout prostřednictvím Nastavení.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek PrivatelineX Lock zapnout prostřednictvím Nastavení.</string>
     <string name="auth_device_authentication_is_disabled_turning_off">Ověřování zařízení je zakázáno. Zámek SimpleX je vypnut.</string>
     <string name="edit_verb">Upravit</string>
     <string name="delete_verb">Smazat</string>
@@ -473,7 +473,7 @@
     <string name="ttl_h">%dh</string>
     <string name="ttl_d">%dd</string>
     <string name="v4_2_security_assessment">Posouzení bezpečnosti</string>
-    <string name="v4_2_security_assessment_desc">Bezpečnost SimpleX Chat byla prověřena společností Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">Bezpečnost Privateline X-Chat byla prověřena společností Trail of Bits.</string>
     <string name="v4_3_irreversible_message_deletion">Nevratné mazání zpráv</string>
     <string name="v4_3_improved_server_configuration">Vylepšena konfigurace serveru</string>
     <string name="v4_3_improved_privacy_and_security">Vylepšena ochrana soukromí a zabezpečení</string>
@@ -530,7 +530,7 @@
     <string name="database_initialization_error_desc">Databáze nefunguje správně. Klepnutím se dozvíte více</string>
     <string name="notifications_mode_off_desc">Aplikace může přijímat oznámení pouze při svém běhu, žádná služba na pozadí nebude spuštěna</string>
     <string name="notification_display_mode_hidden_desc">Skryje kontakt i zprávu</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Chcete-li chránit své informace, zapněte zámek SimpleX Lock.
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Chcete-li chránit své informace, zapněte zámek PrivatelineX Lock.
 \nPřed zapnutím této funkce budete vyzváni k dokončení ověření.</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">Při spuštění, nebo obnovení aplikace po 30 sekundách, budete vyzváni k odemčení.</string>
     <string name="auth_disable_simplex_lock">Vypnout zámek SimpleX</string>
@@ -569,10 +569,10 @@
     <string name="send_live_message">Odeslat živou zprávu</string>
     <string name="live_message">Živá zpráva!</string>
     <string name="connect_via_link_or_qr">Připojit se prostřednictvím odkazu / QR kódu</string>
-    <string name="thank_you_for_installing_simplex">Děkujeme za instalaci SimpleX Chat!</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Můžete se <font color="#0088ff">připojit k SimpleX Chat vývojářům, položit jim případné dotazy a získat aktualizace</font>.]]></string>
+    <string name="thank_you_for_installing_simplex">Děkujeme za instalaci Privateline X-Chat!</string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Můžete se <font color="#0088ff">připojit k Privateline X-Chat vývojářům, položit jim případné dotazy a získat aktualizace</font>.]]></string>
     <string name="to_connect_via_link_title">Připojení prostřednictvím odkazu</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Pokud jste dostali SimpleX Chat pozvánku, můžete ji otevřít v prohlížeči:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Pokud jste dostali Privateline X-Chat pozvánku, můžete ji otevřít v prohlížeči:</string>
     <string name="if_you_choose_to_reject_the_sender_will_not_be_notified">Pokud zvolíte odmítnutí, odesílatel NEBUDE upozorněn.</string>
     <string name="mobile_tap_open_in_mobile_app_then_tap_connect_in_app"><![CDATA[📱 telefon: <b>Otevřete v mobilní aplikaci</b>, potom v aplikaci klepněte na <b>Připojit</b>.]]></string>
     <string name="reject_contact_button">Odmítnout</string>
@@ -616,8 +616,8 @@
     <string name="smp_servers_use_server">Použít server</string>
     <string name="smp_servers_use_server_for_new_conn">Použít pro nová připojení</string>
     <string name="smp_servers_per_user">Servery pro nová připojení vašeho aktuálního chat profilu.</string>
-    <string name="use_simplex_chat_servers__question">Použít SimpleX Chat servery\?</string>
-    <string name="using_simplex_chat_servers">Použití SimpleX Chat serverů.</string>
+    <string name="use_simplex_chat_servers__question">Použít Privateline X-Chat servery\?</string>
+    <string name="using_simplex_chat_servers">Použití Privateline X-Chat serverů.</string>
     <string name="saved_ICE_servers_will_be_removed">Uložené servery WebRTC ICE budou odstraněny.</string>
     <string name="error_saving_ICE_servers">Chyba ukládání serverů ICE</string>
     <string name="ensure_ICE_server_address_are_correct_format_and_unique">Ujistěte se, že adresy serverů WebRTC ICE jsou ve správném formátu, oddělené na řádcích a nejsou duplicitní.</string>
@@ -1178,8 +1178,8 @@
     <string name="you_can_create_it_later">Můžete vytvořit později</string>
     <string name="dont_create_address">Nevytvářet adresu</string>
     <string name="email_invite_body">Ahoj!
-\nSpojte se se mnou přes SimpleX Chat: %s</string>
-    <string name="email_invite_subject">Promluvme si v SimpleX Chatu</string>
+\nSpojte se se mnou přes Privateline X-Chat: %s</string>
+    <string name="email_invite_subject">Promluvme si v Privateline X-Chatu</string>
     <string name="whats_new_read_more">Přečíst více</string>
     <string name="v5_1_self_destruct_passcode_descr">Všechna data se při zadání vymažou.</string>
     <string name="v5_1_better_messages">Lepší zprávy</string>
@@ -2314,7 +2314,7 @@
     <string name="servers_info_statistics_section_header">Statistiky</string>
     <string name="subscription_errors">Chyby odběru</string>
     <string name="onboarding_network_about_operators">O operátorech</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat a Flux udělali dohodu, a zahrnuly servery spravované Flux do aplikace.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat a Flux udělali dohodu, a zahrnuly servery spravované Flux do aplikace.</string>
     <string name="smp_server">SMP server</string>
     <string name="contact_list_header_title">Vaše kontakty</string>
     <string name="servers_info_private_data_disclaimer">Od %s.\nJsou všechna data uchovávána ve vašem zařízení.</string>

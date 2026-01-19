@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v4.5 released – with multiple chat profiles, message draft, transport isolation and Italian language!"
+title: "Privateline X-Chat v4.5 released – with multiple chat profiles, message draft, transport isolation and Italian language!"
 date: 2023-02-04
 image: images/20230204-profiles2.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20230204.html
 permalink: "/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html"
 ---
 
-# SimpleX Chat v4.5 released – with multiple user profiles, message draft, transport isolation and Italian interface!
+# Privateline X-Chat v4.5 released – with multiple user profiles, message draft, transport isolation and Italian interface!
 
 **Published:** Feb 4, 2023
 
@@ -65,7 +65,7 @@ There is an additional BETA option to use a separate transport connection for ea
 
 ### Reduced battery usage
 
-Battery usage is one of the biggest complaints of SimpleX Chat users. The main reason for excess traffic is inefficient retry strategies for Network operations in these cases:
+Battery usage is one of the biggest complaints of Privateline X-Chat users. The main reason for excess traffic is inefficient retry strategies for Network operations in these cases:
 
 - the message queue capacity is exceeded - the app will keep retrying to send the message until there will be capacity.
 - the server is not available, e.g. if you connect to somebody via their server, and they later disable it. This case creates much less extra traffic than the first.
@@ -85,7 +85,7 @@ When you send an image or voice message they are sent as files with filenames in
 
 ### Italian interface
 
-Thanks to our users' community and to Weblate providing a free hosting plan for SimpleX Chat translations we can now support more languages in the interface – this version adds Italian and many more is in progress - Chinese, Japanese, Czech, Dutch, etc.
+Thanks to our users' community and to Weblate providing a free hosting plan for Privateline X-Chat translations we can now support more languages in the interface – this version adds Italian and many more is in progress - Chinese, Japanese, Czech, Dutch, etc.
 
 You can [contribute the translation](https://github.com/simplex-chat/simplex-chat/tree/stable#translate-the-apps) of the apps to your language too!
 
@@ -105,7 +105,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -119,4 +119,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

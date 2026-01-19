@@ -3,7 +3,7 @@
 //  SimpleX
 //
 //  Created by EP on 01/05/2025.
-//  Copyright © 2025 SimpleX Chat. All rights reserved.
+//  Copyright © 2025 Privateline X-Chat. All rights reserved.
 //
 
 import SimpleXChat
@@ -1596,8 +1596,8 @@ struct ServerOperatorInfo {
 let operatorsInfo: Dictionary<OperatorTag, ServerOperatorInfo> = [
     .simplex: ServerOperatorInfo(
         description: [
-            "SimpleX Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or identity keys.",
-            "SimpleX Chat Ltd develops the communication software for SimpleX network."
+            "Privateline X-Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or identity keys.",
+            "Privateline X-Chat Ltd develops the communication software for SimpleX network."
         ],
         website: URL(string: "https://simplex.chat")!,
         logo: "decentralized",
@@ -1730,8 +1730,8 @@ struct ServerOperator: Identifiable, Equatable, Codable {
     static var sampleData1 = ServerOperator(
         operatorId: 1,
         operatorTag: .simplex,
-        tradeName: "SimpleX Chat",
-        legalName: "SimpleX Chat Ltd",
+        tradeName: "Privateline X-Chat",
+        legalName: "Privateline X-Chat Ltd",
         serverDomains: ["simplex.im"],
         conditionsAcceptance: .accepted(acceptedAt: nil, autoAccepted: false),
         enabled: true,

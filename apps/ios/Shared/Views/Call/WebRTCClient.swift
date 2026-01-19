@@ -1,6 +1,6 @@
 //
 // Created by Avently on 09.02.2023.
-// Copyright (c) 2023 SimpleX Chat. All rights reserved.
+// Copyright (c) 2023 Privateline X-Chat. All rights reserved.
 //
 
 import WebRTC

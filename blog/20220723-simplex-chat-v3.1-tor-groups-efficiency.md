@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v3.1-beta is released &mdash; improved battery/traffic usage"
+title: "Privateline X-Chat v3.1-beta is released &mdash; improved battery/traffic usage"
 date: 2022-07-23
 image: images/20220723-group-invite.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20220723.html
 permalink: "/blog/20220723-simplex-chat-v3.1-tor-groups-efficiency.html"
 ---
 
-# SimpleX Chat v3.1-beta is released - improved battery/traffic usage
+# Privateline X-Chat v3.1-beta is released - improved battery/traffic usage
 
 **Published:** Jul 23, 2022
 
@@ -39,7 +39,7 @@ curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/stable/inst
 
 <img src="./images/20220723-group-invite.png" width="330"> <img src="./images/20220723-group-accept.png" width="330"> <img src="./images/20220723-group-leave.png" width="330">
 
-Groups have been supported by SimpleX Chat core for a very long time, but there was no user interface in the mobile apps to use them - users had to use chat console to create groups, add members, and accept invitations.
+Groups have been supported by Privateline X-Chat core for a very long time, but there was no user interface in the mobile apps to use them - users had to use chat console to create groups, add members, and accept invitations.
 
 This release allows accepting the invitations to join groups via mobile apps UI, making it much easier to create groups - only one user (a group owner) needs to use chat console, while all other groups members just need to tap a button in the UI to join or leave the group. Full group UI is coming in v3.1 in 1-2 weeks, but you can already start using groups today by installing beta-versions of mobile apps via [TestFlight](https://testflight.apple.com/join/DWuT2LQu), [Google PlayStore Beta](https://play.google.com/apps/testing/chat.simplex.app) and [APK download](https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex.apk).
 
@@ -61,7 +61,7 @@ To mitigate the risk of servers correlating your messaging queues we will soon a
 
 ### Docker configuration for self-hosted SMP servers
 
-When we released SimpleX Chat v3 two weeks ago many users wanted to host messaging servers in docker containers. So, we are now offering [two versions of docker configurations](https://github.com/simplex-chat/simplexmq/tree/stable/scripts/docker):
+When we released Privateline X-Chat v3 two weeks ago many users wanted to host messaging servers in docker containers. So, we are now offering [two versions of docker configurations](https://github.com/simplex-chat/simplexmq/tree/stable/scripts/docker):
 
 - fast and convenient - it downloads SMP server binary from GitHub.
 - more secure - it builds SMP server from the source code.
@@ -70,11 +70,11 @@ Let us know how it works for you!
 
 ## SimpleX platform
 
-We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [SimpleX Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a messaging application built on the SimpleX platform.
+We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [Privateline X-Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a messaging application built on the SimpleX platform.
 
 ### The first (and the only?) messaging platform without user identifiers of any kind - 100% private by design!
 
-To protect identities of users and their connections, instead of user identifiers visible to the servers and/or the network (that are used by all other messaging platforms), SimpleX Chat uses [pairwise identifiers](https://csrc.nist.gov/glossary/term/Pairwise_Pseudonymous_Identifier) of connections between the users – there are two queues in each connection, each queue having 2 different identifiers to send and to receive the messages. It increases the number of used identifiers to the square of the number of users, making it more difficult (or impossible) to determine who is talking to whom. I [wrote previously](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#why-having-users-identifiers-is-bad-for-the-users) why it is bad for the users' privacy to have any identifiers, even random numbers, associated with their profiles.
+To protect identities of users and their connections, instead of user identifiers visible to the servers and/or the network (that are used by all other messaging platforms), Privateline X-Chat uses [pairwise identifiers](https://csrc.nist.gov/glossary/term/Pairwise_Pseudonymous_Identifier) of connections between the users – there are two queues in each connection, each queue having 2 different identifiers to send and to receive the messages. It increases the number of used identifiers to the square of the number of users, making it more difficult (or impossible) to determine who is talking to whom. I [wrote previously](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#why-having-users-identifiers-is-bad-for-the-users) why it is bad for the users' privacy to have any identifiers, even random numbers, associated with their profiles.
 
 ### If SimpleX has no user identifiers, how can it deliver messages?
 
@@ -99,11 +99,11 @@ What we plan to add soon to further improve privacy and security:
 - using Tor v3 hidden service addresses for messaging servers.
 - passphrase-based local database encryption.
 
-SimpleX Chat [README page](https://github.com/simplex-chat/simplex-chat/blob/stable/README.md#privacy-technical-details-and-limitations) has more details about it.
+Privateline X-Chat [README page](https://github.com/simplex-chat/simplex-chat/blob/stable/README.md#privacy-technical-details-and-limitations) has more details about it.
 
 ## We ask you to help us pay for 3rd party security audit
 
-I will get straight to the point: I ask you to support SimpleX Chat with donations.
+I will get straight to the point: I ask you to support Privateline X-Chat with donations.
 
 We are prioritizing users privacy and security - it would be impossible without your support we were lucky to have so far.
 
@@ -111,7 +111,7 @@ We are planning a 3rd party security audit for the app, and it would hugely help
 
 Our pledge to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations for the clients and the servers. We are building SimpleX platform based on the same principles as email and web, but much more private and secure.
 
-If you are already using SimpleX Chat, or plan to use it in the future when it has more features, please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
+If you are already using Privateline X-Chat, or plan to use it in the future when it has more features, please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
 
 It is possible to [donate via GitHub](https://github.com/sponsors/simplex-chat), which is commission-free for us, or [via OpenCollective](https://opencollective.com/simplex-chat), that also accepts donations in crypto-currencies, but charges a commission.
 
@@ -119,4 +119,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

@@ -44,7 +44,7 @@
       android:largeHeap="true"
       android:extractNativeLibs="${extract_native_libs}"
       android:supportsRtl="true"
-      android:theme="@style/Theme.SimpleX">
+      android:theme="@style/Theme.PrivatelineX">
     <!--      android:localeConfig="@xml/locales_config"-->
 
     <!-- Main activity -->
@@ -55,7 +55,7 @@
         android:label="${app_name}"
         android:windowSoftInputMode="adjustResize"
         android:configChanges="uiMode"
-        android:theme="@style/Theme.SimpleX">
+        android:theme="@style/Theme.PrivatelineX">
       <intent-filter>
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>

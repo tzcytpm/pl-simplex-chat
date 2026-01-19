@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: preset servers operated by Flux, business chats and more with v6.2 of the apps"
+title: "PrivatelineX network: preset servers operated by Flux, business chats and more with v6.2 of the apps"
 date: 2024-12-10
 previewBody: blog_previews/20241210.html
 image: images/20241210-operators-1.png
@@ -13,18 +13,18 @@ permalink: "/blog/20241210-simplex-network-v6-2-servers-by-flux-business-chats.h
 
 What's new in v6.2:
 
-- [SimpleX Chat and Flux](#simplex-chat-and-flux-improve-metadata-privacy-in-simplex-network) improve metadata privacy in SimpleX network.
+- [Privateline X-Chat and Flux](#simplex-chat-and-flux-improve-metadata-privacy-in-simplex-network) improve metadata privacy in SimpleX network.
 - [Business chats](#business-chats) to provide support from your business to users of SimpleX network.
 - [Better user experience](#better-user-experience): open on the first unread, jump to quoted messages, see who reacted.
 - [Improving notifications in iOS app](#improving-notifications-in-ios-app).
 
 ## What's new in v6.2
 
-### SimpleX Chat and Flux improve metadata privacy in SimpleX network
+### Privateline X-Chat and Flux improve metadata privacy in SimpleX network
 
 <img src="./images/20241210-operators-1.png" width=288 class="float-to-right"> <img src="./images/20241210-operators-2.png" width=288 class="float-to-right">
 
-SimpleX Chat and [Flux](https://runonflux.com) (Influx Technology Limited) made an agreement to include messaging and file servers operated by Flux into the app.
+Privateline X-Chat and [Flux](https://runonflux.com) (Influx Technology Limited) made an agreement to include messaging and file servers operated by Flux into the app.
 
 SimpleX network is decentralized by design, but in the users of the previous app versions had to find other servers online or host servers themselves to use any other servers than operated by us.
 
@@ -32,7 +32,7 @@ Now all users can choose between servers of two companies, use both of them, and
 
 To use Flux servers enable them when the app offers it, or at any point later via Network & servers settings in the app.
 
-When both SimpleX Chat and Flux servers are enabled, the app will use servers of both operators in each connection to receive messages and for [private message routing](./20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md), increasing metadata privacy for all users.
+When both Privateline X-Chat and Flux servers are enabled, the app will use servers of both operators in each connection to receive messages and for [private message routing](./20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md), increasing metadata privacy for all users.
 
 Read more about why SimpleX network benefits from multiple operators in [our previous post](./20241125-servers-operated-by-flux-true-privacy-and-decentralization-for-all-users.md).
 
@@ -42,13 +42,13 @@ You can also read about our plan [how network operators will make money](https:/
 
 <img src="./images/20241210-business.png" width=288 class="float-to-right">
 
-We use SimpleX Chat to provide support to SimpleX Chat users, and we also see some other companies offering SimpleX Chat as a support channel.
+We use Privateline X-Chat to provide support to Privateline X-Chat users, and we also see some other companies offering Privateline X-Chat as a support channel.
 
 One of the problem of providing support via general purpose messengers is that the customers don't see who they talk to, as they can in all dedicated support systems.
 
-It is not possible in most messengers, including SimpleX Chat prior to v6.2 - every new customer joins a one-to-one conversation, where the customers see that they talk to a company, not knowing who they talk to, and if it's a bot or a human.
+It is not possible in most messengers, including Privateline X-Chat prior to v6.2 - every new customer joins a one-to-one conversation, where the customers see that they talk to a company, not knowing who they talk to, and if it's a bot or a human.
 
-The new business chats in SimpleX Chat solve this problem: to use them enable the toggle under the contact address in your chat profile. It is safe to do, and you can always toggle it off, if needed - the address itself does not change.
+The new business chats in Privateline X-Chat solve this problem: to use them enable the toggle under the contact address in your chat profile. It is safe to do, and you can always toggle it off, if needed - the address itself does not change.
 
 Once you do it, the app will be creating a new business chat with each connecting customer where multiple people can participate. Business chat is a hybrid of one-to-one and group conversation. In the list of chats you will see customer names and avatars, and the customer will see your business name and avatar, like with one-to-one conversations. But inside it works as a group, allowing customer to see who sent the message, and allowing you to add other participants from the business side, for delegation and escalation of customer questions.
 
@@ -100,7 +100,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -116,4 +116,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

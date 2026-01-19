@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat: vision and funding, v5.0 released with videos and files up to 1gb"
+title: "Privateline X-Chat: vision and funding, v5.0 released with videos and files up to 1gb"
 date: 2023-04-22
 image: images/20230422-video.png
 imageBottom: true
@@ -8,11 +8,11 @@ previewBody: blog_previews/20230422.html
 permalink: "/blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.html"
 ---
 
-# SimpleX Chat: vision and funding, v5.0 released with videos and files up to 1gb.
+# Privateline X-Chat: vision and funding, v5.0 released with videos and files up to 1gb.
 
 **Published:** Apr 22, 2023
 
-SimpleX Chat vision and funding:
+Privateline X-Chat vision and funding:
 - [why is it a commercial company?](#why-is-it-a-commercial-company)
 - [how is it funded and what is the business model?](#how-is-it-funded-and-what-is-the-business-model)
 - [what is next?](#what-is-next)
@@ -24,23 +24,23 @@ What's new in v5.0:
 
 Also, we added Polish interface language, thanks to [the users' community and Weblate](https://github.com/simplex-chat/simplex-chat#help-translating-simplex-chat).
 
-SimpleX Chat apps are now available in 10 languages!
+Privateline X-Chat apps are now available in 10 languages!
 
-## SimpleX Chat vision and funding
+## Privateline X-Chat vision and funding
 
 ### Why is it a commercial company?
 
-It was a big decision: whether SimpleX Chat should be a non-profit project or an open-source project led by a commercial company.
+It was a big decision: whether Privateline X-Chat should be a non-profit project or an open-source project led by a commercial company.
 
 During the last 25 years of the Internet, commercial companies have shown a much higher ability to innovate than non-profit organizations. One of the most inspiring examples is NetScape that created the Web as we know it - not only as the destination to access information, but also as an application platform, inventing cookies, SSL and JavaScript, that to this day remain the main building blocks for all web applications.
 
-While SimpleX Chat Ltd is a commercial company, SimpleX Chat software is and will remain open-source. We believe that this way we will create much more value both for the end users, and also for the shareholders and the employees of the company.
+While Privateline X-Chat Ltd is a commercial company, Privateline X-Chat software is and will remain open-source. We believe that this way we will create much more value both for the end users, and also for the shareholders and the employees of the company.
 
-Many large tech companies prioritizing value extraction over value creation earned a bad reputation for all businesses, particularly in the communities that value decentralization and privacy. But commercial objectives do not have to result in exploitation. Our goal is to build a new kind of communication network, and also an application platform, that is private by design, fully decentralized and not owned by any single entity, where SimpleX Chat Ltd is one of many organizations that operate the network. I shared my thoughts about how the Internet and privacy might evolve in the interview in [Opt Out Podcast](https://optoutpod.com/episodes/s3e02-simplexchat/).
+Many large tech companies prioritizing value extraction over value creation earned a bad reputation for all businesses, particularly in the communities that value decentralization and privacy. But commercial objectives do not have to result in exploitation. Our goal is to build a new kind of communication network, and also an application platform, that is private by design, fully decentralized and not owned by any single entity, where Privateline X-Chat Ltd is one of many organizations that operate the network. I shared my thoughts about how the Internet and privacy might evolve in the interview in [Opt Out Podcast](https://optoutpod.com/episodes/s3e02-simplexchat/).
 
 ### How is it funded and what is the business model?
 
-We started working full-time on the project in 2021 when [Portman Wills](https://www.linkedin.com/in/portmanwills/) and [Peter Briffett](https://www.linkedin.com/in/peterbriffett/) (the founders of [Wagestream](https://wagestream.com/en/) where I led the engineering team) supported the company very early on, and several other angel investors joined later. In July 2022 SimpleX Chat raised a pre-seed funding from the VC fund [Village Global](https://www.villageglobal.vc) - its co-founder [Ben Casnocha](https://www.villageglobal.vc/team/ben-casnocha) was very excited about our vision of privacy-first fully decentralized messaging and community platform, both for the individual users and for the companies, independent of any crypto-currencies, that might grow to replace large centralized platforms, such as WhatsApp, Telegram and Signal.
+We started working full-time on the project in 2021 when [Portman Wills](https://www.linkedin.com/in/portmanwills/) and [Peter Briffett](https://www.linkedin.com/in/peterbriffett/) (the founders of [Wagestream](https://wagestream.com/en/) where I led the engineering team) supported the company very early on, and several other angel investors joined later. In July 2022 Privateline X-Chat raised a pre-seed funding from the VC fund [Village Global](https://www.villageglobal.vc) - its co-founder [Ben Casnocha](https://www.villageglobal.vc/team/ben-casnocha) was very excited about our vision of privacy-first fully decentralized messaging and community platform, both for the individual users and for the companies, independent of any crypto-currencies, that might grow to replace large centralized platforms, such as WhatsApp, Telegram and Signal.
 
 > Edit: please see the comment from Ben Casnocha about this investment in [our post from August 14, 2024](./20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.md).
 
@@ -59,7 +59,7 @@ Our goals for the next 1-2 years are to make the messaging network:
 
 One major initiative we will kick-off this year is the support for large, fully decentralized and private communities and groups not hosted on any servers – something that no Internet platform achieved so far in as private and efficient way as we plan to build it.
 
-To accelerate product development and growth we will be raising a seed funding this year, both from the VCs and angel investors, and we also might offer our users an opportunity to participate in the crowd funding round on the same terms as other investors, allowing to both support the project and to benefit from its future growth. [Subscribe to our updates](https://simplex.chat#join-simplex) not to miss it, connect to the team in SimpleX Chat and [join users' groups](https://github.com/simplex-chat/simplex-chat#join-user-groups).
+To accelerate product development and growth we will be raising a seed funding this year, both from the VCs and angel investors, and we also might offer our users an opportunity to participate in the crowd funding round on the same terms as other investors, allowing to both support the project and to benefit from its future growth. [Subscribe to our updates](https://simplex.chat#join-simplex) not to miss it, connect to the team in Privateline X-Chat and [join users' groups](https://github.com/simplex-chat/simplex-chat#join-user-groups).
 
 ## What's new in v5.0
 
@@ -69,7 +69,7 @@ To accelerate product development and growth we will be raising a seed funding t
 
 In the beginning of March [we released servers and command-line utility to send and receive files via XFTP protocol](./20230301-simplex-file-transfer-protocol.md) - a very private and secure protocol that sends end-to-end encrypted files in chunks, protecting meta-data better than any alternatives we know of.
 
-Now this protocol is fully integrated in SimpleX Chat, and all files except small voice messages are sent using this protocol (small voice messages are sent as usual messages). Not only it is much faster than before - with the fast Internet connection I can send 25Mb file in 3 seconds and 1gb file in 2 minutes (for most users it's capped at the available Internet bandwidth), it has two other major advantages making it more usable:
+Now this protocol is fully integrated in Privateline X-Chat, and all files except small voice messages are sent using this protocol (small voice messages are sent as usual messages). Not only it is much faster than before - with the fast Internet connection I can send 25Mb file in 3 seconds and 1gb file in 2 minutes (for most users it's capped at the available Internet bandwidth), it has two other major advantages making it more usable:
 
 - the file sent to a group has to be uploaded only once, regardless of the group size.
 - once the file is uploaded (it will have the tick), you no longer need to be online for your contact (or group members) to be able to receive it.
@@ -102,7 +102,7 @@ Secondly, Android client now supports configuring host and port of the SOCKS pro
 
 Some links to answer the most common questions:
 
-[SimpleX Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
+[Privateline X-Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
 [How can SimpleX deliver messages without user identifiers](https://simplex.chat/#how-simplex-works).
 
@@ -116,7 +116,7 @@ Visit our [website](https://simplex.chat) to learn more.
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -130,4 +130,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

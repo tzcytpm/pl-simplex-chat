@@ -4,7 +4,7 @@
     <string name="chat_item_ttl_day">1天</string>
     <string name="about_simplex">关于 SimpleX</string>
     <string name="all_group_members_will_remain_connected">所有群成员将保持连接。</string>
-    <string name="about_simplex_chat">关于 SimpleX Chat</string>
+    <string name="about_simplex_chat">关于 Privateline X-Chat</string>
     <string name="above_then_preposition_continuation">以上，然后：</string>
     <string name="accept_contact_button">接受</string>
     <string name="accept_call_on_lock_screen">接受</string>
@@ -207,7 +207,7 @@
     <string name="restore_passphrase_not_found_desc">在密匙库中没有找到密码，请手动输入。如果你使用备份工具恢复了应用程序的数据，可能会发生这种情况。如果不是这种情况，请联系开发者。</string>
     <string name="remove_passphrase_from_keychain">从密钥库中删除密码？</string>
     <string name="save_passphrase_in_keychain">在密钥库中保存密码</string>
-    <string name="simplex_service_notification_title">SimpleX Chat 服务</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat 服务</string>
     <string name="settings_notifications_mode_title">通知服务</string>
     <string name="confirm_new_passphrase">确认新密码……</string>
     <string name="group_member_status_complete">完整的</string>
@@ -550,7 +550,7 @@
     <string name="wrong_passphrase">数据库密码错误</string>
     <string name="network_options_save">保存</string>
     <string name="update_network_settings_confirmation">更新</string>
-    <string name="open_simplex_chat_to_accept_call">打开 SimpleX Chat 来接听电话</string>
+    <string name="open_simplex_chat_to_accept_call">打开 Privateline X-Chat 来接听电话</string>
     <string name="icon_descr_video_call">视频通话</string>
     <string name="contact_wants_to_connect_via_call">%1$s 想通过以下账户与你连接</string>
     <string name="icon_descr_call_rejected">拒接来电</string>
@@ -563,7 +563,7 @@
     <string name="callstatus_rejected">拒接来电</string>
     <string name="v4_3_voice_messages">语音消息</string>
     <string name="voice_messages">语音消息</string>
-    <string name="ntf_channel_calls">SimpleX Chat 通话</string>
+    <string name="ntf_channel_calls">Privateline X-Chat 通话</string>
     <string name="if_you_cannot_meet_in_person_show_QR_in_video_call_or_via_another_channel"><![CDATA[如果你不能亲自见面，<b>在视频通话</b>中出示二维码，或分享链接。]]></string>
     <string name="your_chat_profiles">你的聊天资料</string>
     <string name="icon_descr_call_missed">未接来电</string>
@@ -625,7 +625,7 @@
     <string name="mark_code_verified">标记为已验证</string>
     <string name="make_private_connection">建立私密连接</string>
     <string name="group_preview_join_as">以 %s 身份加入</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">如果你收到 SimpleX Chat 邀请链接，你可以在浏览器中打开它：</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">如果你收到 Privateline X-Chat 邀请链接，你可以在浏览器中打开它：</string>
     <string name="mark_read">标记为已读</string>
     <string name="mark_unread">标记为未读</string>
     <string name="markdown_in_messages">在消息中使用 Markdown</string>
@@ -689,7 +689,7 @@
     <string name="network_option_tcp_connection_timeout">TCP 连接超时</string>
     <string name="feature_received_prohibited">收到，禁止</string>
     <string name="accept_feature_set_1_day">设定1天</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat 安全性由 Trail of Bits 审核。</string>
+    <string name="v4_2_security_assessment_desc">Privateline X-Chat 安全性由 Trail of Bits 审核。</string>
     <string name="simplex_link_mode_browser_warning">在浏览器中打开链接可能会降低连接的隐私和安全性。SimpleX 上不受信任的链接将显示为红色。</string>
     <string name="restore_database_alert_desc">恢复数据库备份后请输入之前的密码。 此操作无法撤消。</string>
     <string name="contact_developers">请更新应用程序并联系开发者。</string>
@@ -817,7 +817,7 @@
     <string name="auth_stop_chat">停止聊天程序</string>
     <string name="toast_permission_denied">权限被拒绝！</string>
     <string name="chat_help_tap_button">点击按钮</string>
-    <string name="thank_you_for_installing_simplex">感谢你安装 SimpleX Chat！</string>
+    <string name="thank_you_for_installing_simplex">感谢你安装 Privateline X-Chat！</string>
     <string name="use_camera_button">相机</string>
     <string name="smp_servers_preset_address">预设服务器地址</string>
     <string name="smp_servers_scan_qr">扫描服务器二维码</string>
@@ -846,7 +846,7 @@
     <string name="voice_prohibited_in_this_chat">此聊天中禁止语音消息。</string>
     <string name="voice_messages_are_prohibited">语音信息被禁止。</string>
     <string name="verify_security_code">验证安全码</string>
-    <string name="using_simplex_chat_servers">使用 SimpleX Chat 服务器。</string>
+    <string name="using_simplex_chat_servers">使用 Privateline X-Chat 服务器。</string>
     <string name="simplex_link_connection">通过 %1$s</string>
     <string name="group_invitation_item_description">邀请至群 %1$s</string>
     <string name="icon_descr_address">SimpleX 地址</string>
@@ -855,7 +855,7 @@
     <string name="chat_preferences_yes">是</string>
     <string name="you_will_be_connected_when_group_host_device_is_online">你将在群主设备上线时连接到该群，请稍等或稍后再检查！</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">当你启动应用或在应用程序驻留后台超过30 秒后，你将需要进行身份验证。</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以 <font color="#0088ff"> 连接到  SimpleX Chat  开发者提出任何问题并接收更新 </font>。]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以 <font color="#0088ff"> 连接到  Privateline X-Chat  开发者提出任何问题并接收更新 </font>。]]></string>
     <string name="you_accepted_connection">你已接受连接</string>
     <string name="your_SMP_servers">你的 SMP 服务器</string>
     <string name="integrity_msg_skipped">%1$d 条已跳过消息</string>
@@ -873,8 +873,8 @@
     <string name="alert_text_connection_pending_they_need_to_be_online_can_delete_and_retry">你的联系人需要在线才能完成连接。 \n你可以取消此连接并删除联系人（稍后尝试使用新链接）。</string>
     <string name="image_descr_simplex_logo">SimpleX 标志</string>
     <string name="your_simplex_contact_address">你的 SimpleX 地址</string>
-    <string name="install_simplex_chat_for_terminal">为终端安装 SimpleX Chat</string>
-    <string name="use_simplex_chat_servers__question">使用 SimpleX Chat 服务器？</string>
+    <string name="install_simplex_chat_for_terminal">为终端安装 Privateline X-Chat</string>
+    <string name="use_simplex_chat_servers__question">使用 Privateline X-Chat 服务器？</string>
     <string name="we_do_not_store_contacts_or_messages_on_servers">我们不会在服务器上存储你的任何联系人或消息（一旦发送）。</string>
     <string name="webrtc_ice_servers">WebRTC ICE 服务器</string>
     <string name="relay_server_protects_ip">中继服务器保护你的 IP 地址，但它可以观察通话的持续时间。</string>
@@ -1177,8 +1177,8 @@
     <string name="save_settings_question">保存设置？</string>
     <string name="stop_sharing">停止分享</string>
     <string name="email_invite_body">你好！
-\n用 SimpleX Chat 与我联系：%s</string>
-    <string name="email_invite_subject">让我们一起在 SimpleX Chat 里聊天</string>
+\n用 Privateline X-Chat 与我联系：%s</string>
+    <string name="email_invite_subject">让我们一起在 Privateline X-Chat 里聊天</string>
     <string name="you_can_create_it_later">你可以以后创建它</string>
     <string name="share_address">分享地址</string>
     <string name="you_can_share_this_address_with_your_contacts">你可以与你的联系人分享该地址，让他们与 %s 联系。</string>
@@ -2232,7 +2232,7 @@
     <string name="display_name_accepted_invitation">已接受邀请</string>
     <string name="display_name_requested_to_connect">被请求连接</string>
     <string name="onboarding_network_about_operators">关于运营方</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat 和 Flux 达成协议将 Flux 运营的服务器包括在应用中。</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat 和 Flux 达成协议将 Flux 运营的服务器包括在应用中。</string>
     <string name="sync_connection_confirm">修复</string>
     <string name="sync_connection_question">修复连接？</string>
     <string name="encryption_renegotiation_in_progress">正进行加密重协商。</string>
@@ -2362,7 +2362,7 @@
     <string name="members_will_be_removed_from_chat_cannot_be_undone">将从聊天中移除这些成员 — 此操作无法撤销！</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">隐私政策和使用条款。</string>
     <string name="onboarding_conditions_accept">接受</string>
-    <string name="onboarding_conditions_by_using_you_agree">使用 SimpleX Chat 代表您同意：\n- 在公开群中只发送合法内容\n- 尊重其他用户 – 没有垃圾信息。</string>
+    <string name="onboarding_conditions_by_using_you_agree">使用 Privateline X-Chat 代表您同意：\n- 在公开群中只发送合法内容\n- 尊重其他用户 – 没有垃圾信息。</string>
     <string name="onboarding_conditions_private_chats_not_accessible">服务器运营方无法访问私密聊天、群和你的联系人。</string>
     <string name="onboarding_conditions_configure_server_operators">配置服务器运营方</string>
     <string name="unsupported_connection_link">不支持的连接链接</string>

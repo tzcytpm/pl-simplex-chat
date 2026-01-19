@@ -3,7 +3,7 @@
 //  SimpleX NSE
 //
 //  Created by Evgeny on 26/04/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import Foundation

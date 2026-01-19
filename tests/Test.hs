@@ -62,10 +62,10 @@ main = do
       describe "Bot API docs" apiDocsTest
       around tmpBracket $ describe "WebRTC encryption" webRTCTests
 #endif
-      describe "SimpleX chat markdown" markdownTests
+      describe "PrivatelineX chat markdown" markdownTests
       describe "JSON Tests" jsonTests
-      describe "SimpleX chat view" viewTests
-      describe "SimpleX chat protocol" protocolTests
+      describe "PrivatelineX chat view" viewTests
+      describe "PrivatelineX chat protocol" protocolTests
       describe "Valid names" validNameTests
       describe "Message batching" batchingTests
       describe "Operators" operatorTests
@@ -80,9 +80,9 @@ main = do
 #if !defined(dbPostgres)
           describe "Mobile API Tests" mobileTests
 #endif
-          describe "SimpleX chat client" chatTests
-          xdescribe'' "SimpleX Broadcast bot" broadcastBotTests
-          xdescribe'' "SimpleX Directory service bot" directoryServiceTests
+          describe "PrivatelineX chat client" chatTests
+          xdescribe'' "PrivatelineX Broadcast bot" broadcastBotTests
+          xdescribe'' "PrivatelineX Directory service bot" directoryServiceTests
           describe "Remote session" remoteTests
 #if !defined(dbPostgres)
           xdescribe'' "Save query plans" saveQueryPlans

@@ -22,7 +22,7 @@ permalink: "/blog/20241125-servers-operated-by-flux-true-privacy-and-decentraliz
 
 <img src="./images/20241125-operators-1.png" width="288" class="float-to-right">
 
-[Flux](https://runonflux.com) is a decentralized cloud infrastructure that consists of user-operated nodes [1]. With this beta release all SimpleX Chat users can use pre-configured Flux servers to improve metadata privacy and decentralization.
+[Flux](https://runonflux.com) is a decentralized cloud infrastructure that consists of user-operated nodes [1]. With this beta release all Privateline X-Chat users can use pre-configured Flux servers to improve metadata privacy and decentralization.
 
 We are very grateful to [Daniel Keller](https://x.com/dak_flux), CEO and co-founder of Flux, for supporting SimpleX network, and betting on our vision of extreme decentralization of communication. Flux investing their infrastructure in our vision is a game changer for us and our users.
 
@@ -44,15 +44,15 @@ Our open-source code that we are [legally bound to use](./20240426-simplex-legal
 
 To ensure that the users' metadata from different servers cannot be combined to discover who talks to whom, the servers in each connection have to be operated by different independent organizations.
 
-Before this version the app was choosing servers randomly. Now, when both SimpleX Chat and Flux servers are enabled it will always choose servers of different operators in each connection to receive messages and for [private message routing](./20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md), increasing metadata privacy for all users.
+Before this version the app was choosing servers randomly. Now, when both Privateline X-Chat and Flux servers are enabled it will always choose servers of different operators in each connection to receive messages and for [private message routing](./20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md), increasing metadata privacy for all users.
 
-Flux servers are configured as opt-in, and the privacy policy and conditions of use that apply to Flux servers are the same as for SimpleX Chat servers, to make it simple for the users.
+Flux servers are configured as opt-in, and the privacy policy and conditions of use that apply to Flux servers are the same as for Privateline X-Chat servers, to make it simple for the users.
 
 To improve connection privacy by using Flux servers all you have to do is to enable Flux once the app offers it, or later, via Network & servers settings, and accept that the same conditions apply.
 
 <img src="./images/20241125-operators-3.png" width="330" class="float-to-left">
 
-By default, if both Flux and SimpleX servers are enabled in this version, you will be using SimpleX Chat servers to receive messages, Flux servers to forward messages to SimpleX Chat servers, and the servers of both to forward messages to unknown servers. We will enable Flux to receive messages by default a bit later, or you can change it now via settings.
+By default, if both Flux and SimpleX servers are enabled in this version, you will be using Privateline X-Chat servers to receive messages, Flux servers to forward messages to Privateline X-Chat servers, and the servers of both to forward messages to unknown servers. We will enable Flux to receive messages by default a bit later, or you can change it now via settings.
 
 Any additional servers you add to app configuration are treated as belonging to another operator, so they will also be used to improve connection privacy, together with pre-configured servers, unless you disable them.
 
@@ -121,7 +121,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -137,7 +137,7 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder
 
 [1]: You can also to self-host your own SimpleX servers on [Flux decentralized cloud](https://home.runonflux.io/apps/marketplace?q=simplex).
 

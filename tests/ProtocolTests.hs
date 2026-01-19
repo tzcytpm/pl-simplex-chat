@@ -121,8 +121,8 @@ decodeChatMessageTest = describe "Chat message encoding/decoding" $ do
     "{\"v\":\"1\",\"event\":\"x.msg.new\",\"params\":{\"content\":{\"text\":\"hello\",\"type\":\"text\"},\"live\":true}}"
       #==# XMsgNew (MCSimple (ExtMsgContent (MCText "hello") [] Nothing Nothing (Just True) Nothing))
   it "x.msg.new simple link" $
-    "{\"v\":\"1\",\"event\":\"x.msg.new\",\"params\":{\"content\":{\"text\":\"https://simplex.chat\",\"type\":\"link\",\"preview\":{\"description\":\"SimpleX Chat\",\"image\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgA\",\"title\":\"SimpleX Chat\",\"uri\":\"https://simplex.chat\"}}}}"
-      #==# XMsgNew (MCSimple (extMsgContent (MCLink "https://simplex.chat" $ LinkPreview {uri = "https://simplex.chat", title = "SimpleX Chat", description = "SimpleX Chat", image = ImageData "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgA", content = Nothing}) Nothing))
+    "{\"v\":\"1\",\"event\":\"x.msg.new\",\"params\":{\"content\":{\"text\":\"https://simplex.chat\",\"type\":\"link\",\"preview\":{\"description\":\"Privateline X-Chat\",\"image\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgA\",\"title\":\"Privateline X-Chat\",\"uri\":\"https://simplex.chat\"}}}}"
+      #==# XMsgNew (MCSimple (extMsgContent (MCLink "https://simplex.chat" $ LinkPreview {uri = "https://simplex.chat", title = "Privateline X-Chat", description = "Privateline X-Chat", image = ImageData "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgA", content = Nothing}) Nothing))
   it "x.msg.new simple image" $
     "{\"v\":\"1\",\"event\":\"x.msg.new\",\"params\":{\"content\":{\"text\":\"\",\"type\":\"image\",\"image\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII=\"}}}"
       #==# XMsgNew (MCSimple (extMsgContent (MCImage "" $ ImageData "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII=") Nothing))

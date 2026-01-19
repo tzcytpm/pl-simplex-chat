@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Evgeny on 20/09/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -38,7 +38,7 @@ struct RTCServers: View {
                     }
                     .alert(isPresented: $showResetServersAlert) {
                         Alert(
-                            title: Text("Use SimpleX Chat servers?"),
+                            title: Text("Use Privateline X-Chat servers?"),
                             message: Text("Saved WebRTC ICE servers will be removed"),
                             primaryButton: .destructive(Text("Confirm")) {
                                 resetRTCServers()
@@ -53,7 +53,7 @@ struct RTCServers: View {
                 Text("")
             } footer: {
                 if !isUserRTCServers {
-                    Text("Using SimpleX Chat servers.")
+                    Text("Using Privateline X-Chat servers.")
                         .foregroundColor(theme.colors.secondary)
                 }
             }

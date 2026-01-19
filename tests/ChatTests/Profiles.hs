@@ -104,7 +104,7 @@ chatProfileTests = do
     describe "group preferences for specific member role" $ do
       it "direct messages" testGroupPrefsDirectForRole
       it "files & media" testGroupPrefsFilesForRole
-      it "SimpleX links" testGroupPrefsSimplexLinksForRole
+      it "PrivatelineX links" testGroupPrefsSimplexLinksForRole
     it "set user, contact and group UI theme" testSetUITheme
   describe "short links" $ do
     it "should connect via one-time invitation" testShortLinkInvitation
@@ -2721,7 +2721,7 @@ testGroupPrefsSimplexLinksForRole = testChat3 aliceProfile bobProfile cathProfil
     threadDelay 1000000
     alice ##> "/set links #team on owner"
     alice <## "updated group preferences:"
-    alice <## "SimpleX links: on for owners"
+    alice <## "PrivatelineX links: on for owners"
     linksForOwners bob
     linksForOwners cath
     threadDelay 1000000
@@ -2748,7 +2748,7 @@ testGroupPrefsSimplexLinksForRole = testChat3 aliceProfile bobProfile cathProfil
     linksForOwners cc = do
       cc <## "alice updated group #team:"
       cc <## "updated group preferences:"
-      cc <## "SimpleX links: on for owners"
+      cc <## "PrivatelineX links: on for owners"
 
 testSetUITheme :: HasCallStack => TestParams -> IO ()
 testSetUITheme =
@@ -3680,7 +3680,7 @@ testShortLinkChangePreparedContactUser = testChat2 aliceProfile bobProfile test
       alice @@@ [("@robert", "hey")]
       alice `hasContactProfiles` ["alice", "robert"]
       bob #$> ("/_get chats 2 pcc=on", chats, [("@alice", "hey"), ("@Ask SimpleX Team", ""), ("@SimpleX Status", ""), ("*", "")])
-      bob `hasContactProfiles` ["robert", "alice", "Ask SimpleX Team", "SimpleX Status"]
+      bob `hasContactProfiles` ["robert", "alice", "Ask SimpleX Team", "PrivatelineX Status"]
       bob ##> "/user bob"
       showActiveUser bob "bob (Bob)"
       bob @@@ []
@@ -3737,7 +3737,7 @@ testShortLinkChangePreparedContactUserDuplicate = testChat2 aliceProfile bobProf
       alice @@@ [("@robert", "hey"), ("@robert_1", "hey")]
       alice `hasContactProfiles` ["alice", "robert", "robert"]
       bob #$> ("/_get chats 2 pcc=on", chats, [("@alice", "hey"), ("@alice_1", "hey"), ("@Ask SimpleX Team", ""), ("@SimpleX Status", ""), ("*", "")])
-      bob `hasContactProfiles` ["robert", "alice", "alice", "Ask SimpleX Team", "SimpleX Status"]
+      bob `hasContactProfiles` ["robert", "alice", "alice", "Ask SimpleX Team", "PrivatelineX Status"]
       bob ##> "/user bob"
       showActiveUser bob "bob (Bob)"
       bob @@@ []
@@ -3831,7 +3831,7 @@ testShortLinkChangePreparedGroupUser = testChat3 aliceProfile bobProfile cathPro
       alice @@@ [("#team", "3"), ("@cath","sent invitation to join group team as admin")]
       alice `hasContactProfiles` ["alice", "cath", "robert"]
       bob #$> ("/_get chats 2 pcc=on", chats, [("#team", "3"), ("@Ask SimpleX Team", ""), ("@SimpleX Status", ""), ("*", "")])
-      bob `hasContactProfiles` ["robert", "alice", "cath", "Ask SimpleX Team", "SimpleX Status"]
+      bob `hasContactProfiles` ["robert", "alice", "cath", "Ask SimpleX Team", "PrivatelineX Status"]
       cath @@@ [("#team", "3"), ("@alice","received invitation to join group team as admin")]
       cath `hasContactProfiles` ["cath", "alice", "robert"]
       bob ##> "/user bob"
@@ -3944,7 +3944,7 @@ testShortLinkChangePreparedGroupUserDuplicate = testChat3 aliceProfile bobProfil
 
       alice @@@ [("#team", "7"), ("@cath","sent invitation to join group team as admin")]
       alice `hasContactProfiles` ["alice", "cath", "robert", "robert"]
-      bob `hasContactProfiles` ["robert", "robert", "robert", "alice", "alice", "cath", "cath", "Ask SimpleX Team", "SimpleX Status"]
+      bob `hasContactProfiles` ["robert", "robert", "robert", "alice", "alice", "cath", "cath", "Ask SimpleX Team", "PrivatelineX Status"]
       cath @@@ [("#team", "7"), ("@alice","received invitation to join group team as admin")]
       cath `hasContactProfiles` ["cath", "alice", "robert", "robert"]
       bob ##> "/user bob"

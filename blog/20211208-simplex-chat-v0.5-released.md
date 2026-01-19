@@ -1,18 +1,18 @@
 ---
 layout: layouts/article.html
-title: "SimpleX announces SimpleX Chat v0.5"
+title: "PrivatelineX announces Privateline X-Chat v0.5"
 date: 2021-12-08
 preview: Support for long-term user addresses in terminal app.
 permalink: "/blog/20211208-simplex-chat-v0.5-released.html"
 ---
 
-# SimpleX announces SimpleX Chat v0.5
+# SimpleX announces Privateline X-Chat v0.5
 
 **Published:** Dec 08, 2021
 
 ## Simplex Chat is the first chat platform that is 100% private by design - SimpleX no access to your connections graph
 
-We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [SimpleX Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a chat application built on the SimpleX platform that serves as an example of the power of the platform and as a reference application.
+We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [Privateline X-Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a chat application built on the SimpleX platform that serves as an example of the power of the platform and as a reference application.
 
 ## What is SimpleX?
 
@@ -32,7 +32,7 @@ This is an ALPHA feature, and we have not yet added any protection against spam 
 
 We'd really appreciate your comments, criticism and support - a star on the GitHub repo, downloading and testing the chat or any contribution to the project will help a lot – thank you for all your support!
 
-**Please note:** SimpleX Chat is in early stage development: we are still iterating protocols, improving privacy and security, so if you have communication scenarios requiring high security, you should consider some other options for now.
+**Please note:** Privateline X-Chat is in early stage development: we are still iterating protocols, improving privacy and security, so if you have communication scenarios requiring high security, you should consider some other options for now.
 
 Our goal is to create a new kind of chat platform that lets you control your chat!
 

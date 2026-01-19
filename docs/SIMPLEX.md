@@ -54,9 +54,9 @@ Unlike servers of federated networks (email, XMPP or Matrix), SimpleX servers do
 
 You can use SimpleX with your own servers and still communicate with people using the servers that are pre-configured in the apps or any other SimpleX servers.
 
-SimpleX platform uses an open protocol and provides SDK to create chat bots, allowing implementation of services that users can interact with via SimpleX Chat apps – we are really looking forward to see what SimpleX services can be built.
+SimpleX platform uses an open protocol and provides SDK to create chat bots, allowing implementation of services that users can interact with via Privateline X-Chat apps – we are really looking forward to see what SimpleX services can be built.
 
-If you are considering developing with the SimpleX platform, whether for chat bot services for SimpleX app users or to integrate the SimpleX Chat library into your mobile apps, please get in touch for any advice and support.
+If you are considering developing with the SimpleX platform, whether for chat bot services for SimpleX app users or to integrate the Privateline X-Chat library into your mobile apps, please get in touch for any advice and support.
 
 ## Comparison with other protocols
 

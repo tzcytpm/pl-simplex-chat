@@ -6,21 +6,21 @@
 
 | 30/03/2023 | PL, [EN](/README.md), [FR](/docs/lang/fr/README.md), [CZ](/docs/lang/cs/README.md) |
 
-<img src="images/simplex-chat-logo.svg" alt="SimpleX logo" width="100%">
+<img src="images/simplex-chat-logo.svg" alt="PrivatelineX logo" width="100%">
 
 # SimpleX - pierwszy komunikator bez jakichkolwiek identyfikatorów użytkowników - w 100% prywatny z założenia!
 
 [<img src="./images/trail-of-bits.jpg" height="100">](http://simplex.chat/blog/20221108-simplex-chat-v4.2-security-audit-new-website.html) &nbsp;&nbsp;&nbsp; [<img src="./images/privacy-guides.jpg" height="80">](https://www.privacyguides.org/en/real-time-communication/#simplex-chat) &nbsp;&nbsp;&nbsp; [<img src="./images/kuketz-blog.jpg" height="80">](https://www.kuketz-blog.de/simplex-eindruecke-vom-messenger-ohne-identifier/)
 
-## Witamy w SimpleX Chat!
+## Witamy w Privateline X-Chat!
 
 1. 📲 [Zainstaluj aplikację](#zainstaluj-aplikację).
 2. ↔️ [Połącz się z naszym zespołem](#połącz-się-z-naszym-zespołem), [dołącz do grup użytkowników](#dołącz-do-grup-użytkowników) oraz [śledź nasze aktualizacje](#śledź-nasze-aktualizacje).
 3. 🤝 [Wykonaj prywatne połączenie](#wykonaj-prywatne-połączenie) ze znajomym.
-4. 🔤 [Pomóż w tłumaczeniu SimpleX Chat](#pomóż-nam-przetłumaczyć-simplex-chat).
+4. 🔤 [Pomóż w tłumaczeniu Privateline X-Chat](#pomóż-nam-przetłumaczyć-simplex-chat).
 5. ⚡️ [Kontrybuuj](#kontrybuuj) i [wesprzyj nas dotacjami](#wesprzyj-nas-dotacjami).
 
-[Dowiedz się więcej na temat SimpleX Chat](#informacje).
+[Dowiedz się więcej na temat Privateline X-Chat](#informacje).
 
 ## Zainstaluj aplikację
 
@@ -56,7 +56,7 @@ Jeśli jesteś zainteresowany pomocą w integracji otwartoźródłowych modeli j
 
 Możesz dołączyć do grup utworzonych przez innych użytkowników za pośrednictwem nowej [usługi katalogowej](https://simplex.chat/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion). Nie jesteśmy odpowiedzialni za treści udostępniane w tych grupach.
 
-**Uwaga**: Poniższe grupy zostały utworzone, aby użytkownicy mogli zadawać pytania, zgłaszać sugestie i zadawać pytania dotyczące wyłącznie SimpleX Chat.
+**Uwaga**: Poniższe grupy zostały utworzone, aby użytkownicy mogli zadawać pytania, zgłaszać sugestie i zadawać pytania dotyczące wyłącznie Privateline X-Chat.
 
 Możesz również:
 - krytykować aplikację i dokonywać porównań z innymi komunikatorami.
@@ -81,7 +81,7 @@ Istnieje również [#simplex-devs](https://simplex.chat/contact#/?v=1-4&smp=smp%
 - aplikacje społecznościowe i serwisy
 - itp.
 
-Istnieją grupy w innych językach, na które przetłumaczyliśmy interfejs aplikacji. Grupy te służą do testowania i zadawania pytań innym użytkownikom SimpleX Chat:
+Istnieją grupy w innych językach, na które przetłumaczyliśmy interfejs aplikacji. Grupy te służą do testowania i zadawania pytań innym użytkownikom Privateline X-Chat:
 
 [\#SimpleX-DE](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FkIEl7OQzcp-J6aDmjdlQbRJwqkcZE7XR%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAR16PCu02MobRmKAsjzhDWMZcWP9hS8l5AUZi-Gs8z18%253D%26srv%3Dbylepyau3ty4czmn77q4fglvperknl4bi2eb2fdy2bh4jxtf32kf73yd.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22puYPMCQt11yPUvgmI5jCiw%3D%3D%22%7D) (German-speaking), [\#SimpleX-ES](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FaJ8O1O8A8GbeoaHTo_V8dcefaCl7ouPb%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEA034qWTA3sWcTsi6aWhNf9BA34vKVCFaEBdP2R66z6Ao%253D%26srv%3Dbylepyau3ty4czmn77q4fglvperknl4bi2eb2fdy2bh4jxtf32kf73yd.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22wiZ1v_wNjLPlT-nCSB-bRA%3D%3D%22%7D) (Spanish-speaking), [\#SimpleX-FR](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2Fhpq7_4gGJiilmz5Rf-CswuU5kZGkm_zOIooSw6yALRg%3D%40smp5.simplex.im%2FvIHQDxTor53nwnWWTy5cHNwQQAdWN5Hw%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAPdgK1eBnETmgiqEQufbUkydKBJafoRx4iRrtrC2NAGc%253D%26srv%3Djjbyvoemxysm7qxap7m5d5m35jzv5qq6gnlv7s4rsn7tdwwmuqciwpid.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%221FyUryBPza-1ZFFE80Ekbg%3D%3D%22%7D) (French-speaking), [\#SimpleX-RU](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FXZyt3hJmWsycpN7Dqve_wbrAqb6myk1R%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAMFVIoytozTEa_QXOgoZFq_oe0IwZBYKvW50trSFXzXo%253D%26srv%3Dbylepyau3ty4czmn77q4fglvperknl4bi2eb2fdy2bh4jxtf32kf73yd.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22xz05ngjA3pNIxLZ32a8Vxg%3D%3D%22%7D) (Russian-speaking), [\#SimpleX-IT](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2F0weR-ZgDUl7ruOtI_8TZwEsnJP6UiImA%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAq4PSThO9Fvb5ydF48wB0yNbpzCbuQJCW3vZ9BGUfcxk%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22e-iceLA0SctC62eARgYDWg%3D%3D%22%7D) (Italian-speaking).
 
@@ -110,9 +110,9 @@ Po wykonaniu połączenia możesz [zweryfikować kod bezpieczeństwa połączeni
 
 Przeczytaj o funkcjach i ustawieniach aplikacji w nowym [Przewodniku użytkownika](../../guide/README.md).
 
-## Pomóż nam przetłumaczyć SimpleX Chat
+## Pomóż nam przetłumaczyć Privateline X-Chat
 
-Dzięki naszym użytkownikom i [Weblate](https://hosted.weblate.org/engage/simplex-chat/), aplikacje SimpleX Chat, strona internetowa i dokumenty są tłumaczone na wiele innych języków.
+Dzięki naszym użytkownikom i [Weblate](https://hosted.weblate.org/engage/simplex-chat/), aplikacje Privateline X-Chat, strona internetowa i dokumenty są tłumaczone na wiele innych języków.
 
 Dołącz do naszych tłumaczy, aby pomóc SimpleX w rozwoju!
 
@@ -147,12 +147,12 @@ Chcielibyśmy, abyś przyczynił się do naszego rozwoju! Możesz nam pomóc:
 
 - [dzieląc się motywem kolorystycznym](../../THEMES.md), którego używasz w aplikacji na Androida!
 - pisząc samouczki lub poradniki, które dotyczą hostowania serwerów, automatyzacji czatbotów itp.
-- współtworząc bazy wiedzy SimpleX Chat.
+- współtworząc bazy wiedzy Privateline X-Chat.
 - rozwijając funkcje - skontaktuj się z nami za pośrednictwem czatu, abyśmy mogli pomóc Ci zacząć.
 
 ## Wesprzyj nas dotacjami
 
-Ogromne podziękowania dla wszystkich, którzy wsparli projekt SimpleX Chat!
+Ogromne podziękowania dla wszystkich, którzy wsparli projekt Privateline X-Chat!
 
 Na pierwszym miejscu stawiamy prywatność i bezpieczeństwo użytkowników - byłoby to niemożliwe bez waszego wsparcia.
 
@@ -177,7 +177,7 @@ Dziękuję,
 
 Evgeny
 
-Twórca SimpleX Chat.
+Twórca Privateline X-Chat.
 
 ## Informacje
 
@@ -236,21 +236,21 @@ Najnowsze i ważne wiadomości:
 
 [Mar 23, 2024. SimpleX network: real privacy and stable profits, non-profits for protocols, v5.6 released with quantum resistant e2e encryption and simple profile migration.](../../../blog/20240323-simplex-network-privacy-non-profit-v5-6-quantum-resistant-e2e-encryption-simple-migration.md)
 
-[Mar 14, 2024. SimpleX Chat v5.6 beta: adding quantum resistance to Signal double ratchet algorithm.](../../../blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md)
+[Mar 14, 2024. Privateline X-Chat v5.6 beta: adding quantum resistance to Signal double ratchet algorithm.](../../../blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md)
 
-[Jan 24, 2024. SimpleX Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect.](../../../blog/20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.md)
+[Jan 24, 2024. Privateline X-Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect.](../../../blog/20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.md)
 
-[Nov 25, 2023. SimpleX Chat v5.4 released: link mobile and desktop apps via quantum resistant protocol, and much better groups](../../../blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.md).
+[Nov 25, 2023. Privateline X-Chat v5.4 released: link mobile and desktop apps via quantum resistant protocol, and much better groups](../../../blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.md).
 
-[Sep 25, 2023. SimpleX Chat v5.3 released: desktop app, local file encryption, improved groups and directory service](../../../blog/20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.md).
+[Sep 25, 2023. Privateline X-Chat v5.3 released: desktop app, local file encryption, improved groups and directory service](../../../blog/20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.md).
 
-[Jul 22, 2023. SimpleX Chat: v5.2 released with message delivery receipts](../../../blog/20230722-simplex-chat-v5-2-message-delivery-receipts.md).
+[Jul 22, 2023. Privateline X-Chat: v5.2 released with message delivery receipts](../../../blog/20230722-simplex-chat-v5-2-message-delivery-receipts.md).
 
-[May 23, 2023. SimpleX Chat: v5.1 released with message reactions and self-destruct passcode](../../../blog/20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.md).
+[May 23, 2023. Privateline X-Chat: v5.1 released with message reactions and self-destruct passcode](../../../blog/20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.md).
 
-[Apr 22, 2023. SimpleX Chat: vision and funding, v5.0 released with videos and files up to 1gb](../../../blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md).
+[Apr 22, 2023. Privateline X-Chat: vision and funding, v5.0 released with videos and files up to 1gb](../../../blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md).
 
-[Mar 1, 2023. SimpleX File Transfer Protocol – send large files efficiently, privately and securely, soon to be integrated into SimpleX Chat apps.](../../../blog/20230301-simplex-file-transfer-protocol.md).
+[Mar 1, 2023. SimpleX File Transfer Protocol – send large files efficiently, privately and securely, soon to be integrated into Privateline X-Chat apps.](../../../blog/20230301-simplex-file-transfer-protocol.md).
 
 [Nov 8, 2022. Security audit by Trail of Bits, the new website and v4.2 released](../../../blog/20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
@@ -286,7 +286,7 @@ Zobacz [Protokół Czatu SimpleX](../../protocol/simplex-chat.md) by dowiedzieć
 
 ## Prywatność i bezpieczeństwo: szczegóły techniczne i ograniczenia
 
-Prace nad SimpleX Chat wciąż trwają - udostępniamy nowe ulepszenia, gdy tylko będą gotowe. To Ty musisz zdecydować, czy obecny stan jest wystarczająco dobry dla Twojego przypadku zastosowania.
+Prace nad Privateline X-Chat wciąż trwają - udostępniamy nowe ulepszenia, gdy tylko będą gotowe. To Ty musisz zdecydować, czy obecny stan jest wystarczająco dobry dla Twojego przypadku zastosowania.
 
 Stworzyliśmy [słownik pojęć](../../GLOSSARY.md) używany do opisu systemów komunikacyjnych, aby pomóc zrozumieć niektóre z poniższych pojęć oraz aby pomóc Ci w porównaniu zalet i wad różnych systemów komunikacyjnych.
 
@@ -300,8 +300,8 @@ Co zostało już wprowadzone:
 6. Wszystkie metadane wiadomości, w tym czas odebrania wiadomości przez serwer (zaokrąglony do sekundy), są wysyłane do odbiorców w zaszyfrowanej postaci, więc nawet jeśli TLS zostanie przejęty, nie można ich zobaczyć.
 7. Dozwolone są tylko TLS 1.2/1.3 dla połączeń klient-serwer, z ograniczeniem do algorytmów kryptograficznych: CHACHA20POLY1305_SHA256, Ed25519/Ed448, Curve25519/Curve448.
 8. Aby zapobiec atakom typu replay, serwery SimpleX wymagają [tlsunique channel binding](https://www.rfc-editor.org/rfc/rfc5929.html) jako identyfikatora sesji w każdym poleceniu klienta podpisanym kluczem efemerycznym dla każdej kolejki.
-9. Aby ochronić swój adres IP, wszystkie klienty SimpleX Chat obsługują dostęp do serwerów komunikacyjnych za pośrednictwem Tora - zobacz [v3.1 release announcement](../../../blog/20220808-simplex-chat-v3.1-chat-groups.md) po więcej szczegółów.
-10. Lokalne szyfrowanie bazy danych z hasłem - kontakty, grupy oraz wszystkie wysłane i odebrane wiadomości są przechowywane w postaci zaszyfrowanej. Jeśli korzystałeś z SimpleX Chat przed wersją v4.0, musisz włączyć szyfrowanie w ustawieniach aplikacji.
+9. Aby ochronić swój adres IP, wszystkie klienty Privateline X-Chat obsługują dostęp do serwerów komunikacyjnych za pośrednictwem Tora - zobacz [v3.1 release announcement](../../../blog/20220808-simplex-chat-v3.1-chat-groups.md) po więcej szczegółów.
+10. Lokalne szyfrowanie bazy danych z hasłem - kontakty, grupy oraz wszystkie wysłane i odebrane wiadomości są przechowywane w postaci zaszyfrowanej. Jeśli korzystałeś z Privateline X-Chat przed wersją v4.0, musisz włączyć szyfrowanie w ustawieniach aplikacji.
 11. Izolacja transportu - różne połączenia TCP i obwody Tor używane są dla ruchu różnych profili użytkowników, opcjonalnie - dla różnych kontaktów i połączeń członków grupy.
 12. Ręczne obracanie kolejki wiadomości w celu przeniesienia konwersacji do innego przekaźnika SMP.
 13. Wysyłanie zaszyfrowanych plików end-to-end przy użyciu [protokołu XFTP](../../../blog/20230301-simplex-file-transfer-protocol.md).
@@ -319,9 +319,9 @@ Planujemy dodać:
 
 Możesz:
 
-- korzystać z biblioteki SimpleX Chat w celu zintegrowania funkcji czatu z aplikacjami mobilnymi.
+- korzystać z biblioteki Privateline X-Chat w celu zintegrowania funkcji czatu z aplikacjami mobilnymi.
 - tworzyć boty i usługi czatu w języku Haskell - zobacz [prosty](./apps/simplex-bot/) i bardziej [zaawansowany przykład bota czatu](./apps/simplex-bot-advanced/).
-- tworzenie chat botów i usług w dowolnym języku z wykorzystaniem terminala CLI SimpleX Chat jako lokalnego serwera WebSocket. Zobacz [TypeScript SimpleX Chat client](./packages/simplex-chat-client/) i [JavaScript chat bot example](./packages/simplex-chat-client/typescript/examples/squaring-bot.js).
+- tworzenie chat botów i usług w dowolnym języku z wykorzystaniem terminala CLI Privateline X-Chat jako lokalnego serwera WebSocket. Zobacz [TypeScript Privateline X-Chat client](./packages/simplex-chat-client/) i [JavaScript chat bot example](./packages/simplex-chat-client/typescript/examples/squaring-bot.js).
 - uruchomić [simplex-chat w terminal ](./CLI.md), aby wykonywać poszczególne polecenia czatu, np. wysyłać wiadomości w ramach wykonywania skryptu powłoki.
 
 Jeśli chcesz rozwijać platformę SimpleX, skontaktuj się z nami, aby uzyskać porady i wsparcie.
@@ -404,7 +404,7 @@ Dołącz również do grupy [#simplex-devs](https://simplex.chat/contact#/?v=1-2
 
 Audyt bezpieczeństwa został przeprowadzony w październiku 2022 r. przez [Trail of Bits](https://www.trailofbits.com/about), a większość poprawek została wydana w wersji 4.2.0 - zobacz [ogłoszenie](../../../blog/20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
-SimpleX Chat jest nadal na stosunkowo wczesnym etapie rozwoju (aplikacje mobilne zostały wydane w marcu 2022 r.), więc możesz odkryć pewne błędy i brakujące funkcje. Będziemy bardzo wdzięczni za poinformowanie nas o wszystkim, co wymaga naprawy lub ulepszenia.
+Privateline X-Chat jest nadal na stosunkowo wczesnym etapie rozwoju (aplikacje mobilne zostały wydane w marcu 2022 r.), więc możesz odkryć pewne błędy i brakujące funkcje. Będziemy bardzo wdzięczni za poinformowanie nas o wszystkim, co wymaga naprawy lub ulepszenia.
 
 Domyślne serwery skonfigurowane w aplikacji są dostarczane na zasadzie najlepszych starań. Obecnie nie gwarantujemy żadnych umów SLA, chociaż historycznie nasze serwery miały ponad 99,9% czasu pracy.
 

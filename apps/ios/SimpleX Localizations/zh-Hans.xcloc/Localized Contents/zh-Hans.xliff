@@ -337,12 +337,12 @@
       </trans-unit>
       <trans-unit id="**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." xml:space="preserve">
         <source>**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata.</source>
-        <target>**更私密**：每20分钟检查新消息。设备令牌和 SimpleX Chat 服务器共享，但是不会共享有您有多少联系人或者消息。</target>
+        <target>**更私密**：每20分钟检查新消息。设备令牌和 Privateline X-Chat 服务器共享，但是不会共享有您有多少联系人或者消息。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve">
-        <source>**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
-        <target>**最私密**：不使用 SimpleX Chat 通知服务器，在后台定期检查消息（取决于您多经常使用应用程序）。</target>
+      <trans-unit id="**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve">
+        <source>**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
+        <target>**最私密**：不使用 Privateline X-Chat 通知服务器，在后台定期检查消息（取决于您多经常使用应用程序）。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." xml:space="preserve">
@@ -355,9 +355,9 @@
         <target>**请注意**：如果您丢失密码，您将无法恢复或者更改密码。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve">
-        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from.</source>
-        <target>**推荐**：设备令牌和通知会发送至 SimpleX Chat 通知服务器，但是消息内容、大小或者发送人不会。</target>
+      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve">
+        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from.</source>
+        <target>**推荐**：设备令牌和通知会发送至 Privateline X-Chat 通知服务器，但是消息内容、大小或者发送人不会。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Scan / Paste link**: to connect via a link you received." xml:space="preserve">
@@ -494,11 +494,11 @@ time interval</note>
         <target>30秒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve">
+      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve">
         <source>&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;</source>
+&lt;p&gt;&lt;a href="%@"&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;</source>
         <target>&lt;p&gt;你好！&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt;通过 SimpleX Chat &lt;/a&gt;&lt;/p&gt;与我联系</target>
+&lt;p&gt;&lt;a href="%@"&gt;通过 Privateline X-Chat &lt;/a&gt;&lt;/p&gt;与我联系</target>
         <note>email text</note>
       </trans-unit>
       <trans-unit id="A few more things" xml:space="preserve">
@@ -543,9 +543,9 @@ time interval</note>
         <target>中止地址更改？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX Chat" xml:space="preserve">
-        <source>About SimpleX Chat</source>
-        <target>关于SimpleX Chat</target>
+      <trans-unit id="About Privateline X-Chat" xml:space="preserve">
+        <source>About Privateline X-Chat</source>
+        <target>关于Privateline X-Chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="About operators" xml:space="preserve">
@@ -1375,11 +1375,11 @@ swipe action</note>
         <target>通过聊天资料（默认）或者[通过连接](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="By using SimpleX Chat you agree to:&#10;- send only legal content in public groups.&#10;- respect other users – no spam." xml:space="preserve">
-        <source>By using SimpleX Chat you agree to:
+      <trans-unit id="By using Privateline X-Chat you agree to:&#10;- send only legal content in public groups.&#10;- respect other users – no spam." xml:space="preserve">
+        <source>By using Privateline X-Chat you agree to:
 - send only legal content in public groups.
 - respect other users – no spam.</source>
-        <target>使用 SimpleX Chat 代表您同意：
+        <target>使用 Privateline X-Chat 代表您同意：
 - 在公开群中只发送合法内容
 - 尊重其他用户 – 没有垃圾信息。</target>
         <note>No comment provided by engineer.</note>
@@ -1891,9 +1891,9 @@ set passcode view</note>
         <target>更快地与您的朋友联系。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Connect to yourself?&#10;This is your own SimpleX address!" xml:space="preserve">
+      <trans-unit id="Connect to yourself?&#10;This is your own PrivatelineX address!" xml:space="preserve">
         <source>Connect to yourself?
-This is your own SimpleX address!</source>
+This is your own PrivatelineX address!</source>
         <target>与自己建立联系？
 这是您自己的 SimpleX 地址！</target>
         <note>new chat sheet title</note>
@@ -2155,8 +2155,8 @@ This is your own one-time link!</source>
         <target>创建一次性链接</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Create SimpleX address" xml:space="preserve">
-        <source>Create SimpleX address</source>
+      <trans-unit id="Create PrivatelineX address" xml:space="preserve">
+        <source>Create PrivatelineX address</source>
         <target>创建 SimpleX 地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -2735,13 +2735,13 @@ swipe action</note>
         <target>设备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is disabled. Turning off SimpleX Lock." xml:space="preserve">
-        <source>Device authentication is disabled. Turning off SimpleX Lock.</source>
+      <trans-unit id="Device authentication is disabled. Turning off PrivatelineX Lock." xml:space="preserve">
+        <source>Device authentication is disabled. Turning off PrivatelineX Lock.</source>
         <target>设备验证已禁用。 SimpleX 已解锁。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." xml:space="preserve">
-        <source>Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication.</source>
+      <trans-unit id="Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." xml:space="preserve">
+        <source>Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication.</source>
         <target>没有启用设备验证。一旦启用设备验证，您可以通过设置打开 SimpleX 锁定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -2770,8 +2770,8 @@ swipe action</note>
         <target>禁用（保留覆盖）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Disable SimpleX Lock" xml:space="preserve">
-        <source>Disable SimpleX Lock</source>
+      <trans-unit id="Disable PrivatelineX Lock" xml:space="preserve">
+        <source>Disable PrivatelineX Lock</source>
         <target>禁用 SimpleX 锁定</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -3000,8 +3000,8 @@ chat item action</note>
         <target>在“网络&amp;服务器”设置中启用 Flux，更好地保护元数据隐私。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable SimpleX Lock" xml:space="preserve">
-        <source>Enable SimpleX Lock</source>
+      <trans-unit id="Enable PrivatelineX Lock" xml:space="preserve">
+        <source>Enable PrivatelineX Lock</source>
         <target>启用 SimpleX 锁定</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -3897,8 +3897,8 @@ snd error text</note>
         <target>用于控制台</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." xml:space="preserve">
-        <source>For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server.</source>
+      <trans-unit id="For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server." xml:space="preserve">
+        <source>For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server.</source>
         <target>比如，如果你通过 SimpleX 服务器收到消息，应用会通过 Flux 服务器传送它们。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -4442,9 +4442,9 @@ More improvements are coming soon!</source>
         <target>初始角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
-        <source>Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
-        <target>安装[用于终端的 SimpleX Chat](https://github.com/simplex-chat/simplex-chat)</target>
+      <trans-unit id="Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
+        <source>Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
+        <target>安装[用于终端的 Privateline X-Chat](https://github.com/simplex-chat/simplex-chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant" xml:space="preserve">
@@ -4740,9 +4740,9 @@ This is your link for group %@!</source>
         <source>Less traffic on mobile networks.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Let's talk in SimpleX Chat" xml:space="preserve">
-        <source>Let's talk in SimpleX Chat</source>
-        <target>让我们一起在 SimpleX Chat 里聊天</target>
+      <trans-unit id="Let's talk in Privateline X-Chat" xml:space="preserve">
+        <source>Let's talk in Privateline X-Chat</source>
+        <target>让我们一起在 Privateline X-Chat 里聊天</target>
         <note>email subject</note>
       </trans-unit>
       <trans-unit id="Light" xml:space="preserve">
@@ -6935,7 +6935,7 @@ chat item action</note>
         <target>搜索栏接受邀请链接。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Search or paste SimpleX link" xml:space="preserve">
+      <trans-unit id="Search or paste PrivatelineX link" xml:space="preserve">
         <source>Search or paste SimpleX link</source>
         <target>搜索或粘贴 SimpleX 链接</target>
         <note>No comment provided by engineer.</note>
@@ -7384,8 +7384,8 @@ chat item action</note>
         <source>Share 1-time link with a friend</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Share SimpleX address on social media." xml:space="preserve">
-        <source>Share SimpleX address on social media.</source>
+      <trans-unit id="Share PrivatelineX address on social media." xml:space="preserve">
+        <source>Share PrivatelineX address on social media.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Share address" xml:space="preserve">
@@ -7429,7 +7429,7 @@ chat item action</note>
         <target>分享此一次性邀请链接</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Share to SimpleX" xml:space="preserve">
+      <trans-unit id="Share to PrivatelineX" xml:space="preserve">
         <source>Share to SimpleX</source>
         <target>分享到 SimpleX</target>
         <note>No comment provided by engineer.</note>
@@ -7443,8 +7443,8 @@ chat item action</note>
         <source>Share your address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Short SimpleX address" xml:space="preserve">
-        <source>Short SimpleX address</source>
+      <trans-unit id="Short PrivatelineX address" xml:space="preserve">
+        <source>Short PrivatelineX address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Short description" xml:space="preserve">
@@ -7500,112 +7500,112 @@ chat item action</note>
         <target>显示：</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX" xml:space="preserve">
+      <trans-unit id="PrivatelineX" xml:space="preserve">
         <source>SimpleX</source>
         <target>SimpleX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Address" xml:space="preserve">
+      <trans-unit id="PrivatelineX Address" xml:space="preserve">
         <source>SimpleX Address</source>
         <target>SimpleX 地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." xml:space="preserve">
-        <source>SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app.</source>
-        <target>SimpleX Chat 与 Flux 达成了协议，将由 Flux 控制的服务器纳入 SimpleX 应用。</target>
+      <trans-unit id="Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app." xml:space="preserve">
+        <source>Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app.</source>
+        <target>Privateline X-Chat 与 Flux 达成了协议，将由 Flux 控制的服务器纳入 SimpleX 应用。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat security was audited by Trail of Bits." xml:space="preserve">
-        <source>SimpleX Chat security was audited by Trail of Bits.</source>
-        <target>SimpleX Chat 的安全性 由 Trail of Bits 审核。</target>
+      <trans-unit id="Privateline X-Chat security was audited by Trail of Bits." xml:space="preserve">
+        <source>Privateline X-Chat security was audited by Trail of Bits.</source>
+        <target>Privateline X-Chat 的安全性 由 Trail of Bits 审核。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock" xml:space="preserve">
-        <source>SimpleX Lock</source>
+      <trans-unit id="PrivatelineX Lock" xml:space="preserve">
+        <source>PrivatelineX Lock</source>
         <target>SimpleX 锁定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock mode" xml:space="preserve">
-        <source>SimpleX Lock mode</source>
+      <trans-unit id="PrivatelineX Lock mode" xml:space="preserve">
+        <source>PrivatelineX Lock mode</source>
         <target>SimpleX 锁定模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock not enabled!" xml:space="preserve">
-        <source>SimpleX Lock not enabled!</source>
+      <trans-unit id="PrivatelineX Lock not enabled!" xml:space="preserve">
+        <source>PrivatelineX Lock not enabled!</source>
         <target>未启用 SimpleX 锁定！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock turned on" xml:space="preserve">
-        <source>SimpleX Lock turned on</source>
+      <trans-unit id="PrivatelineX Lock turned on" xml:space="preserve">
+        <source>PrivatelineX Lock turned on</source>
         <target>已开启 SimpleX 锁定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address" xml:space="preserve">
-        <source>SimpleX address</source>
+      <trans-unit id="PrivatelineX address" xml:space="preserve">
+        <source>PrivatelineX address</source>
         <target>SimpleX 地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address and 1-time links are safe to share via any messenger." xml:space="preserve">
-        <source>SimpleX address and 1-time links are safe to share via any messenger.</source>
+      <trans-unit id="PrivatelineX address and 1-time links are safe to share via any messenger." xml:space="preserve">
+        <source>PrivatelineX address and 1-time links are safe to share via any messenger.</source>
         <target>可以通过任何消息应用安全分享 SimpleX 地址和一次性链接。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address or 1-time link?" xml:space="preserve">
-        <source>SimpleX address or 1-time link?</source>
+      <trans-unit id="PrivatelineX address or 1-time link?" xml:space="preserve">
+        <source>PrivatelineX address or 1-time link?</source>
         <target>SimpleX 地址或一次性链接？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address settings" xml:space="preserve">
-        <source>SimpleX address settings</source>
+      <trans-unit id="PrivatelineX address settings" xml:space="preserve">
+        <source>PrivatelineX address settings</source>
         <target>自动接受设置</target>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="SimpleX channel link" xml:space="preserve">
+      <trans-unit id="PrivatelineX channel link" xml:space="preserve">
         <source>SimpleX channel link</source>
         <target>SimpleX 频道链接</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX contact address" xml:space="preserve">
+      <trans-unit id="PrivatelineX contact address" xml:space="preserve">
         <source>SimpleX contact address</source>
         <target>SimpleX 联系地址</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX encrypted message or connection event" xml:space="preserve">
+      <trans-unit id="PrivatelineX encrypted message or connection event" xml:space="preserve">
         <source>SimpleX encrypted message or connection event</source>
         <target>SimpleX 加密的消息或连接事件</target>
         <note>notification</note>
       </trans-unit>
-      <trans-unit id="SimpleX group link" xml:space="preserve">
+      <trans-unit id="PrivatelineX group link" xml:space="preserve">
         <source>SimpleX group link</source>
         <target>SimpleX 群链接</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX links" xml:space="preserve">
+      <trans-unit id="PrivatelineX links" xml:space="preserve">
         <source>SimpleX links</source>
         <target>SimpleX 链接</target>
         <note>chat feature</note>
       </trans-unit>
-      <trans-unit id="SimpleX links are prohibited." xml:space="preserve">
+      <trans-unit id="PrivatelineX links are prohibited." xml:space="preserve">
         <source>SimpleX links are prohibited.</source>
         <target>此群禁止 SimpleX 链接。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX links not allowed" xml:space="preserve">
+      <trans-unit id="PrivatelineX links not allowed" xml:space="preserve">
         <source>SimpleX links not allowed</source>
         <target>不允许SimpleX 链接</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX one-time invitation" xml:space="preserve">
+      <trans-unit id="PrivatelineX one-time invitation" xml:space="preserve">
         <source>SimpleX one-time invitation</source>
         <target>SimpleX 一次性邀请</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX protocols reviewed by Trail of Bits." xml:space="preserve">
+      <trans-unit id="PrivatelineX protocols reviewed by Trail of Bits." xml:space="preserve">
         <source>SimpleX protocols reviewed by Trail of Bits.</source>
         <target>SimpleX 协议由 Trail of Bits 审阅。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX relay link" xml:space="preserve">
+      <trans-unit id="PrivatelineX relay link" xml:space="preserve">
         <source>SimpleX relay link</source>
         <note>simplex link type</note>
       </trans-unit>
@@ -7709,7 +7709,7 @@ report reason</note>
         <target>停止</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stop SimpleX" xml:space="preserve">
+      <trans-unit id="Stop PrivatelineX" xml:space="preserve">
         <source>Stop SimpleX</source>
         <target>停止 SimpleX</target>
         <note>authentication reason</note>
@@ -7788,9 +7788,9 @@ report reason</note>
         <target>忽略订阅</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Support SimpleX Chat" xml:space="preserve">
-        <source>Support SimpleX Chat</source>
-        <target>支持 SimpleX Chat</target>
+      <trans-unit id="Support Privateline X-Chat" xml:space="preserve">
+        <source>Support Privateline X-Chat</source>
+        <target>支持 Privateline X-Chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Switch audio and video during the call." xml:space="preserve">
@@ -7865,8 +7865,8 @@ report reason</note>
         <source>Tap Connect to use bot</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tap Create SimpleX address in the menu to create it later." xml:space="preserve">
-        <source>Tap Create SimpleX address in the menu to create it later.</source>
+      <trans-unit id="Tap Create PrivatelineX address in the menu to create it later." xml:space="preserve">
+        <source>Tap Create PrivatelineX address in the menu to create it later.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tap Join group" xml:space="preserve">
@@ -7937,9 +7937,9 @@ report reason</note>
         <target>测试失败！</target>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="Thank you for installing SimpleX Chat!" xml:space="preserve">
-        <source>Thank you for installing SimpleX Chat!</source>
-        <target>感谢您安装 SimpleX Chat！</target>
+      <trans-unit id="Thank you for installing Privateline X-Chat!" xml:space="preserve">
+        <source>Thank you for installing Privateline X-Chat!</source>
+        <target>感谢您安装 Privateline X-Chat！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" xml:space="preserve">
@@ -8219,8 +8219,8 @@ It can happen because of some bug or when the connection is compromised.</source
         <target>为了保护您的 IP 地址，私有路由使用您的 SMP 服务器来传递邮件。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your information, turn on SimpleX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
-        <source>To protect your information, turn on SimpleX Lock.
+      <trans-unit id="To protect your information, turn on PrivatelineX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
+        <source>To protect your information, turn on PrivatelineX Lock.
 You will be prompted to complete authentication before this feature is enabled.</source>
         <target>为保护您的信息，请打开 SimpleX 锁定。
 在启用此功能之前，系统将提示您完成身份验证。</target>
@@ -8574,9 +8574,9 @@ To connect, please ask your contact to create another connection link and check 
         <source>Use SOCKS proxy</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use SimpleX Chat servers?" xml:space="preserve">
-        <source>Use SimpleX Chat servers?</source>
-        <target>使用 SimpleX Chat 服务器？</target>
+      <trans-unit id="Use Privateline X-Chat servers?" xml:space="preserve">
+        <source>Use Privateline X-Chat servers?</source>
+        <target>使用 Privateline X-Chat 服务器？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Use TCP port %@ when no port is specified." xml:space="preserve">
@@ -8676,9 +8676,9 @@ To connect, please ask your contact to create another connection link and check 
         <source>Username</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Using SimpleX Chat servers." xml:space="preserve">
-        <source>Using SimpleX Chat servers.</source>
-        <target>使用 SimpleX Chat 服务器。</target>
+      <trans-unit id="Using Privateline X-Chat servers." xml:space="preserve">
+        <source>Using Privateline X-Chat servers.</source>
+        <target>使用 Privateline X-Chat 服务器。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Verify code with desktop" xml:space="preserve">
@@ -9106,8 +9106,8 @@ Repeat join request?</source>
         <target>您仍然可以在聊天列表中查看与 %@的对话。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can turn on SimpleX Lock via Settings." xml:space="preserve">
-        <source>You can turn on SimpleX Lock via Settings.</source>
+      <trans-unit id="You can turn on PrivatelineX Lock via Settings." xml:space="preserve">
+        <source>You can turn on PrivatelineX Lock via Settings.</source>
         <target>您可以通过设置开启 SimpleX 锁定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -9269,8 +9269,8 @@ Repeat connection request?</source>
         <target>您的 ICE 服务器</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Your SimpleX address" xml:space="preserve">
-        <source>Your SimpleX address</source>
+      <trans-unit id="Your PrivatelineX address" xml:space="preserve">
+        <source>Your PrivatelineX address</source>
         <target>您的 SimpleX 地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -9600,9 +9600,9 @@ marked deleted chat item preview text</note>
         <target>完整的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="connect to SimpleX Chat developers." xml:space="preserve">
-        <source>connect to SimpleX Chat developers.</source>
-        <target>连接到 SimpleX Chat 开发者。</target>
+      <trans-unit id="connect to Privateline X-Chat developers." xml:space="preserve">
+        <source>connect to Privateline X-Chat developers.</source>
+        <target>连接到 Privateline X-Chat 开发者。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="connected" xml:space="preserve">
@@ -10495,7 +10495,7 @@ last received msg: %2$@</source>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -10511,13 +10511,13 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 SimpleX Chat. All rights reserved.</source>
-        <target>版权所有 © 2022 SimpleX Chat。保留所有权利。</target>
+        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <target>版权所有 © 2022 Privateline X-Chat。保留所有权利。</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -10544,7 +10544,7 @@ last received msg: %2$@</source>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX SE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
+  <file original="PrivatelineX SE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -10560,13 +10560,13 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2024 SimpleX Chat. All rights reserved.</source>
-        <target>版权所有 © 2024 SimpleX Chat。保留所有权利。</target>
+        <source>Copyright © 2024 Privateline X-Chat. All rights reserved.</source>
+        <target>版权所有 © 2024 Privateline X-Chat。保留所有权利。</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX SE/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
+  <file original="PrivatelineX SE/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -10751,9 +10751,9 @@ last received msg: %2$@</source>
         <target>数据库密码错误</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can allow sharing in Privacy &amp; Security / SimpleX Lock settings." xml:space="preserve">
-        <source>You can allow sharing in Privacy &amp; Security / SimpleX Lock settings.</source>
-        <target>您可以在 "隐私与安全"/"SimpleX Lock "设置中允许共享。</target>
+      <trans-unit id="You can allow sharing in Privacy &amp; Security / PrivatelineX Lock settings." xml:space="preserve">
+        <source>You can allow sharing in Privacy &amp; Security / PrivatelineX Lock settings.</source>
+        <target>您可以在 "隐私与安全"/"PrivatelineX Lock "设置中允许共享。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

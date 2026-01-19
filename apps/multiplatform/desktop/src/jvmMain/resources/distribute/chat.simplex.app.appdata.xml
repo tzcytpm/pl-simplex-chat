@@ -4,12 +4,12 @@
   <launchable type="desktop-id">chat.simplex.app.desktop</launchable>
   <metadata_license>FSFAP</metadata_license>
   <project_license>AGPL-3.0</project_license>
-  <name>PLX-Chat</name>
+  <name>Privateline X-Chat</name>
   <summary>Private and secure open-source messenger - no user IDs (not even random numbers)</summary>
 
   <description>
     <p>Security assessment was done by Trail of Bits in November 2022.</p>
-    <p>PLX-Chat features:</p>
+    <p>Privateline X-Chat features:</p>
     <ul>
       <li>end-to-end encrypted messages, with editing, replies and deletion of messages.</li>
       <li>sending end-to-end encrypted images and files.</li>
@@ -21,7 +21,7 @@
       <li>encrypted app database and files in the app storage (except videos).</li>
       <li>18 interface languages.</li>
     </ul>
-    <p>PLX-Chat advantages:</p>
+    <p>Privateline X-Chat advantages:</p>
     <ul>
       <li><em>Full privacy of your identity, profile, contacts and metadata</em>: unlike any other existing messaging platform, SimpleX uses no phone numbers or any other identifiers assigned to the users - not even random numbers. This protects the privacy of who you are communicating with, hiding it from SimpleX platform servers and from any observers.</li>
       <li><em>Complete protection against spam and abuse</em>: as you have no identifier on SimpleX platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address.</li>
@@ -33,7 +33,7 @@
     <p>All messages are end-to-end encrypted using open-source double-ratchet protocol; the messages are routed via our servers using open-source SimpleX Messaging Protocol.</p>
     <p>Please send us any questions via the app or submit an issue on GitHub.</p>
     <p>Follow us on Mastodon, Twitter and Reddit for the latest updates.</p>
-    <p>Once you install SimpleX Chat, "connect to developers" for any questions, to share feedback, and to discover the groups (the link for directory service will be in response).</p>
+    <p>Once you install Privateline X-Chat, "connect to developers" for any questions, to share feedback, and to discover the groups (the link for directory service will be in response).</p>
   </description>
 
   <screenshots>

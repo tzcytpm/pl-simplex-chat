@@ -220,12 +220,12 @@ Available in v5.1</source>
       </trans-unit>
       <trans-unit id="**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." xml:space="preserve" approved="no">
         <source>**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata.</source>
-        <target state="translated">**Mais privado**: verifique novas mensagens a cada 20 minutos. O token do dispositivo é compartilhado com o servidor SimpleX Chat, mas não com quantos contatos ou mensagens você possui.</target>
+        <target state="translated">**Mais privado**: verifique novas mensagens a cada 20 minutos. O token do dispositivo é compartilhado com o servidor Privateline X-Chat, mas não com quantos contatos ou mensagens você possui.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve" approved="no">
-        <source>**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
-        <target state="translated">**Totalmente privado**: não use o servidor de notificações do SimpleX Chat, verifique as mensagens periodicamente em segundo plano (depende da frequência com que você usa o aplicativo).</target>
+      <trans-unit id="**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve" approved="no">
+        <source>**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
+        <target state="translated">**Totalmente privado**: não use o servidor de notificações do Privateline X-Chat, verifique as mensagens periodicamente em segundo plano (depende da frequência com que você usa o aplicativo).</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Paste received link** or open it in the browser and tap **Open in mobile app**." xml:space="preserve">
@@ -237,9 +237,9 @@ Available in v5.1</source>
         <target state="translated">**Atenção**: Você NÃO poderá recuperar ou alterar a senha caso a perca.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve" approved="no">
-        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from.</source>
-        <target state="translated">**Recomendado**: O token do dispositivo e as notificações são enviados ao servidor de notificação do SimpleX Chat, mas não o conteúdo, o tamanho da mensagem ou de quem ela é.</target>
+      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve" approved="no">
+        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from.</source>
+        <target state="translated">**Recomendado**: O token do dispositivo e as notificações são enviados ao servidor de notificação do Privateline X-Chat, mas não o conteúdo, o tamanho da mensagem ou de quem ela é.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Scan QR code**: to connect to your contact in person or via video call." xml:space="preserve">
@@ -322,12 +322,12 @@ Available in v5.1</source>
 **Please note**: if you have many connections, your battery and traffic consumption can be substantially higher and some connections may fail.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX" xml:space="preserve">
+      <trans-unit id="About PrivatelineX" xml:space="preserve">
         <source>About SimpleX</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX Chat" xml:space="preserve">
-        <source>About SimpleX Chat</source>
+      <trans-unit id="About Privateline X-Chat" xml:space="preserve">
+        <source>About Privateline X-Chat</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Accent color" xml:space="preserve">
@@ -1211,12 +1211,12 @@ Available in v5.1</source>
         <source>Device</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is disabled. Turning off SimpleX Lock." xml:space="preserve">
-        <source>Device authentication is disabled. Turning off SimpleX Lock.</source>
+      <trans-unit id="Device authentication is disabled. Turning off PrivatelineX Lock." xml:space="preserve">
+        <source>Device authentication is disabled. Turning off PrivatelineX Lock.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." xml:space="preserve">
-        <source>Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication.</source>
+      <trans-unit id="Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." xml:space="preserve">
+        <source>Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Different names, avatars and transport isolation." xml:space="preserve">
@@ -1231,8 +1231,8 @@ Available in v5.1</source>
         <source>Direct messages between members are prohibited.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Disable SimpleX Lock" xml:space="preserve">
-        <source>Disable SimpleX Lock</source>
+      <trans-unit id="Disable PrivatelineX Lock" xml:space="preserve">
+        <source>Disable PrivatelineX Lock</source>
         <note>authentication reason</note>
       </trans-unit>
       <trans-unit id="Disappearing messages" xml:space="preserve">
@@ -1295,8 +1295,8 @@ Available in v5.1</source>
         <source>Enable</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable SimpleX Lock" xml:space="preserve">
-        <source>Enable SimpleX Lock</source>
+      <trans-unit id="Enable PrivatelineX Lock" xml:space="preserve">
+        <source>Enable PrivatelineX Lock</source>
         <note>authentication reason</note>
       </trans-unit>
       <trans-unit id="Enable TCP keep-alive" xml:space="preserve">
@@ -1875,8 +1875,8 @@ Available in v5.1</source>
         <source>Initial role</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
-        <source>Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
+      <trans-unit id="Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
+        <source>Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant push notifications will be hidden!&#10;" xml:space="preserve">
@@ -2913,43 +2913,43 @@ Available in v5.1</source>
         <source>Show:</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat security was audited by Trail of Bits." xml:space="preserve">
-        <source>SimpleX Chat security was audited by Trail of Bits.</source>
+      <trans-unit id="Privateline X-Chat security was audited by Trail of Bits." xml:space="preserve">
+        <source>Privateline X-Chat security was audited by Trail of Bits.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock" xml:space="preserve">
-        <source>SimpleX Lock</source>
+      <trans-unit id="PrivatelineX Lock" xml:space="preserve">
+        <source>PrivatelineX Lock</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock mode" xml:space="preserve">
-        <source>SimpleX Lock mode</source>
+      <trans-unit id="PrivatelineX Lock mode" xml:space="preserve">
+        <source>PrivatelineX Lock mode</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock not enabled!" xml:space="preserve">
-        <source>SimpleX Lock not enabled!</source>
+      <trans-unit id="PrivatelineX Lock not enabled!" xml:space="preserve">
+        <source>PrivatelineX Lock not enabled!</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock turned on" xml:space="preserve">
-        <source>SimpleX Lock turned on</source>
+      <trans-unit id="PrivatelineX Lock turned on" xml:space="preserve">
+        <source>PrivatelineX Lock turned on</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX contact address" xml:space="preserve">
+      <trans-unit id="PrivatelineX contact address" xml:space="preserve">
         <source>SimpleX contact address</source>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX encrypted message or connection event" xml:space="preserve">
+      <trans-unit id="PrivatelineX encrypted message or connection event" xml:space="preserve">
         <source>SimpleX encrypted message or connection event</source>
         <note>notification</note>
       </trans-unit>
-      <trans-unit id="SimpleX group link" xml:space="preserve">
+      <trans-unit id="PrivatelineX group link" xml:space="preserve">
         <source>SimpleX group link</source>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX links" xml:space="preserve">
+      <trans-unit id="PrivatelineX links" xml:space="preserve">
         <source>SimpleX links</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX one-time invitation" xml:space="preserve">
+      <trans-unit id="PrivatelineX one-time invitation" xml:space="preserve">
         <source>SimpleX one-time invitation</source>
         <note>simplex link type</note>
       </trans-unit>
@@ -2981,7 +2981,7 @@ Available in v5.1</source>
         <source>Stop</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stop SimpleX" xml:space="preserve">
+      <trans-unit id="Stop PrivatelineX" xml:space="preserve">
         <source>Stop SimpleX</source>
         <note>authentication reason</note>
       </trans-unit>
@@ -3013,8 +3013,8 @@ Available in v5.1</source>
         <source>Submit</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Support SimpleX Chat" xml:space="preserve">
-        <source>Support SimpleX Chat</source>
+      <trans-unit id="Support Privateline X-Chat" xml:space="preserve">
+        <source>Support Privateline X-Chat</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="System" xml:space="preserve">
@@ -3081,8 +3081,8 @@ Available in v5.1</source>
         <source>Tests failed!</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Thank you for installing SimpleX Chat!" xml:space="preserve">
-        <source>Thank you for installing SimpleX Chat!</source>
+      <trans-unit id="Thank you for installing Privateline X-Chat!" xml:space="preserve">
+        <source>Thank you for installing Privateline X-Chat!</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#translate-the-apps)!" xml:space="preserve">
@@ -3218,8 +3218,8 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>To protect timezone, image/voice files use UTC.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your information, turn on SimpleX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
-        <source>To protect your information, turn on SimpleX Lock.
+      <trans-unit id="To protect your information, turn on PrivatelineX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
+        <source>To protect your information, turn on PrivatelineX Lock.
 You will be prompted to complete authentication before this feature is enabled.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -3364,8 +3364,8 @@ To connect, please ask your contact to create another connection link and check 
         <source>Use .onion hosts</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use SimpleX Chat servers?" xml:space="preserve">
-        <source>Use SimpleX Chat servers?</source>
+      <trans-unit id="Use Privateline X-Chat servers?" xml:space="preserve">
+        <source>Use Privateline X-Chat servers?</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Use chat" xml:space="preserve">
@@ -3392,8 +3392,8 @@ To connect, please ask your contact to create another connection link and check 
         <source>Using .onion hosts requires compatible VPN provider.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Using SimpleX Chat servers." xml:space="preserve">
-        <source>Using SimpleX Chat servers.</source>
+      <trans-unit id="Using Privateline X-Chat servers." xml:space="preserve">
+        <source>Using Privateline X-Chat servers.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Verify connection security" xml:space="preserve">
@@ -3540,9 +3540,9 @@ To connect, please ask your contact to create another connection link and check 
         <source>You can also connect by clicking the link. If it opens in the browser, click **Open in mobile app** button.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can hide or mute a user profile - swipe it to the right.&#10;SimpleX Lock must be enabled." xml:space="preserve">
+      <trans-unit id="You can hide or mute a user profile - swipe it to the right.&#10;PrivatelineX Lock must be enabled." xml:space="preserve">
         <source>You can hide or mute a user profile - swipe it to the right.
-SimpleX Lock must be enabled.</source>
+PrivatelineX Lock must be enabled.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="You can now send messages to %@" xml:space="preserve">
@@ -3565,8 +3565,8 @@ SimpleX Lock must be enabled.</source>
         <source>You can start chat via app Settings / Database or by restarting the app</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can turn on SimpleX Lock via Settings." xml:space="preserve">
-        <source>You can turn on SimpleX Lock via Settings.</source>
+      <trans-unit id="You can turn on PrivatelineX Lock via Settings." xml:space="preserve">
+        <source>You can turn on PrivatelineX Lock via Settings.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="You can use markdown to format messages:" xml:space="preserve">
@@ -3863,8 +3863,8 @@ SimpleX servers cannot see your profile.</source>
         <source>complete</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="connect to SimpleX Chat developers." xml:space="preserve">
-        <source>connect to SimpleX Chat developers.</source>
+      <trans-unit id="connect to Privateline X-Chat developers." xml:space="preserve">
+        <source>connect to Privateline X-Chat developers.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="connected" xml:space="preserve">
@@ -4598,7 +4598,7 @@ SimpleX servers cannot see your profile.</source>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="pt" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="pt" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
     </header>
@@ -4612,7 +4612,7 @@ SimpleX servers cannot see your profile.</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 SimpleX Chat. All rights reserved.</source>
+        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>

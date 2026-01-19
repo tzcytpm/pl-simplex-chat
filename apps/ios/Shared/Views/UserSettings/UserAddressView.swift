@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 26.04.2023.
-//  Copyright © 2023 SimpleX Chat. All rights reserved.
+//  Copyright © 2023 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -188,7 +188,7 @@ struct UserAddressView: View {
         Button {
             createAddress()
         } label: {
-            Label("Create SimpleX address", systemImage: "qrcode")
+            Label("Create PrivatelineX address", systemImage: "qrcode")
         }
     }
 
@@ -306,7 +306,7 @@ struct UserAddressView: View {
                 .navigationBarTitleDisplayMode(.inline)
         } label: {
             settingsRow("info.circle", color: theme.colors.secondary) {
-                Text("SimpleX address or 1-time link?")
+                Text("PrivatelineX address or 1-time link?")
             }
         }
     }
@@ -442,7 +442,7 @@ struct UserAddressSettingsView: View {
                     .onDisappear {
                         if savedSettings != settings {
                             showAlert(
-                                title: NSLocalizedString("SimpleX address settings", comment: "alert title"),
+                                title: NSLocalizedString("PrivatelineX address settings", comment: "alert title"),
                                 message: NSLocalizedString("Settings were changed.", comment: "alert message"),
                                 buttonTitle: NSLocalizedString("Save", comment: "alert button"),
                                 buttonAction: { saveAddressSettings(settings, $savedSettings) },

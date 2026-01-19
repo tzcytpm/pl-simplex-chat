@@ -16,7 +16,7 @@
     <string name="chat_item_ttl_month">1 місяць</string>
     <string name="learn_more_about_address">Про SimpleX-адресу</string>
     <string name="one_time_link_short">1-разове посилання</string>
-    <string name="about_simplex_chat">Про SimpleX Chat</string>
+    <string name="about_simplex_chat">Про Privateline X-Chat</string>
     <string name="v4_3_improved_server_configuration_desc">Додавайте сервери, скануючи QR-коди.</string>
     <string name="users_delete_all_chats_deleted">Усі чати та повідомлення будуть видалені - цю дію неможливо скасувати!</string>
     <string name="allow_calls_only_if">Дозволити дзвінки тільки за умови, що ваш контакт дозволяє їх.</string>
@@ -355,12 +355,12 @@
     <string name="smp_servers_invalid_address">Невірна адреса сервера!</string>
     <string name="smp_servers_check_address">Перевірте адресу сервера і спробуйте ще раз.</string>
     <string name="xftp_servers">Сервери XFTP</string>
-    <string name="install_simplex_chat_for_terminal">Встановити SimpleX Chat для терміналу</string>
+    <string name="install_simplex_chat_for_terminal">Встановити Privateline X-Chat для терміналу</string>
     <string name="contribute">Внести вклад</string>
     <string name="rate_the_app">Оцініть додаток</string>
     <string name="your_SMP_servers">Ваші сервери SMP</string>
     <string name="your_XFTP_servers">Ваші сервери XFTP</string>
-    <string name="using_simplex_chat_servers">Використання серверів SimpleX Chat.</string>
+    <string name="using_simplex_chat_servers">Використання серверів Privateline X-Chat.</string>
     <string name="how_to">Як користуватися</string>
     <string name="callstatus_calling">дзвінок…</string>
     <string name="callstatus_missed">пропущений виклик</string>
@@ -374,7 +374,7 @@
     <string name="icon_descr_expand_role">Розгорнути вибір ролі</string>
     <string name="chat_preferences_yes">так</string>
     <string name="contact_preferences">Налаштування контакту</string>
-    <string name="v4_2_security_assessment_desc">Безпека SimpleX Chat була перевірена компанією Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">Безпека Privateline X-Chat була перевірена компанією Trail of Bits.</string>
     <string name="v4_3_irreversible_message_deletion_desc">Ваші контакти можуть дозволити остаточне видалення повідомлень.</string>
     <string name="database_will_be_encrypted">База даних буде зашифрована.</string>
     <string name="keychain_error">Помилка сховища ключів</string>
@@ -409,7 +409,7 @@
     <string name="people_can_connect_only_via_links_you_share">Ви вирішуєте, хто може під\'єднатися.</string>
     <string name="how_simplex_works">Як працює SimpleX</string>
     <string name="encrypted_audio_call">зашифрований e2e аудіовиклик</string>
-    <string name="open_simplex_chat_to_accept_call">Відкрийте SimpleX Chat для прийняття виклику</string>
+    <string name="open_simplex_chat_to_accept_call">Відкрийте Privateline X-Chat для прийняття виклику</string>
     <string name="status_e2e_encrypted">e2e зашифровано</string>
     <string name="icon_descr_speaker_off">Динамік вимкнено</string>
     <string name="icon_descr_call_pending_sent">Очікування виклику</string>
@@ -593,8 +593,8 @@
     <string name="only_stored_on_members_devices">(зберігається лише на пристроях учасників групи)</string>
     <string name="toast_permission_denied">Доступ відхилено!</string>
     <string name="use_camera_button">Камера</string>
-    <string name="thank_you_for_installing_simplex">Дякуємо за установку SimpleX Chat!</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Якщо ви отримали запрошення від SimpleX Chat, ви можете відкрити його у вашому браузері:</string>
+    <string name="thank_you_for_installing_simplex">Дякуємо за установку Privateline X-Chat!</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Якщо ви отримали запрошення від Privateline X-Chat, ви можете відкрити його у вашому браузері:</string>
     <string name="clear_chat_menu_action">Очистити</string>
     <string name="delete_contact_menu_action">Видалити</string>
     <string name="delete_group_menu_action">Видалити</string>
@@ -627,7 +627,7 @@
     <string name="smp_servers_preset_server">Попередньо встановлений сервер</string>
     <string name="smp_servers_your_server_address">Адреса вашого сервера</string>
     <string name="smp_servers_per_user">Сервери для нових підключень до вашого поточного профілю</string>
-    <string name="use_simplex_chat_servers__question">Використовувати сервери SimpleX Chat?</string>
+    <string name="use_simplex_chat_servers__question">Використовувати сервери Privateline X-Chat?</string>
     <string name="enter_one_ICE_server_per_line">Сервери ICE (один на рядок)</string>
     <string name="error_saving_ICE_servers">Помилка збереження серверів ICE</string>
     <string name="network_use_onion_hosts_required_desc">.Onion-хости будуть обов\'язковими для підключення.
@@ -1033,9 +1033,9 @@
     <string name="save_settings_question">Зберегти налаштування\?</string>
     <string name="save_auto_accept_settings">Зберегти налаштування адреси SimpleX</string>
     <string name="email_invite_body">Привіт!
-\nПриєднуйтесь до мене через SimpleX Chat: %s</string>
+\nПриєднуйтесь до мене через Privateline X-Chat: %s</string>
     <string name="invite_friends">Запросити друзів</string>
-    <string name="email_invite_subject">Давайте говорити в SimpleX Chat</string>
+    <string name="email_invite_subject">Давайте говорити в Privateline X-Chat</string>
     <string name="continue_to_next_step">Продовжити</string>
     <string name="dont_create_address">Не створювати адресу</string>
     <string name="callstate_received_answer">отримано відповідь…</string>
@@ -1176,7 +1176,7 @@
     <string name="create_group">Створити секретну групу</string>
     <string name="to_share_with_your_contact">(щоб поділитися з вашим контактом)</string>
     <string name="connect_via_link_or_qr_from_clipboard_or_in_person">(сканувати або вставити з буферу обміну)</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Ви можете <font color="#0088ff">підключитися до розробників SimpleX Chat, щоб задати будь-які питання і отримувати оновлення</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Ви можете <font color="#0088ff">підключитися до розробників Privateline X-Chat, щоб задати будь-які питання і отримувати оновлення</font>.]]></string>
     <string name="desktop_scan_QR_code_from_app_via_scan_QR_code"><![CDATA[💻 на комп\'ютері: скануйте відображений QR-код з додатка за допомогою <b>Сканувати QR-код</b>.]]></string>
     <string name="icon_descr_address">Адреса SimpleX</string>
     <string name="show_QR_code">Показати QR-код</string>
@@ -2128,7 +2128,7 @@
     <string name="onboarding_choose_server_operators">Оператори серверів</string>
     <string name="onboarding_network_operators">Мережеві оператори</string>
     <string name="onboarding_network_operators_conditions_will_be_accepted">Умови будуть прийняті для ввімкнених операторів через 30 днів.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Наприклад, якщо ваш контакт отримує повідомлення через сервер SimpleX Chat, ваш додаток доставлятиме їх через сервер Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Наприклад, якщо ваш контакт отримує повідомлення через сервер Privateline X-Chat, ваш додаток доставлятиме їх через сервер Flux.</string>
     <string name="onboarding_select_network_operators_to_use">Виберіть мережевих операторів для використання.</string>
     <string name="onboarding_network_operators_configure_via_settings">Ви можете налаштувати сервери за допомогою налаштувань.</string>
     <string name="onboarding_network_operators_review_later">Перегляньте пізніше</string>
@@ -2243,7 +2243,7 @@
     <string name="display_name_accepted_invitation">прийнято запрошення</string>
     <string name="display_name_requested_to_connect">запит на підключення</string>
     <string name="onboarding_network_about_operators">Про операторів</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat та Flux уклали угоду про включення серверів, що працюють на Flux, до додатку.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat та Flux уклали угоду про включення серверів, що працюють на Flux, до додатку.</string>
     <string name="sync_connection_desc">Підключення вимагає повторного узгодження шифрування.</string>
     <string name="encryption_renegotiation_in_progress">Виконується повторне узгодження шифрування.</string>
     <string name="sync_connection_confirm">Виправити</string>
@@ -2375,7 +2375,7 @@
     <string name="operator_updated_conditions">Оновлені умови</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Приватні чати, групи та ваші контакти недоступні для операторів сервера.</string>
     <string name="onboarding_conditions_accept">Прийняти</string>
-    <string name="onboarding_conditions_by_using_you_agree">Використовуючи SimpleX Chat, ви погоджуєтесь на:\n- надсилати тільки легальний контент у публічних групах.\n- поважати інших користувачів – без спаму.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Використовуючи Privateline X-Chat, ви погоджуєтесь на:\n- надсилати тільки легальний контент у публічних групах.\n- поважати інших користувачів – без спаму.</string>
     <string name="onboarding_conditions_configure_server_operators">Налаштувати операторів сервера</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Політика конфіденційності та умови використання</string>
     <string name="link_requires_newer_app_version_please_upgrade">Це посилання вимагає новішої версії додатку. Будь ласка, оновіть додаток або попросіть вашого контакту надіслати сумісне посилання.</string>

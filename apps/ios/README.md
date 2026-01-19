@@ -1,1 +1,1 @@
-# SimpleX Chat iOS app
+# Privateline X-Chat iOS app

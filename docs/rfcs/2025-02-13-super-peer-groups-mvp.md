@@ -76,12 +76,12 @@ UX for creating a public group should be straightforward:
 3. Confirm creation, once super-peers connected. Super-peer can fail to connect, at least one connected super-peer is required for confirmation.
 4. Share link for members to join.
 
-Super-peers are pre-configured in app for preset operators. User can also add self-hosted or other known super-peers to custom configuration. Super-peer should have a SimpleX address to receive group join requests.
+Super-peers are pre-configured in app for preset operators. User can also add self-hosted or other known super-peers to custom configuration. Super-peer should have a PrivatelineX address to receive group join requests.
 
 Protocol for creating public group (happy path):
 
 1. Group owner's client (further owner) creates group record locally.
-2. Owner sends contact requests to selected super-peers SimpleX addresses. These contact requests are essentially invitations to be super-peers in this group. ConnInfo sent in these contact requests (INV) contains group invitation details (XGrpInv with added fields, or new specific protocol message - TBC).
+2. Owner sends contact requests to selected super-peers PrivatelineX addresses. These contact requests are essentially invitations to be super-peers in this group. ConnInfo sent in these contact requests (INV) contains group invitation details (XGrpInv with added fields, or new specific protocol message - TBC).
 3. Super-peers receive these requests. They generate new group links specifically for this group, to serve as a point of connection to them for new members.
 4. Super-peers accept requests, sending generated group links in confirmation (CONF) ConnInfos.
 5. Owner packages super-peers group links and other group metadata into blob.

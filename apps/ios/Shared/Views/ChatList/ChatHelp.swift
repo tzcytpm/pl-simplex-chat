@@ -3,7 +3,7 @@
 //  SimpleX
 //
 //  Created by Evgeny Poberezkin on 10/02/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -18,11 +18,11 @@ struct ChatHelp: View {
 
     func chatHelp() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Thank you for installing SimpleX Chat!")
+            Text("Thank you for installing Privateline X-Chat!")
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("To ask any questions and to receive updates:")
-                Button("connect to SimpleX Chat developers.") {
+                Button("connect to Privateline X-Chat developers.") {
                     dismissSettingsSheet()
                     DispatchQueue.main.async {
                         UIApplication.shared.open(simplexTeamURL)

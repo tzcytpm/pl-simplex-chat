@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v5.1 released: message reactions and self-destruct passcode"
+title: "Privateline X-Chat v5.1 released: message reactions and self-destruct passcode"
 date: 2023-05-23
 image: images/20230523-reactions.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20230523.html
 permalink: "/blog/20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.html"
 ---
 
-# SimpleX Chat v5.1 released: message reactions and self-destruct passcode
+# Privateline X-Chat v5.1 released: message reactions and self-destruct passcode
 
 **Published:** May 23, 2023
 
@@ -84,7 +84,7 @@ You can share your theme with other users by exporting it to a file and sending 
 
 <img src="./images/20230523-self-destruct.png" width="288" class="float-to-left">
 
-This is something many of you asked before - when asked to enter the app passcode under duress, to be able to enter a special self-destruct code that would remove the app data. This feature is offered in many security tools, and now you can configure it in SimpleX Chat as well.
+This is something many of you asked before - when asked to enter the app passcode under duress, to be able to enter a special self-destruct code that would remove the app data. This feature is offered in many security tools, and now you can configure it in Privateline X-Chat as well.
 
 To enable it:
 - go to app Settings > Privacy & security > SimpleX Lock.
@@ -96,7 +96,7 @@ To enable it:
 
 Some links to answer the most common questions:
 
-[SimpleX Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
+[Privateline X-Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
 [How can SimpleX deliver messages without user identifiers](https://simplex.chat/#how-simplex-works).
 
@@ -110,7 +110,7 @@ Visit our [website](https://simplex.chat) to learn more.
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -124,4 +124,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

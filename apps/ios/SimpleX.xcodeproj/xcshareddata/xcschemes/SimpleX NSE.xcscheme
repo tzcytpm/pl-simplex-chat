@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CDCAD442818589900503DA2"
-               BuildableName = "SimpleX NSE.appex"
-               BlueprintName = "SimpleX NSE"
+               BuildableName = "PrivatelineX NSE.appex"
+               BlueprintName = "PrivatelineX NSE"
                ReferencedContainer = "container:SimpleX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-               BuildableName = "SimpleX.app"
-               BlueprintName = "SimpleX (iOS)"
+               BuildableName = "PrivatelineX.app"
+               BlueprintName = "PrivatelineX (iOS)"
                ReferencedContainer = "container:SimpleX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,8 +60,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-            BuildableName = "SimpleX.app"
-            BlueprintName = "SimpleX (iOS)"
+            BuildableName = "PrivatelineX.app"
+            BlueprintName = "PrivatelineX (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -79,8 +79,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CA059C9279559F40002BEB4"
-            BuildableName = "SimpleX.app"
-            BlueprintName = "SimpleX (iOS)"
+            BuildableName = "PrivatelineX.app"
+            BlueprintName = "PrivatelineX (iOS)"
             ReferencedContainer = "container:SimpleX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

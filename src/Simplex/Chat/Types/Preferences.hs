@@ -213,7 +213,7 @@ groupFeatureNameText = \case
   GFReactions -> "Message reactions"
   GFVoice -> "Voice messages"
   GFFiles -> "Files and media"
-  GFSimplexLinks -> "SimpleX links"
+  GFSimplexLinks -> "PrivatelineX links"
   GFReports -> "Member reports"
   GFHistory -> "Recent history"
   GFSessions -> "Chat sessions"

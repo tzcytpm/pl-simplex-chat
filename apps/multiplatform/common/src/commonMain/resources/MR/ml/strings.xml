@@ -273,7 +273,7 @@
     <string name="smp_servers_your_server_address">നിങ്ങളുടെ സെർവർ വിലാസം</string>
     <string name="info_row_sent_at">എന്ന വിലാസത്തിൽ അയച്ചു</string>
     <string name="your_XFTP_servers">നിങ്ങളുടെ XFTP സെർവറുകൾ</string>
-    <string name="about_simplex_chat">കുറിച്ച് SimpleX Chat</string>
+    <string name="about_simplex_chat">കുറിച്ച് Privateline X-Chat</string>
     <string name="users_delete_all_chats_deleted">എല്ലാ സംഭാഷണങ്ങളും സന്ദേശങ്ങളും ഇല്ലാതാക്കപ്പെടും - ഇത് പഴയപടിയാക്കാനാകില്ല!</string>
     <string name="all_group_members_will_remain_connected">സംഘത്തിലെ എല്ലാ അംഗങ്ങളുടെ ബന്ധം നിലനിർത്തും.</string>
     <string name="la_could_not_be_verified">നിങ്ങളെ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>

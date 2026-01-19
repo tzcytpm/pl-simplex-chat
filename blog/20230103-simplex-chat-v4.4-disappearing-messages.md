@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v4.4 released – with disappearing messages, live messages, connection security verification and French language!"
+title: "Privateline X-Chat v4.4 released – with disappearing messages, live messages, connection security verification and French language!"
 date: 2023-01-03
 image: images/20230103-disappearing1.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20230103.html
 permalink: "/blog/20230103-simplex-chat-v4.4-disappearing-messages.html"
 ---
 
-# SimpleX Chat v4.4 released – with disappearing messages, live messages, connection security verification and French language!
+# Privateline X-Chat v4.4 released – with disappearing messages, live messages, connection security verification and French language!
 
 **Published:** Jan 3, 2023
 
@@ -43,7 +43,7 @@ You can also start a live message after you started typing or after you chose th
 
 <img src="./images/20230103-verification.png" width="288">
 
-SimpleX Chat design prevents the possibility of messaging servers substituting the key during the initial connection (man-in-the-middle attack) by requiring that the invitation link is passed via another channel. I wrote more about how MITM attack works in [this post](https://www.poberezkin.com/posts/2022-12-07-why-privacy-needs-to-be-redefined.html). But this other channel, however unlikely, could still have been compromised by an attacker to replace the invitation link you sent. That is the reason why we recommend sharing QR code in a video call – this is very complex for an attacker to replace it in this case.
+Privateline X-Chat design prevents the possibility of messaging servers substituting the key during the initial connection (man-in-the-middle attack) by requiring that the invitation link is passed via another channel. I wrote more about how MITM attack works in [this post](https://www.poberezkin.com/posts/2022-12-07-why-privacy-needs-to-be-redefined.html). But this other channel, however unlikely, could still have been compromised by an attacker to replace the invitation link you sent. That is the reason why we recommend sharing QR code in a video call – this is very complex for an attacker to replace it in this case.
 
 This new feature allows you to verify, via yet another channel, that the connection is secure and the keys were not replaced. You can either scan the security code from your contact's app, or compare codes visually, or even read it in a voice call – if your and your contact's app have the same security code for each other then the connection is secure.
 
@@ -59,7 +59,7 @@ Android app supported GIFs and stickers for some time, now you can view and send
 
 ### French language interface
 
-Thanks to our users' community and to [Weblate](https://weblate.org/en-gb/) kindly providing a free hosting plan for SimpleX Chat translations we can now support more languages in the interface – this version adds French.
+Thanks to our users' community and to [Weblate](https://weblate.org/en-gb/) kindly providing a free hosting plan for Privateline X-Chat translations we can now support more languages in the interface – this version adds French.
 
 Please get in touch if you want to translate the interface into your language!
 
@@ -79,7 +79,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -100,4 +100,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

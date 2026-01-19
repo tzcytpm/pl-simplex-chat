@@ -1,9 +1,9 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "SimpleX NSE";
+"CFBundleDisplayName" = "PrivatelineX NSE";
 
 /* Bundle name */
-"CFBundleName" = "SimpleX NSE";
+"CFBundleName" = "PrivatelineX NSE";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2022 SimpleX Chat. Todos los derechos reservados.";
+"NSHumanReadableCopyright" = "Copyright © 2022 Privateline X-Chat. Todos los derechos reservados.";
 

@@ -9,7 +9,7 @@ revision: 31.07.2023
 
 ## Informacje ogólne
 
-Serwer SMP to serwer przekaźnikowy używany do przekazywania wiadomości w sieci SimpleX. Aplikacje SimpleX Chat mają wstępnie ustawione serwery (dla aplikacji mobilnych są to smp11, smp12 i smp14.simplex.im), ale można łatwo zmienić konfigurację aplikacji, aby korzystać z innych serwerów.
+Serwer SMP to serwer przekaźnikowy używany do przekazywania wiadomości w sieci SimpleX. Aplikacje Privateline X-Chat mają wstępnie ustawione serwery (dla aplikacji mobilnych są to smp11, smp12 i smp14.simplex.im), ale można łatwo zmienić konfigurację aplikacji, aby korzystać z innych serwerów.
 
 Klienty SimpleX określają tylko, który serwer jest używany do odbierania wiadomości, oddzielnie dla każdego kontaktu (lub połączenia grupowego z członkiem grupy), a serwery te są tylko tymczasowe, ponieważ adres dostawy może ulec zmianie.
 

@@ -1,17 +1,17 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect."
+title: "Privateline X-Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect."
 date: 2024-01-24
 previewBody: blog_previews/20240124.html
 image: images/20240124-connect1.png
 permalink: "/blog/20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.html"
 ---
 
-# SimpleX Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect.
+# Privateline X-Chat: free infrastructure from Linode, v5.5 released with private notes, group history and a simpler UX to connect.
 
 **Published:** Jan 24, 2024
 
-[SimpleX Chat infrastructure on Linode](#simplex-chat-infrastructure-on-linode):
+[Privateline X-Chat infrastructure on Linode](#simplex-chat-infrastructure-on-linode):
 - Free infrastructure.
 - SimpleX servers in Linode Marketplace.
 - High capacity messaging servers.
@@ -24,9 +24,9 @@ What's new in v5.5:
 
 Also, we added Hungarian (only Android) and Turkish interface languages, thanks to [our users and Weblate](https://github.com/simplex-chat/simplex-chat#help-translating-simplex-chat).
 
-SimpleX Chat Android app is now available in 20 languages!
+Privateline X-Chat Android app is now available in 20 languages!
 
-## SimpleX Chat infrastructure on Linode
+## Privateline X-Chat infrastructure on Linode
 
 We chose Linode as our hosting provider as and they have been consistently reliable, cheaper than alternatives, with excellent support and great documentation.
 
@@ -34,13 +34,13 @@ When Linode was acquired by Akamai, we were a bit nervous about how it may affec
 
 As the usage of SimpleX network was growing, so did our hosting costs, and from being really small they started to become significant, particularly as we didn't yet manage to optimize the servers last year.
 
-Linode helped - we're really excited to announce that Akamai decided to support SimpleX Chat growth by accepting it into their [Linode Rise startup program](https://www.linode.com/linode-for-startups/).
+Linode helped - we're really excited to announce that Akamai decided to support Privateline X-Chat growth by accepting it into their [Linode Rise startup program](https://www.linode.com/linode-for-startups/).
 
 Thanks to this program:
 
 - we received free infrastructure for the first year up to $10,000 per month, no strings attached. It already saved us some money, and gave us enough time to optimize the servers - the latest version of the servers are much less costly to operate with the current traffic, and can support a much larger traffic within this limit. In the year 2 of the program we will receive 50% discount with unlimited traffic, and in year 3 - 25% discount.
 
-- Linode Marketplace now includes [SimpleX Chat messages and file servers](https://www.linode.com/marketplace/apps/simplex-chat/simplex-chat/) - you can get free $100 credits for the first 2 months and run your own servers in just a few clicks, and use them in SimpleX Chat apps. Anybody can submit their application to Linode marketplace, but dedicated support we have from Linode team via this program made it simpler.
+- Linode Marketplace now includes [Privateline X-Chat messages and file servers](https://www.linode.com/marketplace/apps/simplex-chat/simplex-chat/) - you can get free $100 credits for the first 2 months and run your own servers in just a few clicks, and use them in Privateline X-Chat apps. Anybody can submit their application to Linode marketplace, but dedicated support we have from Linode team via this program made it simpler.
 
 - Akamai solution engineers are helping us to design high capacity server solution, free of charge, so that a single host can provide horizontally scalable capacity for messaging, allowing for a much larger number of concurrent users on a single server address. Initially we considered using HAProxy, and the latest proof of concept uses OpenResty - a fork of Nginx with Lua script engine - to route requests from a single host to multiple SMP relays, reducing an overhead for the clients that would be configured with a smaller number of higher capacity servers. This project is still in progress, there will be more details as we roll it out.
 
@@ -102,7 +102,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -116,4 +116,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

@@ -4,16 +4,16 @@ import java.io.File
 import java.util.*
 
 private val home = System.getProperty("user.home")
-private val unixConfigPath = (System.getenv("XDG_CONFIG_HOME") ?: "$home/.config") + "/plx-chat"
-private val unixDataPath = (System.getenv("XDG_DATA_HOME") ?: "$home/.local/share") + "/plx-chat"
+private val unixConfigPath = (System.getenv("XDG_CONFIG_HOME") ?: "$home/.config") + "/privateline-x-chat"
+private val unixDataPath = (System.getenv("XDG_DATA_HOME") ?: "$home/.local/share") + "/privateline-x-chat"
 val desktopPlatform = detectDesktopPlatform()
 
 enum class DesktopPlatform(val libExtension: String, val configPath: String, val dataPath: String, val githubAssetName: String) {
-  LINUX_X86_64("so", unixConfigPath, unixDataPath, "plx-chat-desktop-x86_64.AppImage"),
-  LINUX_AARCH64("so", unixConfigPath, unixDataPath, " plx-chat-desktop-aarch64.AppImage"),
-  WINDOWS_X86_64("dll", System.getenv("AppData") + File.separator + "PLX-Chat", System.getenv("AppData") + File.separator + "PLX-Chat", "plx-chat-desktop-windows-x86_64.msi"),
-  MAC_X86_64("dylib", unixConfigPath, unixDataPath, "plx-chat-desktop-macos-x86_64.dmg"),
-  MAC_AARCH64("dylib", unixConfigPath, unixDataPath, "plx-chat-desktop-macos-aarch64.dmg");
+  LINUX_X86_64("so", unixConfigPath, unixDataPath, "privateline-x-chat-desktop-x86_64.AppImage"),
+  LINUX_AARCH64("so", unixConfigPath, unixDataPath, " privateline-x-chat-desktop-aarch64.AppImage"),
+  WINDOWS_X86_64("dll", System.getenv("AppData") + File.separator + "Privateline X-Chat", System.getenv("AppData") + File.separator + "Privateline X-Chat", "privateline-x-chat-desktop-windows-x86_64.msi"),
+  MAC_X86_64("dylib", unixConfigPath, unixDataPath, "privateline-x-chat-desktop-macos-x86_64.dmg"),
+  MAC_AARCH64("dylib", unixConfigPath, unixDataPath, "privateline-x-chat-desktop-macos-aarch64.dmg");
 
   fun isLinux() = this == LINUX_X86_64 || this == LINUX_AARCH64
   fun isWindows() = this == WINDOWS_X86_64

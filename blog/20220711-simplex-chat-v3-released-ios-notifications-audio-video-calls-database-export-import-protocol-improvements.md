@@ -1,13 +1,13 @@
 ---
 layout: layouts/article.html
-title: "SimpleX announces SimpleX Chat v3 &mdash; with encrypted calls and iOS push notifications"
+title: "PrivatelineX announces Privateline X-Chat v3 &mdash; with encrypted calls and iOS push notifications"
 date: 2022-07-11
 image: images/20220711-call.png
 previewBody: blog_previews/20220711.html
 permalink: "/blog/20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.html"
 ---
 
-# SimpleX announces SimpleX Chat v3 - with encrypted calls and iOS push notifications
+# SimpleX announces Privateline X-Chat v3 - with encrypted calls and iOS push notifications
 
 **Published:** Jul 11, 2022
 
@@ -34,7 +34,7 @@ To deliver the notifications to iOS devices we use our notification server, as t
 
 ### End-to-end encrypted audio/video calls
 
-You can now call your contacts via WebRTC, connecting via SimpleX Chat relay servers or peer-to-peer, and in the near future you will be able to configure your own STUN/TURN servers used to establish the connection. The calls are end-to-end encrypted - the key is negotiated via the connection you already have with your contact in the chat, that is also used as a signalling layer for WebRTC - in most cases only three messages in total have to be sent by your and your contact's clients for the call to start, including the initial call invitation.
+You can now call your contacts via WebRTC, connecting via Privateline X-Chat relay servers or peer-to-peer, and in the near future you will be able to configure your own STUN/TURN servers used to establish the connection. The calls are end-to-end encrypted - the key is negotiated via the connection you already have with your contact in the chat, that is also used as a signalling layer for WebRTC - in most cases only three messages in total have to be sent by your and your contact's clients for the call to start, including the initial call invitation.
 
 <img src="./images/20220711-call-in-progress.png" width="480">
 
@@ -42,7 +42,7 @@ The calls are still quite limited, especially on iOS, - for example, you cannot 
 
 ### Database export and import
 
-Quite a few users asked - _how can I move my chat profile to a new device_? SimpleX Chat v3 has a solution for that - you can now export chat database from one device and import it into another - even to another platform, e.g. you can move chat database from Android phone to iOS or to the terminal (console) client.
+Quite a few users asked - _how can I move my chat profile to a new device_? Privateline X-Chat v3 has a solution for that - you can now export chat database from one device and import it into another - even to another platform, e.g. you can move chat database from Android phone to iOS or to the terminal (console) client.
 
 <img src="./images/20220711-database-chat-stopped.png" width="480">
 
@@ -54,7 +54,7 @@ Some important limitations:
 This feature can be useful in some other scenarios:
 
 - managing multiple chat profiles - it's not very convenient, and a better support of multiple profiles is coming soon.
-- share access to the same profile with other people, as long as it is not used at the same time. For that use case it may be better to run SimpleX Chat terminal client in the cloud, as we do with our public account that you can connect to via the app.
+- share access to the same profile with other people, as long as it is not used at the same time. For that use case it may be better to run Privateline X-Chat terminal client in the cloud, as we do with our public account that you can connect to via the app.
 - preserve chat profile when you need to temporarily delete the app from your device.
 
 ### Protocol privacy and performance improvements
@@ -67,11 +67,11 @@ All these changes did not affect backward compatibility - if your contact has th
 
 ## SimpleX platform
 
-We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [SimpleX Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a messaging application built on the SimpleX platform.
+We are building a new platform for distributed Internet applications where privacy of the messages _and_ the network matter. [Privateline X-Chat](https://github.com/simplex-chat/simplex-chat) is our first application, a messaging application built on the SimpleX platform.
 
 ### The first (and we believe the only) messaging platform without user identifiers of any kind - 100% private by design!
 
-To protect identities of users and their connections, SimpleX Chat has no user identifiers visible to the servers and the network – unlike any other messaging platform. Not only SimpleX doesn't use phone numbers or emails, as Signal and many other platforms, it also does not have any persistent identifiers to identify users - unlike many other messengers considered private - Session, Cwtch, Ricochet, Briar, Jami, etc., - all these platforms have global user identifiers, uniquely identifying their users and creating the risks of de-anonymising the users.
+To protect identities of users and their connections, Privateline X-Chat has no user identifiers visible to the servers and the network – unlike any other messaging platform. Not only SimpleX doesn't use phone numbers or emails, as Signal and many other platforms, it also does not have any persistent identifiers to identify users - unlike many other messengers considered private - Session, Cwtch, Ricochet, Briar, Jami, etc., - all these platforms have global user identifiers, uniquely identifying their users and creating the risks of de-anonymising the users.
 
 ### Why having users' identifiers is bad for the users?
 
@@ -87,7 +87,7 @@ I wrote about it in [v2 release announcement](./20220511-simplex-chat-v2-images-
 
 ## We ask you to help us pay for 3rd party security audit
 
-I will get straight to the point: I ask you to support SimpleX Chat with donations.
+I will get straight to the point: I ask you to support Privateline X-Chat with donations.
 
 We are prioritizing users privacy and security - it would be impossible without your support we were lucky to have so far.
 
@@ -95,7 +95,7 @@ We are planning a 3rd party security audit for the app, and it would hugely help
 
 Our pledge to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations for the clients and the servers. We are building SimpleX platform based on the same principles as email and web, but much more private and secure.
 
-If you are already using SimpleX Chat, or plan to use it in the future when it has more features, please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
+If you are already using Privateline X-Chat, or plan to use it in the future when it has more features, please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
 
 It is possible to [donate via GitHub](https://github.com/sponsors/simplex-chat), which is commission-free for us, or [via OpenCollective](https://opencollective.com/simplex-chat), that also accepts donations in crypto-currencies, but charges a commission.
 
@@ -103,4 +103,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v3.2 is released &mdash; meet Incognito mode, unique to Simplex Chat"
+title: "Privateline X-Chat v3.2 is released &mdash; meet Incognito mode, unique to Simplex Chat"
 date: 2022-09-01
 image: images/20220901-incognito1.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20220901.html
 permalink: "/blog/20220901-simplex-chat-v3.2-incognito-mode.html"
 ---
 
-# SimpleX Chat v3.2 is released - meet Incognito mode, unique to Simplex Chat
+# Privateline X-Chat v3.2 is released - meet Incognito mode, unique to Simplex Chat
 
 **Published:** Sep 1, 2022
 
@@ -57,7 +57,7 @@ You can now change the name under which your contacts appear in the chats. This 
 
 We have released support for using SOCKS proxy to access messaging servers via Tor, but previously the servers were still available via their public Internet addresses. It means that while your IP address was protected from the server, the whole Tor circuit could have been observed by some actors, and for some communication scenarios it is not desirable.
 
-This release adds support for servers with multiple hostnames - all servers provided by SimpleX Chat now have dual addresses (one public and one .onion), and you can have your own servers available via two addresses as well - all you have to do is to install Tor client on your server and register its address with Tor. If you server has both public and .onion address, it is not really hidden, so you should enable HiddenServiceSingleHopMode to reduce the latency of connection - it protects anonymity of the people who connect to the server, but not of the server itself. The server address would include both its public and onion address, as you can see in the server addresses in the app (in the contacts pages) - you should use the same format for the addresses of your servers.
+This release adds support for servers with multiple hostnames - all servers provided by Privateline X-Chat now have dual addresses (one public and one .onion), and you can have your own servers available via two addresses as well - all you have to do is to install Tor client on your server and register its address with Tor. If you server has both public and .onion address, it is not really hidden, so you should enable HiddenServiceSingleHopMode to reduce the latency of connection - it protects anonymity of the people who connect to the server, but not of the server itself. The server address would include both its public and onion address, as you can see in the server addresses in the app (in the contacts pages) - you should use the same format for the addresses of your servers.
 
 Both android and iOS app allow managing whether .onion addresses are used, and you can also enforce using .onion addresses - in this case the app will not connect to the server unless one of its hostname is .onion address. On Android, .onion addresses are used by default when SOCKS proxy is enabled.
 
@@ -91,7 +91,7 @@ It is planned in October, and if there are no major issues we will publish this 
 
 This is a major expense for use - over $20,000 - I would really appreciate if you could help us cover some part of this cost with the donations.
 
-Our promise to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations of the clients and the servers. We will be establishing a legal framework this year to ensure that it doesn't change if the ownership of SimpleX Chat Ltd changes at any future point.
+Our promise to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations of the clients and the servers. We will be establishing a legal framework this year to ensure that it doesn't change if the ownership of Privateline X-Chat Ltd changes at any future point.
 
 Please consider making a donation - it will help us to raise more funds. Donating any amount, even the price of the cup of coffee, would make a huge difference for us.
 
@@ -105,4 +105,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

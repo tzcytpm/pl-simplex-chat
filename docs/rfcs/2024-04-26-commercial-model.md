@@ -6,7 +6,7 @@ SimpleX two-tier network design provides a _potential_ for a much higher degree 
 
 The main downside of most, if not all, p2p networks is the lack of (or very limited) asynchronous message delivery that is critically important both for the network usability and for privacy and protection against traffic correlation attacks.
 
-But while two-tier network design has a _potential_ for higher privacy, this potential is hard to realize as it does not have an in-built mechanism for network operator incentives. All SimpleX network relays preset in the app are operated by SimpleX Chat Ltd., and while there are probably over 1000 self-hosted and community-hosted messaging relays - not having a single register of such relays is important for true decentralization, so we cannot know the exact number - it is probably a valid argument that a substantial part of SimpleX network traffic is provided by preset relays. Again, while we don't know the exact share, it is probably not much less than 40-50% and probably not much more than 65-75% - which is a very large share in any case for a single entity.
+But while two-tier network design has a _potential_ for higher privacy, this potential is hard to realize as it does not have an in-built mechanism for network operator incentives. All SimpleX network relays preset in the app are operated by Privateline X-Chat Ltd., and while there are probably over 1000 self-hosted and community-hosted messaging relays - not having a single register of such relays is important for true decentralization, so we cannot know the exact number - it is probably a valid argument that a substantial part of SimpleX network traffic is provided by preset relays. Again, while we don't know the exact share, it is probably not much less than 40-50% and probably not much more than 65-75% - which is a very large share in any case for a single entity.
 
 For SimpleX network to achieve the level of decentralization that is designed, the applications have to be able to offer multiple network operators via the app who have commercial incentives to operate these relays.
 
@@ -32,7 +32,7 @@ If these requirements are satisfied it would achieve a radical shift of control 
 ## Solution concept
 
 There are three types of participants in the network:
-- software vendors (e.g., SimpleX Chat ltd.).
+- software vendors (e.g., Privateline X-Chat ltd.).
 - infrastructure operators - commercial entities that have agreement with software vendors - they run server software provided by software vendors.
 - users - they run client software.
 

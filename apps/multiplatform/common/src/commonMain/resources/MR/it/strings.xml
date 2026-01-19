@@ -92,8 +92,8 @@
     <string name="database_initialization_error_desc">Il database non funziona bene. Tocca per maggiori informazioni</string>
     <string name="simplex_service_notification_text">Ricezione messaggi…</string>
     <string name="hide_notification">Nascondi</string>
-    <string name="ntf_channel_messages">Messaggi di SimpleX Chat</string>
-    <string name="ntf_channel_calls">Chiamate di SimpleX Chat</string>
+    <string name="ntf_channel_messages">Messaggi di Privateline X-Chat</string>
+    <string name="ntf_channel_calls">Chiamate di Privateline X-Chat</string>
     <string name="settings_notifications_mode_title">Servizio di notifica</string>
     <string name="settings_notification_preview_mode_title">Mostra anteprima</string>
     <string name="settings_notification_preview_title">Anteprima notifica</string>
@@ -115,11 +115,11 @@
     <string name="la_notice_turn_on">Attiva</string>
     <string name="auth_unlock">Sblocca</string>
     <string name="auth_log_in_using_credential">Accedi usando le tue credenziali</string>
-    <string name="auth_enable_simplex_lock">Attiva SimpleX Lock</string>
-    <string name="auth_disable_simplex_lock">Disattiva SimpleX Lock</string>
+    <string name="auth_enable_simplex_lock">Attiva PrivatelineX Lock</string>
+    <string name="auth_disable_simplex_lock">Disattiva PrivatelineX Lock</string>
     <string name="auth_confirm_credential">Conferma le tue credenziali</string>
     <string name="auth_unavailable">Autenticazione non disponibile</string>
-    <string name="auth_device_authentication_is_disabled_turning_off">L\'autenticazione del dispositivo è disattivata. Disattivazione di SimpleX Lock.</string>
+    <string name="auth_device_authentication_is_disabled_turning_off">L\'autenticazione del dispositivo è disattivata. Disattivazione di PrivatelineX Lock.</string>
     <string name="auth_stop_chat">Ferma la chat</string>
     <string name="auth_open_chat_console">Apri la console della chat</string>
     <string name="message_delivery_error_title">Errore di recapito del messaggio</string>
@@ -213,14 +213,14 @@
     <string name="error_smp_test_certificate">Probabilmente l\'impronta del certificato nell\'indirizzo del server è sbagliata</string>
     <string name="to_preserve_privacy_simplex_has_background_service_instead_of_push_notifications_it_uses_a_few_pc_battery"><![CDATA[Per migliorare la privacy, <b>SimpleX funziona in secondo piano</b> invece di usare le notifiche push.]]></string>
     <string name="turn_off_battery_optimization"><![CDATA[<b>Consentilo</b> nella prossima schermata per ricevere le notifiche immediatamente.]]></string>
-    <string name="simplex_service_notification_title">Servizio SimpleX Chat</string>
+    <string name="simplex_service_notification_title">Servizio Privateline X-Chat</string>
     <string name="notifications_mode_service_desc">Servizio in secondo piano sempre attivo. Le notifiche verranno mostrate appena i messaggi saranno disponibili.</string>
-    <string name="la_notice_title_simplex_lock">SimpleX Lock</string>
-    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Per proteggere le tue informazioni, attiva SimpleX Lock.
+    <string name="la_notice_title_simplex_lock">PrivatelineX Lock</string>
+    <string name="la_notice_to_protect_your_information_turn_on_simplex_lock_you_will_be_prompted_to_complete_authentication_before_this_feature_is_enabled">Per proteggere le tue informazioni, attiva PrivatelineX Lock.
 \nTi verrà chiesto di completare l\'autenticazione prima di attivare questa funzionalità.</string>
-    <string name="auth_simplex_lock_turned_on">SimpleX Lock attivo</string>
+    <string name="auth_simplex_lock_turned_on">PrivatelineX Lock attivo</string>
     <string name="auth_you_will_be_required_to_authenticate_when_you_start_or_resume">Dovrai autenticarti quando avvii o riapri l\'app dopo 30 secondi in secondo piano.</string>
-    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">L\'autenticazione del dispositivo non è attiva. Potrai attivare SimpleX Lock nelle impostazioni, quando avrai attivato l\'autenticazione del dispositivo.</string>
+    <string name="auth_device_authentication_is_not_enabled_you_can_turn_on_in_settings_once_enabled">L\'autenticazione del dispositivo non è attiva. Potrai attivare PrivatelineX Lock nelle impostazioni, quando avrai attivato l\'autenticazione del dispositivo.</string>
     <string name="delete_message_mark_deleted_warning">Il messaggio verrà contrassegnato per l\'eliminazione. I destinatari potranno rivelare questo messaggio.</string>
     <string name="share_message">Condividi messaggio…</string>
     <string name="contact_sent_large_file">Il tuo contatto ha inviato un file più grande della dimensione massima supportata (%1$s).</string>
@@ -230,7 +230,7 @@
     <string name="send_live_message_desc">Invia un messaggio in diretta: si aggiornerà per i destinatari mentre lo digiti</string>
     <string name="chat_item_ttl_day">1 giorno</string>
     <string name="a_plus_b">a + b</string>
-    <string name="about_simplex_chat">Riguardo SimpleX Chat</string>
+    <string name="about_simplex_chat">Riguardo Privateline X-Chat</string>
     <string name="group_member_role_admin">amministratore</string>
     <string name="chat_item_ttl_week">1 settimana</string>
     <string name="smp_servers_add_to_another_device">Aggiungi ad un altro dispositivo</string>
@@ -517,7 +517,7 @@
     <string name="error_encrypting_database">Errore nella crittografia del database</string>
     <string name="your_settings">Le tue impostazioni</string>
     <string name="you_will_be_connected_when_group_host_device_is_online">Verrai connesso/a al gruppo quando il dispositivo dell\'host del gruppo sarà in linea, attendi o controlla più tardi!</string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Se hai ricevuto il link di invito a SimpleX Chat, puoi aprirlo nel tuo browser:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">Se hai ricevuto il link di invito a Privateline X-Chat, puoi aprirlo nel tuo browser:</string>
     <string name="mobile_tap_open_in_mobile_app_then_tap_connect_in_app"><![CDATA[📱 mobile: tocca <b>Apri nell\'app mobile</b>, quindi <b>Connetti</b> nell\'app.]]></string>
     <string name="no_details">nessun dettaglio</string>
     <string name="add_contact">Link di invito una tantum</string>
@@ -528,12 +528,12 @@
     <string name="scan_QR_code">Scansiona codice QR</string>
     <string name="add_contact_or_create_group">Inizia una nuova conversazione</string>
     <string name="chat_help_tap_button">Tocca il pulsante</string>
-    <string name="thank_you_for_installing_simplex">Grazie per aver installato SimpleX Chat!</string>
+    <string name="thank_you_for_installing_simplex">Grazie per aver installato Privateline X-Chat!</string>
     <string name="to_connect_via_link_title">Per connettersi via link</string>
     <string name="to_share_with_your_contact">(da condividere con il tuo contatto)</string>
     <string name="to_start_a_new_chat_help_header">Per iniziare una nuova chat</string>
     <string name="use_camera_button">Fotocamera</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Puoi <font color="#0088ff">connetterti con gli sviluppatori di SimpleX Chat per porre domande e ricevere aggiornamenti</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Puoi <font color="#0088ff">connetterti con gli sviluppatori di Privateline X-Chat per porre domande e ricevere aggiornamenti</font>.]]></string>
     <string name="invalid_contact_link">Link non valido!</string>
     <string name="invalid_QR_code">Codice QR non valido</string>
     <string name="image_descr_link_preview">immagine di anteprima link</string>
@@ -582,7 +582,7 @@
     <string name="send_us_an_email">Inviaci un\'email</string>
     <string name="smp_servers_test_failed">Test del server fallito!</string>
     <string name="share_invitation_link">Condividi link una tantum</string>
-    <string name="chat_lock">SimpleX Lock</string>
+    <string name="chat_lock">PrivatelineX Lock</string>
     <string name="is_not_verified">%s non è verificato/a</string>
     <string name="is_verified">%s è verificato/a</string>
     <string name="smp_servers">Server SMP</string>
@@ -598,7 +598,7 @@
     <string name="smp_servers_your_server_address">L\'indirizzo del tuo server</string>
     <string name="your_simplex_contact_address">Il tuo indirizzo SimpleX</string>
     <string name="network_disable_socks_info">Se confermi, i server di messaggistica saranno in grado di vedere il tuo indirizzo IP e il tuo fornitore, a quali server ti stai connettendo.</string>
-    <string name="install_simplex_chat_for_terminal">Installa SimpleX Chat per terminale</string>
+    <string name="install_simplex_chat_for_terminal">Installa Privateline X-Chat per terminale</string>
     <string name="ensure_ICE_server_address_are_correct_format_and_unique">Assicurati che gli indirizzi dei server WebRTC ICE siano nel formato corretto, uno per riga e non doppi.</string>
     <string name="network_and_servers">Rete e server</string>
     <string name="network_settings_title">Impostazioni avanzate</string>
@@ -616,8 +616,8 @@
     <string name="network_disable_socks">Usare una connessione internet diretta\?</string>
     <string name="network_use_onion_hosts">Usa gli host .onion</string>
     <string name="network_enable_socks">Usare il proxy SOCKS\?</string>
-    <string name="use_simplex_chat_servers__question">Usare i server di SimpleX Chat\?</string>
-    <string name="using_simplex_chat_servers">Stai usando i server di SimpleX Chat.</string>
+    <string name="use_simplex_chat_servers__question">Usare i server di Privateline X-Chat\?</string>
+    <string name="using_simplex_chat_servers">Stai usando i server di Privateline X-Chat.</string>
     <string name="network_use_onion_hosts_prefer">Quando disponibili</string>
     <string name="your_ICE_servers">I tuoi server ICE</string>
     <string name="your_SMP_servers">I tuoi server SMP</string>
@@ -675,7 +675,7 @@
     <string name="icon_descr_call_missed">Chiamata persa</string>
     <string name="status_no_e2e_encryption">nessuna crittografia e2e</string>
     <string name="open_verb">Apri</string>
-    <string name="open_simplex_chat_to_accept_call">Apri SimpleX Chat per accettare la chiamata</string>
+    <string name="open_simplex_chat_to_accept_call">Apri Privateline X-Chat per accettare la chiamata</string>
     <string name="call_connection_peer_to_peer">peer-to-peer</string>
     <string name="icon_descr_call_pending_sent">Chiamata in sospeso</string>
     <string name="privacy_and_security">Privacy e sicurezza</string>
@@ -852,7 +852,7 @@
     <string name="prohibit_sending_disappearing">Proibisci l\'invio di messaggi a tempo.</string>
     <string name="prohibit_sending_voice">Proibisci l\'invio di messaggi vocali.</string>
     <string name="v4_2_security_assessment">Valutazione della sicurezza</string>
-    <string name="v4_2_security_assessment_desc">La sicurezza di SimpleX Chat è stata verificata da Trail of Bits.</string>
+    <string name="v4_2_security_assessment_desc">La sicurezza di Privateline X-Chat è stata verificata da Trail of Bits.</string>
     <string name="v4_3_voice_messages">Messaggi vocali</string>
     <string name="voice_prohibited_in_this_chat">I messaggi vocali sono vietati in questa chat.</string>
     <string name="voice_messages_are_prohibited">I messaggi vocali sono vietati.</string>
@@ -1033,7 +1033,7 @@
     <string name="ensure_xftp_server_address_are_correct_format_and_unique">Assicurati che gli indirizzi del server XFTP siano nel formato corretto, uno per riga e non doppi.</string>
     <string name="la_auth_failed">Autenticazione fallita</string>
     <string name="la_lock_mode_passcode">Inserimento del codice di accesso</string>
-    <string name="la_lock_mode">Modalità di SimpleX Lock</string>
+    <string name="la_lock_mode">Modalità di PrivatelineX Lock</string>
     <string name="la_lock_mode_system">Autenticazione di sistema</string>
     <string name="la_authenticate">Autentica</string>
     <string name="la_change_app_passcode">Cambia codice di accesso</string>
@@ -1044,8 +1044,8 @@
     <string name="la_immediately">Immediatamente</string>
     <string name="la_no_app_password">Nessun codice di accesso dell\'app</string>
     <string name="la_please_remember_to_store_password">Ricordala o conservala in modo sicuro: non c\'è modo di recuperare una password persa!</string>
-    <string name="lock_not_enabled">SimpleX Lock non attivato!</string>
-    <string name="you_can_turn_on_lock">Puoi attivare SimpleX Lock tramite le impostazioni.</string>
+    <string name="lock_not_enabled">PrivatelineX Lock non attivato!</string>
+    <string name="you_can_turn_on_lock">Puoi attivare PrivatelineX Lock tramite le impostazioni.</string>
     <string name="la_could_not_be_verified">Non è stato possibile verificarti, riprova.</string>
     <string name="confirm_passcode">Conferma il codice di accesso</string>
     <string name="la_mode_passcode">Codice di accesso</string>
@@ -1113,7 +1113,7 @@
     <string name="stop_sharing">Smetti di condividere</string>
     <string name="enter_welcome_message_optional">Inserisci il messaggio di benvenuto… (facoltativo)</string>
     <string name="email_invite_body">Ciao!
-\nConnettiti a me tramite SimpleX Chat: %s</string>
+\nConnettiti a me tramite Privateline X-Chat: %s</string>
     <string name="invite_friends">Invita amici</string>
     <string name="save_auto_accept_settings">Salva le impostazioni dell\'indirizzo SimpleX</string>
     <string name="you_can_create_it_later">Puoi crearlo più tardi</string>
@@ -1143,7 +1143,7 @@
     <string name="customize_theme_title">Personalizza il tema</string>
     <string name="dark_theme">Tema scuro</string>
     <string name="if_you_cant_meet_in_person">Se non potete incontrarvi di persona, mostra il codice QR in una videochiamata o condividi il link.</string>
-    <string name="email_invite_subject">Parliamo in SimpleX Chat</string>
+    <string name="email_invite_subject">Parliamo in Privateline X-Chat</string>
     <string name="profile_update_will_be_sent_to_contacts">L\'aggiornamento del profilo verrà inviato ai tuoi contatti.</string>
     <string name="read_more_in_user_guide_with_link"><![CDATA[Maggiori informazioni nella <font color="#0088ff">Guida per l\'utente</font>.]]></string>
     <string name="color_surface">Menu e avvisi</string>
@@ -2190,7 +2190,7 @@
     <string name="error_accepting_operator_conditions">Errore di accettazione delle condizioni</string>
     <string name="failed_to_save_servers">Errore di salvataggio dei server</string>
     <string name="v6_2_network_decentralization_enable_flux_reason">per una migliore privacy dei metadati.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Ad esempio, se il tuo contatto riceve i messaggi tramite un server di SimpleX Chat, la tua app li consegnerà tramite un server di Flux.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Ad esempio, se il tuo contatto riceve i messaggi tramite un server di Privateline X-Chat, la tua app li consegnerà tramite un server di Flux.</string>
     <string name="v6_2_improved_chat_navigation">Navigazione della chat migliorata</string>
     <string name="smp_servers_new_server">Nuovo server</string>
     <string name="operator_use_for_files">Usa per i file</string>
@@ -2247,7 +2247,7 @@
     <string name="onboarding_network_operators_cant_see_who_talks_to_whom">Quando più di un operatore è attivato, nessuno di essi ha metadati per capire chi comunica con chi.</string>
     <string name="display_name_accepted_invitation">invito accettato</string>
     <string name="display_name_requested_to_connect">richiesto di connettersi</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">SimpleX Chat e Flux hanno concluso un accordo per includere server gestiti da Flux nell\'app.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">Privateline X-Chat e Flux hanno concluso un accordo per includere server gestiti da Flux nell\'app.</string>
     <string name="onboarding_network_about_operators">Info sugli operatori</string>
     <string name="sync_connection_desc">La connessione richiede la rinegoziazione della crittografia.</string>
     <string name="sync_connection_confirm">Correggi</string>
@@ -2376,7 +2376,7 @@
     <string name="block_members_for_all_question">Bloccare i membri per tutti?</string>
     <string name="feature_roles_moderators">moderatori</string>
     <string name="block_members_desc">Tutti i nuovi messaggi di questi membri verranno nascosti!</string>
-    <string name="onboarding_conditions_by_using_you_agree">Usando SimpleX Chat accetti di:\n- inviare solo contenuto legale nei gruppi pubblici.\n- rispettare gli altri utenti - niente spam.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Usando Privateline X-Chat accetti di:\n- inviare solo contenuto legale nei gruppi pubblici.\n- rispettare gli altri utenti - niente spam.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">Le chat private, i gruppi e i tuoi contatti non sono accessibili agli operatori dei server.</string>
     <string name="onboarding_conditions_accept">Accetta</string>
     <string name="onboarding_conditions_configure_server_operators">Configura gli operatori dei server</string>

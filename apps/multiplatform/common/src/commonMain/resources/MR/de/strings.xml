@@ -99,7 +99,7 @@
     <string name="enter_passphrase_notification_desc">Geben Sie bitte das Datenbank-Passwort ein, um Benachrichtigungen zu erhalten.</string>
     <string name="database_initialization_error_title">Die Datenbank kann nicht initialisiert werden</string>
     <string name="database_initialization_error_desc">Die Datenbank arbeitet nicht richtig. Für weitere Informationen antippen.</string>
-    <!-- SimpleX Chat foreground Service -->
+    <!-- Privateline X-Chat foreground Service -->
     <string name="simplex_service_notification_title">SimpleX-Chat-Hintergrunddienst</string>
     <string name="simplex_service_notification_text">Empfange Nachrichten …</string>
     <string name="hide_notification">Verberge</string>
@@ -261,7 +261,7 @@
     <string name="gallery_image_button">Bild</string>
     <string name="gallery_video_button">Video</string>
     <!-- help - ChatHelpView.kt -->
-    <string name="thank_you_for_installing_simplex">Danke, dass Sie SimpleX Chat installiert haben!</string>
+    <string name="thank_you_for_installing_simplex">Danke, dass Sie Privateline X-Chat installiert haben!</string>
     <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Sie können sich <font color="#0088ff">mit den SimpleX-Chat-Entwicklern verbinden, um Fragen zu stellen und aktuelle Informationen zu erhalten</font>.]]></string>
     <string name="to_start_a_new_chat_help_header">Um einen neuen Chat zu starten</string>
     <string name="chat_help_tap_button">Schaltfläche tippen</string>
@@ -345,7 +345,7 @@
     <string name="your_settings">Einstellungen</string>
     <string name="your_simplex_contact_address">Ihre SimpleX-Adresse</string>
     <string name="database_passphrase_and_export">Datenbank-Passwort &amp; -Export</string>
-    <string name="about_simplex_chat">Über SimpleX Chat</string>
+    <string name="about_simplex_chat">Über Privateline X-Chat</string>
     <string name="how_to_use_simplex_chat">Wie man SimpleX nutzt</string>
     <string name="markdown_help">Markdown-Hilfe</string>
     <string name="markdown_in_messages">Markdown in Nachrichten</string>
@@ -373,7 +373,7 @@
     <string name="smp_servers_invalid_address">Ungültige Serveradresse!</string>
     <string name="smp_servers_check_address">Überprüfen Sie die Serveradresse und versuchen Sie es nochmal.</string>
     <string name="smp_servers_delete_server">Server löschen</string>
-    <string name="install_simplex_chat_for_terminal">Installieren Sie SimpleX Chat als Terminalanwendung</string>
+    <string name="install_simplex_chat_for_terminal">Installieren Sie Privateline X-Chat als Terminalanwendung</string>
     <string name="star_on_github">Stern auf GitHub vergeben</string>
     <string name="contribute">Unterstützen Sie uns</string>
     <string name="rate_the_app">Bewerten Sie die App</string>
@@ -506,7 +506,7 @@
     <string name="relay_server_protects_ip">Relais-Server schützen Ihre IP-Adresse, aber sie können die Anrufdauer erfassen.</string>
     <string name="relay_server_if_necessary">Relais-Server werden nur genutzt, wenn sie benötigt werden. Ihre IP-Adresse kann von Anderen erfasst werden.</string>
     <!-- Call Lock Screen -->
-    <string name="open_simplex_chat_to_accept_call">Öffnen Sie SimpleX Chat, um den Anruf anzunehmen.</string>
+    <string name="open_simplex_chat_to_accept_call">Öffnen Sie Privateline X-Chat, um den Anruf anzunehmen.</string>
     <string name="allow_accepting_calls_from_lock_screen">Aktivieren Sie Anrufe vom Sperrbildschirm über die Einstellungen.</string>
     <string name="open_verb">Öffnen</string>
     <!-- Call overlay -->
@@ -942,7 +942,7 @@
     <string name="new_in_version">Neu in %s</string>
     <string name="prohibit_sending_disappearing">Das Senden von verschwindenden Nachrichten nicht erlauben.</string>
     <string name="v4_2_security_assessment">Sicherheits-Gutachten</string>
-    <string name="v4_2_security_assessment_desc">Die Sicherheit von SimpleX Chat wurde von Trail of Bits überprüft.</string>
+    <string name="v4_2_security_assessment_desc">Die Sicherheit von Privateline X-Chat wurde von Trail of Bits überprüft.</string>
     <string name="whats_new">Was ist neu</string>
     <string name="v4_2_group_links_desc">Administratoren können Links für den Beitritt zu Gruppen erzeugen.</string>
     <string name="v4_2_auto_accept_contact_requests">Kontaktanfragen automatisch annehmen</string>
@@ -1200,7 +1200,7 @@
     <string name="auto_accept_contact">Automatisch akzeptieren</string>
     <string name="enter_welcome_message_optional">Geben Sie eine Begrüßungsmeldung ein … (optional)</string>
     <string name="invite_friends">Freunde einladen</string>
-    <string name="email_invite_subject">Lassen Sie uns über SimpleX Chat schreiben</string>
+    <string name="email_invite_subject">Lassen Sie uns über Privateline X-Chat schreiben</string>
     <string name="profile_update_will_be_sent_to_contacts">Profil-Aktualisierung wird an Ihre Kontakte gesendet.</string>
     <string name="save_auto_accept_settings">SimpleX-Adress-Einstellungen speichern</string>
     <string name="save_settings_question">Einstellungen speichern\?</string>
@@ -1209,7 +1209,7 @@
     <string name="stop_sharing_address">Das Teilen der Adresse beenden\?</string>
     <string name="dont_create_address">Keine Adresse erstellt</string>
     <string name="email_invite_body">Hallo!
-\nVerbinden Sie sich per SimpleX Chat mit mir: %s</string>
+\nVerbinden Sie sich per Privateline X-Chat mit mir: %s</string>
     <string name="you_can_create_it_later">Sie können dies später erstellen</string>
     <string name="enter_welcome_message">Geben Sie eine Begrüßungsmeldung ein …</string>
     <string name="group_welcome_preview">Vorschau</string>
@@ -2447,7 +2447,7 @@
     <string name="feature_roles_moderators">Moderatoren</string>
     <string name="block_members_for_all_question">Mitglieder für Alle blockieren?</string>
     <string name="block_members_desc">Alle neuen Nachrichten dieser Mitglieder werden nicht angezeigt!</string>
-    <string name="onboarding_conditions_by_using_you_agree">Durch die Nutzung von SimpleX Chat erklären Sie sich damit einverstanden:\n- nur legale Inhalte in öffentlichen Gruppen zu versenden.\n- andere Nutzer zu respektieren - kein Spam.</string>
+    <string name="onboarding_conditions_by_using_you_agree">Durch die Nutzung von Privateline X-Chat erklären Sie sich damit einverstanden:\n- nur legale Inhalte in öffentlichen Gruppen zu versenden.\n- andere Nutzer zu respektieren - kein Spam.</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Datenschutz- und Nutzungsbedingungen.</string>
     <string name="onboarding_conditions_accept">Annehmen</string>
     <string name="onboarding_conditions_configure_server_operators">Server-Betreiber konfigurieren</string>

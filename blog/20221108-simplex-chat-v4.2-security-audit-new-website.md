@@ -17,17 +17,17 @@ permalink: "/blog/20221108-simplex-chat-v4.2-security-audit-new-website.html"
 
 When we first launched the app in March the response on Reddit was: _"Have you been audited or should we just ignore you?"_.
 
-We have a growing number of enthusiasts using SimpleX Chat who can accept the security risks of unaudited system, but the users who depend on their security were patiently waiting until some independent experts review our codebase.
+We have a growing number of enthusiasts using Privateline X-Chat who can accept the security risks of unaudited system, but the users who depend on their security were patiently waiting until some independent experts review our codebase.
 
-[Trail of Bits](https://www.trailofbits.com/about), a US based security and technology consultancy whose clients include big tech companies, governmental agencies and major blockchain projects, had 2 engineers reviewing SimpleX Chat for one calendar week, specifically [simplexmq library](https://github.com/simplex-chat/simplexmq) that is responsible for all cryptography and networking of SimpleX platform.
+[Trail of Bits](https://www.trailofbits.com/about), a US based security and technology consultancy whose clients include big tech companies, governmental agencies and major blockchain projects, had 2 engineers reviewing Privateline X-Chat for one calendar week, specifically [simplexmq library](https://github.com/simplex-chat/simplexmq) that is responsible for all cryptography and networking of SimpleX platform.
 
 2 medium and 2 low severity issues were identified, all of which require a high difficulty attack to exploit – the attacker would need to have a privileged access to the system, may need to know complex technical details, or must discover other weaknesses to exploit them. 3 of these issues are already fixed in v4.2.
 
 In the course of the audit, Trail of Bits assessed the maturity of the [simplexmq library](https://github.com/simplex-chat/simplexmq) across eight categories and found five of them to be strong or satisfactory.
 
-Explained below is our understanding of the issues, as well as fixes implemented by the SimpleX Chat team after project completion. The full security review is available via [Trail of Bits publications](https://github.com/trailofbits/publications/blob/master/reviews/SimpleXChat.pdf).
+Explained below is our understanding of the issues, as well as fixes implemented by the Privateline X-Chat team after project completion. The full security review is available via [Trail of Bits publications](https://github.com/trailofbits/publications/blob/master/reviews/SimpleXChat.pdf).
 
-We are hugely thankful to Trail of Bits and their engineers for the work they did, helping us identify these issues and supporting the ongoing efforts to make SimpleX Chat more secure.
+We are hugely thankful to Trail of Bits and their engineers for the work they did, helping us identify these issues and supporting the ongoing efforts to make Privateline X-Chat more secure.
 
 ### Medium severity issues
 
@@ -37,11 +37,11 @@ We made a mistake implementing X3DH key exchange - the key derivation function w
 
 Please note that SimpleX does not perform X3DH with long-term identity keys, as the SimpleX protocol does not rely on long-term keys to identify client devices. Therefore, the impact of compromising a key will be less severe, as it will affect only the secrets of the connection where the key was compromised.
 
-This issue is fixed in version 4.2 in [this PR](https://github.com/simplex-chat/simplexmq/pull/548/files), and if both clients are updated the key exchange will not have this vulnerability. Also, previously created connections should be secure as long as both sides sent the messages, but if you believe that your private key(s) could have been compromised (for example, if you used SimpleX Chat since before we added database encryption), we recommend that you create the new connections with your contacts, at least with the security-critical ones. Simply rotating the connection queue (manual queue rotation is added in version 4.2) will not be sufficient, as this rotation does not re-initialize the ratchets - this is something we will be adding in the future.
+This issue is fixed in version 4.2 in [this PR](https://github.com/simplex-chat/simplexmq/pull/548/files), and if both clients are updated the key exchange will not have this vulnerability. Also, previously created connections should be secure as long as both sides sent the messages, but if you believe that your private key(s) could have been compromised (for example, if you used Privateline X-Chat since before we added database encryption), we recommend that you create the new connections with your contacts, at least with the security-critical ones. Simply rotating the connection queue (manual queue rotation is added in version 4.2) will not be sufficient, as this rotation does not re-initialize the ratchets - this is something we will be adding in the future.
 
 #### Keys are stored in unpinned memory and not cleared after their lifetime
 
-The problem here is that the memory with cryptographic keys can be swapped to the storage and potentially accessed by an attacker who has root-level access to the device (or the level of access required to access swap file of the application). So, if you are running SimpleX Chat on desktop you could improve its security by running it in an isolated container.
+The problem here is that the memory with cryptographic keys can be swapped to the storage and potentially accessed by an attacker who has root-level access to the device (or the level of access required to access swap file of the application). So, if you are running Privateline X-Chat on desktop you could improve its security by running it in an isolated container.
 
 In our opinion, on mobile operating systems it is less severe as each application already runs in its own container, and applications do not share access to their swap areas (e.g., on Android swap is a [compressed area in RAM](https://developer.android.com/topic/performance/memory-management) not accessible to other applications).
 
@@ -53,11 +53,11 @@ We will be addressing this issue in the near future, possibly by using library [
 
 #### The string padding function is incorrect for long messages, and the string unpadding function throws exception for short messages
 
-Both these issues are fixed in 4.2 in [this PR](https://github.com/simplex-chat/simplexmq/pull/547/files), with the additional unit tests, and we also validated that even before the fix the strings that would cause such exception were never passed to this function – The SimpleX Chat team could not find the possibility of the attack that would succeed because of this issue.
+Both these issues are fixed in 4.2 in [this PR](https://github.com/simplex-chat/simplexmq/pull/547/files), with the additional unit tests, and we also validated that even before the fix the strings that would cause such exception were never passed to this function – The Privateline X-Chat team could not find the possibility of the attack that would succeed because of this issue.
 
 ### What's next
 
-There are areas of SimpleX Chat that were out of scope of this review, specifically:
+There are areas of Privateline X-Chat that were out of scope of this review, specifically:
 
 - the chat protocol implementation and mobile UIs, as they includes no cryptography of networking (with the exception of Android app storing encrypted database passphrase and key exchange/encryption for WebRTC calls).
 - push notifications server that is used by iOS clients.
@@ -66,13 +66,13 @@ We will be arranging to review these areas separately.
 
 ## The new website
 
-Our [previous website](https://old-website.simplex.chat) was created 2 years ago to present SimpleX idea, there was no SimpleX Chat at the time - we only had a prototype implementation of SimpleX Messaging Protocol server then.
+Our [previous website](https://old-website.simplex.chat) was created 2 years ago to present SimpleX idea, there was no Privateline X-Chat at the time - we only had a prototype implementation of SimpleX Messaging Protocol server then.
 
-A lot of people told us that our website didn't explain well enough who SimpleX Chat is for, what problems it solves, and how it is different from the alternatives. So, while we love to be focused on the chat application, we decided to make the new one.
+A lot of people told us that our website didn't explain well enough who Privateline X-Chat is for, what problems it solves, and how it is different from the alternatives. So, while we love to be focused on the chat application, we decided to make the new one.
 
 We hope that our [new website](https://simplex.chat) better answers these questions. If you think something should be added/removed/changed - please let us know. Thank you!
 
-## SimpleX Chat v4.2 released!
+## Privateline X-Chat v4.2 released!
 
 New in this release:
 
@@ -90,7 +90,7 @@ Beta features (enable Developer tools to try them):
 
 <img src="./images/20221108-group1.png" width="288"> &nbsp;&nbsp; <img src="./images/20221108-group2.png" width="288">
 
-It's been requested by many users - to be able to join a group via link. Because SimpleX Chat groups are fully decentralised, and there is no server-side state, joining via these links requires the participation of the link creator who has to be online to accept the group joining request.
+It's been requested by many users - to be able to join a group via link. Because Privateline X-Chat groups are fully decentralised, and there is no server-side state, joining via these links requires the participation of the link creator who has to be online to accept the group joining request.
 
 The way it works under the hood is similar to how contact addresses work:
 
@@ -139,7 +139,7 @@ To manually switch any of your contacts (or a group member to a new server addre
 
 That is a major improvement of metadata privacy of SimpleX protocols, because previously, while we didn't have user identifiers, the pairwise identifiers of messaging queues used to deliver messages were used for as long as the contact existed. Now these identifiers are temporary, and in a near future we will be adding automatic rotation of these delivery addresses.
 
-It is also useful when you want to migrate message delivery to another server, for example, if you used SimpleX Chat default servers and now want to self-host your own. Or, maybe, you need to change the address of your server. Previously it would require creating new contacts and losing conversation histories, and now all you have to do is to change server configuration in the app, and when the change of the address is triggered (currently, only manually, and in the near future - automatically), your contacts will be migrated to a new server, without you doing anything - it only requires each party sending 2 messages to negotiate the reconnection, and it would also rotate the encryption keys used for the outer layer of E2E encryption.
+It is also useful when you want to migrate message delivery to another server, for example, if you used Privateline X-Chat default servers and now want to self-host your own. Or, maybe, you need to change the address of your server. Previously it would require creating new contacts and losing conversation histories, and now all you have to do is to change server configuration in the app, and when the change of the address is triggered (currently, only manually, and in the near future - automatically), your contacts will be migrated to a new server, without you doing anything - it only requires each party sending 2 messages to negotiate the reconnection, and it would also rotate the encryption keys used for the outer layer of E2E encryption.
 
 ### Receive images and small files faster (BETA)
 
@@ -165,7 +165,7 @@ Please also see the information on our [new website](https://simplex.chat) - it 
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -185,4 +185,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

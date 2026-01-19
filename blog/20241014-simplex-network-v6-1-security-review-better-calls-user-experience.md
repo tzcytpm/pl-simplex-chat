@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: cryptographic design review by Trail of Bits, v6.1 released with better calls and user experience."
+title: "PrivatelineX network: cryptographic design review by Trail of Bits, v6.1 released with better calls and user experience."
 date: 2024-10-14
 image: images/20221108-trail-of-bits.jpg
 previewBody: blog_previews/20241014.html
@@ -25,9 +25,9 @@ permalink: "/blog/20241014-simplex-network-v6-1-security-review-better-calls-use
 
 <img src="./images/20221108-trail-of-bits.jpg" width=240 class="float-to-right">
 
-It's been almost two years since Trail of Bits did the first security assessment of SimpleX Chat.
+It's been almost two years since Trail of Bits did the first security assessment of Privateline X-Chat.
 
-Since then SimpleX Chat grew a lot, both in the number of users and in its functionality. We added XFTP &mdash; a protocol for sending files, &mdash; and XRCP &mdash; the protocol for using a mobile app profile from a desktop app. Messaging protocols also evolved a lot, adding private message routing and quantum resistant encryption.
+Since then Privateline X-Chat grew a lot, both in the number of users and in its functionality. We added XFTP &mdash; a protocol for sending files, &mdash; and XRCP &mdash; the protocol for using a mobile app profile from a desktop app. Messaging protocols also evolved a lot, adding private message routing and quantum resistant encryption.
 
 Trail of Bits reviewed the design of protocols used in SimpleX network and applications in July 2024. Even though there are no critical issues, we made some security improvements based on this report.
 
@@ -45,7 +45,7 @@ There are 3 medium and 1 low severity findings, all of which require a high diff
 
 The full cryptographic design review is available [here](https://github.com/simplex-chat/simplex-chat/blob/stable/docs/SimpleX_Design_Review_2024_Summary_Report_12_08_2024.pdf).
 
-We are very thankful to Trail of Bits and their engineers for their work identifying these issues and helping us make SimpleX Chat more secure.
+We are very thankful to Trail of Bits and their engineers for their work identifying these issues and helping us make Privateline X-Chat more secure.
 
 ### Review findings, our comments and improvements
 
@@ -173,7 +173,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -189,4 +189,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

@@ -1,5 +1,5 @@
 /* Bundle name */
-"CFBundleName" = "SimpleX";
+"CFBundleName" = "PrivatelineX";
 
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "SimpleXは他のユーザーに接続したりビデオ通話する際にQRコード読み取りのためにカメラにアクセスする必要があります。";

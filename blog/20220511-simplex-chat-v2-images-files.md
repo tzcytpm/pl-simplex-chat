@@ -1,29 +1,29 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v2.0 - sending images and files in mobile apps"
+title: "Privateline X-Chat v2.0 - sending images and files in mobile apps"
 date: 2022-05-11
 image: images/20220511-images-files.png
 preview: Read how SimpleX delivers messages without having user profile identifiers of any kind.
 permalink: "/blog/20220511-simplex-chat-v2-images-files.html"
 ---
 
-# SimpleX Chat v2.0 - sending images and files in mobile apps
+# Privateline X-Chat v2.0 - sending images and files in mobile apps
 
 **Published:** May 11, 2022
 
 ## New in version 2.0 - sending images and files privately
 
-To send image and files SimpleX Chat uses privacy-preserving system components, both in iOS and Android apps. We do not ask for permission to access multiple or selected files, as, for example, Signal and Telegram do - it compromises either privacy or convenience.
+To send image and files Privateline X-Chat uses privacy-preserving system components, both in iOS and Android apps. We do not ask for permission to access multiple or selected files, as, for example, Signal and Telegram do - it compromises either privacy or convenience.
 
 How does it work? The gallery and files are accessed from a system provided dialogue that runs in a separate process, and provides a temporary URI to access only one file selected by the user, only until the app is restarted.
 
-To make file and images work for mobile apps we made a breaking change in SimpleX Chat core. The current version can exchange files with the previous version 1.6 of the terminal app, but not with the version before that.
+To make file and images work for mobile apps we made a breaking change in Privateline X-Chat core. The current version can exchange files with the previous version 1.6 of the terminal app, but not with the version before that.
 
 In the mobile app, to send and receive files both devices must have version 2.0 installed - so please check it with your contacts. Receiving images works in the previous version, so even if your contacts did not yet upgrade the app, they should be able to receive the images.
 
 ## The first messaging platform without user identifiers
 
-To protect identities of users and their connections, SimpleX Chat has no user identifiers visible to the network – unlike any other messaging platform.
+To protect identities of users and their connections, Privateline X-Chat has no user identifiers visible to the network – unlike any other messaging platform.
 
 Many people asked: _if SimpleX has no user identifiers, how can it deliver messages?_
 
@@ -35,7 +35,7 @@ Only client devices store user profiles, contacts, groups, and messages sent wit
 
 Read more in [SimpleX whitepaper](https://github.com/simplex-chat/simplexmq/blob/master/protocol/overview-tjr.md).
 
-## How to connect with your contacts in SimpleX Chat
+## How to connect with your contacts in Privateline X-Chat
 
 Once you install the app, you can connect to anybody:
 

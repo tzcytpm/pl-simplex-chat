@@ -4209,8 +4209,8 @@ data class ServerOperatorInfo(
 val operatorsInfo: Map<OperatorTag, ServerOperatorInfo> = mapOf(
   OperatorTag.SimpleX to ServerOperatorInfo(
     description = listOf(
-      "SimpleX Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or keys that identify the users.",
-      "SimpleX Chat Ltd develops the communication software for SimpleX network."
+      "Privateline X-Chat is the first communication network that has no user profile IDs of any kind, not even random numbers or keys that identify the users.",
+      "Privateline X-Chat Ltd develops the communication software for SimpleX network."
     ),
     website = "https://simplex.chat",
     logo = MR.images.decentralized,
@@ -4320,8 +4320,8 @@ data class ServerOperator(
     val sampleData1 = ServerOperator(
       operatorId = 1,
       operatorTag = OperatorTag.SimpleX,
-      tradeName = "SimpleX Chat",
-      legalName = "SimpleX Chat Ltd",
+      tradeName = "Privateline X-Chat",
+      legalName = "Privateline X-Chat Ltd",
       serverDomains = listOf("simplex.im"),
       conditionsAcceptance = ConditionsAcceptance.Accepted(acceptedAt = null, autoAccepted = false),
       enabled = true,

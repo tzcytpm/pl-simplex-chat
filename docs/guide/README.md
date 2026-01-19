@@ -1,7 +1,7 @@
 ---
 title: Quick start
 ---
-# SimpleX Chat User Guide
+# Privateline X-Chat User Guide
 
 The first messaging platform that has no user identifiers of any kind — 100% private by design.
 
@@ -20,7 +20,7 @@ The first messaging platform that has no user identifiers of any kind — 100% p
 
 ### Create your first chat profile
 
-After downloading SimpleX Chat via the links at https://simplex.chat:
+After downloading Privateline X-Chat via the links at https://simplex.chat:
 
 - Open the app.
 - Create a new profile by inputting your display name and full name (optional).
@@ -61,7 +61,7 @@ To join a group via a link:
 
 ### Connect to friends
 
-- Tell your friends to download SimpleX Chat app via one of the links here: https://simplex.chat
+- Tell your friends to download Privateline X-Chat app via one of the links here: https://simplex.chat
 - Create a one-time link for each of you friends by tapping new chat button (Android: a floating pencil button in the bottom right corner, iOS: a pencil button in the top right corner)
 - Tap _Create one-time invitation link_.
 - Share each link with a different friend, or alternatively let them scan a QR code.

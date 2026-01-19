@@ -32,7 +32,7 @@ welcomeGetOpts :: IO ChatOpts
 welcomeGetOpts = do
   appDir <- getAppUserDataDirectory "simplex"
   opts@ChatOpts {coreOptions} <- getChatOpts appDir "simplex_bot"
-  putStrLn $ "SimpleX Chat Bot v" ++ versionNumber
+  putStrLn $ "Privateline X-Chat Bot v" ++ versionNumber
   printDbOpts coreOptions
   pure opts
 

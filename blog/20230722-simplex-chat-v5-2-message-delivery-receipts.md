@@ -1,13 +1,13 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v5.2 released: message delivery receipts"
+title: "Privateline X-Chat v5.2 released: message delivery receipts"
 date: 2023-07-22
 image: images/20230722-receipts-full.png
 previewBody: blog_previews/20230722.html
 permalink: "/blog/20230722-simplex-chat-v5-2-message-delivery-receipts.html"
 ---
 
-# SimpleX Chat v5.2 released: message delivery receipts
+# Privateline X-Chat v5.2 released: message delivery receipts
 
 **Published:** July 22, 2023
 
@@ -40,7 +40,7 @@ permalink: "/blog/20230722-simplex-chat-v5-2-message-delivery-receipts.html"
 
 <img src="./images/20230722-receipts.png" width="330" class="float-to-left">
 
-Most messaging apps add two ticks to sent messages – the first one to show that the message is accepted by the server, and the second – that it is delivered to the recipient's device. It confirms that the network is functioning, and that the message is not lost or delayed. SimpleX Chat now has this feature too!
+Most messaging apps add two ticks to sent messages – the first one to show that the message is accepted by the server, and the second – that it is delivered to the recipient's device. It confirms that the network is functioning, and that the message is not lost or delayed. Privateline X-Chat now has this feature too!
 
 In some cases it may compromise recipients' privacy, as they show that the recipient is online, so we made sending delivery receipts optional – it can be disabled separately for each chat profile or contact. For the new chat profiles this feature is enabled by default.
 
@@ -54,7 +54,7 @@ You can now mark your contacts and groups as _favorite_, to be able to find them
 
 ### More usable groups
 
-Active SimpleX Chat users know how broken the current group experience is, and that we plan some major overhaul of the groups protocol – more on that below. In the meanwhile, we added some simple features that make groups in their current state a bit more usable.
+Active Privateline X-Chat users know how broken the current group experience is, and that we plan some major overhaul of the groups protocol – more on that below. In the meanwhile, we added some simple features that make groups in their current state a bit more usable.
 
 #### What is this in reply to?
 
@@ -66,7 +66,7 @@ A major problem is that you can see replies to the messages you've not seen befo
 
 <img src="./images/20230722-search.png" width="330" class="float-to-left">
 
-To simplify direct connections with other group members, you can now share your SimpleX address via your chat profile, and group members can send you a contact request even if the group does not allow direct messages.
+To simplify direct connections with other group members, you can now share your PrivatelineX address via your chat profile, and group members can send you a contact request even if the group does not allow direct messages.
 
 #### How to find a member in the list?
 
@@ -74,7 +74,7 @@ Large member lists (and also the long lists of contacts, if you have many of the
 
 ### Stability improvements
 
-This version fixes many long-standing problems with the message delivery, failed connections with group members (that also contributed to group fragmentation), and reduces traffic in groups (beta users experienced a traffic spike because of this fix, but it doesn't affect the final v5.2 release). It's not the end of the road to making SimpleX Chat as stable as mainstream messengers, but it is a big improvement.
+This version fixes many long-standing problems with the message delivery, failed connections with group members (that also contributed to group fragmentation), and reduces traffic in groups (beta users experienced a traffic spike because of this fix, but it doesn't affect the final v5.2 release). It's not the end of the road to making Privateline X-Chat as stable as mainstream messengers, but it is a big improvement.
 
 Please report the cases when messages are not delivered – delivery receipts should help with that.
 
@@ -154,7 +154,7 @@ There is also no discounting that the presense of read receipts functionality, e
 
 Some links to answer the most common questions:
 
-[SimpleX Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
+[Privateline X-Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
 [How can SimpleX deliver messages without user identifiers](https://simplex.chat/#how-simplex-works).
 
@@ -168,7 +168,7 @@ Visit our [website](https://simplex.chat) to learn more.
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -182,4 +182,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

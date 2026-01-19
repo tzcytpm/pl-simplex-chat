@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 28.04.2023.
-//  Copyright © 2023 SimpleX Chat. All rights reserved.
+//  Copyright © 2023 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -23,7 +23,7 @@ struct CreateSimpleXAddress: View {
             ScrollView {
                 ZStack {
                     VStack(alignment: .leading) {
-                        Text("SimpleX Address")
+                        Text("PrivatelineX Address")
                             .font(.largeTitle)
                             .bold()
                             .frame(maxWidth: .infinity)
@@ -94,7 +94,7 @@ struct CreateSimpleXAddress: View {
                     }
                 }
             } label: {
-                Text("Create SimpleX address").font(.title)
+                Text("Create PrivatelineX address").font(.title)
             }
             Text("You can make it visible to your SimpleX contacts via Settings.")
                 .multilineTextAlignment(.center)
@@ -189,12 +189,12 @@ struct SendAddressMailView: View {
     var body: some View {
         let messageBody = String(format: NSLocalizedString("""
             <p>Hi!</p>
-            <p><a href="%@">Connect to me via SimpleX Chat</a></p>
+            <p><a href="%@">Connect to me via Privateline X-Chat</a></p>
             """, comment: "email text"), simplexChatLink(userAddress.connLinkContact.simplexChatUri(short: false)))
         MailView(
             isShowing: self.$showMailView,
             result: $mailViewResult,
-            subject: NSLocalizedString("Let's talk in SimpleX Chat", comment: "email subject"),
+            subject: NSLocalizedString("Let's talk in Privateline X-Chat", comment: "email subject"),
             messageBody: messageBody
         )
     }

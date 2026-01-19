@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v4.6 – with hidden profiles, community moderation, improved audio/video calls and reduced battery usage."
+title: "Privateline X-Chat v4.6 – with hidden profiles, community moderation, improved audio/video calls and reduced battery usage."
 date: 2023-03-28
 image: images/20230328-hidden-profiles2.png
 imageBottom: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20230328.html
 permalink: "/blog/20230328-simplex-chat-v4-6-hidden-profiles.html"
 ---
 
-# SimpleX Chat v4.6 – with hidden profiles, community moderation, improved audio/video calls and reduced battery usage.
+# Privateline X-Chat v4.6 – with hidden profiles, community moderation, improved audio/video calls and reduced battery usage.
 
 **Published:** Mar 28, 2023
 
@@ -26,7 +26,7 @@ Also, we added [Chinese and Spanish interface languages](#chinese-and-spanish-in
 
 ### ARMv7a (32 bit) and Android 8+ support!
 
-It increases the number of supported Android devices twice - now most of your friends should be able to install SimpleX Chat. SimpleX Chat still doesn't support Android 7 and erlier versions.
+It increases the number of supported Android devices twice - now most of your friends should be able to install Privateline X-Chat. Privateline X-Chat still doesn't support Android 7 and erlier versions.
 
 If you install the app from GitHub or F-Droid you need to choose the correct APK, Play Store will provide it automatically.
 
@@ -34,7 +34,7 @@ If you install the app from GitHub or F-Droid you need to choose the correct APK
 
 <img src="./images/20230328-hidden-profiles1.png" width="288"> &nbsp;&nbsp; <img src="./images/20230328-hidden-profiles2.png" width="288"> &nbsp;&nbsp; <img src="./images/20230328-hidden-profiles3.png" width="288">
 
-For a long time the main way to protect SimpleX Chat app from people who have access to your phone was device authentication - it is requested when you open the app (and some of its sensitive functions).
+For a long time the main way to protect Privateline X-Chat app from people who have access to your phone was device authentication - it is requested when you open the app (and some of its sensitive functions).
 
 Many users asked to allow setting the app password or PIN independently from the device PIN, as some other apps do. But it did not seem a good enough solution - if somebody has your device PIN, then in most cases they can also ask you to provide the app PIN as well.
 
@@ -44,9 +44,9 @@ It's important to remember that these hidden profiles are still stored locally o
 
 ### Group / Community moderation
 
-Initially we did not design SimpleX Chat to support communities - our focus has always been maximum privacy and security.
+Initially we did not design Privateline X-Chat to support communities - our focus has always been maximum privacy and security.
 
-SimpleX Chat supports small and fully decentralized groups, that are not hosted anywhere. But many users want to participate in and to discover communities. Since we added support for group links, the groups we created to let users test the app started to grow, and many other communities of over 100 people emerged.
+Privateline X-Chat supports small and fully decentralized groups, that are not hosted anywhere. But many users want to participate in and to discover communities. Since we added support for group links, the groups we created to let users test the app started to grow, and many other communities of over 100 people emerged.
 
 We are already observing some less-than-friendly messages and undesirable content that is not welcome in some communities. So this version adds features allowing to moderate groups.
 
@@ -72,7 +72,7 @@ Calls on Android were also improved – they now support bluetooth headphones, a
 
 ### Reduced battery usage
 
-We know that battery usage of SimpleX Chat is suboptimal, and we are committed to reduce it. Unfortunately, there is no simple change that we could make to solve this problem, it requires many systematic improvements and fixes.
+We know that battery usage of Privateline X-Chat is suboptimal, and we are committed to reduce it. Unfortunately, there is no simple change that we could make to solve this problem, it requires many systematic improvements and fixes.
 
 One of the big issues, particularly in large groups, was inefficient retry strategy for sending messages in cases when the receiving message queue (mailbox) was out of capacity.
 
@@ -84,11 +84,11 @@ Please share your experience. If the battery usage is still suboptimal, please s
 
 ### SMP server monitoring
 
-If you use preset servers in SimpleX Chat you can now see when we do any maintenance or when the server is down either by [connecting to status bot via the app](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FShQuD-rPokbDvkyotKx5NwM8P3oUXHxA%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEA6fSx1k9zrOmF0BJpCaTarZvnZpMTAVQhd3RkDQ35KT0%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) or by visiting a [status page](https://status.simplex.chat). Status bot always sends automatic messages before the server is restarted for maintenance, but in case of downtime if the same server is down that you use to receive the messages from the bot, you may miss them - check the status page in this case.
+If you use preset servers in Privateline X-Chat you can now see when we do any maintenance or when the server is down either by [connecting to status bot via the app](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FShQuD-rPokbDvkyotKx5NwM8P3oUXHxA%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEA6fSx1k9zrOmF0BJpCaTarZvnZpMTAVQhd3RkDQ35KT0%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion) or by visiting a [status page](https://status.simplex.chat). Status bot always sends automatic messages before the server is restarted for maintenance, but in case of downtime if the same server is down that you use to receive the messages from the bot, you may miss them - check the status page in this case.
 
 ### Chinese and Spanish interface - you can choose the language via the app!
 
-Thanks to our users' community and to Weblate providing a free hosting plan for SimpleX Chat translations we can now support more languages in the interface – this version adds Chinese and Spanish and more are in progress.
+Thanks to our users' community and to Weblate providing a free hosting plan for Privateline X-Chat translations we can now support more languages in the interface – this version adds Chinese and Spanish and more are in progress.
 
 You can [contribute the translation](https://github.com/simplex-chat/simplex-chat/tree/stable#translate-the-apps) of the apps to your language too!
 
@@ -98,7 +98,7 @@ The app now supports 8 languages in addition to English - Czech, German, Spanish
 
 Some links to answer the most common questions:
 
-[SimpleX Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
+[Privateline X-Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
 [How can SimpleX deliver messages without user identifiers](https://simplex.chat/#how-simplex-works).
 
@@ -112,7 +112,7 @@ Visit our [website](https://simplex.chat) to learn more.
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -126,4 +126,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

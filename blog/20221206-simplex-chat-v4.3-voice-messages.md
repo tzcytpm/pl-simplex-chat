@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat reviews and v4.3 released – with instant voice messages, irreversible deletion of sent messages and improved server configuration."
+title: "Privateline X-Chat reviews and v4.3 released – with instant voice messages, irreversible deletion of sent messages and improved server configuration."
 date: 2022-12-06
 image: images/20221206-voice.png
 imageBottom: true
@@ -8,17 +8,17 @@ previewBody: blog_previews/20221206.html
 permalink: "/blog/20221206-simplex-chat-v4.3-voice-messages.html"
 ---
 
-# SimpleX Chat reviews and v4.3 released – with instant voice messages, irreversible deletion of sent messages and improved server configuration.
+# Privateline X-Chat reviews and v4.3 released – with instant voice messages, irreversible deletion of sent messages and improved server configuration.
 
 **Published:** Dec 6, 2022
 
-## SimpleX Chat reviews
+## Privateline X-Chat reviews
 
-Since we published [the security assessment of SimpleX Chat](./20221108-simplex-chat-v4.2-security-audit-new-website.md) completed by Trail of Bits in November, several sites published the reviews and included it in their recommendations:
+Since we published [the security assessment of Privateline X-Chat](./20221108-simplex-chat-v4.2-security-audit-new-website.md) completed by Trail of Bits in November, several sites published the reviews and included it in their recommendations:
 
-- Privacy Guides added SimpleX Chat to [the recommended private and secure messengers](https://www.privacyguides.org/real-time-communication/#simplex-chat).
-- Mike Kuketz – a well-known security expert – published [the review of SimpleX Chat](https://www.kuketz-blog.de/simplex-eindruecke-vom-messenger-ohne-identifier/) and added it to [the messenger matrix](https://www.messenger-matrix.de).
-- Supernova published [the review](https://supernovas.space/detailed_reviews.html#simplex) and increased [SimpleX Chat recommendation ratings](https://supernovas.space/messengers.html).
+- Privacy Guides added Privateline X-Chat to [the recommended private and secure messengers](https://www.privacyguides.org/real-time-communication/#simplex-chat).
+- Mike Kuketz – a well-known security expert – published [the review of Privateline X-Chat](https://www.kuketz-blog.de/simplex-eindruecke-vom-messenger-ohne-identifier/) and added it to [the messenger matrix](https://www.messenger-matrix.de).
+- Supernova published [the review](https://supernovas.space/detailed_reviews.html#simplex) and increased [Privateline X-Chat recommendation ratings](https://supernovas.space/messengers.html).
 
 ## What's new in v4.3
 
@@ -35,7 +35,7 @@ Since we published [the security assessment of SimpleX Chat](./20221108-simplex-
 
 <img src="./images/20221206-voice.png" width="288">
 
-Voice messages, unlike normal files, are sent instantly, in the existing connection with your contact and without acceptance from the recipient. For this reason we limited the size of voice messages to ~92.5kb (an equivalent of 6 messages), that limits the duration to 30 seconds on iOS and to ~42 seconds on Android (the size is different because of different encoders), with an average sound quality. The voice messages are sent in MP4AAC format that is natively supported both on iOS and on Android, and you can play voice message files outside of SimpleX Chat app.
+Voice messages, unlike normal files, are sent instantly, in the existing connection with your contact and without acceptance from the recipient. For this reason we limited the size of voice messages to ~92.5kb (an equivalent of 6 messages), that limits the duration to 30 seconds on iOS and to ~42 seconds on Android (the size is different because of different encoders), with an average sound quality. The voice messages are sent in MP4AAC format that is natively supported both on iOS and on Android, and you can play voice message files outside of Privateline X-Chat app.
 
 Users who do not want to receive voice messages can disable them, either globally, for all contacts, or for each contact independently. Please note that the global preference change will only affect the contacts where you shared your main profile (not incognito contacts) and where you didn't change the preference for the particular contact. Groups have a separate policy that allows disabling voice messages for all members (they are allowed by default). The owner can set this policy when creating a group or later, via Group preferences page.
 
@@ -55,7 +55,7 @@ You may want to be able to delete your messages even after they are received to 
 - these messages may contain threat or abuse and you want to keep them as a proof.
 - you may have paid for the the message (e.g., it can be a consulting report), and you don't want it to suddenly disappear before you had a chance to store it outside of the conversation.
 
-Instead of taking any side in this choice, we decided to allow to change this behaviour either globally or separately for each contact or group. That makes SimpleX Chat unique, being suitable both for the communication contexts where email is traditionally used and in informal or privacy sensitive contexts, that would allow the senders to delete messages irreversibly, provided that the recipients agree to that.
+Instead of taking any side in this choice, we decided to allow to change this behaviour either globally or separately for each contact or group. That makes Privateline X-Chat unique, being suitable both for the communication contexts where email is traditionally used and in informal or privacy sensitive contexts, that would allow the senders to delete messages irreversibly, provided that the recipients agree to that.
 
 In any case, the senders can never be 100% certain that the message is deleted from the recipient's device - recipient can be running a modified client that does not honour the conversation setting, and there is no way to ascertain which code your contact runs on their device.
 
@@ -115,7 +115,7 @@ Please also see the information on our [new website](https://simplex.chat) - it 
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -136,4 +136,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

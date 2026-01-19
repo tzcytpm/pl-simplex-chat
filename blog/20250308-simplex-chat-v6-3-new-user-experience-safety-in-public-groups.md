@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v6.3: new user experience and safety in public groups"
+title: "Privateline X-Chat v6.3: new user experience and safety in public groups"
 date: 2025-03-08
 previewBody: blog_previews/20250308.html
 image: images/20250308-captcha.png
@@ -8,7 +8,7 @@ imageBottom: true
 permalink: "/blog/20250308-simplex-chat-v6-3-new-user-experience-safety-in-public-groups.html"
 ---
 
-# SimpleX Chat v6.3: new user experience and safety in public groups
+# Privateline X-Chat v6.3: new user experience and safety in public groups
 
 **Published:** Mar 8, 2025
 
@@ -30,7 +30,7 @@ The last but not the least - [server builds are now reproducible](#reproducible-
 
 ### Spam in groups that are listed in our group directory
 
-There is no built-in group discovery in SimpleX Chat apps. Instead, we offer an experimental chat bot that allows to submit and to discover public groups. Not so long ago, spammers started sending messages via bots attempting to disrupt these groups.
+There is no built-in group discovery in Privateline X-Chat apps. Instead, we offer an experimental chat bot that allows to submit and to discover public groups. Not so long ago, spammers started sending messages via bots attempting to disrupt these groups.
 
 We released several changes to the groups directory to protect from spam attacks.
 
@@ -169,7 +169,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -185,4 +185,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

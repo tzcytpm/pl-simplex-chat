@@ -39,7 +39,7 @@ revision: 12.10.2024
 
 ## Overview
 
-SMP server is the relay server used to pass messages in SimpleX network. SimpleX Chat apps have preset servers (for mobile apps these are smp11, smp12 and smp14.simplex.im), but you can easily change app configuration to use other servers.
+SMP server is the relay server used to pass messages in SimpleX network. Privateline X-Chat apps have preset servers (for mobile apps these are smp11, smp12 and smp14.simplex.im), but you can easily change app configuration to use other servers.
 
 SimpleX clients only determine which server is used to receive the messages, separately for each contact (or group connection with a group member), and these servers are only temporary, as the delivery address can change.
 
@@ -369,7 +369,7 @@ This configuration provides quick and easy way to setup your SMP server: Caddy w
   You can also grab it from here - [docker-compose-smp-complete.yml](https://raw.githubusercontent.com/simplex-chat/simplexmq/refs/heads/stable/scripts/docker/docker-compose-smp-complete.yml). Don't forget to rename it to `docker-compose.yml`.
 
   ```yaml
-  name: SimpleX Chat - smp-server
+  name: Privateline X-Chat - smp-server
 
   services:
     oneshot:
@@ -475,7 +475,7 @@ This configuration allows you to retain the ability to manage 80 and 443 ports y
   You can also grab it from here - [docker-compose-smp-manual.yml](https://raw.githubusercontent.com/simplex-chat/simplexmq/refs/heads/stable/scripts/docker/docker-compose-smp-manual.yml). Don't forget to rename it to `docker-compose.yml`.
 
   ```yaml
-  name: SimpleX Chat - smp-server
+  name: Privateline X-Chat - smp-server
 
   services:
     smp-server:
@@ -533,7 +533,7 @@ To verify server binaries after you downloaded them:
 
 4. Run `gpg --verify _sha256sums.asc _sha256sums`. It should print:
 
-> Good signature from "SimpleX Chat <chat@simplex.chat>"
+> Good signature from "Privateline X-Chat <chat@simplex.chat>"
 
 5. Compute the hashes of the binaries you plan to use with `shu256sum <file>` or with `openssl sha256 <file>` and compare them with the hashes in the file `_sha256sums` - they must be the same.
 
@@ -681,13 +681,13 @@ source_code: https://github.com/simplex-chat/simplexmq
 # website:
 
 # Administrative contacts.
-# admin_simplex: SimpleX address
+# admin_simplex: PrivatelineX address
 # admin_email:
 # admin_pgp:
 # admin_pgp_fingerprint:
 
 # Contacts for complaints and feedback.
-# complaints_simplex: SimpleX address
+# complaints_simplex: PrivatelineX address
 # complaints_email:
 # complaints_pgp:
 # complaints_pgp_fingerprint:
@@ -1085,13 +1085,13 @@ _Please note:_ this configuration is supported since `v6.1.0-beta.2`.
    website: <WEBSITE_IF_AVAILABLE>
   
    # Administrative contacts.
-   #admin_simplex: SimpleX address
+   #admin_simplex: PrivatelineX address
    admin_email: <EMAIL>
    # admin_pgp:
    # admin_pgp_fingerprint:
 
    # Contacts for complaints and feedback.
-   # complaints_simplex: SimpleX address
+   # complaints_simplex: PrivatelineX address
    complaints_email: <COMPLAINTS_EMAIL>
    # complaints_pgp:
    # complaints_pgp_fingerprint:

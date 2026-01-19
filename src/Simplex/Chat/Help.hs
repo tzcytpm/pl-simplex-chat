@@ -48,9 +48,9 @@ chatWelcome user =
       " |___/___|_|  |_|_| |____|___" <> "/_/ \\_\\" <> "\\___|_||_/_/ \\_\\_|",
       "",
       "Welcome " <> green userName <> "!",
-      "Thank you for installing SimpleX Chat!",
+      "Thank you for installing Privateline X-Chat!",
       "",
-      "Connect to SimpleX Chat developers for any questions - just type " <> highlight "/simplex",
+      "Connect to Privateline X-Chat developers for any questions - just type " <> highlight "/simplex",
       "",
       "Follow our updates:",
       "> Reddit: https://www.reddit.com/r/SimpleXChat/",
@@ -66,7 +66,7 @@ chatHelpInfo :: [StyledString]
 chatHelpInfo =
   map
     styleMarkdown
-    [ highlight "Using SimpleX Chat",
+    [ highlight "Using Privateline X-Chat",
       "Follow these steps to set up a connection:",
       "",
       green "Step 1: " <> highlight "/connect" <> " - Alice adds a contact.",
@@ -93,7 +93,7 @@ chatHelpInfo =
       indent <> highlight "/delete <contact>" <> " - delete contact and all messages with them",
       indent <> highlight "/chats           " <> " - most recent chats",
       indent <> highlight "/markdown        " <> " - supported markdown syntax",
-      indent <> highlight "/version         " <> " - SimpleX Chat version",
+      indent <> highlight "/version         " <> " - Privateline X-Chat version",
       indent <> highlight "/quit            " <> " - quit chat",
       "",
       "The commands may be abbreviated: " <> listHighlight ["/c", "/f", "/g", "/p", "/ad"] <> ", etc."
@@ -234,7 +234,7 @@ incognitoHelpInfo =
       indent <> highlight "/connect incognito               " <> " - create new invitation link using incognito profile",
       indent <> highlight "/connect incognito <invitation>  " <> " - accept invitation using incognito profile",
       indent <> highlight "/accept incognito <name>         " <> " - accept contact request using incognito profile",
-      indent <> highlight "/simplex incognito               " <> " - connect to SimpleX Chat developers using incognito profile",
+      indent <> highlight "/simplex incognito               " <> " - connect to Privateline X-Chat developers using incognito profile",
       "",
       "The commands may be abbreviated: " <> listHighlight ["/c i", "/c i <invitation>", "/ac i <name>"],
       "To find the profile used for an incognito connection, use " <> highlight "/info <contact>" <> "."

@@ -15,7 +15,7 @@
     <string name="send_disappearing_message_30_seconds">30 másodperc</string>
     <string name="one_time_link_short">Egyszer használható meghívó</string>
     <string name="contact_wants_to_connect_via_call">%1$s szeretne kapcsolatba lépni Önnel a következőn keresztül:</string>
-    <string name="about_simplex_chat">A SimpleX Chat névjegye</string>
+    <string name="about_simplex_chat">A Privateline X-Chat névjegye</string>
     <string name="chat_item_ttl_day">1 nap</string>
     <string name="abort_switch_receiving_address">Cím módosításának megszakítása</string>
     <string name="about_simplex">A SimpleXről</string>
@@ -474,7 +474,7 @@
     <string name="error_setting_network_config">Hiba történt a hálózat konfigurációjának frissítésekor</string>
     <string name="network_option_enable_tcp_keep_alive">TCP életben tartása</string>
     <string name="icon_descr_flip_camera">Kamera váltás</string>
-    <string name="email_invite_body">Üdvözlöm!\nCsatlakozzon hozzám a SimpleX Chaten keresztül: %s</string>
+    <string name="email_invite_body">Üdvözlöm!\nCsatlakozzon hozzám a Privateline X-Chaten keresztül: %s</string>
     <string name="display_name_cannot_contain_whitespace">A megjelenítendő név nem tartalmazhat szóközöket.</string>
     <string name="info_row_group">Csoport</string>
     <string name="enter_welcome_message_optional">Adja meg az üdvözlőüzenetet… (nem kötelező)</string>
@@ -668,7 +668,7 @@
     <string name="network_disable_socks_info">Megerősítés esetén az üzenetváltó-kiszolgálók látni fogják az IP-címét és a szolgáltatóját – azt, hogy mely kiszolgálókhoz kapcsolódik.</string>
     <string name="image_will_be_received_when_contact_completes_uploading">A kép akkor érkezik meg, amikor a küldője befejezte annak feltöltését.</string>
     <string name="desktop_scan_QR_code_from_app_via_scan_QR_code"><![CDATA[💻 számítógép: a megjelenített QR-kód beolvasása az alkalmazásból, a <b>QR-kód beolvasásával</b>.]]></string>
-    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">A kapott SimpleX Chat-meghívási hivatkozását megnyithatja a böngészőjében:</string>
+    <string name="if_you_received_simplex_invitation_link_you_can_open_in_browser">A kapott Privateline X-Chat-meghívási hivatkozását megnyithatja a böngészőjében:</string>
     <string name="if_you_enter_self_destruct_code">Ha az alkalmazás megnyitásakor megadja az önmegsemmisítő jelkódot:</string>
     <string name="found_desktop">Megtalált számítógép</string>
     <string name="desktop_devices">Számítógépek</string>
@@ -824,7 +824,7 @@
     <string name="share_text_moderated_at">Moderálva: %s</string>
     <string name="one_time_link">Egyszer használható meghívó</string>
     <string name="invalid_name">Érvénytelen név!</string>
-    <string name="email_invite_subject">Beszélgessünk a SimpleX Chatben</string>
+    <string name="email_invite_subject">Beszélgessünk a Privateline X-Chatben</string>
     <string name="info_row_moderated_at">Moderálva</string>
     <string name="v4_4_live_messages">Élő üzenetek</string>
     <string name="mark_code_verified">Hitelesítés</string>
@@ -834,7 +834,7 @@
     <string name="chat_preferences_no">nem</string>
     <string name="v4_5_reduced_battery_usage_descr">Hamarosan további fejlesztések érkeznek!</string>
     <string name="feature_off">kikapcsolva</string>
-    <string name="install_simplex_chat_for_terminal">SimpleX Chat telepítése a terminálhoz</string>
+    <string name="install_simplex_chat_for_terminal">Privateline X-Chat telepítése a terminálhoz</string>
     <string name="self_destruct_new_display_name">Új megjelenítendő név:</string>
     <string name="new_passphrase">Új jelmondat…</string>
     <string name="callstatus_missed">nem fogadott hívás</string>
@@ -913,7 +913,7 @@
     <string name="v4_5_reduced_battery_usage">Csökkentett akkumulátor-használat</string>
     <string name="save_and_notify_contacts">Mentés és a partnerek értesítése</string>
     <string name="group_welcome_preview">Előnézet</string>
-    <string name="use_chat">SimpleX Chat használata</string>
+    <string name="use_chat">Privateline X-Chat használata</string>
     <string name="share_verb">Megosztás</string>
     <string name="received_message">Fogadott üzenet</string>
     <string name="button_welcome_message">Üdvözlőüzenet</string>
@@ -927,7 +927,7 @@
     <string name="waiting_for_video">Várakozás a videóra</string>
     <string name="reply_verb">Válasz</string>
     <string name="connect_plan_this_is_your_own_one_time_link">Ez a saját egyszer használható meghívója!</string>
-    <string name="ntf_channel_calls">SimpleX Chat hívások</string>
+    <string name="ntf_channel_calls">Privateline X-Chat hívások</string>
     <string name="connect_use_new_incognito_profile">Új inkognitóprofil használata</string>
     <string name="contact_developers">Frissítse az alkalmazást, és lépjen kapcsolatba a fejlesztőkkel.</string>
     <string name="theme_simplex">SimpleX</string>
@@ -946,7 +946,7 @@
     <string name="icon_descr_video_on">Videó bekapcsolva</string>
     <string name="display_name__field">Profilnév:</string>
     <string name="paste_button">Beillesztés</string>
-    <string name="thank_you_for_installing_simplex">Köszönjük, hogy telepítette a SimpleX Chatet!</string>
+    <string name="thank_you_for_installing_simplex">Köszönjük, hogy telepítette a Privateline X-Chatet!</string>
     <string name="star_on_github">Csillagozás a GitHubon</string>
     <string name="remove_member_confirmation">Eltávolítás</string>
     <string name="search_verb">Keresés</string>
@@ -1022,10 +1022,10 @@
     <string name="run_chat_section">CSEVEGÉSI SZOLGÁLTATÁS INDÍTÁSA</string>
     <string name="paste_the_link_you_received">Kapott hivatkozás beillesztése</string>
     <string name="smp_save_servers_question">Menti a kiszolgálókat?</string>
-    <string name="v4_2_security_assessment_desc">A SimpleX Chat biztonsága a Trail of Bits által lett auditálva.</string>
+    <string name="v4_2_security_assessment_desc">A Privateline X-Chat biztonsága a Trail of Bits által lett auditálva.</string>
     <string name="rcv_group_event_updated_group_profile">frissítette a csoportprofilt</string>
     <string name="settings_section_title_support">SIMPLEX CHAT TÁMOGATÁSA</string>
-    <string name="simplex_service_notification_title">SimpleX Chat szolgáltatás</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat szolgáltatás</string>
     <string name="observer_cant_send_message_title">Ön megfigyelő</string>
     <string name="is_verified">%s hitelesítve</string>
     <string name="password_to_show">Jelszó a megjelenítéshez</string>
@@ -1056,7 +1056,7 @@
     <string name="smp_server_test_upload_file">Fájl feltöltése</string>
     <string name="prohibit_calls">A hívások kezdeményezése le van tiltva.</string>
     <string name="network_use_onion_hosts_required">Szükséges</string>
-    <string name="ntf_channel_messages">SimpleX Chat üzenetek</string>
+    <string name="ntf_channel_messages">Privateline X-Chat üzenetek</string>
     <string name="restore_database_alert_confirm">Visszaállítás</string>
     <string name="setup_database_passphrase">Adatbázis-jelmondat beállítása</string>
     <string name="color_sent_message">Üzenetbuborék színe</string>
@@ -1223,7 +1223,7 @@
     <string name="image_descr_simplex_logo">SimpleX logó</string>
     <string name="unblock_member_confirmation">Feloldás</string>
     <string name="unmute_chat">Némítás megszüntetése</string>
-    <string name="open_simplex_chat_to_accept_call">SimpleX Chat megnyitása a hívás fogadásához</string>
+    <string name="open_simplex_chat_to_accept_call">Privateline X-Chat megnyitása a hívás fogadásához</string>
     <string name="stop_rcv_file__title">Megállítja a fájlfogadást?</string>
     <string name="v5_4_more_things_descr">- partnerek értesítése a törlésről (nem kötelező)\n- profilnevek szóközökkel\n- és még sok más!</string>
     <string name="v5_0_polish_interface">Lengyel kezelőfelület</string>
@@ -1258,8 +1258,8 @@
     <string name="color_received_message">Fogadott üzenetbuborék színe</string>
     <string name="only_your_contact_can_delete">Csak a partnere tudja az üzeneteket véglegesen törölni (Ön csak törlésre jelölheti meg azokat). (24 óra)</string>
     <string name="self_destruct_passcode_changed">Az önmegsemmisítő jelkód módosult!</string>
-    <string name="using_simplex_chat_servers">SimpleX Chat kiszolgálók használatban.</string>
-    <string name="use_simplex_chat_servers__question">SimpleX Chat kiszolgálók használata?</string>
+    <string name="using_simplex_chat_servers">Privateline X-Chat kiszolgálók használatban.</string>
+    <string name="use_simplex_chat_servers__question">Privateline X-Chat kiszolgálók használata?</string>
     <string name="unhide_chat_profile">Csevegési profil felfedése</string>
     <string name="v5_0_large_files_support">Videók és fájlok legfeljebb 1GB méretig</string>
     <string name="network_option_tcp_connection_timeout">TCP-kapcsolat időtúllépése</string>
@@ -1392,7 +1392,7 @@
     <string name="you_can_start_chat_via_setting_or_by_restarting_the_app">A csevegési szolgáltatás elindítható a „Beállítások / Adatbázis” menüben vagy az alkalmazás újraindításával.</string>
     <string name="verify_code_on_mobile">Kód hitelesítése a hordozható eszközön</string>
     <string name="youve_accepted_group_invitation_connecting_to_inviting_group_member">Ön csatlakozott ehhez a csoporthoz. Kapcsolódás a meghívó csoporttaghoz.</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Kapcsolatba léphet <font color="#0088ff">a SimpleX Chat fejlesztőivel, ahol bármiről kérdezhet és értesülhet a friss hírekről</font>.]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[Kapcsolatba léphet <font color="#0088ff">a Privateline X-Chat fejlesztőivel, ahol bármiről kérdezhet és értesülhet a friss hírekről</font>.]]></string>
     <string name="v4_2_auto_accept_contact_requests_desc">Nem kötelező üdvözlőüzenettel.</string>
     <string name="unknown_database_error_with_info">Ismeretlen adatbázishiba: %s</string>
     <string name="you_can_hide_or_mute_user_profile">Elrejtheti vagy lenémíthatja a felhasználóprofiljait – koppintson (vagy számítógép-alkalmazásban kattintson) hosszan a profilra a felugró menühöz.</string>
@@ -1589,7 +1589,7 @@
     <string name="call_service_notification_end_call">A hívás befejeződött</string>
     <string name="call_service_notification_video_call">Videóhívás</string>
     <string name="unable_to_open_browser_title">Hiba történt a böngésző megnyitásakor</string>
-    <string name="unable_to_open_browser_desc">A hívásokhoz egy alapértelmezett webböngésző szükséges. Állítson be egy alapértelmezett webböngészőt az eszközön, és osszon meg további információkat a SimpleX Chat fejlesztőivel.</string>
+    <string name="unable_to_open_browser_desc">A hívásokhoz egy alapértelmezett webböngésző szükséges. Állítson be egy alapértelmezett webböngészőt az eszközön, és osszon meg további információkat a Privateline X-Chat fejlesztőivel.</string>
     <string name="migrate_to_device_confirm_network_settings">Hálózati beállítások megerősítése</string>
     <string name="migrate_from_device_error_exporting_archive">Hiba történt a csevegési adatbázis exportálásakor</string>
     <string name="migrate_to_device_apply_onion">Alkalmaz</string>
@@ -2109,7 +2109,7 @@
     <string name="onboarding_choose_server_operators">Kiszolgálóüzemeltetők</string>
     <string name="onboarding_network_operators">Hálózatüzemeltetők</string>
     <string name="onboarding_network_operators_app_will_use_different_operators">Az alkalmazás úgy védi az adatait, hogy minden egyes beszélgetéshez más-más üzemeltetőt használ.</string>
-    <string name="onboarding_network_operators_app_will_use_for_routing">Például, ha a partnere egy SimpleX Chat kiszolgálón keresztül fogadja az üzeneteket, akkor az Ön alkalmazása egy Flux kiszolgálón keresztül fogja azokat kézbesíteni.</string>
+    <string name="onboarding_network_operators_app_will_use_for_routing">Például, ha a partnere egy Privateline X-Chat kiszolgálón keresztül fogadja az üzeneteket, akkor az Ön alkalmazása egy Flux kiszolgálón keresztül fogja azokat kézbesíteni.</string>
     <string name="onboarding_select_network_operators_to_use">Jelölje ki a használni kívánt hálózatüzemeltetőket.</string>
     <string name="onboarding_network_operators_review_later">Felülvizsgálat később</string>
     <string name="onboarding_network_operators_configure_via_settings">A kiszolgálókat a „Hálózat és kiszolgálók” menüben konfigurálhatja.</string>
@@ -2207,7 +2207,7 @@
     <string name="display_name_accepted_invitation">elfogadott meghívó</string>
     <string name="display_name_requested_to_connect">függőben lévő kapcsolat</string>
     <string name="onboarding_network_about_operators">Az üzemeltetőkről</string>
-    <string name="onboarding_network_operators_simplex_flux_agreement">A SimpleX Chat és a Flux megállapodást kötött arról, hogy a Flux által üzemeltetett kiszolgálókat beépítik az alkalmazásba.</string>
+    <string name="onboarding_network_operators_simplex_flux_agreement">A Privateline X-Chat és a Flux megállapodást kötött arról, hogy a Flux által üzemeltetett kiszolgálókat beépítik az alkalmazásba.</string>
     <string name="encryption_renegotiation_in_progress">A titkosítás újraegyeztetése folyamatban van.</string>
     <string name="sync_connection_desc">A kapcsolat titkosítása újraegyeztetést igényel.</string>
     <string name="sync_connection_confirm">Javítás</string>
@@ -2340,7 +2340,7 @@
     <string name="unblock_members_desc">A tagok összes üzenete meg fog jelenni!</string>
     <string name="feature_roles_moderators">moderátorok</string>
     <string name="onboarding_conditions_accept">Elfogadás</string>
-    <string name="onboarding_conditions_by_using_you_agree">A SimpleX Chat használatával Ön elfogadja, hogy:\n- csak elfogadott tartalmakat tesz közzé a nyilvános csoportokban.\n- tiszteletben tartja a többi felhasználót, és nem küld kéretlen tartalmat senkinek.</string>
+    <string name="onboarding_conditions_by_using_you_agree">A Privateline X-Chat használatával Ön elfogadja, hogy:\n- csak elfogadott tartalmakat tesz közzé a nyilvános csoportokban.\n- tiszteletben tartja a többi felhasználót, és nem küld kéretlen tartalmat senkinek.</string>
     <string name="onboarding_conditions_privacy_policy_and_conditions_of_use">Adatvédelmi szabályzat és felhasználási feltételek.</string>
     <string name="onboarding_conditions_private_chats_not_accessible">A privát csevegések, a csoportok és a partnerek nem érhetők el a kiszolgálók üzemeltetői számára.</string>
     <string name="onboarding_conditions_configure_server_operators">Kiszolgálóüzemeltetők beállítása</string>

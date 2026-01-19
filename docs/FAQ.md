@@ -39,7 +39,7 @@ revision: 13.08.2025
 - [What user data can be provided on request?](#what-user-data-can-be-provided-on-request)
 - [Does SimpleX protect my IP address?](#does-simplex-protect-my-ip-address)
 - [Doesn't private message routing reinvent Tor?](#doesnt-private-message-routing-reinvent-tor)
-- [Why don't you embed Tor in SimpleX Chat app?](#why-dont-you-embed-tor-in-simplex-chat-app)
+- [Why don't you embed Tor in Privateline X-Chat app?](#why-dont-you-embed-tor-in-simplex-chat-app)
 - [Can I host my own relays?](#can-i-host-my-own-relays)
 
 [Funding and business model](#funding-and-business-model)
@@ -57,7 +57,7 @@ Alternatively, you can show the QR code when meeting in person or in a video cal
 
 It is safe to share this link over any communication channel, it contains only public keys and can only be used once.
 
-If you want to share your address publicly, so that many people can connect to you, use your SimpleX address instead of 1-time links. Tap your profile image/avatar, then Your SimpleX address. Once you create the address, you can share it in social media profiles, email signature, etc. See [the comparison of SimpleX address with 1-time links](./guide/making-connections.md#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).
+If you want to share your address publicly, so that many people can connect to you, use your PrivatelineX address instead of 1-time links. Tap your profile image/avatar, then Your PrivatelineX address. Once you create the address, you can share it in social media profiles, email signature, etc. See [the comparison of PrivatelineX address with 1-time links](./guide/making-connections.md#comparison-of-1-time-invitation-links-and-simplex-contact-addresses).
 
 ### I have nobody to chat with! Where can I find any groups?
 
@@ -65,7 +65,7 @@ Please check our [Groups Directory](./DIRECTORY.md) in the first place. You migh
 
 ### What is database? What can I do with it?
 
-Database is essential for SimpleX Chat to function properly. In comparison to centralized messaging providers, it is _the user_ who is responsible for taking care of their data. On the other hand, user is sure that _nobody but them_ has access to it. Please read more about it: [Database](./guide/managing-data.md).
+Database is essential for Privateline X-Chat to function properly. In comparison to centralized messaging providers, it is _the user_ who is responsible for taking care of their data. On the other hand, user is sure that _nobody but them_ has access to it. Please read more about it: [Database](./guide/managing-data.md).
 
 ### Can I send files over SimpleX?
 
@@ -73,7 +73,7 @@ Of course! While doing so, you are using a _state-of-the-art_ protocol that grea
 
 ### What’s incognito profile?
 
-This feature is unique to SimpleX Chat – it is independent from chat profiles.
+This feature is unique to Privateline X-Chat – it is independent from chat profiles.
 
 When "Incognito Mode” is turned on, your currently chosen profile name and image are hidden from your new contacts. It allows anonymous connections with other people without any shared data – when you make new connections or join groups via a link a new random profile name will be generated for each connection.
 
@@ -119,7 +119,7 @@ You can use your profile from mobile device on desktop. However, to do so you ne
 
 ### Why cannot I delete messages I sent from my contact's device?
 
-In SimpleX Chat, you and your contacts can delete the messages you send from recipients' devices if you both agree to that within 24 hours of sending it. To be able to do that you both have to enable "Delete for everyone" option in Contact preferences - tap on the contact's name above the conversation to get there.
+In Privateline X-Chat, you and your contacts can delete the messages you send from recipients' devices if you both agree to that within 24 hours of sending it. To be able to do that you both have to enable "Delete for everyone" option in Contact preferences - tap on the contact's name above the conversation to get there.
 
 You can also revoke the files you send. If the recipients did not yet receive the file, they will not be able to receive it after the file is revoked.
 
@@ -169,7 +169,7 @@ Each role can do everything that the previous roles can, except moderators and h
 
 ### I don't want to share a web link or a QR code. How can I connect?
 
-You can replace the server part of the link (e.g., `https://smp18.simplex.im/`) with `simplex:/` and add `?h=smp18.simplex.im` (replace it with server of your link) to the end of the link. Then it will not be possible to use it in a web browser, but it will be recognized by SimpleX Chat app.
+You can replace the server part of the link (e.g., `https://smp18.simplex.im/`) with `simplex:/` and add `?h=smp18.simplex.im` (replace it with server of your link) to the end of the link. Then it will not be possible to use it in a web browser, but it will be recognized by Privateline X-Chat app.
 
 For example, this link: `https://smp18.simplex.im/i#E74vSxMwDnEx6DAvRCZmzBeZwwAseJUD/yVTHjaaH_EzL19DG7fvd46Mjry3IBqYT0UMo5G7l4jQ`
 
@@ -285,9 +285,9 @@ Once the connection is established you don't need to be online at the same time 
 
 If you are prompted to enter database passphrase and you do not know it, this could have happened due to:
 - You may have forgotten the passphrase. (There is no other way to access your data).
-- Migration of app data from one device to another while using unsupported migration process, e.g. via iCloud backup. Use SimpleX Chat's own migration process in the app Settings.
+- Migration of app data from one device to another while using unsupported migration process, e.g. via iCloud backup. Use Privateline X-Chat's own migration process in the app Settings.
 
-In the previous desktop app versions it could also happen in case of error during SimpleX Chat installation.
+In the previous desktop app versions it could also happen in case of error during Privateline X-Chat installation.
 
 You can resolve it by deleting the app's database: (WARNING: this results in deletion of all profiles, contacts and messages)
 - on Android/iOS, uninstall the app and install it again.
@@ -299,7 +299,7 @@ You can resolve it by deleting the app's database: (WARNING: this results in del
 
 1. Check that both devices are connected to the same network (e.g., it won't work if mobile is connected to mobile Internet and desktop to WiFi).
 2. If you use VPN on mobile, allow connections to local network in you VPN settings, or disable VPN.
-3. Allow SimpleX Chat on desktop to accept network connections in system firewall settings. You may choose a specific port in desktop app to accept connections, by default it uses a random port every time.
+3. Allow Privateline X-Chat on desktop to accept network connections in system firewall settings. You may choose a specific port in desktop app to accept connections, by default it uses a random port every time.
 4. Check that your WiFi router allows connections between devices (e.g., it may have an option for "device isolation", or similar).
 5. If you see an error "certificate expired", please check that your device clocks are synchronized within a few seconds.
 6. If iOS app fails to connect and shows an error containing "no route", check that local network connections are allowed for the app in system settings.
@@ -312,11 +312,11 @@ If none of the suggestions work for you, you can create a separate profile on ea
 
 ### Does SimpleX support post quantum cryptography?
 
-Yes! Please read more about quantum resistant encryption is added to SimpleX Chat and about various properties of end-to-end encryption in [this post](../blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md).
+Yes! Please read more about quantum resistant encryption is added to Privateline X-Chat and about various properties of end-to-end encryption in [this post](../blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md).
 
 ### Why can't I use the same profile on different devices?
 
-SimpleX Chat apps support [linking of mobile and desktop apps](https://simplex.chat/blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.html#link-mobile-and-desktop-apps-via-secure-quantum-resistant-protocol) via secure quantum-resistant protocol. It allows using the profile on your mobile device from desktop clients.
+Privateline X-Chat apps support [linking of mobile and desktop apps](https://simplex.chat/blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.html#link-mobile-and-desktop-apps-via-secure-quantum-resistant-protocol) via secure quantum-resistant protocol. It allows using the profile on your mobile device from desktop clients.
 
 Seamlessly and securely using the same profile from two or more devices is a complex and unsolved problem. All apps that provide multi-device support do so at a cost of compromising security of end-to-end encryption. E.g., Session removed the Double Ratchet algorithm entirely to enable multi-device support, sacrificing forward secrecy. Signal provides multi-device support with Double Ratchet algorithm, but by [compromising its "break-in recovery" property](https://eprint.iacr.org/2021/626.pdf) (aka post-compromise security).
 
@@ -347,7 +347,7 @@ Please see our [Privacy Policy](../PRIVACY.md) and [Transparency Reports](./TRAN
 
 Yes!
 
-SimpleX Chat from version 6.0 uses *private message routing* whenever you send messages to unknown servers (all servers in app network settings, both enabled and not, are considered "known").
+Privateline X-Chat from version 6.0 uses *private message routing* whenever you send messages to unknown servers (all servers in app network settings, both enabled and not, are considered "known").
 
 For private routing to work, the servers chosen by your contacts (and by the group members in your groups) must be upgraded to the recent versions. Messaging servers include support for private routing from v5.8, but we recommend using the latest versions.
 
@@ -377,9 +377,9 @@ As each message uses its own random encryption key and random (non-sequential) i
 
 This design is similar to mixnets (e.g. [Nym network](https://nymtech.net)), and it is tailored to the needs of message routing, providing better transport anonymity that general purpose networks, like Tor or VPN. You still can use Tor or VPN to connect to known servers, to protect your IP address from them.
 
-### Why don't you embed Tor in SimpleX Chat app?
+### Why don't you embed Tor in Privateline X-Chat app?
 
-[Tor](https://www.torproject.org) is a fantastic transport overlay network - we believe it might be the best there is right now. If its [threat model](https://support.torproject.org/about/attacks-on-onion-routing/) works for you, you absolutely should use it - SimpleX Chat app supports Tor via SOCKS proxy [since v3.1](https://simplex.chat/blog/20220808-simplex-chat-v3.1-chat-groups.html#access-messaging-servers-via-tor), and SimpleX network servers can be available on both public and onion address at the same time [since v3.2](https://simplex.chat/blog/20220901-simplex-chat-v3.2-incognito-mode.html#using-onion-server-addresses-with-tor), improving anonymity of the users who use Tor.
+[Tor](https://www.torproject.org) is a fantastic transport overlay network - we believe it might be the best there is right now. If its [threat model](https://support.torproject.org/about/attacks-on-onion-routing/) works for you, you absolutely should use it - Privateline X-Chat app supports Tor via SOCKS proxy [since v3.1](https://simplex.chat/blog/20220808-simplex-chat-v3.1-chat-groups.html#access-messaging-servers-via-tor), and SimpleX network servers can be available on both public and onion address at the same time [since v3.2](https://simplex.chat/blog/20220901-simplex-chat-v3.2-incognito-mode.html#using-onion-server-addresses-with-tor), improving anonymity of the users who use Tor.
 
 If you host your messaging server on the onion address only, the users who don't use Tor would still be able to message you via private message routing - all preset servers are configured to forward messages to onion-only servers.
 
@@ -403,7 +403,7 @@ Of course! Please check these tutorials: [SMP server](./SERVER.md) and [XFTP ser
 
 ### How are you funded?
 
-SimpleX Chat Ltd is funded by private investors and venture capital. As an open-source project, it is also being generously supported by donations as well. Read the posts [from 2023](../blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md#how-is-it-funded-and-what-is-the-business-model) and [from 2024](../blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.md) for more details.
+Privateline X-Chat Ltd is funded by private investors and venture capital. As an open-source project, it is also being generously supported by donations as well. Read the posts [from 2023](../blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md#how-is-it-funded-and-what-is-the-business-model) and [from 2024](../blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.md) for more details.
 
 ### Why VCs?
 

@@ -1,5 +1,5 @@
 /* Bundle name */
-"CFBundleName" = "SimpleX";
+"CFBundleName" = "PrivatelineX";
 
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "A SimpleXnek kamera-hozzáférésre van szüksége a QR-kódok beolvasásához, hogy kapcsolódhasson más felhasználókhoz és videohívásokhoz.";

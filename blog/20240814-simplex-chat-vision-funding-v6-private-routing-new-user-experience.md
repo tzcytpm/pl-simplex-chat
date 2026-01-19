@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: the investment from Jack Dorsey and Asymmetric, v6.0 released with the new user experience and private message routing."
+title: "PrivatelineX network: the investment from Jack Dorsey and Asymmetric, v6.0 released with the new user experience and private message routing."
 date: 2024-08-14
 image: images/20240814-reachable.png
 previewBody: blog_previews/20240814.html
@@ -11,7 +11,7 @@ permalink: "/blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-us
 
 **Published:** Aug 14, 2024
 
-[SimpleX Chat: vision and funding 2.0](#simplex-chat-vision-and-funding-20):
+[Privateline X-Chat: vision and funding 2.0](#simplex-chat-vision-and-funding-20):
 - [The past](#the-past-investment-from-village-global): investment from Village Global.
 - [The present](#the-present-announcing-the-investment-from-jack-dorsey-and-asymmetric): announcing the investment from Jack Dorsey and Asymmetric Capital Partners.
 - [The future](#the-future-faster-development-and-transition-to-non-profit-governance): faster development and the path to non-profit governance.
@@ -36,7 +36,7 @@ permalink: "/blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-us
 
 \*\* Android and desktop apps.
 
-## SimpleX Chat: vision and funding 2.0
+## Privateline X-Chat: vision and funding 2.0
 
 ### The past: investment from Village Global
 
@@ -44,13 +44,13 @@ Last year [we announced](https://simplex.chat/blog/20230422-simplex-chat-vision-
 
 [Ben Casnocha](https://www.villageglobal.vc/team/ben-casnocha), the founder and general partner of Village Global, commented on their investment: 
 
-> I believe in SimpleX Chat vision and team’s ability to execute it. The growing number of Internet users who demand privacy of their data and contacts will make SimpleX Chat profitable, which is critically important for any sustainable organization.
+> I believe in Privateline X-Chat vision and team’s ability to execute it. The growing number of Internet users who demand privacy of their data and contacts will make Privateline X-Chat profitable, which is critically important for any sustainable organization.
 >
 > We are fortunate to have LPs who founded many iconic Internet ventures. But they don’t have any influence on the 400+ companies we invested in. They are financial investors in our fund and exert no control or influence on any of the underlying portfolio companies.
 >
-> What's more, we believe that founders should lead their ventures, as it yields better results – our investment in SimpleX Chat has no control provisions. We are happy to help, but we don’t control any decisions nor have a board seat. Evgeny runs the company independently.
+> What's more, we believe that founders should lead their ventures, as it yields better results – our investment in Privateline X-Chat has no control provisions. We are happy to help, but we don’t control any decisions nor have a board seat. Evgeny runs the company independently.
 
-Ben, thank you for believing in our vision – without it SimpleX Chat would simply not exist, as most other investors at the time did not believe that privacy could ever escape the niche of privacy enthusiasts – and we already see the first signs of it happening. 
+Ben, thank you for believing in our vision – without it Privateline X-Chat would simply not exist, as most other investors at the time did not believe that privacy could ever escape the niche of privacy enthusiasts – and we already see the first signs of it happening. 
 
 ### The present: announcing the investment from Jack Dorsey and Asymmetric
 
@@ -58,26 +58,26 @@ The Android app recently hit [100,000 downloads on Google Play Store](https://pl
 
 We are very happy to announce that we now have funds to move faster – we raised a $1.3 million pre-seed round led by [Jack Dorsey](https://en.wikipedia.org/wiki/Jack_Dorsey), with participation of [Asymmetric Capital Partners](https://www.acp.vc) (ACP) VC fund. 
 
-When Jack discovered SimpleX Chat last year, he [posted on Twitter](https://x.com/jack/status/1661681076983529479): 
+When Jack discovered Privateline X-Chat last year, he [posted on Twitter](https://x.com/jack/status/1661681076983529479): 
 
 > Better than Signal? Looks promising.
 > A few bugs and UX issues but great foundation. Love that it’s public domain.
 
 And [on Nostr](https://primal.net/e/note1txz9xmmc456kwcg7zrsrtqrhn7as29ptuz0qulu452k8n85hsshqq6uh6q): 
 
-> A full day with @SimpleX Chat. Solid overall. TestFlight is not recommended. There are some scaling issues today. And not the most intuitive onboarding for everyone. Name still reminds everyone of herpes. All fixable. It’s fast and doesn’t require a phone number or email and I do believe people will eventually see the value of that. Finally, some competition for Signal, and in a permissionless way. And def a solid path so apps don’t have to build their own DM experiences.
+> A full day with @Privateline X-Chat. Solid overall. TestFlight is not recommended. There are some scaling issues today. And not the most intuitive onboarding for everyone. Name still reminds everyone of herpes. All fixable. It’s fast and doesn’t require a phone number or email and I do believe people will eventually see the value of that. Finally, some competition for Signal, and in a permissionless way. And def a solid path so apps don’t have to build their own DM experiences.
 
 Jack, we are super lucky to have your support and investment – thank you for believing in our ability to build a better messaging network! It is a hard work, and we’ve made a lot of progress since your note was written, and a lot of work is ongoing! 
 
-The ACP investment is strategically important – it is a fund that only invests in B2B startups, and SimpleX Chat currently is mostly used by individual users. Making a private communication network sustainable requires its adoption by businesses, and we already see a growing usage by the small teams. 
+The ACP investment is strategically important – it is a fund that only invests in B2B startups, and Privateline X-Chat currently is mostly used by individual users. Making a private communication network sustainable requires its adoption by businesses, and we already see a growing usage by the small teams. 
 
 [Rob Biederman](https://www.acp.vc/team/rob-biederman) and [Sam Clayman](https://www.acp.vc/team/sam), the partners of ACP, commented: 
 
-> We believe that SimpleX Chat network can grow into a de facto Internet standard for private and secure communications for both businesses and individual users, unifying instant and email-like messaging into a single product.
+> We believe that Privateline X-Chat network can grow into a de facto Internet standard for private and secure communications for both businesses and individual users, unifying instant and email-like messaging into a single product.
 >
 > Emails no longer provide privacy and security that businesses require, particularly given the emerging threat of AI-led phishing and social engineering attacks. We look forward to SimpleX network providing a secure alternative.
 
-I was lucky to have met Rob, Sam and the ACP team when I was presenting SimpleX Chat in London – thank you all for your support and believing that the future of communication requires a single product, both for businesses and individual users. 
+I was lucky to have met Rob, Sam and the ACP team when I was presenting Privateline X-Chat in London – thank you all for your support and believing that the future of communication requires a single product, both for businesses and individual users. 
 
 ### The future: faster development and the path to non-profit governance
 
@@ -111,7 +111,7 @@ It will be improved further in the next version: you will be able to send messag
 
 <img src="./images/20240814-reachable.png" width="288" class="float-to-right">
 
-Like with the most innovative mobile browsers (e.g., Safari and Firefox), SimpleX Chat users now can use the app with one hand by moving the toolbar and search bar to the bottom of the screen, and ordering the chats with the most recent conversations in the bottom too, where they can be more easily reached on a mobile screen. 
+Like with the most innovative mobile browsers (e.g., Safari and Firefox), Privateline X-Chat users now can use the app with one hand by moving the toolbar and search bar to the bottom of the screen, and ordering the chats with the most recent conversations in the bottom too, where they can be more easily reached on a mobile screen. 
 
 This layout is enabled by default, and you can disable it right from the list of chats when you install the new version if you prefer to use conventional UI.
 
@@ -135,7 +135,7 @@ When you tap pencil button, you will see a large *New message* sheet, that adds 
 
 Old options:
 - *Add contact* to create a new 1-time invitation link,
-- *Scan / paste link*: to use the link you received. It can be 1-time invitation, a public SimpleX address, or a link to join the group.
+- *Scan / paste link*: to use the link you received. It can be 1-time invitation, a public PrivatelineX address, or a link to join the group.
 - *Create group*
 
 New options:
@@ -158,7 +158,7 @@ Also, these themes are compatible between platforms, so you can import the theme
 
 As much as we disagree with the attacks on the freedom of speech on the society level – all people must be able to express their opinions – we also believe that the small community owners should have full control over which content is allowed and which is not. But as communities grow, bad actors begin to join in order to disrupt, subvert and troll the conversations. So, the moderation tools are critical for small public communities to thrive.
 
-SimpleX Chat already has several moderation tools available for community owners:
+Privateline X-Chat already has several moderation tools available for community owners:
 - Moderate individual messages.
 - Set the default role of the new members to "observer" &mdash; they won't be able to send messages until you allow it. In addition to that, by enabling default messages for admins and owners only you can reach out to the new members and ask some questions before allowing to send messages.
 - Block messages of a member for yourself only.
@@ -198,7 +198,7 @@ You can set all images and videos to blur in your app, and unblur them on tap (o
 
 Not much to brag about, as most iOS messaging apps allow it, and users expected it to be possible since the beginning.
 
-But iOS makes it much harder to develop the capability to share into the app than Android, so it's only in this version you can share images, videos, files and links into SimpleX Chat from other apps.
+But iOS makes it much harder to develop the capability to share into the app than Android, so it's only in this version you can share images, videos, files and links into Privateline X-Chat from other apps.
 
 ### Improved networking and reduced battery usage
 
@@ -226,7 +226,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 You might ask: *Why do you need donations if you've just raised the investment?*
 
@@ -244,4 +244,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

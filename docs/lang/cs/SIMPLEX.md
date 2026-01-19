@@ -54,9 +54,9 @@ Na rozdíl od serverů federativních sítí (e-mail, XMPP nebo Matrix) servery 
 
 Můžete používat SimpleX s vlastními servery a přitom komunikovat s lidmi, kteří používají servery předkonfigurované v aplikacích nebo jakékoli jiné servery SimpleX.
 
-Platforma SimpleX používá otevřený protokol a poskytuje SDK pro vytváření chatovacích botů, což umožňuje implementaci služeb, s nimiž mohou uživatelé komunikovat prostřednictvím aplikací SimpleX Chat - opravdu se těšíme, jaké služby SimpleX bude možné vytvořit.
+Platforma SimpleX používá otevřený protokol a poskytuje SDK pro vytváření chatovacích botů, což umožňuje implementaci služeb, s nimiž mohou uživatelé komunikovat prostřednictvím aplikací Privateline X-Chat - opravdu se těšíme, jaké služby SimpleX bude možné vytvořit.
 
-Pokud uvažujete o vývoji s platformou SimpleX, ať už jde o služby chatovacích botů pro uživatele aplikací SimpleX, nebo o integraci knihovny SimpleX Chat do vašich mobilních aplikací, obraťte se na nás pro případné rady a podporu.
+Pokud uvažujete o vývoji s platformou SimpleX, ať už jde o služby chatovacích botů pro uživatele aplikací SimpleX, nebo o integraci knihovny Privateline X-Chat do vašich mobilních aplikací, obraťte se na nás pro případné rady a podporu.
 
 ## Srovnání s jinými protokoly
 

@@ -3,7 +3,7 @@
 //  SimpleX
 //
 //  Created by Evgeny Poberezkin on 31/01/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -379,7 +379,7 @@ struct SettingsView: View {
                         .modifier(ThemedBackground())
                         .frame(maxHeight: .infinity, alignment: .top)
                 } label: {
-                    settingsRow("info", color: theme.colors.secondary) { Text("About SimpleX Chat") }
+                    settingsRow("info", color: theme.colors.secondary) { Text("About Privateline X-Chat") }
                 }
                 settingsRow("number", color: theme.colors.secondary) {
                     Button("Send questions and ideas") {
@@ -393,7 +393,7 @@ struct SettingsView: View {
                 settingsRow("envelope", color: theme.colors.secondary) { Text("[Send us email](mailto:chat@simplex.chat)") }
             }
 
-            Section(header: Text("Support SimpleX Chat").foregroundColor(theme.colors.secondary)) {
+            Section(header: Text("Support Privateline X-Chat").foregroundColor(theme.colors.secondary)) {
                 settingsRow("keyboard", color: theme.colors.secondary) { Text("[Contribute](https://github.com/simplex-chat/simplex-chat#contribute)") }
                 settingsRow("star", color: theme.colors.secondary) {
                     Button("Rate the app") {

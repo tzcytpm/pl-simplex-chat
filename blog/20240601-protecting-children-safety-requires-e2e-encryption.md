@@ -15,7 +15,7 @@ Privacy critics have long pushed for measures like centralized scanning of priva
 
 ## Why we’re taking action
 
-SimpleX Chat signed a [joint statement](https://www.globalencryption.org/2024/05/joint-statement-on-the-dangers-of-the-may-2024-council-of-the-eu-compromise-proposal-on-eu-csam/) about the dangers of the EU compromise proposal on EU CSAM because maintaining end-to-end encryption is crucial for protecting privacy and security for everyone, including and especially children. 
+Privateline X-Chat signed a [joint statement](https://www.globalencryption.org/2024/05/joint-statement-on-the-dangers-of-the-may-2024-council-of-the-eu-compromise-proposal-on-eu-csam/) about the dangers of the EU compromise proposal on EU CSAM because maintaining end-to-end encryption is crucial for protecting privacy and security for everyone, including and especially children. 
 
 We urge the Ministers in the Council of the EU to stand firm against any scanning proposals that undermine end-to-end encryption, which would enable mass surveillance and misuse by bad actors, whether framed as client-side scanning, upload moderation, or any other terminology. Compromising this basic principle opens the door to devastating privacy violations. We also urge any organizations or individuals reading this to write to their representatives and voice their concerns. European Digital Rights has [outlined these issues](https://edri.org/our-work/be-scanned-or-get-banned/) in greater detail for anyone seeking more information.
 

@@ -1,22 +1,22 @@
 ---
 layout: layouts/article.html
-title: "Announcing SimpleX Chat Prototype!"
+title: "Announcing Privateline X-Chat Prototype!"
 date: 2021-05-12
 preview: Prototype chat app for the terminal (console).
 permalink: "/blog/20210512-simplex-chat-terminal-ui.html"
 ---
 
-# Announcing SimpleX Chat Prototype!
+# Announcing Privateline X-Chat Prototype!
 
 **Published:** May 12, 2021
 
-For the last six months [me](https://github.com/epoberezkin) and my son Efim have been working to bring you a working prototype of SimpleX Chat. We're excited to announce SimpleX Chat terminal client is now available [here](https://github.com/simplex-chat/simplex-chat) on Linux, Windows and Mac (you can either build from source or download the binary for Linux, Windows or Mac from the latest release).
+For the last six months [me](https://github.com/epoberezkin) and my son Efim have been working to bring you a working prototype of Privateline X-Chat. We're excited to announce Privateline X-Chat terminal client is now available [here](https://github.com/simplex-chat/simplex-chat) on Linux, Windows and Mac (you can either build from source or download the binary for Linux, Windows or Mac from the latest release).
 
 We’ve been using the terminal client between us and a few other people for a couple of months now, eating our own “dog food”, and have developed up to version 0.3.1, with most of the messaging protocol features we originally planned
 
 ## Features
 
-- End-to-end encryption with protection from man in the middle attack. The connection invitation must be passed out-of-band (see [how to use SimpleX Chat](https://github.com/simplex-chat/simplex-chat#how-to-use-simplex-chat) in the repo).
+- End-to-end encryption with protection from man in the middle attack. The connection invitation must be passed out-of-band (see [how to use Privateline X-Chat](https://github.com/simplex-chat/simplex-chat#how-to-use-simplex-chat) in the repo).
 - No global identity or any usernames visible to the server(s), ensuring full privacy of your contacts and conversations.
 - Message signing and verification with automatically generated RSA keys, with keys being unique per each connection.
 - Authorization of each command/message by the servers with automatically generated RSA key pairs, also unique per connection.

@@ -260,7 +260,7 @@
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CA059C9279559F40002BEB4;
-			remoteInfo = "SimpleX (iOS)";
+			remoteInfo = "PrivatelineX (iOS)";
 		};
 		5CE2BA6E2845308900EC33A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -274,7 +274,7 @@
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CDCAD442818589900503DA2;
-			remoteInfo = "SimpleX NSE";
+			remoteInfo = "PrivatelineX NSE";
 		};
 		5CE2BAA82845617C00EC33A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -288,7 +288,7 @@
 			containerPortal = 5CA059BE279559F40002BEB4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CEE723A62C3BD3D70009AE93;
-			remoteInfo = "SimpleX SE";
+			remoteInfo = "PrivatelineX SE";
 		};
 		CEE723D12C3C21C90009AE93 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -368,7 +368,7 @@
 		5C3CCFCB2AE6BD3100C3F0C3 /* ConnectDesktopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDesktopView.swift; sourceTree = "<group>"; };
 		5C3F1D552842B68D00EC8A82 /* IntegrityErrorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrityErrorItemView.swift; sourceTree = "<group>"; };
 		5C3F1D57284363C400EC8A82 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
-		5C422A7C27A9A6FA0097A1E1 /* SimpleX (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX (iOS).entitlements"; sourceTree = "<group>"; };
+		5C422A7C27A9A6FA0097A1E1 /* SimpleX (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PrivatelineX (iOS).entitlements"; sourceTree = "<group>"; };
 		5C4B3B09285FB130003915F2 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
 		5C5346A727B59A6A004DF848 /* ChatHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelp.swift; sourceTree = "<group>"; };
 		5C55A91E283AD0E400C4E99E /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
@@ -478,10 +478,10 @@
 		5CCB939B297EFCB100399E78 /* NavStackCompat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavStackCompat.swift; sourceTree = "<group>"; };
 		5CD67B8D2B0E858A00C510B1 /* hs_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hs_init.h; sourceTree = "<group>"; };
 		5CD67B8E2B0E858A00C510B1 /* hs_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hs_init.c; sourceTree = "<group>"; };
-		5CDCAD452818589900503DA2 /* SimpleX NSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SimpleX NSE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDCAD452818589900503DA2 /* SimpleX NSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PrivatelineX NSE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDCAD472818589900503DA2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5CDCAD492818589900503DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDCAD5128186DE400503DA2 /* SimpleX NSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX NSE.entitlements"; sourceTree = "<group>"; };
+		5CDCAD5128186DE400503DA2 /* SimpleX NSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PrivatelineX NSE.entitlements"; sourceTree = "<group>"; };
 		5CDCAD5228186F9500503DA2 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		5CDCAD5E28187D4A00503DA2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		5CDCAD6028187D7900503DA2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
@@ -596,10 +596,10 @@
 		CEA6E91B2CBD21B0002B5DB4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		CEDB245A2C9CD71800FBC5F6 /* StickyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyScrollView.swift; sourceTree = "<group>"; };
 		CEDE70212C48FD9500233B1F /* SEChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEChatState.swift; sourceTree = "<group>"; };
-		CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SimpleX SE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PrivatelineX SE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE723A92C3BD3D70009AE93 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		CEE723AE2C3BD3D70009AE93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE723D42C3C21F50009AE93 /* SimpleX SE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleX SE.entitlements"; sourceTree = "<group>"; };
+		CEE723D42C3C21F50009AE93 /* SimpleX SE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PrivatelineX SE.entitlements"; sourceTree = "<group>"; };
 		CEE723EF2C3D25C70009AE93 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		CEE723F12C3D25ED0009AE93 /* ShareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareModel.swift; sourceTree = "<group>"; };
 		CEFB2EDE2CA1BCC7004B1ECE /* SheetRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRepresentable.swift; sourceTree = "<group>"; };
@@ -1018,7 +1018,7 @@
 				5CB0BA862826CB3A00B3292C /* InfoPlist.strings */,
 				E5DCF9822C5902CE007928CC /* Localizable.strings */,
 			);
-			path = "SimpleX NSE";
+			path = "PrivatelineX NSE";
 			sourceTree = "<group>";
 		};
 		5CE2BA692845308900EC33A6 /* SimpleXChat */ = {
@@ -1194,7 +1194,7 @@
 				E5DCF96F2C590272007928CC /* Localizable.strings */,
 				E5DCF9962C5906FF007928CC /* InfoPlist.strings */,
 			);
-			path = "SimpleX SE";
+			path = "PrivatelineX SE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1216,7 +1216,7 @@
 /* Begin PBXNativeTarget section */
 		5CA059C9279559F40002BEB4 /* SimpleX (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "SimpleX (iOS)" */;
+			buildConfigurationList = 5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "PrivatelineX (iOS)" */;
 			buildPhases = (
 				5CA059C6279559F40002BEB4 /* Sources */,
 				5CA059C7279559F40002BEB4 /* Frameworks */,
@@ -1231,7 +1231,7 @@
 				5CE2BA9F284555F500EC33A6 /* PBXTargetDependency */,
 				CEE723B02C3BD3D70009AE93 /* PBXTargetDependency */,
 			);
-			name = "SimpleX (iOS)";
+			name = "PrivatelineX (iOS)";
 			packageProductDependencies = (
 				5C8F01CC27A6F0D8007D2C8D /* CodeScanner */,
 				D77B92DB2952372200A5A1CC /* SwiftyGif */,
@@ -1241,7 +1241,7 @@
 				8CB3476B2CF5CFFA006787A5 /* Ink */,
 				B728945A2D0C62BF00F7A19A /* ElegantEmojiPicker */,
 			);
-			productName = "SimpleX (iOS)";
+			productName = "PrivatelineX (iOS)";
 			productReference = 5CA059CA279559F40002BEB4 /* SimpleX.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1265,7 +1265,7 @@
 		};
 		5CDCAD442818589900503DA2 /* SimpleX NSE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "SimpleX NSE" */;
+			buildConfigurationList = 5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "PrivatelineX NSE" */;
 			buildPhases = (
 				5CDCAD412818589900503DA2 /* Sources */,
 				5CDCAD422818589900503DA2 /* Frameworks */,
@@ -1276,8 +1276,8 @@
 			dependencies = (
 				5CE2BAA92845617C00EC33A6 /* PBXTargetDependency */,
 			);
-			name = "SimpleX NSE";
-			productName = "SimpleX NSE";
+			name = "PrivatelineX NSE";
+			productName = "PrivatelineX NSE";
 			productReference = 5CDCAD452818589900503DA2 /* SimpleX NSE.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
@@ -1304,7 +1304,7 @@
 		};
 		CEE723A62C3BD3D70009AE93 /* SimpleX SE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "SimpleX SE" */;
+			buildConfigurationList = CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "PrivatelineX SE" */;
 			buildPhases = (
 				CEE723A32C3BD3D70009AE93 /* Sources */,
 				CEE723A52C3BD3D70009AE93 /* Resources */,
@@ -1315,8 +1315,8 @@
 			dependencies = (
 				CEE723D22C3C21C90009AE93 /* PBXTargetDependency */,
 			);
-			name = "SimpleX SE";
-			productName = "SimpleX SE";
+			name = "PrivatelineX SE";
+			productName = "PrivatelineX SE";
 			productReference = CEE723A72C3BD3D70009AE93 /* SimpleX SE.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
@@ -1329,7 +1329,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = "SimpleX Chat";
+				ORGANIZATIONNAME = "Privateline X-Chat";
 				TargetAttributes = {
 					5CA059C9279559F40002BEB4 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -1352,7 +1352,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CA059C1279559F40002BEB4 /* Build configuration list for PBXProject "SimpleX" */;
+			buildConfigurationList = 5CA059C1279559F40002BEB4 /* Build configuration list for PBXProject "PrivatelineX" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1795,7 +1795,7 @@
 				5C245F3D2B501F13001CC39F /* tr */,
 				5C371E4F2BA9AB6400100AD3 /* hu */,
 			);
-			name = "SimpleX--iOS--InfoPlist.strings";
+			name = "PrivatelineX--iOS--InfoPlist.strings";
 			sourceTree = "<group>";
 		};
 		E5DCF96F2C590272007928CC /* Localizable.strings */ = {
@@ -2001,7 +2001,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
 				DEAD_CODE_STRIPPING = YES;
@@ -2010,12 +2010,12 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SimpleX needs camera access to scan QR codes to connect to other users and for video calls.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "SimpleX uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SimpleX uses local network access to allow using user chat profile via desktop app on the same network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SimpleX needs microphone access for audio and video calls, and to record voice messages.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SimpleX needs access to Photo Library for saving captured and received media";
+				INFOPLIST_FILE = "PrivatelineX--iOS--Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "PrivatelineX needs camera access to scan QR codes to connect to other users and for video calls.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "PrivatelineX uses Face ID for local authentication";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "PrivatelineX uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "PrivatelineX needs microphone access for audio and video calls, and to record voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PrivatelineX needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2051,7 +2051,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
 				DEAD_CODE_STRIPPING = YES;
@@ -2060,12 +2060,12 @@
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX--iOS--Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SimpleX needs camera access to scan QR codes to connect to other users and for video calls.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "SimpleX uses Face ID for local authentication";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SimpleX uses local network access to allow using user chat profile via desktop app on the same network.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SimpleX needs microphone access for audio and video calls, and to record voice messages.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SimpleX needs access to Photo Library for saving captured and received media";
+				INFOPLIST_FILE = "PrivatelineX--iOS--Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "PrivatelineX needs camera access to scan QR codes to connect to other users and for video calls.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "PrivatelineX uses Face ID for local authentication";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "PrivatelineX uses local network access to allow using user chat profile via desktop app on the same network.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "PrivatelineX needs microphone access for audio and video calls, and to record voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PrivatelineX needs access to Photo Library for saving captured and received media";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2106,7 +2106,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SimpleX (iOS)";
+				TEST_TARGET_NAME = "PrivatelineX (iOS)";
 			};
 			name = Debug;
 		};
@@ -2126,7 +2126,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SimpleX (iOS)";
+				TEST_TARGET_NAME = "PrivatelineX (iOS)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2137,7 +2137,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX NSE/SimpleX NSE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX NSE/SimpleX NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
@@ -2145,9 +2145,9 @@
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX NSE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_FILE = "PrivatelineX NSE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PrivatelineX NSE";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Privateline X-Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2174,7 +2174,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_TIDY_BUGPRONE_REDUNDANT_BRANCH_CONDITION = YES;
 				CLANG_TIDY_MISC_REDUNDANT_EXPRESSION = YES;
-				CODE_SIGN_ENTITLEMENTS = "SimpleX NSE/SimpleX NSE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX NSE/SimpleX NSE.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
@@ -2182,9 +2182,9 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX NSE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX NSE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_FILE = "PrivatelineX NSE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PrivatelineX NSE";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Privateline X-Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2223,7 +2223,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Privateline X-Chat. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2274,7 +2274,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_CODE_COVERAGE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 SimpleX Chat. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Privateline X-Chat. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2314,16 +2314,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX SE/SimpleX SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
 				DEVELOPMENT_TEAM = 5NN7GUYB6T;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX SE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX SE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
+				INFOPLIST_FILE = "PrivatelineX SE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PrivatelineX SE";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Privateline X-Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2348,16 +2348,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "SimpleX SE/SimpleX SE.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PrivatelineX SE/SimpleX SE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 298;
 				DEVELOPMENT_TEAM = 5NN7GUYB6T;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SimpleX SE/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "SimpleX SE";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 SimpleX Chat. All rights reserved.";
+				INFOPLIST_FILE = "PrivatelineX SE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "PrivatelineX SE";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Privateline X-Chat. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2380,7 +2380,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CA059C1279559F40002BEB4 /* Build configuration list for PBXProject "SimpleX" */ = {
+		5CA059C1279559F40002BEB4 /* Build configuration list for PBXProject "PrivatelineX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CA059F1279559F40002BEB4 /* Debug */,
@@ -2389,7 +2389,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "SimpleX (iOS)" */ = {
+		5CA059F3279559F40002BEB4 /* Build configuration list for PBXNativeTarget "PrivatelineX (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CA059F4279559F40002BEB4 /* Debug */,
@@ -2407,7 +2407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "SimpleX NSE" */ = {
+		5CDCAD502818589900503DA2 /* Build configuration list for PBXNativeTarget "PrivatelineX NSE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CDCAD4E2818589900503DA2 /* Debug */,
@@ -2425,7 +2425,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "SimpleX SE" */ = {
+		CEE723B42C3BD3D70009AE93 /* Build configuration list for PBXNativeTarget "PrivatelineX SE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE723B22C3BD3D70009AE93 /* Debug */,

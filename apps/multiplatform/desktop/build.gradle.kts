@@ -55,12 +55,12 @@ compose {
           //, TargetFormat.AppImage // Gradle doesn't sync on Mac with it
         )
         linux {
-          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.png"))
+          iconFile.set(project.file("src/jvmMain/resources/distribute/privateline-x-chat.png"))
           appCategory = "Messenger"
         }
         windows {
-          packageName = "PLX-Chat"
-          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.ico"))
+          packageName = "Privateline X-Chat"
+          iconFile.set(project.file("src/jvmMain/resources/distribute/privateline-x-chat.ico"))
           console = false
           perUserInstall = false
           dirChooser = true
@@ -68,8 +68,8 @@ compose {
           upgradeUuid = "CC9EFBC8-AFFF-40D8-BB69-FCD7CE99EFB9"
         }
         macOS {
-          packageName = "PLX-Chat"
-          iconFile.set(project.file("src/jvmMain/resources/distribute/plxchat.icns"))
+          packageName = "Privateline X-Chat"
+          iconFile.set(project.file("src/jvmMain/resources/distribute/privateline-x-chat.icns"))
           appCategory = "public.app-category.social-networking"
           bundleID = "chat.simplex.app"
           val identity = rootProject.extra["desktop.mac.signing.identity"] as String?
@@ -82,7 +82,7 @@ compose {
               sign.set(true)
               this.identity.set(identity)
               this.keychain.set(keychain)
-            }
+            }chat
             notarization {
               this.appleID.set(appleId)
               this.password.set(password)
@@ -92,9 +92,9 @@ compose {
         }
         val os = System.getProperty("os.name", "generic").toDefaultLowerCase()
         if (os.contains("mac") || os.contains("win")) {
-          packageName = "PLX-Chat"
+          packageName = "Privateline X-Chat"
         } else {
-          packageName = "plx-chat"
+          packageName = "privateline-x-chat"
         }
         // Packaging requires to have version like MAJOR.MINOR.PATCH
         var adjustedVersion = rootProject.extra["desktop.version_name"] as String

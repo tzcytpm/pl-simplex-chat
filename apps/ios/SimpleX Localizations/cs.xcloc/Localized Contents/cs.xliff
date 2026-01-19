@@ -336,12 +336,12 @@
       </trans-unit>
       <trans-unit id="**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." xml:space="preserve">
         <source>**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata.</source>
-        <target>**Soukromější**: kontrolovat nové zprávy každých 20 minut. Token zařízení je sdílen se serverem SimpleX Chat, ale ne kolik máte kontaktů nebo zpráv.</target>
+        <target>**Soukromější**: kontrolovat nové zprávy každých 20 minut. Token zařízení je sdílen se serverem Privateline X-Chat, ale ne kolik máte kontaktů nebo zpráv.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve">
-        <source>**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
-        <target>**Nejsoukromější**: nepoužívejte server oznámení SimpleX Chat, pravidelně kontrolujte zprávy na pozadí (závisí na tom, jak často aplikaci používáte).</target>
+      <trans-unit id="**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve">
+        <source>**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
+        <target>**Nejsoukromější**: nepoužívejte server oznámení Privateline X-Chat, pravidelně kontrolujte zprávy na pozadí (závisí na tom, jak často aplikaci používáte).</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." xml:space="preserve">
@@ -353,9 +353,9 @@
         <target>**Upozornění**: Pokud heslo ztratíte, NEBUDETE jej moci obnovit ani změnit.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve">
-        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from.</source>
-        <target>**Doporučeno**: Token zařízení a oznámení se odesílají na oznamovací server SimpleX Chat, ale nikoli obsah, velikost nebo od koho jsou zprávy.</target>
+      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve">
+        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from.</source>
+        <target>**Doporučeno**: Token zařízení a oznámení se odesílají na oznamovací server Privateline X-Chat, ale nikoli obsah, velikost nebo od koho jsou zprávy.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Scan / Paste link**: to connect via a link you received." xml:space="preserve">
@@ -491,11 +491,11 @@ time interval</note>
         <target>30 vteřin</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve">
+      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve">
         <source>&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;</source>
+&lt;p&gt;&lt;a href="%@"&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;</source>
         <target>&lt;p&gt;Ahoj!&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt; Připojte se ke mne přes SimpleX Chat&lt;/a&gt;&lt;/p&gt;</target>
+&lt;p&gt;&lt;a href="%@"&gt; Připojte se ke mne přes Privateline X-Chat&lt;/a&gt;&lt;/p&gt;</target>
         <note>email text</note>
       </trans-unit>
       <trans-unit id="A few more things" xml:space="preserve">
@@ -540,8 +540,8 @@ time interval</note>
         <target>Přerušit změnu adresy?</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX Chat" xml:space="preserve">
-        <source>About SimpleX Chat</source>
+      <trans-unit id="About Privateline X-Chat" xml:space="preserve">
+        <source>About Privateline X-Chat</source>
         <target>O SimpleX chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -1348,8 +1348,8 @@ swipe action</note>
         <target>Podle chat profilu (výchozí) nebo [podle připojení](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA).</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="By using SimpleX Chat you agree to:&#10;- send only legal content in public groups.&#10;- respect other users – no spam." xml:space="preserve">
-        <source>By using SimpleX Chat you agree to:
+      <trans-unit id="By using Privateline X-Chat you agree to:&#10;- send only legal content in public groups.&#10;- respect other users – no spam." xml:space="preserve">
+        <source>By using Privateline X-Chat you agree to:
 - send only legal content in public groups.
 - respect other users – no spam.</source>
         <note>No comment provided by engineer.</note>
@@ -1825,9 +1825,9 @@ set passcode view</note>
         <source>Connect to your friends faster.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Connect to yourself?&#10;This is your own SimpleX address!" xml:space="preserve">
+      <trans-unit id="Connect to yourself?&#10;This is your own PrivatelineX address!" xml:space="preserve">
         <source>Connect to yourself?
-This is your own SimpleX address!</source>
+This is your own PrivatelineX address!</source>
         <note>new chat sheet title</note>
       </trans-unit>
       <trans-unit id="Connect to yourself?&#10;This is your own one-time link!" xml:space="preserve">
@@ -2059,8 +2059,8 @@ Toto je váš vlastní jednorázový odkaz!</target>
         <source>Create 1-time link</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Create SimpleX address" xml:space="preserve">
-        <source>Create SimpleX address</source>
+      <trans-unit id="Create PrivatelineX address" xml:space="preserve">
+        <source>Create PrivatelineX address</source>
         <target>Vytvořit SimpleX adresu</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -2600,14 +2600,14 @@ swipe action</note>
         <target>Zařízení</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is disabled. Turning off SimpleX Lock." xml:space="preserve">
-        <source>Device authentication is disabled. Turning off SimpleX Lock.</source>
-        <target>Ověřování zařízení je zakázáno. Vypnutí zámku SimpleX Lock.</target>
+      <trans-unit id="Device authentication is disabled. Turning off PrivatelineX Lock." xml:space="preserve">
+        <source>Device authentication is disabled. Turning off PrivatelineX Lock.</source>
+        <target>Ověřování zařízení je zakázáno. Vypnutí zámku PrivatelineX Lock.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." xml:space="preserve">
-        <source>Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication.</source>
-        <target>Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek SimpleX Lock zapnout prostřednictvím Nastavení.</target>
+      <trans-unit id="Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." xml:space="preserve">
+        <source>Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication.</source>
+        <target>Ověřování zařízení není povoleno. Jakmile povolíte ověřování zařízení, můžete zámek PrivatelineX Lock zapnout prostřednictvím Nastavení.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Different names, avatars and transport isolation." xml:space="preserve">
@@ -2634,8 +2634,8 @@ swipe action</note>
         <target>Vypnout (zachovat přepsání)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Disable SimpleX Lock" xml:space="preserve">
-        <source>Disable SimpleX Lock</source>
+      <trans-unit id="Disable PrivatelineX Lock" xml:space="preserve">
+        <source>Disable PrivatelineX Lock</source>
         <target>Vypnutí zámku SimpleX</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -2842,8 +2842,8 @@ chat item action</note>
         <source>Enable Flux in Network &amp; servers settings for better metadata privacy.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable SimpleX Lock" xml:space="preserve">
-        <source>Enable SimpleX Lock</source>
+      <trans-unit id="Enable PrivatelineX Lock" xml:space="preserve">
+        <source>Enable PrivatelineX Lock</source>
         <target>Zapnutí zámku SimpleX</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -3675,8 +3675,8 @@ snd error text</note>
         <target>Pro konzoli</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." xml:space="preserve">
-        <source>For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server.</source>
+      <trans-unit id="For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server." xml:space="preserve">
+        <source>For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="For me" xml:space="preserve">
@@ -4173,9 +4173,9 @@ More improvements are coming soon!</source>
         <target>Počáteční role</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
-        <source>Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
-        <target>Nainstalujte [SimpleX Chat pro terminál](https://github.com/simplex-chat/simplex-chat)</target>
+      <trans-unit id="Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve">
+        <source>Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
+        <target>Nainstalujte [Privateline X-Chat pro terminál](https://github.com/simplex-chat/simplex-chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant" xml:space="preserve">
@@ -4448,9 +4448,9 @@ This is your link for group %@!</source>
         <source>Less traffic on mobile networks.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Let's talk in SimpleX Chat" xml:space="preserve">
-        <source>Let's talk in SimpleX Chat</source>
-        <target>Promluvme si v SimpleX Chatu</target>
+      <trans-unit id="Let's talk in Privateline X-Chat" xml:space="preserve">
+        <source>Let's talk in Privateline X-Chat</source>
+        <target>Promluvme si v Privateline X-Chatu</target>
         <note>email subject</note>
       </trans-unit>
       <trans-unit id="Light" xml:space="preserve">
@@ -6472,7 +6472,7 @@ chat item action</note>
         <source>Search bar accepts invitation links.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Search or paste SimpleX link" xml:space="preserve">
+      <trans-unit id="Search or paste PrivatelineX link" xml:space="preserve">
         <source>Search or paste SimpleX link</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -6894,8 +6894,8 @@ chat item action</note>
         <source>Share 1-time link with a friend</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Share SimpleX address on social media." xml:space="preserve">
-        <source>Share SimpleX address on social media.</source>
+      <trans-unit id="Share PrivatelineX address on social media." xml:space="preserve">
+        <source>Share PrivatelineX address on social media.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Share address" xml:space="preserve">
@@ -6937,7 +6937,7 @@ chat item action</note>
         <source>Share this 1-time invite link</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Share to SimpleX" xml:space="preserve">
+      <trans-unit id="Share to PrivatelineX" xml:space="preserve">
         <source>Share to SimpleX</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -6950,8 +6950,8 @@ chat item action</note>
         <source>Share your address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Short SimpleX address" xml:space="preserve">
-        <source>Short SimpleX address</source>
+      <trans-unit id="Short PrivatelineX address" xml:space="preserve">
+        <source>Short PrivatelineX address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Short description" xml:space="preserve">
@@ -7003,103 +7003,103 @@ chat item action</note>
         <target>Zobrazit:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX" xml:space="preserve">
+      <trans-unit id="PrivatelineX" xml:space="preserve">
         <source>SimpleX</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Address" xml:space="preserve">
+      <trans-unit id="PrivatelineX Address" xml:space="preserve">
         <source>SimpleX Address</source>
         <target>SimpleX Adresa</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." xml:space="preserve">
-        <source>SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app.</source>
+      <trans-unit id="Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app." xml:space="preserve">
+        <source>Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat security was audited by Trail of Bits." xml:space="preserve">
-        <source>SimpleX Chat security was audited by Trail of Bits.</source>
+      <trans-unit id="Privateline X-Chat security was audited by Trail of Bits." xml:space="preserve">
+        <source>Privateline X-Chat security was audited by Trail of Bits.</source>
         <target>Zabezpečení SimpleX chatu bylo auditováno společností Trail of Bits.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock" xml:space="preserve">
-        <source>SimpleX Lock</source>
+      <trans-unit id="PrivatelineX Lock" xml:space="preserve">
+        <source>PrivatelineX Lock</source>
         <target>Zámek SimpleX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock mode" xml:space="preserve">
-        <source>SimpleX Lock mode</source>
+      <trans-unit id="PrivatelineX Lock mode" xml:space="preserve">
+        <source>PrivatelineX Lock mode</source>
         <target>SimpleX zámek</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock not enabled!" xml:space="preserve">
-        <source>SimpleX Lock not enabled!</source>
+      <trans-unit id="PrivatelineX Lock not enabled!" xml:space="preserve">
+        <source>PrivatelineX Lock not enabled!</source>
         <target>Zámek SimpleX není povolen!</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock turned on" xml:space="preserve">
-        <source>SimpleX Lock turned on</source>
-        <target>Zapnutý zámek SimpleX Lock</target>
+      <trans-unit id="PrivatelineX Lock turned on" xml:space="preserve">
+        <source>PrivatelineX Lock turned on</source>
+        <target>Zapnutý zámek PrivatelineX Lock</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address" xml:space="preserve">
-        <source>SimpleX address</source>
+      <trans-unit id="PrivatelineX address" xml:space="preserve">
+        <source>PrivatelineX address</source>
         <target>Adresa SimpleX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address and 1-time links are safe to share via any messenger." xml:space="preserve">
-        <source>SimpleX address and 1-time links are safe to share via any messenger.</source>
+      <trans-unit id="PrivatelineX address and 1-time links are safe to share via any messenger." xml:space="preserve">
+        <source>PrivatelineX address and 1-time links are safe to share via any messenger.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address or 1-time link?" xml:space="preserve">
-        <source>SimpleX address or 1-time link?</source>
+      <trans-unit id="PrivatelineX address or 1-time link?" xml:space="preserve">
+        <source>PrivatelineX address or 1-time link?</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address settings" xml:space="preserve">
-        <source>SimpleX address settings</source>
+      <trans-unit id="PrivatelineX address settings" xml:space="preserve">
+        <source>PrivatelineX address settings</source>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="SimpleX channel link" xml:space="preserve">
+      <trans-unit id="PrivatelineX channel link" xml:space="preserve">
         <source>SimpleX channel link</source>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX contact address" xml:space="preserve">
+      <trans-unit id="PrivatelineX contact address" xml:space="preserve">
         <source>SimpleX contact address</source>
         <target>SimpleX kontaktní adresa</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX encrypted message or connection event" xml:space="preserve">
+      <trans-unit id="PrivatelineX encrypted message or connection event" xml:space="preserve">
         <source>SimpleX encrypted message or connection event</source>
         <target>SimpleX šifrovaná zpráva nebo událost připojení</target>
         <note>notification</note>
       </trans-unit>
-      <trans-unit id="SimpleX group link" xml:space="preserve">
+      <trans-unit id="PrivatelineX group link" xml:space="preserve">
         <source>SimpleX group link</source>
         <target>Skupinový odkaz SimpleX</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX links" xml:space="preserve">
+      <trans-unit id="PrivatelineX links" xml:space="preserve">
         <source>SimpleX links</source>
         <target>Odkazy na SimpleX</target>
         <note>chat feature</note>
       </trans-unit>
-      <trans-unit id="SimpleX links are prohibited." xml:space="preserve">
+      <trans-unit id="PrivatelineX links are prohibited." xml:space="preserve">
         <source>SimpleX links are prohibited.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX links not allowed" xml:space="preserve">
+      <trans-unit id="PrivatelineX links not allowed" xml:space="preserve">
         <source>SimpleX links not allowed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX one-time invitation" xml:space="preserve">
+      <trans-unit id="PrivatelineX one-time invitation" xml:space="preserve">
         <source>SimpleX one-time invitation</source>
         <target>Jednorázová pozvánka SimpleX</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX protocols reviewed by Trail of Bits." xml:space="preserve">
+      <trans-unit id="PrivatelineX protocols reviewed by Trail of Bits." xml:space="preserve">
         <source>SimpleX protocols reviewed by Trail of Bits.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX relay link" xml:space="preserve">
+      <trans-unit id="PrivatelineX relay link" xml:space="preserve">
         <source>SimpleX relay link</source>
         <note>simplex link type</note>
       </trans-unit>
@@ -7194,7 +7194,7 @@ report reason</note>
         <target>Zastavit</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stop SimpleX" xml:space="preserve">
+      <trans-unit id="Stop PrivatelineX" xml:space="preserve">
         <source>Stop SimpleX</source>
         <target>Zastavit SimpleX</target>
         <note>authentication reason</note>
@@ -7267,9 +7267,9 @@ report reason</note>
         <source>Subscriptions ignored</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Support SimpleX Chat" xml:space="preserve">
-        <source>Support SimpleX Chat</source>
-        <target>Podpořte SimpleX Chat</target>
+      <trans-unit id="Support Privateline X-Chat" xml:space="preserve">
+        <source>Support Privateline X-Chat</source>
+        <target>Podpořte Privateline X-Chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Switch audio and video during the call." xml:space="preserve">
@@ -7343,8 +7343,8 @@ report reason</note>
         <source>Tap Connect to use bot</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tap Create SimpleX address in the menu to create it later." xml:space="preserve">
-        <source>Tap Create SimpleX address in the menu to create it later.</source>
+      <trans-unit id="Tap Create PrivatelineX address in the menu to create it later." xml:space="preserve">
+        <source>Tap Create PrivatelineX address in the menu to create it later.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tap Join group" xml:space="preserve">
@@ -7411,9 +7411,9 @@ report reason</note>
         <target>Testy selhaly!</target>
         <note>alert title</note>
       </trans-unit>
-      <trans-unit id="Thank you for installing SimpleX Chat!" xml:space="preserve">
-        <source>Thank you for installing SimpleX Chat!</source>
-        <target>Děkujeme, že jste si nainstalovali SimpleX Chat!</target>
+      <trans-unit id="Thank you for installing Privateline X-Chat!" xml:space="preserve">
+        <source>Thank you for installing Privateline X-Chat!</source>
+        <target>Děkujeme, že jste si nainstalovali Privateline X-Chat!</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" xml:space="preserve">
@@ -7679,10 +7679,10 @@ Může se to stát kvůli nějaké chybě, nebo pokud je spojení kompromitován
         <source>To protect your IP address, private routing uses your SMP servers to deliver messages.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your information, turn on SimpleX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
-        <source>To protect your information, turn on SimpleX Lock.
+      <trans-unit id="To protect your information, turn on PrivatelineX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve">
+        <source>To protect your information, turn on PrivatelineX Lock.
 You will be prompted to complete authentication before this feature is enabled.</source>
-        <target>Chcete-li chránit své informace, zapněte zámek SimpleX Lock.
+        <target>Chcete-li chránit své informace, zapněte zámek PrivatelineX Lock.
 Před zapnutím této funkce budete vyzváni k dokončení ověření.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -8014,9 +8014,9 @@ Chcete-li se připojit, požádejte svůj kontakt o vytvoření dalšího odkazu
         <source>Use SOCKS proxy</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use SimpleX Chat servers?" xml:space="preserve">
-        <source>Use SimpleX Chat servers?</source>
-        <target>Používat servery SimpleX Chat?</target>
+      <trans-unit id="Use Privateline X-Chat servers?" xml:space="preserve">
+        <source>Use Privateline X-Chat servers?</source>
+        <target>Používat servery Privateline X-Chat?</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Use TCP port %@ when no port is specified." xml:space="preserve">
@@ -8109,9 +8109,9 @@ Chcete-li se připojit, požádejte svůj kontakt o vytvoření dalšího odkazu
         <source>Username</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Using SimpleX Chat servers." xml:space="preserve">
-        <source>Using SimpleX Chat servers.</source>
-        <target>Používat servery SimpleX Chat.</target>
+      <trans-unit id="Using Privateline X-Chat servers." xml:space="preserve">
+        <source>Using Privateline X-Chat servers.</source>
+        <target>Používat servery Privateline X-Chat.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Verify code with desktop" xml:space="preserve">
@@ -8501,8 +8501,8 @@ Repeat join request?</source>
         <source>You can still view conversation with %@ in the list of chats.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can turn on SimpleX Lock via Settings." xml:space="preserve">
-        <source>You can turn on SimpleX Lock via Settings.</source>
+      <trans-unit id="You can turn on PrivatelineX Lock via Settings." xml:space="preserve">
+        <source>You can turn on PrivatelineX Lock via Settings.</source>
         <target>Zámek SimpleX můžete zapnout v Nastavení.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -8657,8 +8657,8 @@ Repeat connection request?</source>
         <target>Vaše servery ICE</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Your SimpleX address" xml:space="preserve">
-        <source>Your SimpleX address</source>
+      <trans-unit id="Your PrivatelineX address" xml:space="preserve">
+        <source>Your PrivatelineX address</source>
         <target>Vaše SimpleX adresa</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -8978,9 +8978,9 @@ marked deleted chat item preview text</note>
         <target>kompletní</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="connect to SimpleX Chat developers." xml:space="preserve">
-        <source>connect to SimpleX Chat developers.</source>
-        <target>připojit se k vývojářům SimpleX Chat.</target>
+      <trans-unit id="connect to Privateline X-Chat developers." xml:space="preserve">
+        <source>connect to Privateline X-Chat developers.</source>
+        <target>připojit se k vývojářům Privateline X-Chat.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="connected" xml:space="preserve">
@@ -9836,7 +9836,7 @@ last received msg: %2$@</source>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="cs" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="cs" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -9852,13 +9852,13 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 SimpleX Chat. All rights reserved.</source>
-        <target>Autorská práva © 2022 SimpleX Chat. Všechna práva vyhrazena.</target>
+        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <target>Autorská práva © 2022 Privateline X-Chat. Všechna práva vyhrazena.</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/Localizable.strings" source-language="en" target-language="cs" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/Localizable.strings" source-language="en" target-language="cs" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -9885,7 +9885,7 @@ last received msg: %2$@</source>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX SE/en.lproj/InfoPlist.strings" source-language="en" target-language="cs" datatype="plaintext">
+  <file original="PrivatelineX SE/en.lproj/InfoPlist.strings" source-language="en" target-language="cs" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -9899,12 +9899,12 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2024 SimpleX Chat. All rights reserved.</source>
+        <source>Copyright © 2024 Privateline X-Chat. All rights reserved.</source>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX SE/en.lproj/Localizable.strings" source-language="en" target-language="cs" datatype="plaintext">
+  <file original="PrivatelineX SE/en.lproj/Localizable.strings" source-language="en" target-language="cs" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"/>
     </header>
@@ -10053,8 +10053,8 @@ last received msg: %2$@</source>
         <source>Wrong database passphrase</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can allow sharing in Privacy &amp; Security / SimpleX Lock settings." xml:space="preserve">
-        <source>You can allow sharing in Privacy &amp; Security / SimpleX Lock settings.</source>
+      <trans-unit id="You can allow sharing in Privacy &amp; Security / PrivatelineX Lock settings." xml:space="preserve">
+        <source>You can allow sharing in Privacy &amp; Security / PrivatelineX Lock settings.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

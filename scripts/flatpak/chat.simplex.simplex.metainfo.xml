@@ -2,11 +2,11 @@
 <component type="desktop-application">
   <id>chat.simplex.simplex</id>
   
-  <name>SimpleX Chat</name>
+  <name>Privateline X-Chat</name>
   <summary>A private &amp; encrypted open-source messenger without any user IDs (not even random)!</summary>
 
   <developer id="chat.simplex">
-    <name>SimpleX Chat</name>
+    <name>Privateline X-Chat</name>
   </developer>
   
   <metadata_license>MIT</metadata_license>
@@ -15,7 +15,7 @@
   <description>
     <p>SimpleX - the first messaging platform that has no user identifiers, not even random numbers!</p>
     <p>Security assessment was done by Trail of Bits in November 2022.</p>
-    <p>SimpleX Chat features:</p>
+    <p>Privateline X-Chat features:</p>
     <ol>
       <li>end-to-end encrypted messages, with editing, replies and deletion of messages.</li>
       <li>sending end-to-end encrypted images and files.</li>
@@ -25,7 +25,7 @@
       <li>private instant notifications.</li>
       <li>portable chat profile - you can transfer your chat contacts and history to another device (terminal or mobile).</li>
     </ol>
-    <p>SimpleX Chat advantages:</p>
+    <p>Privateline X-Chat advantages:</p>
     <ol>
       <li><em>Full privacy of your identity, profile, contacts and metadata:</em> unlike any other existing messaging platform, SimpleX uses no phone numbers or any other identifiers assigned to the users - not even random numbers. This protects the privacy of who you are communicating with, hiding it from SimpleX platform servers and from any observers.</li>
       <li><em>Complete protection against spam and abuse:</em> as you have no identifier on SimpleX platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address.</li>
@@ -97,7 +97,7 @@
         <ul>
           <li>welcome your contacts: set profile bio and welcome message.</li>
           <li>enable disappearing messages by default for new contacts.</li>
-          <li>short SimpleX addresses and group links now include profile images and welcome messages.</li>
+          <li>short PrivatelineX addresses and group links now include profile images and welcome messages.</li>
         </ul>
       </description>
     </release>
@@ -321,7 +321,7 @@
         </ul>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>
@@ -340,7 +340,7 @@
         </ul>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>
@@ -359,7 +359,7 @@
         </ul>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>
@@ -378,7 +378,7 @@
         </ul>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>
@@ -397,7 +397,7 @@
         </ul>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>
@@ -408,7 +408,7 @@
       <description>
         <p>New in v6.2:</p>
         <ul>
-          <li>SimpleX Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
+          <li>Privateline X-Chat and Flux made an agreement to include servers operated by Flux into the app – to improve metadata privacy.</li>
           <li>Business chats – your customers privacy.</li>
           <li>Improved user experience in chats: open on the first unread, jump to quoted messages, see who reacted.</li>
         </ul>

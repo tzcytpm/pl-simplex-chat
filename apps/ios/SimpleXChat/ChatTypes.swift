@@ -3,7 +3,7 @@
 //  SimpleX NSE
 //
 //  Created by Evgeny on 26/04/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import Foundation
@@ -896,7 +896,7 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
         case .reactions: return NSLocalizedString("Message reactions", comment: "chat feature")
         case .voice: return NSLocalizedString("Voice messages", comment: "chat feature")
         case .files: return NSLocalizedString("Files and media", comment: "chat feature")
-        case .simplexLinks: return NSLocalizedString("SimpleX links", comment: "chat feature")
+        case .simplexLinks: return NSLocalizedString("PrivatelineX links", comment: "chat feature")
         case .reports: return NSLocalizedString("Member reports", comment: "chat feature")
         case .history: return NSLocalizedString("Visible history", comment: "chat feature")
         }
@@ -1021,7 +1021,7 @@ public enum GroupFeature: String, Decodable, Feature, Hashable {
             case .simplexLinks:
                 switch enabled {
                 case .on: return "Members can send SimpleX links."
-                case .off: return "SimpleX links are prohibited."
+                case .off: return "PrivatelineX links are prohibited."
                 }
             case .reports:
                 switch enabled {
@@ -4697,11 +4697,11 @@ public enum SimplexLinkType: String, Decodable, Hashable {
 
     public var description: String {
         switch self {
-        case .contact: return NSLocalizedString("SimpleX contact address", comment: "simplex link type")
-        case .invitation: return NSLocalizedString("SimpleX one-time invitation", comment: "simplex link type")
-        case .group: return NSLocalizedString("SimpleX group link", comment: "simplex link type")
-        case .channel: return NSLocalizedString("SimpleX channel link", comment: "simplex link type")
-        case .relay: return NSLocalizedString("SimpleX relay link", comment: "simplex link type")
+        case .contact: return NSLocalizedString("PrivatelineX contact address", comment: "simplex link type")
+        case .invitation: return NSLocalizedString("PrivatelineX one-time invitation", comment: "simplex link type")
+        case .group: return NSLocalizedString("PrivatelineX group link", comment: "simplex link type")
+        case .channel: return NSLocalizedString("PrivatelineX channel link", comment: "simplex link type")
+        case .relay: return NSLocalizedString("PrivatelineX relay link", comment: "simplex link type")
         }
     }
 }

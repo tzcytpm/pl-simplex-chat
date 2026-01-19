@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**e2e зашифрованный** видеозвонок";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Более конфиденциально**: проверять новые сообщения каждые 20 минут. Только токен устройства будет отправлен на сервер уведомлений SimpleX Chat, но у сервера не будет информации о количестве контактов и какой либо информации о сообщениях.";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**Более конфиденциально**: проверять новые сообщения каждые 20 минут. Только токен устройства будет отправлен на сервер уведомлений Privateline X-Chat, но у сервера не будет информации о количестве контактов и какой либо информации о сообщениях.";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Самый конфиденциальный**: не использовать сервер уведомлений SimpleX Chat. Сообщения проверяются в фоновом режиме, когда система позволяет, в зависимости от того, как часто Вы используете приложение.";
+"**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**Самый конфиденциальный**: не использовать сервер уведомлений Privateline X-Chat. Сообщения проверяются в фоновом режиме, когда система позволяет, в зависимости от того, как часто Вы используете приложение.";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**Обратите внимание**: использование одной и той же базы данных на двух устройствах нарушит расшифровку сообщений от ваших контактов, как свойство защиты соединений.";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**Внимание**: Вы не сможете восстановить или поменять пароль, если Вы его потеряете.";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**Рекомендовано**: токен устройства и уведомления отправляются на сервер SimpleX Chat, но сервер не получает сами сообщения, их размер или от кого они.";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." = "**Рекомендовано**: токен устройства и уведомления отправляются на сервер Privateline X-Chat, но сервер не получает сами сообщения, их размер или от кого они.";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**Сканировать / Вставить ссылку**: чтобы соединиться через полученную ссылку.";
@@ -257,7 +257,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>Привет!</p>\n<p><a href=\"%@\">Соединитесь со мной в SimpleX Chat.</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Privateline X-Chat</a></p>" = "<p>Привет!</p>\n<p><a href=\"%@\">Соединитесь со мной в Privateline X-Chat.</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~зачеркнуть~";
@@ -332,7 +332,7 @@ time interval */
 "About operators" = "Об операторах";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "Информация о SimpleX Chat";
+"About Privateline X-Chat" = "Информация о Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "наверху, затем выберите:";
@@ -907,7 +907,7 @@ marked deleted chat item preview text */
 "By chat profile (default) or [by connection](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (BETA)." = "По профилю чата или [по соединению](https://simplex.chat/blog/20230204-simplex-chat-v4-5-user-chat-profiles.html#transport-isolation) (БЕТА).";
 
 /* No comment provided by engineer. */
-"By using SimpleX Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Используя SimpleX Chat, Вы согласны:\n- отправлять только законные сообщения в публичных группах.\n- уважать других пользователей – не отправлять спам.";
+"By using Privateline X-Chat you agree to:\n- send only legal content in public groups.\n- respect other users – no spam." = "Используя Privateline X-Chat, Вы согласны:\n- отправлять только законные сообщения в публичных группах.\n- уважать других пользователей – не отправлять спам.";
 
 /* No comment provided by engineer. */
 "call" = "звонок";
@@ -1255,7 +1255,7 @@ set passcode view */
 "Connect to desktop" = "Подключиться к компьютеру";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "соединитесь с разработчиками.";
+"connect to Privateline X-Chat developers." = "соединитесь с разработчиками.";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "Соединяйтесь с друзьями быстрее.";
@@ -1264,7 +1264,7 @@ set passcode view */
 "Connect to yourself?\nThis is your own one-time link!" = "Соединиться с самим собой?\nЭто ваша собственная одноразовая ссылка!";
 
 /* new chat sheet title */
-"Connect to yourself?\nThis is your own SimpleX address!" = "Соединиться с самим собой?\nЭто ваш собственный адрес SimpleX!";
+"Connect to yourself?\nThis is your own PrivatelineX address!" = "Соединиться с самим собой?\nЭто ваш собственный адрес SimpleX!";
 
 /* new chat sheet title */
 "Connect via contact address" = "Соединиться через адрес";
@@ -1495,7 +1495,7 @@ set passcode view */
 "Create queue" = "Создание очереди";
 
 /* No comment provided by engineer. */
-"Create SimpleX address" = "Создать адрес SimpleX";
+"Create PrivatelineX address" = "Создать адрес PrivatelineX";
 
 /* No comment provided by engineer. */
 "Create your address" = "Создайте Ваш адрес";
@@ -1848,10 +1848,10 @@ swipe action */
 "Device" = "Устройство";
 
 /* No comment provided by engineer. */
-"Device authentication is disabled. Turning off SimpleX Lock." = "Аутентификация устройства выключена. Отключение блокировки SimpleX Chat.";
+"Device authentication is disabled. Turning off PrivatelineX Lock." = "Аутентификация устройства выключена. Отключение блокировки Privateline X-Chat.";
 
 /* No comment provided by engineer. */
-"Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." = "Аутентификация устройства не включена. Вы можете включить блокировку SimpleX в Настройках после включения аутентификации.";
+"Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." = "Аутентификация устройства не включена. Вы можете включить блокировку SimpleX в Настройках после включения аутентификации.";
 
 /* No comment provided by engineer. */
 "different migration in the app/database: %@ / %@" = "разная миграция в приложении/базе данных: %@ / %@";
@@ -1884,7 +1884,7 @@ swipe action */
 "Disable for all" = "Выключить для всех";
 
 /* authentication reason */
-"Disable SimpleX Lock" = "Отключить блокировку SimpleX";
+"Disable PrivatelineX Lock" = "Отключить блокировку PrivatelineX";
 
 /* No comment provided by engineer. */
 "disabled" = "выключено";
@@ -2059,7 +2059,7 @@ chat item action */
 "Enable self-destruct passcode" = "Включить код самоуничтожения";
 
 /* authentication reason */
-"Enable SimpleX Lock" = "Включить блокировку SimpleX";
+"Enable PrivatelineX Lock" = "Включить блокировку PrivatelineX";
 
 /* No comment provided by engineer. */
 "Enable TCP keep-alive" = "Включить TCP keep-alive";
@@ -2616,7 +2616,7 @@ snd error text */
 "For console" = "Для консоли";
 
 /* No comment provided by engineer. */
-"For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server." = "Например, если Ваш контакт получает сообщения через сервер SimpleX Chat, Ваше приложение доставит их через сервер Flux.";
+"For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server." = "Например, если Ваш контакт получает сообщения через сервер Privateline X-Chat, Ваше приложение доставит их через сервер Flux.";
 
 /* No comment provided by engineer. */
 "For me" = "Для меня";
@@ -2970,7 +2970,7 @@ snd error text */
 "Initial role" = "Роль при вступлении";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "[SimpleX Chat для терминала](https://github.com/simplex-chat/simplex-chat)";
+"Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "[Privateline X-Chat для терминала](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "Мгновенно";
@@ -3183,7 +3183,7 @@ snd error text */
 "Less traffic on mobile networks." = "Меньше трафик в мобильных сетях.";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "Давайте поговорим в SimpleX Chat";
+"Let's talk in Privateline X-Chat" = "Давайте поговорим в Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "Light" = "Светлая";
@@ -4688,7 +4688,7 @@ chat item action */
 "Search bar accepts invitation links." = "Поле поиска поддерживает ссылки-приглашения.";
 
 /* No comment provided by engineer. */
-"Search or paste SimpleX link" = "Искать или вставьте ссылку SimpleX";
+"Search or paste PrivatelineX link" = "Искать или вставьте ссылку PrivatelineX";
 
 /* network option */
 "sec" = "сек";
@@ -5013,13 +5013,13 @@ chat item action */
 "Share profile" = "Поделиться профилем";
 
 /* No comment provided by engineer. */
-"Share SimpleX address on social media." = "Поделитесь SimpleX адресом в социальных сетях.";
+"Share PrivatelineX address on social media." = "Поделитесь SimpleX адресом в социальных сетях.";
 
 /* No comment provided by engineer. */
 "Share this 1-time invite link" = "Поделиться одноразовой ссылкой-приглашением";
 
 /* No comment provided by engineer. */
-"Share to SimpleX" = "Поделиться в SimpleX";
+"Share to PrivatelineX" = "Поделиться в PrivatelineX";
 
 /* No comment provided by engineer. */
 "Share with contacts" = "Поделиться с контактами";
@@ -5034,7 +5034,7 @@ chat item action */
 "Short link" = "Короткая ссылка";
 
 /* No comment provided by engineer. */
-"Short SimpleX address" = "Короткий адрес SimpleX";
+"Short PrivatelineX address" = "Короткий адрес PrivatelineX";
 
 /* No comment provided by engineer. */
 "Show → on messages sent via private routing." = "Показать → на сообщениях доставленных конфиденциально.";
@@ -5064,70 +5064,70 @@ chat item action */
 "Show:" = "Показать:";
 
 /* No comment provided by engineer. */
-"SimpleX" = "SimpleX";
+"PrivatelineX" = "PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX address" = "Адрес SimpleX";
+"PrivatelineX address" = "Адрес PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX Address" = "Адрес SimpleX";
+"PrivatelineX Address" = "Адрес PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX address and 1-time links are safe to share via any messenger." = "Адрес SimpleX и одноразовые ссылки безопасно отправлять через любой мессенджер.";
+"PrivatelineX address and 1-time links are safe to share via any messenger." = "Адрес SimpleX и одноразовые ссылки безопасно отправлять через любой мессенджер.";
 
 /* No comment provided by engineer. */
-"SimpleX address or 1-time link?" = "Адрес SimpleX или одноразовая ссылка?";
+"PrivatelineX address or 1-time link?" = "Адрес SimpleX или одноразовая ссылка?";
 
 /* alert title */
-"SimpleX address settings" = "Настройки автоприема";
+"PrivatelineX address settings" = "Настройки автоприема";
 
 /* simplex link type */
-"SimpleX channel link" = "SimpleX ссылка канала";
+"PrivatelineX channel link" = "PrivatelineX ссылка канала";
 
 /* No comment provided by engineer. */
-"SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app." = "SimpleX Chat и Flux заключили соглашение добавить серверы под управлением Flux в приложение.";
+"Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app." = "Privateline X-Chat и Flux заключили соглашение добавить серверы под управлением Flux в приложение.";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "Безопасность SimpleX Chat была проверена Trail of Bits.";
+"Privateline X-Chat security was audited by Trail of Bits." = "Безопасность Privateline X-Chat была проверена Trail of Bits.";
 
 /* simplex link type */
-"SimpleX contact address" = "SimpleX ссылка-контакт";
+"PrivatelineX contact address" = "PrivatelineX ссылка-контакт";
 
 /* notification */
-"SimpleX encrypted message or connection event" = "SimpleX: зашифрованное сообщение или соединение контакта";
+"PrivatelineX encrypted message or connection event" = "PrivatelineX: зашифрованное сообщение или соединение контакта";
 
 /* simplex link type */
-"SimpleX group link" = "SimpleX ссылка группы";
+"PrivatelineX group link" = "PrivatelineX ссылка группы";
 
 /* chat feature */
-"SimpleX links" = "SimpleX ссылки";
+"PrivatelineX links" = "PrivatelineX ссылки";
 
 /* No comment provided by engineer. */
-"SimpleX links are prohibited." = "Ссылки SimpleX запрещены в этой группе.";
+"PrivatelineX links are prohibited." = "Ссылки SimpleX запрещены в этой группе.";
 
 /* No comment provided by engineer. */
-"SimpleX links not allowed" = "Ссылки SimpleX не разрешены";
+"PrivatelineX links not allowed" = "Ссылки SimpleX не разрешены";
 
 /* No comment provided by engineer. */
-"SimpleX Lock" = "Блокировка SimpleX";
+"PrivatelineX Lock" = "Блокировка PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX Lock mode" = "Режим Блокировки SimpleX";
+"PrivatelineX Lock mode" = "Режим Блокировки PrivatelineX";
 
 /* No comment provided by engineer. */
-"SimpleX Lock not enabled!" = "Блокировка SimpleX не включена!";
+"PrivatelineX Lock not enabled!" = "Блокировка SimpleX не включена!";
 
 /* No comment provided by engineer. */
-"SimpleX Lock turned on" = "Блокировка SimpleX включена";
+"PrivatelineX Lock turned on" = "Блокировка SimpleX включена";
 
 /* simplex link type */
-"SimpleX one-time invitation" = "SimpleX одноразовая ссылка";
+"PrivatelineX one-time invitation" = "PrivatelineX одноразовая ссылка";
 
 /* No comment provided by engineer. */
-"SimpleX protocols reviewed by Trail of Bits." = "Аудит SimpleX протоколов от Trail of Bits.";
+"PrivatelineX protocols reviewed by Trail of Bits." = "Аудит SimpleX протоколов от Trail of Bits.";
 
 /* simplex link type */
-"SimpleX relay link" = "Ссылка SimpleX relay";
+"PrivatelineX relay link" = "Ссылка SimpleX relay";
 
 /* No comment provided by engineer. */
 "Simplified incognito mode" = "Упрощенный режим Инкогнито";
@@ -5227,7 +5227,7 @@ report reason */
 "Stop sharing address?" = "Прекратить делиться адресом?";
 
 /* authentication reason */
-"Stop SimpleX" = "Остановить SimpleX";
+"Stop PrivatelineX" = "Остановить PrivatelineX";
 
 /* No comment provided by engineer. */
 "Stopping chat" = "Остановка чата";
@@ -5254,7 +5254,7 @@ report reason */
 "Subscriptions ignored" = "Подписок игнорировано";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Поддержать SimpleX Chat";
+"Support Privateline X-Chat" = "Поддержать Privateline X-Chat";
 
 /* No comment provided by engineer. */
 "Switch audio and video during the call." = "Переключайте звук и видео во время звонка.";
@@ -5287,7 +5287,7 @@ report reason */
 "Tap Connect to use bot" = "Нажмите Соединиться, чтобы использовать бот.";
 
 /* No comment provided by engineer. */
-"Tap Create SimpleX address in the menu to create it later." = "Нажмите Создать адрес SimpleX в меню, чтобы создать его позже.";
+"Tap Create PrivatelineX address in the menu to create it later." = "Нажмите Создать адрес SimpleX в меню, чтобы создать его позже.";
 
 /* No comment provided by engineer. */
 "Tap Join group" = "Нажмите Вступить в группу";
@@ -5350,7 +5350,7 @@ report reason */
 "Tests failed!" = "Ошибка тестов!";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "Спасибо, что установили SimpleX Chat!";
+"Thank you for installing Privateline X-Chat!" = "Спасибо, что установили Privateline X-Chat!";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "Благодаря пользователям – [добавьте переводы через Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!";
@@ -5527,7 +5527,7 @@ report reason */
 "To protect timezone, image/voice files use UTC." = "Чтобы защитить Ваш часовой пояс, файлы картинок и голосовых сообщений используют UTC.";
 
 /* No comment provided by engineer. */
-"To protect your information, turn on SimpleX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Чтобы защитить Вашу информацию, включите блокировку SimpleX Chat.\nВам будет нужно пройти аутентификацию для включения блокировки.";
+"To protect your information, turn on PrivatelineX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "Чтобы защитить Вашу информацию, включите блокировку Privateline X-Chat.\nВам будет нужно пройти аутентификацию для включения блокировки.";
 
 /* No comment provided by engineer. */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "Чтобы защитить ваш IP адрес, приложение использует Ваши SMP серверы для конфиденциальной доставки сообщений.";
@@ -5812,7 +5812,7 @@ report reason */
 "Use servers" = "Использовать серверы";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "Использовать серверы предосталенные SimpleX Chat?";
+"Use Privateline X-Chat servers?" = "Использовать серверы предосталенные Privateline X-Chat?";
 
 /* No comment provided by engineer. */
 "Use SOCKS proxy" = "Использовать SOCKS прокси";
@@ -5839,7 +5839,7 @@ report reason */
 "Username" = "Имя пользователя";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "Используются серверы, предоставленные SimpleX Chat.";
+"Using Privateline X-Chat servers." = "Используются серверы, предоставленные Privateline X-Chat.";
 
 /* No comment provided by engineer. */
 "v%@" = "v%@";
@@ -6154,7 +6154,7 @@ report reason */
 "You can still view conversation with %@ in the list of chats." = "Вы по-прежнему можете просмотреть разговор с %@ в списке чатов.";
 
 /* No comment provided by engineer. */
-"You can turn on SimpleX Lock via Settings." = "Вы можете включить Блокировку SimpleX через Настройки.";
+"You can turn on PrivatelineX Lock via Settings." = "Вы можете включить Блокировку SimpleX через Настройки.";
 
 /* No comment provided by engineer. */
 "You can use markdown to format messages:" = "Вы можете форматировать сообщения:";
@@ -6364,5 +6364,5 @@ report reason */
 "Your settings" = "Настройки";
 
 /* No comment provided by engineer. */
-"Your SimpleX address" = "Ваш адрес SimpleX";
+"Your PrivatelineX address" = "Ваш адрес PrivatelineX";
 

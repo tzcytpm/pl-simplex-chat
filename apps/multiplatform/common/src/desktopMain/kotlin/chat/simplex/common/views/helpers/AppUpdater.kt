@@ -419,7 +419,7 @@ private suspend fun installAppUpdate(file: File) = withContext(Dispatchers.IO) {
     }
     desktopPlatform.isMac() -> {
       // Default mount point if no other DMGs were mounted before
-      var volume = "/Volumes/SimpleX"
+      var volume = "/Volumes/PrivatelineX"
       try {
         val process = Runtime.getRuntime().exec("hdiutil mount ${file.absolutePath}").onExit().join()
         val startedInstallation = process.exitValue() == 0

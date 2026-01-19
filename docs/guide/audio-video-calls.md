@@ -3,7 +3,7 @@ title: Audio & video Calls
 ---
 # Audio and Video Calls
 
-SimpleX Chat allows you to make end-to-end encrypted audio and video calls with your contacts via WebRTC. Note: Group calls are not supported at this time.
+Privateline X-Chat allows you to make end-to-end encrypted audio and video calls with your contacts via WebRTC. Note: Group calls are not supported at this time.
 
 ## Making and accepting the calls
 
@@ -32,7 +32,7 @@ The call can be accepted from the lock screen, both on Android (it needs to be e
 
 ### Calls on lock screen on Android
 
-SimpleX Chat shows an incoming call on your device's lock screen by default. However, you can change this behavior in the app settings menu.
+Privateline X-Chat shows an incoming call on your device's lock screen by default. However, you can change this behavior in the app settings menu.
 
 1. Open the app settings menu.
 2. Tap **Audio and Video calls**.
@@ -47,7 +47,7 @@ SimpleX Chat shows an incoming call on your device's lock screen by default. How
 
 <img src="../../blog/images/20230328-call1.png" width="288">
 
-By default, SimpleX Chat uses native iOS call interface, where allowed, to show incoming calls on the lock screen. You can disable it:
+By default, Privateline X-Chat uses native iOS call interface, where allowed, to show incoming calls on the lock screen. You can disable it:
 
 1. Open the app settings menu.
 2. Tap **Audio and Video calls**.
@@ -63,7 +63,7 @@ Read more in [this post](../../blog/20230328-simplex-chat-v4-6-hidden-profiles.m
 
 <img src="../../blog/images/20220928-ice-servers.png" width="330">
 
-SimpleX Chat uses a preset relay server to hide your IP address from your contacts by default, but it can also observe the duration of your calls. If you don't want that, you can configure and use your self-hosted WebRTC relay servers instead for further control of your calls.
+Privateline X-Chat uses a preset relay server to hide your IP address from your contacts by default, but it can also observe the duration of your calls. If you don't want that, you can configure and use your self-hosted WebRTC relay servers instead for further control of your calls.
 
 1. Open the app settings menu.
 2. Tap **Audio and Video calls**.
@@ -76,7 +76,7 @@ SimpleX Chat uses a preset relay server to hide your IP address from your contac
 
 ### Always use relay
 
-Audio and video calls on SimpleX Chat are routed via a TURN relay server by default. Optionally you can disable this and use peer-to-peer (P2P) instead, when it is supported by your network. However, your IP address will be known to your contacts.
+Audio and video calls on Privateline X-Chat are routed via a TURN relay server by default. Optionally you can disable this and use peer-to-peer (P2P) instead, when it is supported by your network. However, your IP address will be known to your contacts.
 
 1. Open the app settings menu.
 2. Tap **Audio and Video calls**.

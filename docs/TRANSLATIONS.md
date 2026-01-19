@@ -1,13 +1,13 @@
 ---
-title: Contributing translations to SimpleX Chat
+title: Contributing translations to Privateline X-Chat
 revision: 19.03.2023
 ---
 
 | 19.03.2023 | EN, [CZ](/docs/lang/cs/TRANSLATIONS.md), [FR](/docs/lang/fr/TRANSLATIONS.md), [PL](/docs/lang/pl/TRANSLATIONS.md) |
 
-# Contributing translations to SimpleX Chat
+# Contributing translations to Privateline X-Chat
 
-Huge thanks for your interest in translating SimpleX Chat - it helps a lot to make it accessible to a wider range of users, and we really appreciate your help.
+Huge thanks for your interest in translating Privateline X-Chat - it helps a lot to make it accessible to a wider range of users, and we really appreciate your help.
 
 It requires a substantial time investment - most people underestimate it initially - and ongoing maintenance as we develop the application.
 
@@ -72,7 +72,7 @@ Thanks a lot! This is a huge effort and a huge help for SimpleX Network to grow.
 
 ## Common translation mistakes
 
-1. The word "chat" is used in several meanings, depending on the context. It can mean either "SimpleX Chat app" (e.g. in Start/stop chat) or "a single conversation". Please ask when it is not clear, and we will be adding more translation notes.
+1. The word "chat" is used in several meanings, depending on the context. It can mean either "Privateline X-Chat app" (e.g. in Start/stop chat) or "a single conversation". Please ask when it is not clear, and we will be adding more translation notes.
 
 2. Please use plural and singular as in the original strings, this may change the meaning otherwise. E.g., some settings apply to all contacts, and some to just one contact, it will be confusing if you use plural in both cases.
 
@@ -99,6 +99,6 @@ You would make the review much easier if you could review it in advance in the s
 3. Also, if you want to be a moderator/admin of the users group in your language, once the app is translated we can host such group - we are preparing community guidelines and adding some moderation tools to the app to be released in v4.6 in March.
 
 
-Thank you very much again for helping us grow SimpleX Chat!
+Thank you very much again for helping us grow Privateline X-Chat!
 
-Evgeny, SimpleX Chat founder.
+Evgeny, Privateline X-Chat founder.

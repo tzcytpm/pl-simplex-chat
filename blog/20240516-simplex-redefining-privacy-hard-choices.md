@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX: Redefining Privacy by Making Hard Choices"
+title: "PrivatelineX: Redefining Privacy by Making Hard Choices"
 date: 2024-05-16
 previewBody: blog_previews/20240516.html
 image: images/simplex-explained.png
@@ -14,7 +14,7 @@ permalink: "/blog/20240516-simplex-redefining-privacy-hard-choices.html"
 
 When it comes to open source privacy tools, the status quo often dictates the limitations of existing protocols and structures. However, these norms need to be challenged to radically shift how we approach genuinely private communication. This requires doing some uncomfortable things, like making hard choices as it relates to funding, alternative decentralization models, doubling down on privacy over convenience, and more.
 
-There will always be questions on why the SimpleX Chat and network makes the choices it makes, and that’s good! It’s important to question us and to understand the reasoning behind each decision, whether it’s technical, structural, financial or any other.
+There will always be questions on why the Privateline X-Chat and network makes the choices it makes, and that’s good! It’s important to question us and to understand the reasoning behind each decision, whether it’s technical, structural, financial or any other.
 
 In this post we explain a bit more about why SimpleX operates and makes decisions the way it does.
 
@@ -64,7 +64,7 @@ To make a profit, satisfying customers is the key. Unlike the many companies tha
 
 With regards to jurisdictions, nowhere is perfect. For that reason we plan to establish the foundations for protocol governance in [various jurisdictions](https://simplex.chat/blog/20240323-simplex-network-privacy-non-profit-v5-6-quantum-resistant-e2e-encryption-simple-migration.html#the-journey-to-the-decentralized-non-profit-protocol-governance).
 
-But we’d like to clarify some misconceptions about the UK, where SimpleX Chat Ltd. is registered, and the UK legislation.
+But we’d like to clarify some misconceptions about the UK, where Privateline X-Chat Ltd. is registered, and the UK legislation.
 
 For example, the Online Safety Act (OSA). Some people believe that it applies only to UK companies. But the OSA applicability isn’t determined by the company’s jurisdiction - it applies based on the nature and characteristics of the business and its services, as well as the number of its users in the UK. In case of SimpleX network, the OSA doesn’t apply for both of these reasons.
 

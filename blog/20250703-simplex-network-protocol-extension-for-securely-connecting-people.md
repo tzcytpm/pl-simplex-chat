@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: new experience of connecting with people &mdash; available in SimpleX Chat v6.4-beta.4"
+title: "PrivatelineX network: new experience of connecting with people &mdash; available in Privateline X-Chat v6.4-beta.4"
 date: 2025-07-03
 preview: Now you can start talking to your contacts much faster, as soon as you scan the link. This technical post covers the technology that enabled this new user experience &mdash; short links and associated data of messaging queues.
 image: images/20250703-connect1a.png
@@ -8,7 +8,7 @@ imageBottom: true
 permalink: "/blog/20250703-simplex-network-protocol-extension-for-securely-connecting-people.html"
 ---
 
-# SimpleX network: new experience of connecting with people &mdash; available in SimpleX Chat v6.4-beta.4
+# SimpleX network: new experience of connecting with people &mdash; available in Privateline X-Chat v6.4-beta.4
 
 **Published:** Jul 3, 2025
 
@@ -50,7 +50,7 @@ Before diving into the details of technology, let's walk though the new process 
 
 1. As before, to connect you or your contact need to create a 1-time invitation or a contact address link. All the past problems of the long links are now solved:
   - this link is correctly processed by all applications, as it has a simple structure,
-  - it is short and simple, e.g. the SimpleX Chat team address for support is: https://smp6.simplex.im/a#lrdvu2d8A1GumSmoKb2krQmtKhWXq-tyGpHuM7aMwsw
+  - it is short and simple, e.g. the Privateline X-Chat team address for support is: https://smp6.simplex.im/a#lrdvu2d8A1GumSmoKb2krQmtKhWXq-tyGpHuM7aMwsw
   - the QR code is now much smaller, fits a standard business card, and is easy to scan from all devices,
   - it fits in most social media profiles.
 
@@ -163,7 +163,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Please support us with your donations
 
-Huge *thank you* to everybody who donated to SimpleX Chat!
+Huge *thank you* to everybody who donated to Privateline X-Chat!
 
 Prioritizing users privacy and security, and also raising the investment, would have been impossible without your support and donations.
 
@@ -179,7 +179,7 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder
 
 [1]: An interesting case study is the rise and fall of Nokia as the dominant supplier of mobile phones. The slogan "Connecting people" was created in 1992 by Ove Strandberg, an intern at Nokia, and as it was adopted as the core mission of the company, we saw it rise as the world's main mobile phone supplier. The fall of Nokia is usually attributed on iPhone success. But it may also be attributed to internal cultural changes, with Nokia's communications chief leaving in early 2000s, and Nokia failure to understand how the definition of "Connecting people" should evolve with time.
 

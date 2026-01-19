@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: private message routing, v5.8 released with IP address protection and chat themes"
+title: "PrivatelineX network: private message routing, v5.8 released with IP address protection and chat themes"
 date: 2024-06-04
 previewBody: blog_previews/20240604.html
 image: images/20240604-routing.png
@@ -38,7 +38,7 @@ To work around this limitation, many users connected to SimpleX network relays v
 
 Tor is the best transport overlay network in existence, and it provides network anonymity for millions of Internet users.
 
-SimpleX Chat has many integration points with Tor:
+Privateline X-Chat has many integration points with Tor:
 - it allows [dual server addresses](./20220901-simplex-chat-v3.2-incognito-mode.md#using-onion-server-addresses-with-tor), when the same messaging relay can be reached both via Tor and via clearnet.
 - it utilises Tor's SOCKS proxy "isolate-by-auth" feature to create a new Tor circuit for each user profile, and with an additional option - for each contact. Per-contact [transport isolation](./20230204-simplex-chat-v4-5-user-chat-profiles.md#transport-isolation) is still experimental, as it doesn't work if you connect to groups with many members, and it's only available if you enable developer tools.
 
@@ -59,7 +59,7 @@ Also, while Tor solves the problem of IP address protection, it doesn't solve th
 
 So we believed we would create more value to the users of SimpleX network with private message routing. This new message routing protocol provides IP address and transport session protection out of the box, once released. It can also be extended to support delayed delivery and other functions, improving both usability and transport privacy in the future.
 
-At the same time, we plan to continue supporting Tor and other overlay networks. Any overlay network that supports SOCKS proxy with "isolate-by-auth" feature will work with SimpleX Chat app.
+At the same time, we plan to continue supporting Tor and other overlay networks. Any overlay network that supports SOCKS proxy with "isolate-by-auth" feature will work with Privateline X-Chat app.
 
 ### What is private message routing and how does it work?
 
@@ -152,7 +152,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donates to SimpleX Chat!
+Huge thank you to everybody who donates to Privateline X-Chat!
 
 We are planning a 3rd party security audit for the protocols and cryptography design in July 2024, and also the security audit for an implementation in December 2024/January 2025, and it would hugely help us if some part of this $50,000+ expense is covered with donations.
 
@@ -168,4 +168,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

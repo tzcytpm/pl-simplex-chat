@@ -1,18 +1,18 @@
 ---
 layout: layouts/article.html
-title: "Instant notifications for SimpleX Chat mobile apps"
+title: "Instant notifications for Privateline X-Chat mobile apps"
 date: 2022-04-04
 preview: Design of private instant notifications on Android and for push notifications for iOS.
 permalink: "/blog/20220404-simplex-chat-instant-notifications.html"
 ---
 
-# Instant notifications for SimpleX Chat mobile apps
+# Instant notifications for Privateline X-Chat mobile apps
 
 **Published:** April 04, 2022
 
-## SimpleX Chat is the first chat platform that is 100% private by design - it has no access to your connections
+## Privateline X-Chat is the first chat platform that is 100% private by design - it has no access to your connections
 
-Since we released SimpleX Chat mobile apps couple of weeks ago we've had a lot of excitement from our users - nearly 2000 people downloaded the app after [the announcement](./20220308-simplex-chat-mobile-apps.md)!
+Since we released Privateline X-Chat mobile apps couple of weeks ago we've had a lot of excitement from our users - nearly 2000 people downloaded the app after [the announcement](./20220308-simplex-chat-mobile-apps.md)!
 
 Huge thanks to everybody who downloaded and connected to us via the chat - there were many great questions and suggestions, and on some days I spent most of the time chatting to our users :)
 
@@ -36,17 +36,17 @@ See [demo video](https://youtu.be/rZeVhsv_JAY) that shows how two users connect 
 
 ## Why we are doing it
 
-We are building SimpleX Chat because we believe that privacy is a fundamental human right, and that protecting our personal network of contacts is even more important than the content of the messages - sharing this network can lead to various adverse consequences, from manipulating us into buying goods we don't need, manipulating election processes, and in some cases, prosecuting innocent people. For example, [Mohamedou Ould Salahi](https://en.wikipedia.org/wiki/Mohamedou_Ould_Slahi) was detained in Guantanamo prison for 15 years after a single "wrong" phone call. His story is told in his memoir and in The Mauritanian movie.
+We are building Privateline X-Chat because we believe that privacy is a fundamental human right, and that protecting our personal network of contacts is even more important than the content of the messages - sharing this network can lead to various adverse consequences, from manipulating us into buying goods we don't need, manipulating election processes, and in some cases, prosecuting innocent people. For example, [Mohamedou Ould Salahi](https://en.wikipedia.org/wiki/Mohamedou_Ould_Slahi) was detained in Guantanamo prison for 15 years after a single "wrong" phone call. His story is told in his memoir and in The Mauritanian movie.
 
 ## Problem - users expect to be instantly notified when messages arrive!
 
-Our first users realized that what we take for granted in messaging apps - instant message notifications - is missing in our first release of SimpleX Chat apps. Quite a few people thought that it was a bug, rather than a missing feature. Sorry to disappoint!
+Our first users realized that what we take for granted in messaging apps - instant message notifications - is missing in our first release of Privateline X-Chat apps. Quite a few people thought that it was a bug, rather than a missing feature. Sorry to disappoint!
 
 ## Why can't we just do what messenger X does?
 
-SimpleX Chat is the first and the only messenger we know of that operates without user identities of any kind. There are no phone numbers, emails, usernames, public keys, or any other addresses or identifiers to uniquely identify the users to the network or servers. That is why we say it is 100% private by design, and fundamentally different than other chat platforms.
+Privateline X-Chat is the first and the only messenger we know of that operates without user identities of any kind. There are no phone numbers, emails, usernames, public keys, or any other addresses or identifiers to uniquely identify the users to the network or servers. That is why we say it is 100% private by design, and fundamentally different than other chat platforms.
 
-Instead, SimpleX Chat assigns these identifiers to unidirectional message queues. What looks to SimpleX Chat users like contacts and groups [1], to SimpleX servers looks like an unorganized and unrelated collection of unidirectional message queues. Our servers do not know which queues belong to which users, contacts or groups. Even a single conversation can happen via two different servers (one for sent and another for received messages). This makes our personal network of contacts invisible to the servers.
+Instead, Privateline X-Chat assigns these identifiers to unidirectional message queues. What looks to Privateline X-Chat users like contacts and groups [1], to SimpleX servers looks like an unorganized and unrelated collection of unidirectional message queues. Our servers do not know which queues belong to which users, contacts or groups. Even a single conversation can happen via two different servers (one for sent and another for received messages). This makes our personal network of contacts invisible to the servers.
 
 But it also creates a problem for instant notifications - all push notification services require having a device token.
 
@@ -90,7 +90,7 @@ This design is a compromise between privacy and convenience. The notification se
 
 1. The notification server will only store device tokens and queue addresses in memory, making it more complex for a potential attacker to access. If server has to be restarted, they would lose all configured notification subscriptions and the clients would have to create them again. We will program the clients to periodically check for the existence of notification subscriptions on the notification server.
 2. The notificaiton server will not know the addresses of the messaging queues used to receive or send messages. A different address is used to subscribe to notifications. So while the notification server would have the knowledge of how many queues your device has (and on which servers), it still won't know who is sending you the messages.
-3. We are also planning to split the logic of notification subscriptions and delivering notifications to the devices to two different servers. The server that subscribes to the notifications could be self-hosted, allowing you full control of how you deploy it. Only this server would know which messaging servers you use or how many messaging queues you have. The server that delivers notifications to the devices will be managed by SimpleX Chat as we have to authorize it with Apple's push notification service. This split will not be available in the first release. We plan to add it a bit later.
+3. We are also planning to split the logic of notification subscriptions and delivering notifications to the devices to two different servers. The server that subscribes to the notifications could be self-hosted, allowing you full control of how you deploy it. Only this server would know which messaging servers you use or how many messaging queues you have. The server that delivers notifications to the devices will be managed by Privateline X-Chat as we have to authorize it with Apple's push notification service. This split will not be available in the first release. We plan to add it a bit later.
 
 So, with the notification servers added, our network design will look like this:
 
@@ -100,7 +100,7 @@ So, with the notification servers added, our network design will look like this:
                         |                              |
                         |                              |   (can be self-hosted now)
 +--------------+        |                              |      +----------------+
-| SimpleX Chat |       -------------- TLS ---------------     | SimpleX        |
+| Privateline X-Chat |       -------------- TLS ---------------     | SimpleX        |
 |    client    |------> SimpleX Messaging Protocol (SMP) ---> | Messaging      |
 +--------------+       ----------------------------------     | Server         |
      ^    |             |                              |      +----------------+

@@ -8,7 +8,7 @@
     <string name="chat_item_ttl_day">1 天</string>
     <string name="chat_item_ttl_month">1 個月</string>
     <string name="accept_contact_button">接受</string>
-    <string name="about_simplex_chat">關於 SimpleX Chat</string>
+    <string name="about_simplex_chat">關於 Privateline X-Chat</string>
     <string name="accept_connection_request__question">接受連接請求？</string>
     <string name="callstatus_accepted">已接受通話</string>
     <string name="network_enable_socks_info">要在端口啟用 SOCKS 代理伺服器嗎 %d？在啟用這個選項之前，必須先啟用代理伺服器。</string>
@@ -60,7 +60,7 @@
     <string name="share_invitation_link">分享一次性連結</string>
     <string name="chat_with_the_founder">傳送問題和想法給開發者</string>
     <string name="how_to_use_simplex_chat">如何使用</string>
-    <string name="install_simplex_chat_for_terminal">使用終端機安裝 SimpleX Chat</string>
+    <string name="install_simplex_chat_for_terminal">使用終端機安裝 Privateline X-Chat</string>
     <string name="app_version_title">應用程式版本</string>
     <string name="all_your_contacts_will_remain_connected">你的所有聯絡人會保持連接。</string>
     <string name="app_version_code">應用程式建構：%s</string>
@@ -169,7 +169,7 @@
     <string name="share_one_time_link">建立一次性邀請連結</string>
     <string name="to_share_with_your_contact">（分享給你的聯絡人）</string>
     <string name="chat_help_tap_button">點擊按鈕</string>
-    <string name="thank_you_for_installing_simplex">感謝你安裝 SimpleX Chat！</string>
+    <string name="thank_you_for_installing_simplex">感謝你安裝 Privateline X-Chat！</string>
     <string name="mute_chat">靜音</string>
     <string name="unmute_chat">解除靜音</string>
     <string name="your_settings">你的設定</string>
@@ -276,7 +276,7 @@
     <string name="service_notifications">即時通知！</string>
     <string name="service_notifications_disabled">已禁用即時通知功能！</string>
     <string name="database_initialization_error_desc">資料庫目前沒有正常運作。點擊查看更多</string>
-    <string name="ntf_channel_calls">SimpleX Chat 通話來電</string>
+    <string name="ntf_channel_calls">Privateline X-Chat 通話來電</string>
     <string name="settings_notifications_mode_title">通知服務</string>
     <string name="settings_notification_preview_mode_title">顯示預覽</string>
     <string name="settings_notification_preview_title">通知預覽</string>
@@ -323,10 +323,10 @@
     <string name="turn_off_battery_optimization"><![CDATA[在下一個對話框中<b>允許它</b>以接收實時通知。]]></string>
     <string name="enter_passphrase_notification_desc">在接收通知之前，請你輸入資料庫的密碼</string>
     <string name="periodic_notifications_desc">應用程式會定期取得新的訊息 — 它每天會消耗百分之幾的電量。應用程式將不使用推送通知 — 你裝置中的數據不會傳送至伺服器。</string>
-    <string name="simplex_service_notification_title">SimpleX Chat 服務</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat 服務</string>
     <string name="simplex_service_notification_text">正在接收訊息…</string>
     <string name="hide_notification">隱藏</string>
-    <string name="ntf_channel_messages">SimpleX Chat 訊息</string>
+    <string name="ntf_channel_messages">Privateline X-Chat 訊息</string>
     <string name="notifications_mode_off">當應用程式是開啟</string>
     <string name="notifications_mode_periodic">定期啟動</string>
     <string name="notification_preview_mode_message_desc">顯示聯絡人名稱和訊息內容</string>
@@ -481,9 +481,9 @@
     <string name="smp_servers_use_server_for_new_conn">用於新的連接</string>
     <string name="smp_servers_invalid_address">無效的伺服器地址！</string>
     <string name="smp_servers_per_user">此伺服器用於你目前的個人檔案</string>
-    <string name="use_simplex_chat_servers__question">使用 SimpleX Chat 伺服器？</string>
+    <string name="use_simplex_chat_servers__question">使用 Privateline X-Chat 伺服器？</string>
     <string name="your_SMP_servers">你的 SMP 伺服器</string>
-    <string name="using_simplex_chat_servers">目前使用 SimpleX Chat 伺服器。</string>
+    <string name="using_simplex_chat_servers">目前使用 Privateline X-Chat 伺服器。</string>
     <string name="how_to">如何</string>
     <string name="configure_ICE_servers">配置 ICE 伺服器</string>
     <string name="saved_ICE_servers_will_be_removed">已儲存的 WebRTC ICE 伺服器將移除。</string>
@@ -516,7 +516,7 @@
     <string name="we_do_not_store_contacts_or_messages_on_servers">我們不會在伺服器內儲存你的任何聯絡人和訊息（一旦傳送）。</string>
     <string name="create_profile">建立個人檔案</string>
     <string name="callstate_received_confirmation">已確認回應…</string>
-    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以透過 <font color="#0088ff">連接到 SimpleX Chat 開發人員提出任何問題並同意更新</font>。]]></string>
+    <string name="you_can_connect_to_simplex_chat_founder"><![CDATA[你可以透過 <font color="#0088ff">連接到 Privateline X-Chat 開發人員提出任何問題並同意更新</font>。]]></string>
     <string name="to_start_a_new_chat_help_header">開啟新的對話</string>
     <string name="set_contact_name">設定聯絡人名稱</string>
     <string name="you_invited_a_contact">你已邀請了你的聯絡人</string>
@@ -556,7 +556,7 @@
     <string name="no_call_on_lock_screen">停用</string>
     <string name="icon_descr_call_missed">已錯過通話</string>
     <string name="open_verb">開啟</string>
-    <string name="open_simplex_chat_to_accept_call">開啟  SimpleX Chat 以接受通話</string>
+    <string name="open_simplex_chat_to_accept_call">開啟  Privateline X-Chat 以接受通話</string>
     <string name="icon_descr_call_rejected">已拒絕通話</string>
     <string name="show_call_on_lock_screen">顯示</string>
     <string name="icon_descr_call_connecting">連接通話中</string>
@@ -605,7 +605,7 @@
     <string name="voice_messages">語音訊息</string>
     <string name="feature_offered_item_with_param">已提供 %s: %2s</string>
     <string name="v4_2_security_assessment">安全性評估</string>
-    <string name="v4_2_security_assessment_desc">SimpleX Chat 的安全性由 Trail of Bits 審核。</string>
+    <string name="v4_2_security_assessment_desc">Privateline X-Chat 的安全性由 Trail of Bits 審核。</string>
     <string name="v4_2_group_links">群組連結</string>
     <string name="v4_5_multiple_chat_profiles">多個個人檔案</string>
     <string name="v4_5_multiple_chat_profiles_descr">不同的名稱、頭像和傳輸隔離。</string>
@@ -1108,7 +1108,7 @@
     <string name="dont_create_address">不用建立聯絡地址</string>
     <string name="enter_welcome_message_optional">輸入歡迎訊息… （可選擇的）</string>
     <string name="email_invite_body">你好！ 
-\n透過 SimpleX Chat 來和我連接吧：%s</string>
+\n透過 Privateline X-Chat 來和我連接吧：%s</string>
     <string name="save_auto_accept_settings">儲存自動接受的設定</string>
     <string name="save_settings_question">儲存設定？</string>
     <string name="invite_friends">邀請朋友</string>
@@ -1160,7 +1160,7 @@
     <string name="your_contacts_will_remain_connected">你的聯絡人會保持連接。</string>
     <string name="all_your_contacts_will_remain_connected_update_sent">你的所有聯絡人會保持連接。更新了的個人檔案將傳送給你的聯絡人。</string>
     <string name="add_address_to_your_profile">新增地址至你的個人檔案，以便你的聯絡人可以與其他人分享。更新了的個人檔案將傳送給你的聯絡人。</string>
-    <string name="email_invite_subject">讓我們在 SimpleX Chat中聊天</string>
+    <string name="email_invite_subject">讓我們在 Privateline X-Chat中聊天</string>
     <string name="import_theme_error_desc">確保檔案具有正確的 YAML 語法。匯出主題以獲得主題檔案結構的範例。</string>
     <string name="message_reactions">訊息反應</string>
     <string name="allow_your_contacts_adding_message_reactions">允許你的聯絡人新增訊息互動。</string>

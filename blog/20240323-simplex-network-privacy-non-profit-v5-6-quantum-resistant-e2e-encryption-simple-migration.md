@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: real privacy and stable profits, non-profits for protocols, v5.6 released with quantum resistant e2e encryption and simple profile migration"
+title: "PrivatelineX network: real privacy and stable profits, non-profits for protocols, v5.6 released with quantum resistant e2e encryption and simple profile migration"
 date: 2024-03-23
 previewBody: blog_previews/20240323.html
 image: images/20240323-post-preview.png
@@ -43,7 +43,7 @@ Once SimpleX network protocols stabilize and reach the required maturity, we pla
 
 ### Welcome, Esra’a!
 
-To help us deliver these goals, Esra’a Al Shafei joined SimpleX Chat team - we are excited to welcome her!
+To help us deliver these goals, Esra’a Al Shafei joined Privateline X-Chat team - we are excited to welcome her!
 
 Esra'a is a longtime privacy and human rights advocate from Bahrain. She is the founder of [Majal.org](http://majal.org), a network of platforms that amplify under-reported and marginalized voices in the Middle East and North Africa. She is also the co-founder of the [Numun Fund](https://numun.fund/), the first dedicated fund for women-led tech in the Global South. Esra’a is currently the Vice Chair of the Board at the [Wikimedia Foundation](https://wikimediafoundation.org/), the nonprofit which hosts Wikipedia. She is also on the Board of the [Tor Project](https://www.torproject.org/), developers of one of the world’s strongest tools for privacy and freedom online. Previously, she served on the Board of [Access Now](https://www.accessnow.org/), an international nonprofit dedicated to an open and free Internet.
 
@@ -55,9 +55,9 @@ Executing the plan towards decentralized nonprofit protocol governance will be E
 
 ### Quantum resistant end-to-end encryption (BETA)
 
-Adding post-quantum resistance to the double ratchet end-to-end encryption algorithm in SimpleX Chat is a major upgrade to messaging protocols, and it creates the security against the future quantum computers.
+Adding post-quantum resistance to the double ratchet end-to-end encryption algorithm in Privateline X-Chat is a major upgrade to messaging protocols, and it creates the security against the future quantum computers.
 
-I wrote in detail in the previous post about various properties of end-to-end encryption and how exactly quantum resistance is implemented in SimpleX Chat - currently SimpleX Chat has [the most secure end-to-end encryption design](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md#how-secure-is-end-to-end-encryption-in-different-messengers) against the present and future attacks.
+I wrote in detail in the previous post about various properties of end-to-end encryption and how exactly quantum resistance is implemented in Privateline X-Chat - currently Privateline X-Chat has [the most secure end-to-end encryption design](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md#how-secure-is-end-to-end-encryption-in-different-messengers) against the present and future attacks.
 
 We plan to perform a security audit of this design and implementation later this year.
 
@@ -91,7 +91,7 @@ This version solved this problem - now you can return back to the app without in
 
 ### Migrate all app data to another device via QR code
 
-We always believed that cross-platform data portability is very important for any software. Users own their data, and they should have a way to export it from any software they use. So from the version of SimpleX Chat [released in July 2022](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#database-export-and-import) it was possible to export the database as a self-contained file, including all contacts, messages and files, and import it on a new device.
+We always believed that cross-platform data portability is very important for any software. Users own their data, and they should have a way to export it from any software they use. So from the version of Privateline X-Chat [released in July 2022](./20220711-simplex-chat-v3-released-ios-notifications-audio-video-calls-database-export-import-protocol-improvements.md#database-export-and-import) it was possible to export the database as a self-contained file, including all contacts, messages and files, and import it on a new device.
 
 _"How can I migrate my data to another device?"_ was one of the most frequent user questions, but until this release this process was [quite complex](), requiring too many steps, and most non-technical users were not willing to try it, as even though it was reliable, it appeared risky.
 
@@ -140,7 +140,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donates to SimpleX Chat!
+Huge thank you to everybody who donates to Privateline X-Chat!
 
 As I wrote, we are planning a 3rd party security audit for the protocols and cryptography design, and also for an app implementation, and it would hugely help us if some part of this $50,000+ expense is covered with donations.
 
@@ -156,4 +156,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

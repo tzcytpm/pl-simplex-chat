@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Evgeny on 26/03/2023.
-//  Copyright © 2023 SimpleX Chat. All rights reserved.
+//  Copyright © 2023 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -28,7 +28,7 @@ struct DeveloperView: View {
                             .frame(width: 24, height: 24)
                             .opacity(0.5)
                             .colorMultiply(theme.colors.secondary)
-                        Text("Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)")
+                        Text("Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)")
                             .padding(.leading, 36)
                     }
                     NavigationLink {
@@ -68,7 +68,7 @@ struct DeveloperView: View {
                 }
                 Section("Deprecated options") {
                     settingsRow("link", color: theme.colors.secondary) {
-                        Picker("SimpleX links", selection: $simplexLinkMode) {
+                        Picker("PrivatelineX links", selection: $simplexLinkMode) {
                             ForEach(
                                 SimpleXLinkMode.values + (SimpleXLinkMode.values.contains(simplexLinkMode) ? [] : [simplexLinkMode])
                             ) { mode in

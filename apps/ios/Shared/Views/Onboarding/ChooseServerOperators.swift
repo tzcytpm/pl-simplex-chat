@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 31.10.2024.
-//  Copyright © 2024 SimpleX Chat. All rights reserved.
+//  Copyright © 2024 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -82,7 +82,7 @@ struct OnboardingConditionsView: View {
                             .lineSpacing(2)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Text("""
-                        By using SimpleX Chat you agree to:
+                        By using Privateline X-Chat you agree to:
                         - send only legal content in public groups.
                         - respect other users – no spam.
                         """)
@@ -271,7 +271,7 @@ struct ChooseServerOperators: View {
                         operatorCheckView(srvOperator)
                     }
                     VStack {
-                        Text("SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app.").padding(.bottom, 8)
+                        Text("Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app.").padding(.bottom, 8)
                         Text("You can configure servers via settings.")
                     }
                     .font(.footnote)
@@ -366,7 +366,7 @@ struct ChooseServerOperatorsInfoView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("The app protects your privacy by using different operators in each conversation.")
                     Text("When more than one operator is enabled, none of them has metadata to learn who communicates with whom.")
-                    Text("For example, if your contact receives messages via a SimpleX Chat server, your app will deliver them via a Flux server.")
+                    Text("For example, if your contact receives messages via a Privateline X-Chat server, your app will deliver them via a Flux server.")
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .listRowBackground(Color.clear)

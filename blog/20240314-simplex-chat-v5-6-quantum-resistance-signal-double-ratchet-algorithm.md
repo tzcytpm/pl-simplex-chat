@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v5.6 (beta): adding quantum resistance to Signal double ratchet algorithm"
+title: "Privateline X-Chat v5.6 (beta): adding quantum resistance to Signal double ratchet algorithm"
 date: 2024-03-14
 previewBody: blog_previews/20240314.html
 image: images/20240314-kem.jpg
@@ -8,13 +8,13 @@ imageWide: true
 permalink: "/blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.html"
 ---
 
-# SimpleX Chat v5.6 beta: adding quantum resistance to Signal double ratchet algorithm
+# Privateline X-Chat v5.6 beta: adding quantum resistance to Signal double ratchet algorithm
 
 **Published:** Mar 14, 2024
 
 This is a major upgrade for SimpleX messaging protocols, we are really proud to present the results of the hard work of our whole team on the [Pi day](https://en.wikipedia.org/wiki/Pi_Day).
 
-This post also covers various aspects of end-to-end encryption, compares different messengers, and explains why and how quantum-resistant encryption is added to SimpleX Chat:
+This post also covers various aspects of end-to-end encryption, compares different messengers, and explains why and how quantum-resistant encryption is added to Privateline X-Chat:
 
 - [Why do we need end-to-end encryption?](#why-do-we-need-end-to-end-encryption)
 - [Why is encryption even allowed?](#why-is-encryption-even-allowed)
@@ -54,7 +54,7 @@ In 1995 DJB represented by the Electronic Frontier Foundation brought a case aga
 
 This case is very important for the whole industry, as to this day we can freely create and use open-source cryptography without export control restrictions. It also shows the importance of engaging with the system and challenging its views in an open dialogue, rather than either blindly complying or violating regulations.
 
-DJB role for cryptography and open-source goes beyond this case – many cryptographic algorithms that are considered to be the most advanced, and many of which we use in SimpleX Chat, were designed and developed by him:
+DJB role for cryptography and open-source goes beyond this case – many cryptographic algorithms that are considered to be the most advanced, and many of which we use in Privateline X-Chat, were designed and developed by him:
 
 - Ed25519 cryptographic signature algorithm we use to authorize commands to the servers.
 - NaCL library with cryptobox and secretbox constructions that combine X25519 Diffie-Hellman key agreement with Salsa20 encryption and Poly1305 authentication. We use cryptobox to encrypt messages in two of three encryption layers and secretbox to encrypt files.
@@ -77,11 +77,11 @@ While the content encryption is the most important, concealing the actual messag
 
 The only effective mitigation to these attacks is to pad all messages to a fixed size. Using space-efficient schemes like Padme, or padding to encryption block size is ineffective for mitigating these attacks, as they still allow differentiating message sizes.
 
-To the best of our knowledge, the only messengers other than SimpleX Chat that pad all messages to a fixed packet size are Cwtch and no longer developed [Pond](https://github.com/agl/pond) - SimpleX design can be seen as an evolution of Pond design.
+To the best of our knowledge, the only messengers other than Privateline X-Chat that pad all messages to a fixed packet size are Cwtch and no longer developed [Pond](https://github.com/agl/pond) - SimpleX design can be seen as an evolution of Pond design.
 
 ### 2. Compromised confidential messages - mitigated by repudiation (deniability)
 
-Many users are very interested in having ability to irreversibly delete sent messages from the recipients devices. But not only would this ability violate data sovereignty of device owners, it is also completely ineffective, as the recipients could simply put the device offline or use a modified client app to ignore message deletion requests. While SimpleX Chat provides such features as [disappearing messages](./20230103-simplex-chat-v4.4-disappearing-messages.md#disappearing-messages) and the ability to [irreversibly delete sent messages](./20221206-simplex-chat-v4.3-voice-messages.md#irreversible-message-deletion) provided both parties agree to that, these are convenience features, and they cannot be considered security measures.
+Many users are very interested in having ability to irreversibly delete sent messages from the recipients devices. But not only would this ability violate data sovereignty of device owners, it is also completely ineffective, as the recipients could simply put the device offline or use a modified client app to ignore message deletion requests. While Privateline X-Chat provides such features as [disappearing messages](./20230103-simplex-chat-v4.4-disappearing-messages.md#disappearing-messages) and the ability to [irreversibly delete sent messages](./20221206-simplex-chat-v4.3-voice-messages.md#irreversible-message-deletion) provided both parties agree to that, these are convenience features, and they cannot be considered security measures.
 
 The solution to that is well known to cryptographers - it is the quality of the encryption algorithms called "repudiation", sometimes also called "deniability". This is the ability of the senders to plausibly deny having sent any messages, because cryptographic algorithms used to encrypt allow recipients forging these messages on their devices, so while the encryption proves authenticity of the message to the recipient, it cannot be used as a proof to any third party.
 
@@ -89,7 +89,7 @@ Putting it all in a simpler language - a sender can claim that the recipient for
 
 Repudiation is still a rather new concept - the first off-the-record algorithms were proposed in 2004 and were only offered to a wide range of users in Signal messenger. This concept is still quite badly understood by users and society, and yet to have been used as the defense in any public court cases, as legal systems evolve much slower than technology. In high profile cases repudiation can be used as an effective evidence for the defense.
 
-Repudiation in messaging systems can be undermined by adding cryptographic signature to the protocol, and many messengers that use OTR encryption algorithms do exactly that, unfortunately. SimpleX Chat does not use signature in any part of client-client protocol, but the signature is currently used when authorizing sender's messages to the relays. v5.7 will improve deniability by enabling a different authorization scheme that will provide full-stack repudiation in all protocol layers.
+Repudiation in messaging systems can be undermined by adding cryptographic signature to the protocol, and many messengers that use OTR encryption algorithms do exactly that, unfortunately. Privateline X-Chat does not use signature in any part of client-client protocol, but the signature is currently used when authorizing sender's messages to the relays. v5.7 will improve deniability by enabling a different authorization scheme that will provide full-stack repudiation in all protocol layers.
 
 ### 3. Compromised message keys - mitigated by forward secrecy
 
@@ -103,7 +103,7 @@ This attack is much less understood by the users, and forward secrecy does not p
 
 Out of all encryption algorithms known to us only _Signal double ratchet algorithm_ (also referred to as _Signal algorithm_ or _double ratchet algorithm_, which is not the same as Signal messaging platform and protocols) provides the ability for the encryption security to recover after break-ins attacks. This recovery happens automatically and transparently to the users, without them doing anything special or even knowing about break-in, by simply sending messages. Every time one of the communication parties replies to another party message, new random keys are generated and previously stolen keys become useless.
 
-Double ratchet algorithm is used in Signal, Cwtch and SimpleX Chat. But Signal app by allowing to use the same profile on multiple devices compromises the break-in recovery function of Signal algorithm, as explained in [this paper](https://eprint.iacr.org/2021/626.pdf). Because of break-in recovery you cannot use SimpleX Chat profile on more than one device at the same time - the encryption scheme rotates the long term keys, randomly, and keys on another device become useless, as they would become useless for the attacker who stole them. Security always has some costs to the convenience.
+Double ratchet algorithm is used in Signal, Cwtch and Privateline X-Chat. But Signal app by allowing to use the same profile on multiple devices compromises the break-in recovery function of Signal algorithm, as explained in [this paper](https://eprint.iacr.org/2021/626.pdf). Because of break-in recovery you cannot use Privateline X-Chat profile on more than one device at the same time - the encryption scheme rotates the long term keys, randomly, and keys on another device become useless, as they would become useless for the attacker who stole them. Security always has some costs to the convenience.
 
 ### 5. Man-in-the-middle attack - mitigated by two-factor key exchange
 
@@ -129,7 +129,7 @@ Pictures below illustrate how this attack works for RSA encryption.
 
 The attack on Diffie-Hellman (or on quantum-resistant) key exchange, when both parties send their public keys (or public key and ciphertext), requires the attacker to intercept and replace both keys, but the outcome remains the same - if all communication is passed via a single channel, as it is usually the case with communication services, then any attacker that has inside access to the service can selectively compromise some of the conversations. Two years ago I wrote the post about this [vulnerability of end-to-end encryption to MITM attacks](https://www.poberezkin.com/posts/2022-12-07-why-privacy-needs-to-be-redefined.html#e2e-encryption-is-not-bulletproof).
 
-All known mitigations of this attack require using the secondary communication channel to ensure that the keys have not been substituted. The most secure approach is to make user's key (or key fingerprint) a part of the user's address or connection link, thus making two-factor key exchange non-optional. This approach is used in Session, Cwtch and SimpleX Chat.
+All known mitigations of this attack require using the secondary communication channel to ensure that the keys have not been substituted. The most secure approach is to make user's key (or key fingerprint) a part of the user's address or connection link, thus making two-factor key exchange non-optional. This approach is used in Session, Cwtch and Privateline X-Chat.
 
 A less secure approach is to provide users an optional way to compare security codes - this is what is done by Signal, Element and many other messengers. The problem with this post-key-exchange verification is that it is optional, and is usually skipped by the majority of the users. Also, this security code can change because the user changed the device, or as a result of the attack via the service provider. When you see in the client app the notification that the security code changed, it's pointless to ask in the same messenger whether the device was changed, as if it were an attack, the attacker would simply confirm it. Instead, the security code needs to be re-validated again via another channel. A good security practice for the users would be to warn their communication partners about the intention to switch the device in advance, before the security code is changed.
 
@@ -159,7 +159,7 @@ The main objective here is to establish the framework for comparing the security
 
 ![Messengers comparison](./images/20240314-comparison.jpg)
 
-<sup>1</sup> Repudiation in SimpleX Chat will include client-server protocol from v5.7 or v5.8. Currently it is implemented but not enabled yet, as its support requires releasing the relay protocol that breaks backward compatibility.
+<sup>1</sup> Repudiation in Privateline X-Chat will include client-server protocol from v5.7 or v5.8. Currently it is implemented but not enabled yet, as its support requires releasing the relay protocol that breaks backward compatibility.
 
 <sup>2</sup> Post-quantum cryptography is available in beta version, as opt-in only for direct conversations. See below how it will be rolled-out further.
 
@@ -171,7 +171,7 @@ Some columns are marked with a yellow checkmark:
 
 ## Adding quantum resistance to Signal double ratchet algorithm
 
-We have been exploring post-quantum cryptography since early 2022, when SimpleX Chat was first released, and we did not want to be pioneers here - cryptography is critically important to make it right.
+We have been exploring post-quantum cryptography since early 2022, when Privateline X-Chat was first released, and we did not want to be pioneers here - cryptography is critically important to make it right.
 
 We hoped to adopt the algorithm that will be standardized by NIST, but the standardization process turned out to be hugely disappointing, and the ML-KEM (Kyber) algorithm that was accepted as a standard was modified to remove an important hashing step (see the lines 304-314 in [the published spec](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.ipd.pdf))), that mitigates the attacks via a compromised random numbers generator, ignoring strong criticism from many expert cryptographers, including DJB (see [this discussion](https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/WFRDl8DqYQ4) and [the comments NIST received](https://csrc.nist.gov/files/pubs/fips/203/ipd/docs/fips-203-initial-public-comments-2023.pdf)). To make it even worse, the calculation of security levels of Kyber appears to have been done incorrectly, and overall, the chosen Kyber seems worse than rejected NTRU according to [the analysis by DJB](https://blog.cr.yp.to/20231003-countcorrectly.html).
 
@@ -181,7 +181,7 @@ We also analyzed the encryption schemes proposed in Tutanota in 2021, and anothe
 - unlike other messengers that adopted or plan to adopt ML-KEM, we used Streamlined NTRU Prime algorithm (specifically, strnup761) that has no problems of ML-KEM, no known patent claims, and seems less likely to be compromised than other algorithms - it is exactly the same algorithm that is used in SSH. You can review the comparison of [the risks of various post-quantum algorithms](https://ntruprime.cr.yp.to/warnings.html).
 - unlike Signal design that only added quantum resistance to the initial key exchange by replacing X3DH key agreement scheme with post-quantum [PQXDH](https://signal.org/docs/specifications/pqxdh/), but did not improve Signal algorithm itself, our design added quantum-resistant key agreements inside double algorithm, making its break-in recovery property also quantum resistant.
 
-The we could make break-in recovery property of Signal algorithm quantum-resistant, and why, probably, Signal didn't, is because irrespective of the message size SimpleX Chat uses a fixed block size of 16kb to provide security and privacy against any traffic observers and against messaging relays. So we had an extra space to accommodate additional ~2.2kb worth of keys in each message without any additional traffic costs.
+The we could make break-in recovery property of Signal algorithm quantum-resistant, and why, probably, Signal didn't, is because irrespective of the message size Privateline X-Chat uses a fixed block size of 16kb to provide security and privacy against any traffic observers and against messaging relays. So we had an extra space to accommodate additional ~2.2kb worth of keys in each message without any additional traffic costs.
 
 In case when the message is larger than the remaining block size, e.g. when the message contains image or link preview, or a large text, we used [zstd compression](https://en.wikipedia.org/wiki/Zstd) to provide additional space for the required keys without reducing image preview quality or creating additional traffic - our previously inefficient JSON encoding of chat messages was helpful in this case.
 
@@ -193,7 +193,7 @@ The additional challenge in adding sntrup761 was that unlike Diffie-Hellman key 
 
 <img src="./images/20240314-pq1.png" width="288"> <img src="./images/20240314-pq2.png" width="288"> <img src="./images/20240314-pq3.png" width="288">
 
-Quantum resistant double ratchet algorithm is already available in v5.6 (beta) of SimpleX Chat as an optional feature that can be enabled for the new and, separately, for the existing direct conversations.
+Quantum resistant double ratchet algorithm is already available in v5.6 (beta) of Privateline X-Chat as an optional feature that can be enabled for the new and, separately, for the existing direct conversations.
 
 The reason it is released as opt-in is because once the conversation is upgraded to be quantum resistant, it will no longer work in the previous version of the app, and we see this ability to downgrade the app if something is not working correctly as very important for the users who use the app for critical communications.
 
@@ -243,7 +243,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donates to SimpleX Chat!
+Huge thank you to everybody who donates to Privateline X-Chat!
 
 As I wrote, we are planning a 3rd party security audit for the protocols and cryptography design, and also for an app implementation, and it would hugely help us if some part of this $50,000+ expense is covered with donations.
 
@@ -259,4 +259,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

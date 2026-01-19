@@ -47,10 +47,10 @@
 "**e2e encrypted** video call" = "**エンドツーエンド暗号化済み**の テレビ電話 通話";
 
 /* No comment provided by engineer. */
-"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**よりプライベート**: 20 分ごとに新しいメッセージを確認します。 デバイス トークンは SimpleX Chat サーバーと共有されますが、連絡先やメッセージの数は共有されません。";
+"**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." = "**よりプライベート**: 20 分ごとに新しいメッセージを確認します。 デバイス トークンは Privateline X-Chat サーバーと共有されますが、連絡先やメッセージの数は共有されません。";
 
 /* No comment provided by engineer. */
-"**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最もプライベート**: SimpleX Chat 通知サーバーを使用せず、バックグラウンドで定期的にメッセージをチェックします (アプリの使用頻度によって異なります)。";
+"**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." = "**最もプライベート**: Privateline X-Chat 通知サーバーを使用せず、バックグラウンドで定期的にメッセージをチェックします (アプリの使用頻度によって異なります)。";
 
 /* No comment provided by engineer. */
 "**Please note**: using the same database on two devices will break the decryption of messages from your connections, as a security protection." = "**注意**: 2つの端末で同じデータベースを使用すると、セキュリティ保護として、あなたが接続しているメッセージの復号化が解除されます。";
@@ -59,7 +59,7 @@
 "**Please note**: you will NOT be able to recover or change passphrase if you lose it." = "**注意**: パスフレーズを紛失すると、パスフレーズを復元または変更できなくなります。";
 
 /* No comment provided by engineer. */
-"**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." = "**推奨**: デバイス トークンと通知は SimpleX Chat 通知サーバーに送信されますが、メッセージの内容、サイズ、送信者は送信されません。";
+"**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." = "**推奨**: デバイス トークンと通知は Privateline X-Chat 通知サーバーに送信されますが、メッセージの内容、サイズ、送信者は送信されません。";
 
 /* No comment provided by engineer. */
 "**Scan / Paste link**: to connect via a link you received." = "**QRスキャン / リンクの貼り付け**: 受け取ったリンクで接続する。";
@@ -254,7 +254,7 @@
 "`a + b`" = "\\`a + b`";
 
 /* email text */
-"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via SimpleX Chat</a></p>" = "<p>こんにちは!</p>\n<p><a href=\"%@\">SimpleX Chatでつながろう</a></p>";
+"<p>Hi!</p>\n<p><a href=\"%@\">Connect to me via Privateline X-Chat</a></p>" = "<p>こんにちは!</p>\n<p><a href=\"%@\">Privateline X-Chatでつながろう</a></p>";
 
 /* No comment provided by engineer. */
 "~strike~" = "\\~取り消し線~";
@@ -329,7 +329,7 @@ time interval */
 "About operators" = "オペレーターについて";
 
 /* No comment provided by engineer. */
-"About SimpleX Chat" = "SimpleX Chat について";
+"About Privateline X-Chat" = "Privateline X-Chat について";
 
 /* No comment provided by engineer. */
 "above, then choose:" = "上で選んでください：";
@@ -840,7 +840,7 @@ set passcode view */
 "Connect to desktop" = "デスクトップに接続";
 
 /* No comment provided by engineer. */
-"connect to SimpleX Chat developers." = "SimpleX Chat 開発者に接続します。";
+"connect to Privateline X-Chat developers." = "Privateline X-Chat 開発者に接続します。";
 
 /* No comment provided by engineer. */
 "Connect to your friends faster." = "友達ともっと速くつながりましょう。";
@@ -1897,7 +1897,7 @@ snd error text */
 "Initial role" = "初期の役割";
 
 /* No comment provided by engineer. */
-"Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "インストール [ターミナル用SimpleX Chat](https://github.com/simplex-chat/simplex-chat)";
+"Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" = "インストール [ターミナル用Privateline X-Chat](https://github.com/simplex-chat/simplex-chat)";
 
 /* No comment provided by engineer. */
 "Instant" = "即時";
@@ -2032,7 +2032,7 @@ snd error text */
 "left" = "脱退";
 
 /* email subject */
-"Let's talk in SimpleX Chat" = "SimpleXチャットで会話しよう";
+"Let's talk in Privateline X-Chat" = "SimpleXチャットで会話しよう";
 
 /* No comment provided by engineer. */
 "Light" = "ライトテーマ";
@@ -2956,7 +2956,7 @@ chat item action */
 "SimpleX Address" = "SimpleXアドレス";
 
 /* No comment provided by engineer. */
-"SimpleX Chat security was audited by Trail of Bits." = "SimpleX Chat のセキュリティは Trail of Bits によって監査されました。";
+"Privateline X-Chat security was audited by Trail of Bits." = "Privateline X-Chat のセキュリティは Trail of Bits によって監査されました。";
 
 /* simplex link type */
 "SimpleX contact address" = "SimpleX連絡先アドレス";
@@ -3046,7 +3046,7 @@ chat item action */
 "Submit" = "送信";
 
 /* No comment provided by engineer. */
-"Support SimpleX Chat" = "Simplex Chatを支援";
+"Support Privateline X-Chat" = "Simplex Chatを支援";
 
 /* No comment provided by engineer. */
 "System" = "システム";
@@ -3094,7 +3094,7 @@ chat item action */
 "Tests failed!" = "テストは失敗しました！";
 
 /* No comment provided by engineer. */
-"Thank you for installing SimpleX Chat!" = "SimpleX Chatをインストールしていただき、ありがとうございます！";
+"Thank you for installing Privateline X-Chat!" = "Privateline X-Chatをインストールしていただき、ありがとうございます！";
 
 /* No comment provided by engineer. */
 "Thanks to the users – [contribute via Weblate](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translating-simplex-chat)!" = "ユーザーに感謝します – [Weblate 経由で貢献してください](https://github.com/simplex-chat/simplex-chat/tree/stable#help-translation-simplex-chat)！";
@@ -3310,10 +3310,10 @@ chat item action */
 "Use server" = "サーバを使う";
 
 /* No comment provided by engineer. */
-"Use SimpleX Chat servers?" = "SimpleX チャット サーバーを使用しますか?";
+"Use Privateline X-Chat servers?" = "SimpleX チャット サーバーを使用しますか?";
 
 /* No comment provided by engineer. */
-"Using SimpleX Chat servers." = "SimpleX チャット サーバーを使用する。";
+"Using Privateline X-Chat servers." = "SimpleX チャット サーバーを使用する。";
 
 /* No comment provided by engineer. */
 "v%@ (%@)" = "v%@ (%@)";

@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX Chat v5.3 released: desktop app, local file encryption and improved groups with directory service"
+title: "Privateline X-Chat v5.3 released: desktop app, local file encryption and improved groups with directory service"
 date: 2023-09-25
 image: images/simplex-desktop-light.png
 imageWide: true
@@ -8,7 +8,7 @@ previewBody: blog_previews/20230925.html
 permalink: "/blog/20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.html"
 ---
 
-# SimpleX Chat v5.3 released: desktop app, local file encryption and improved groups
+# Privateline X-Chat v5.3 released: desktop app, local file encryption and improved groups
 
 **Published:** September 25, 2023
 
@@ -56,7 +56,7 @@ You can download the desktop app for Linux and Mac via [downloads page](../docs/
 
 <img src="./images/20230925-directory.png" width="330" class="float-to-left">
 
-Directory service provides a way to search for public groups submitted by the users. To use it, you need to connect to it via SimpleX Chat, as you would connect to any other contact, and type some words to search.
+Directory service provides a way to search for public groups submitted by the users. To use it, you need to connect to it via Privateline X-Chat, as you would connect to any other contact, and type some words to search.
 
 You can also create and register your group, with some limitations explained [here](../docs/DIRECTORY.md).
 
@@ -74,7 +74,7 @@ The next release will reduce the time it takes to send messages to the group, es
 
 <img src="./images/20230925-encrypted.png" width="330" class="float-to-left">
 
-All messages, files and media sent via SimpleX Chat were always end-to-end encrypted from the very beginning. SimpleX Chat uses double-ratchet algorithm with encrypted message headers, for the best possible meta-data protection.
+All messages, files and media sent via Privateline X-Chat were always end-to-end encrypted from the very beginning. Privateline X-Chat uses double-ratchet algorithm with encrypted message headers, for the best possible meta-data protection.
 
 You contacts, groups and messages are stored in the local database on your device, and this database was encrypted from [v4.0 released a year ago](./20220928-simplex-chat-v4-encrypted-database.md).
 
@@ -102,7 +102,7 @@ When you are connecting to people you know you usually want to share your main p
 
 Some links to answer the most common questions:
 
-[SimpleX Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
+[Privateline X-Chat security assessment](./20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
 [How can SimpleX deliver messages without user identifiers](https://simplex.chat/#how-simplex-works).
 
@@ -116,7 +116,7 @@ Visit our [website](https://simplex.chat) to learn more.
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -130,4 +130,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

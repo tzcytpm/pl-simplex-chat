@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX File Transfer Protocol - a new protocol for sending large files efficiently, privately and securely."
+title: "PrivatelineX File Transfer Protocol - a new protocol for sending large files efficiently, privately and securely."
 date: 2023-03-01
 preview: CLI and relays implementing the new XFTP protocol are released - you can use them now!
 image: images/20230301-xftp.jpg
@@ -34,7 +34,7 @@ You can also send the file that can be received by multiple recipients using `-n
 xftp send filename.ext -n 10
 ```
 
-**Step 2**: Pass file description(s) (files `rcvN.xftp`) to the recipient(s) securely, e.g. send it as a file via SimpleX Chat.
+**Step 2**: Pass file description(s) (files `rcvN.xftp`) to the recipient(s) securely, e.g. send it as a file via Privateline X-Chat.
 
 **Step 3**: To receive the file:
 
@@ -52,7 +52,7 @@ xftp del ./filename.ext/snd.xftp.private
 
 ## What's the problem?
 
-If you are using SimpleX Chat apps you know that support of sending files and images is not very good, and sending videos and large files is simply impossible. There are currently these problems:
+If you are using Privateline X-Chat apps you know that support of sending files and images is not very good, and sending videos and large files is simply impossible. There are currently these problems:
 
 - the sender has to be online for file transfer to complete, once it was confirmed by the recipient.
 - when the file is sent to the group, the sender will have to transfer it separately to each member, creating a lot of traffic.
@@ -62,7 +62,7 @@ As a result, we limited the supported size of files in the app to 8mb. Even for 
 
 ## Why didn't we just use some existing solution?
 
-We really hoped to find some existing open-source solution that we could integrate with SimpleX Chat.
+We really hoped to find some existing open-source solution that we could integrate with Privateline X-Chat.
 
 We decided not to use torrent-like or any other P2P solutions because of their lack of privacy, challenging legality in some jurisdictions and, in many cases, because they are inefficient in groups.
 
@@ -100,7 +100,7 @@ file ---> |   XFTP   | ------>           XFTP            ---->  |  Relay  | --->
                                |                       |                         |                  |
 ```
 
-XFTP stands for SimpleX File Transfer Protocol. Its design is based on the same ideas and has some of the qualities of SimpleX Messaging Protocol, that is used in SimpleX Chat:
+XFTP stands for SimpleX File Transfer Protocol. Its design is based on the same ideas and has some of the qualities of SimpleX Messaging Protocol, that is used in Privateline X-Chat:
 
 - recipient cannot see sender's IP address, as the file fragments (chunks) are temporarily stored on multiple XFTP relays.
 - file can be sent asynchronously, without requiring the sender to be online for file to be received.
@@ -117,19 +117,19 @@ Instead of using a link, XFTP protocol includes a special format for a "file des
 
 CLI generates a separate file description for each intended recipient - you need to specify how many people you want to be able to receive this file. You can specify a larger number of recipients to avoid revealing the real number of recipients from XFTP relays. Mobile apps, when this protocol is integrated, will do it automatically, choosing some large random number of possible recipients, so while the relays will be able to observe how many people time the file was downloaded, they won't know how many intended recipients you had - sending to a group of 10 people and to 1 recipient can look the same to the relays.
 
-File description is a security-sensitive file that contains private keys and chunk addresses necessary to receive the whole file, and also a symmetric key to decrypt the file. Therefore you must use a secure channel to send file description - e.g., it can be sent via SimpleX Chat. But once the recipient downloaded the file, CLI invalidates the file fragment addresses on relays and the same file description cannot be used again to download the file.
+File description is a security-sensitive file that contains private keys and chunk addresses necessary to receive the whole file, and also a symmetric key to decrypt the file. Therefore you must use a secure channel to send file description - e.g., it can be sent via Privateline X-Chat. But once the recipient downloaded the file, CLI invalidates the file fragment addresses on relays and the same file description cannot be used again to download the file.
 
 ## What is next?
 
 We released and deployed several XFTP relays for you to experiment with (they are hardcoded in the XFTP CLI), and you can deploy your own relays either from [downloadable binary](https://github.com/simplex-chat/simplexmq/releases/tag/v5.0.0-beta.3) or by compiling [the source code](https://github.com/simplex-chat/simplexmq). We also released XFTP CLI - it is available in the same release.
 
-We are currently integrating support for sending large files using XFTP protocol into SimpleX Chat clients. SimpleX Chat v5.0 will have support for receiving files sent via XFTP protocol (you will be able to send a file description via a SimpleX Chat CLI app, so that mobile apps will be able to receive them as normal files, only much faster), and v5.1 will fully support for sending large files (up to 1gb) in the mobile apps.
+We are currently integrating support for sending large files using XFTP protocol into Privateline X-Chat clients. Privateline X-Chat v5.0 will have support for receiving files sent via XFTP protocol (you will be able to send a file description via a Privateline X-Chat CLI app, so that mobile apps will be able to receive them as normal files, only much faster), and v5.1 will fully support for sending large files (up to 1gb) in the mobile apps.
 
 We will also publish a formal specification for XFTP protocol and overview of its security qualities and threat model. For now you can learn more about the protocol design and motivations from this internal [XFTP protocol RFC](https://github.com/simplex-chat/simplexmq/blob/stable/rfcs/2022-12-26-simplex-file-transfer.md).
 
-Using and sending files with the available XFTP CLI will hugely help us stabilizing both the protocol and implementations. What we really like about this design is that it is completely independent from SimpleX Chat - you can use it on its own, sending files and passing file descriptions to your contacts via any other messenger - e.g. via Signal, – without this messenger being able to observe that you are in fact sending a large file.
+Using and sending files with the available XFTP CLI will hugely help us stabilizing both the protocol and implementations. What we really like about this design is that it is completely independent from Privateline X-Chat - you can use it on its own, sending files and passing file descriptions to your contacts via any other messenger - e.g. via Signal, – without this messenger being able to observe that you are in fact sending a large file.
 
-We did not yet decide whether we will be making a separate security audit of XFTP implementation, or if we combine it with the next security audit of SimpleX Chat. The latter seems more likely, as XFTP uses the same cryptographic primitives that were reviewed during [SimpleX Chat security assessment by Trail of Bits](./20221108-simplex-chat-v4.2-security-audit-new-website.md) in November 2022.
+We did not yet decide whether we will be making a separate security audit of XFTP implementation, or if we combine it with the next security audit of Privateline X-Chat. The latter seems more likely, as XFTP uses the same cryptographic primitives that were reviewed during [Privateline X-Chat security assessment by Trail of Bits](./20221108-simplex-chat-v4.2-security-audit-new-website.md) in November 2022.
 
 ## SimpleX platform
 
@@ -147,7 +147,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donated to SimpleX Chat!
+Huge thank you to everybody who donated to Privateline X-Chat!
 
 We are prioritizing users privacy and security - it would be impossible without your support.
 
@@ -161,4 +161,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

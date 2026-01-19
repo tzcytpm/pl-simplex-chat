@@ -1,4 +1,4 @@
-# SimpleX Chat API types reference
+# Privateline X-Chat API types reference
 
 - [API Commands and Responses](./COMMANDS.md)
 - [API Events](./EVENTS.md)

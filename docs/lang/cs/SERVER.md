@@ -8,7 +8,7 @@ revision: 05.06.2023
 
 ## Přehled
 
-SMP server je relay server používaný k předávání zpráv v síti SimpleX. Aplikace SimpleX Chat mají přednastavené servery (pro mobilní aplikace jsou to smp11, smp12 a smp14.simplex.im), ale konfiguraci aplikace můžete snadno změnit a používat jiné servery.
+SMP server je relay server používaný k předávání zpráv v síti SimpleX. Aplikace Privateline X-Chat mají přednastavené servery (pro mobilní aplikace jsou to smp11, smp12 a smp14.simplex.im), ale konfiguraci aplikace můžete snadno změnit a používat jiné servery.
 
 Klienti SimpleX pouze určují, který server bude použit pro příjem zpráv, a to pro každý kontakt (nebo spojení skupiny s členem skupiny) zvlášť, přičemž tyto servery jsou pouze dočasné, protože adresa pro doručování se může změnit.
 

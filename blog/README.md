@@ -1,6 +1,6 @@
 # Blog
 
-Jul 29, 2025 [SimpleX Chat v6.4.1: welcome your contacts, review members to protect groups, and more.](./20250729-simplex-chat-v6-4-1-welcome-contacts-protect-groups-app-security.md)
+Jul 29, 2025 [Privateline X-Chat v6.4.1: welcome your contacts, review members to protect groups, and more.](./20250729-simplex-chat-v6-4-1-welcome-contacts-protect-groups-app-security.md)
 
 What's new in v6.4.1:
 
@@ -16,13 +16,13 @@ Also, we added 3 new interface languages to Android and desktop apps, thanks to 
 
 ---
 
-Jul 3, 2025 [SimpleX network: new experience of connecting with people &mdash; available in SimpleX Chat v6.4-beta.4](./20250703-simplex-network-protocol-extension-for-securely-connecting-people.md)
+Jul 3, 2025 [SimpleX network: new experience of connecting with people &mdash; available in Privateline X-Chat v6.4-beta.4](./20250703-simplex-network-protocol-extension-for-securely-connecting-people.md)
 
 Now you can start talking to your contacts much faster, as soon as you scan the link. This technical post covers the technology that enabled this new user experience &mdash; short links and associated data of messaging queues.
 
 ---
 
-Mar 8, 2025 [SimpleX Chat v6.3: new user experience and safety in public groups](./20250308-simplex-chat-v6-3-new-user-experience-safety-in-public-groups.html)
+Mar 8, 2025 [Privateline X-Chat v6.3: new user experience and safety in public groups](./20250308-simplex-chat-v6-3-new-user-experience-safety-in-public-groups.html)
 
 What's new in v6.3:
 - preventing spam and abuse in public groups.
@@ -44,7 +44,7 @@ This post explains how server operators can moderate end-to-end encrypted conver
 
 Dec 10, 2024 [SimpleX network: preset servers operated by Flux, business chats and more with v6.2 of the apps](./20241210-simplex-network-v6-2-servers-by-flux-business-chats.md)
 
-- SimpleX Chat and Flux made an agreement to include Flux-operated servers into the app to improve metadata privacy in SimpleX network.
+- Privateline X-Chat and Flux made an agreement to include Flux-operated servers into the app to improve metadata privacy in SimpleX network.
 - Business chats for better privacy and support of your customers.
 - Better user experience: open on the first unread, jump to quoted messages, see who reacted.
 - Improving notifications in iOS app.
@@ -74,7 +74,7 @@ What's new in v6.1:
 
 Aug 14, 2024 [SimpleX network: the investment from Jack Dorsey and Asymmetric, v6.0 released with the new user experience and private message routing](./20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.md)
 
-SimpleX Chat: vision and funding 2.0: past, present, future.
+Privateline X-Chat: vision and funding 2.0: past, present, future.
 
 Announcing the investment from Jack Dorsey and Asymmetric.
 
@@ -151,11 +151,11 @@ It's important not to be complacent with the current standards of messaging, whe
 
 ---
 
-Apr 4. 2024 [Why I joined SimpleX Chat](./20240404-why-i-joined-simplex-chat-esraa-al-shafei.md)
+Apr 4. 2024 [Why I joined Privateline X-Chat](./20240404-why-i-joined-simplex-chat-esraa-al-shafei.md)
 
 _By [Esra'a al Shafei](https://mastodon.social/@alshafei)_
 
-Transitioning from a lifelong career dedicated to nonprofits, including Board roles at organizations like the Wikimedia Foundation, Access Now and Tor, my decision to join SimpleX Chat may come as a surprise to some. But, as I step into this new chapter, I want to share the insights and convictions that have guided me here, shedding light on what I think sets SimpleX Chat apart and why this move feels like an essential learning opportunity.
+Transitioning from a lifelong career dedicated to nonprofits, including Board roles at organizations like the Wikimedia Foundation, Access Now and Tor, my decision to join Privateline X-Chat may come as a surprise to some. But, as I step into this new chapter, I want to share the insights and convictions that have guided me here, shedding light on what I think sets Privateline X-Chat apart and why this move feels like an essential learning opportunity.
 
 ---
 
@@ -173,11 +173,11 @@ What's new in v5.6:
 
 ---
 
-Mar 14, 2024 [SimpleX Chat v5.6 (beta): adding quantum resistance to Signal double ratchet algorithm](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md)
+Mar 14, 2024 [Privateline X-Chat v5.6 (beta): adding quantum resistance to Signal double ratchet algorithm](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md)
 
-This is a major upgrade for SimpleX Chat messaging protocol stack, I am really proud to present this work of the whole team.
+This is a major upgrade for Privateline X-Chat messaging protocol stack, I am really proud to present this work of the whole team.
 
-This post also covers various aspects of end-to-end encryption, compares different messengers, and explains how and why quantum-resistant encryption is added to SimpleX Chat:
+This post also covers various aspects of end-to-end encryption, compares different messengers, and explains how and why quantum-resistant encryption is added to Privateline X-Chat:
 
 - Why do we need end-to-end encryption?
 - Why encryption is even allowed?
@@ -189,9 +189,9 @@ This post also covers various aspects of end-to-end encryption, compares differe
 
 ---
 
-Jan 24, 2024 [SimpleX Chat: free infrastructure from Linode, v5.5 released](./20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.md)
+Jan 24, 2024 [Privateline X-Chat: free infrastructure from Linode, v5.5 released](./20240124-simplex-chat-infrastructure-costs-v5-5-simplex-ux-private-notes-group-history.md)
 
-SimpleX Chat infrastructure on Linode:
+Privateline X-Chat infrastructure on Linode:
 - Free infrastructure.
 - SimpleX servers in Linode Marketplace.
 - High capacity messaging servers.
@@ -204,7 +204,7 @@ What's new in v5.5:
 
 ---
 
-Nov 25, 2023 [SimpleX Chat v5.4 released](./20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.md)
+Nov 25, 2023 [Privateline X-Chat v5.4 released](./20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.md)
 
 - Link mobile and desktop apps via secure quantum-resistant protocol. 🔗
 - Better groups:
@@ -217,7 +217,7 @@ Nov 25, 2023 [SimpleX Chat v5.4 released](./20231125-simplex-chat-v5-4-link-mobi
 
 ---
 
-Sep 25, 2023 [SimpleX Chat v5.3 released](./20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.md)
+Sep 25, 2023 [Privateline X-Chat v5.3 released](./20230925-simplex-chat-v5-3-desktop-app-local-file-encryption-directory-service.md)
 
 - new desktop app! 💻
 - directory service and other group improvements.
@@ -226,7 +226,7 @@ Sep 25, 2023 [SimpleX Chat v5.3 released](./20230925-simplex-chat-v5-3-desktop-a
 
 ---
 
-July 22, 2023 [SimpleX Chat v5.2 released](./20230722-simplex-chat-v5-2-message-delivery-receipts.md)
+July 22, 2023 [Privateline X-Chat v5.2 released](./20230722-simplex-chat-v5-2-message-delivery-receipts.md)
 
 **What's new in v5.2:**
 
@@ -252,7 +252,7 @@ July 22, 2023 [SimpleX Chat v5.2 released](./20230722-simplex-chat-v5-2-message-
 
 ---
 
-May 23, 2023 [SimpleX Chat v5.1 released](./20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.md)
+May 23, 2023 [Privateline X-Chat v5.1 released](./20230523-simplex-chat-v5-1-message-reactions-self-destruct-passcode.md)
 
 What's new in v5.1:
 - message reactions 🚀
@@ -269,9 +269,9 @@ Also, we added Japanese and Portuguese (Brazil)<sup>*</sup> interface languages,
 
 ---
 
-Apr 22, 2023 [SimpleX Chat: vision and funding, v5.0 released](./20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md)
+Apr 22, 2023 [Privateline X-Chat: vision and funding, v5.0 released](./20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md)
 
-SimpleX Chat vision and funding:
+Privateline X-Chat vision and funding:
 - why is it a commercial company?
 - how is it funded and what is the business model?
 - what is next?
@@ -285,7 +285,7 @@ Also, we added Polish language interface, thanks to our users and Weblate!
 
 ---
 
-Mar 28, 2023 [SimpleX Chat v4.6 released](./20230328-simplex-chat-v4-6-hidden-profiles.md)
+Mar 28, 2023 [Privateline X-Chat v4.6 released](./20230328-simplex-chat-v4-6-hidden-profiles.md)
 
 - ARMv7a and Android 8+ support!
 - hidden chat profiles
@@ -301,11 +301,11 @@ Also, we added Chinese and Spanish language interface, thanks to our users and W
 
 Mar 1, 2023 [SimpleX File Transfer Protocol](./20230301-simplex-file-transfer-protocol.md)
 
-A new protocol for sending large files efficiently, privately and securely. It will be soon integrated into SimpleX Chat apps.
+A new protocol for sending large files efficiently, privately and securely. It will be soon integrated into Privateline X-Chat apps.
 
 ---
 
-Feb 4, 2023 [SimpleX Chat v4.5 released](./20230204-simplex-chat-v4-5-user-chat-profiles.md)
+Feb 4, 2023 [Privateline X-Chat v4.5 released](./20230204-simplex-chat-v4-5-user-chat-profiles.md)
 
 - multiple chat profiles.
 - message draft.
@@ -317,7 +317,7 @@ Also, we added Italian language interface, thanks to our users and Weblate!
 
 ---
 
-Jan 3, 2023 [SimpleX Chat v4.4 released](./20230103-simplex-chat-v4.4-disappearing-messages.md)
+Jan 3, 2023 [Privateline X-Chat v4.4 released](./20230103-simplex-chat-v4.4-disappearing-messages.md)
 
 - disappearing messages.
 - "live" messages.
@@ -328,7 +328,7 @@ Also, we added French language interface, thanks to our users and Weblate!
 
 ---
 
-Dec 6, 2022 [SimpleX Chat reviews and v4.3 released](./20221206-simplex-chat-v4.3-voice-messages.md)
+Dec 6, 2022 [Privateline X-Chat reviews and v4.3 released](./20221206-simplex-chat-v4.3-voice-messages.md)
 
 November reviews:
 
@@ -350,7 +350,7 @@ Nov 8, 2022 [Security audit by Trail of Bits, the new website and v4.2 released]
 
 _"Have you been audited or should we just ignore you?"_
 
-SimpleX Chat has now been audited by [Trail of Bits](https://www.trailofbits.com/about), 4 issues were identified, and 3 of them are fixed in 4.2
+Privateline X-Chat has now been audited by [Trail of Bits](https://www.trailofbits.com/about), 4 issues were identified, and 3 of them are fixed in 4.2
 
 The new website is live: https://simplex.chat
 
@@ -372,7 +372,7 @@ Sep 28, 2022 [v4: local database encryption](./20220928-simplex-chat-v4-encrypte
 - support for self-hosted WebRTC ICE servers
 - improved stability of creating new connections: more reliable groups, files and contacts
 - deleting files and media - for security and to save storage
-- For developers - TypeScript SDK for integrating with SimpleX Chat
+- For developers - TypeScript SDK for integrating with Privateline X-Chat
 - support animated images in Android app
 - German language in mobile apps UI
 
@@ -429,7 +429,7 @@ May 11, 2022 [v2.0 released - sending images and files in mobile apps](./2022051
 
 ---
 
-Apr 04, 2022 [Instant notifications for SimpleX Chat mobile apps](./20220404-simplex-chat-instant-notifications.md)
+Apr 04, 2022 [Instant notifications for Privateline X-Chat mobile apps](./20220404-simplex-chat-instant-notifications.md)
 
 ---
 
@@ -437,24 +437,24 @@ Mar 08, 2022 [Mobile apps for iOS and Android released!](./20220308-simplex-chat
 
 ---
 
-Feb 14, 2022. [SimpleX Chat: join our public beta for iOS!](./20220214-simplex-chat-ios-public-beta.md)
+Feb 14, 2022. [Privateline X-Chat: join our public beta for iOS!](./20220214-simplex-chat-ios-public-beta.md)
 
 ---
 
-Jan 12, 2022. [SimpleX Chat v1 released: the most private and secure chat and application platform](./20220112-simplex-chat-v1-released.md)
+Jan 12, 2022. [Privateline X-Chat v1 released: the most private and secure chat and application platform](./20220112-simplex-chat-v1-released.md)
 
 ---
 
-Dec 08, 2021. [SimpleX Chat v0.5 released: the first chat platform that is 100% private by design - no access to your connections graph](./20211208-simplex-chat-v0.5-released.md)
+Dec 08, 2021. [Privateline X-Chat v0.5 released: the first chat platform that is 100% private by design - no access to your connections graph](./20211208-simplex-chat-v0.5-released.md)
 
 ---
 
-Sep 14, 2021. [SimpleX Chat v0.4 released: open-source chat that uses privacy-preserving message routing protocol](./20210914-simplex-chat-v0.4-released.md)
+Sep 14, 2021. [Privateline X-Chat v0.4 released: open-source chat that uses privacy-preserving message routing protocol](./20210914-simplex-chat-v0.4-released.md)
 
 ---
 
-May 12, 2021. [SimpleX Chat Prototype!](./20210512-simplex-chat-terminal-ui.md)
+May 12, 2021. [Privateline X-Chat Prototype!](./20210512-simplex-chat-terminal-ui.md)
 
 ---
 
-Oct 22, 2020. [SimpleX Chat](./20201022-simplex-chat.md)
+Oct 22, 2020. [Privateline X-Chat](./20201022-simplex-chat.md)

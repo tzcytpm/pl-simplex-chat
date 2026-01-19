@@ -4,7 +4,7 @@ revision: 31.01.2023
 ---
 | 31.01.2023 | FR, [EN](/docs/CLI.md), [CZ](/docs/lang/cs/CLI.md), [PL](/docs/lang/pl/CLI.md) |
 
-# Application de terminal (console) SimpleX Chat pour Linux/MacOS/Windows
+# Application de terminal (console) Privateline X-Chat pour Linux/MacOS/Windows
 
 ## Table des matières
 

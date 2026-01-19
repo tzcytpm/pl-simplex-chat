@@ -1,4 +1,4 @@
-# WebView for WebRTC calls in SimpleX Chat
+# WebView for WebRTC calls in Privateline X-Chat
 
 ```
 npm i

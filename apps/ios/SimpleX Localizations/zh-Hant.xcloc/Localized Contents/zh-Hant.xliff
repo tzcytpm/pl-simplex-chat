@@ -194,12 +194,12 @@
       </trans-unit>
       <trans-unit id="**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata." xml:space="preserve" approved="no">
         <source>**More private**: check new messages every 20 minutes. Only device token is shared with our push server. It doesn't see how many contacts you have, or any message metadata.</source>
-        <target state="translated">**更有私隱**：每20分鐘會檢查一次訊息。裝置權杖與 SimpleX Chat 伺服器分享中，但是不包括你的聯絡人和訊息資料。</target>
+        <target state="translated">**更有私隱**：每20分鐘會檢查一次訊息。裝置權杖與 Privateline X-Chat 伺服器分享中，但是不包括你的聯絡人和訊息資料。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve" approved="no">
-        <source>**Most private**: do not use SimpleX Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
-        <target state="translated">**最有私隱**：不使用 SimpleX Chat 通知服務器，在後台定期檢查訊息（取決於你使用應用程序的頻率）。</target>
+      <trans-unit id="**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app." xml:space="preserve" approved="no">
+        <source>**Most private**: do not use Privateline X-Chat push server. The app will check messages in background, when the system allows it, depending on how often you use the app.</source>
+        <target state="translated">**最有私隱**：不使用 Privateline X-Chat 通知服務器，在後台定期檢查訊息（取決於你使用應用程序的頻率）。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="**Paste received link** or open it in the browser and tap **Open in mobile app**." xml:space="preserve" approved="no">
@@ -212,8 +212,8 @@
         <target state="translated">**請注意**：如果你忘記了密碼你將不能再次復原或更改密碼。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve" approved="no">
-        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to SimpleX Chat push server, but it does not see the message content, size or who it is from.</source>
+      <trans-unit id="**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from." xml:space="preserve" approved="no">
+        <source>**Recommended**: device token and end-to-end encrypted notifications are sent to Privateline X-Chat push server, but it does not see the message content, size or who it is from.</source>
         <target state="translated">**建議**：裝置權杖和通知都會傳送去 SimpeleX Chat 的通知伺服器，但是不包括訊息內容、大小或傳送者資料。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -302,14 +302,14 @@
         <target state="translated">隨機的個人檔案將傳送給你的聯絡人</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX" xml:space="preserve" approved="no">
+      <trans-unit id="About PrivatelineX" xml:space="preserve" approved="no">
         <source>About SimpleX</source>
         <target state="translated">關於 SimpleX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About SimpleX Chat" xml:space="preserve" approved="no">
-        <source>About SimpleX Chat</source>
-        <target state="translated">關於 SimpleX Chat</target>
+      <trans-unit id="About Privateline X-Chat" xml:space="preserve" approved="no">
+        <source>About Privateline X-Chat</source>
+        <target state="translated">關於 Privateline X-Chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Accent color" xml:space="preserve" approved="no">
@@ -1158,13 +1158,13 @@
         <target state="translated">裝置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is disabled. Turning off SimpleX Lock." xml:space="preserve" approved="no">
-        <source>Device authentication is disabled. Turning off SimpleX Lock.</source>
+      <trans-unit id="Device authentication is disabled. Turning off PrivatelineX Lock." xml:space="preserve" approved="no">
+        <source>Device authentication is disabled. Turning off PrivatelineX Lock.</source>
         <target state="translated">裝置內的螢幕鎖定已關閉。正在關閉 SimpleX 鎖定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication." xml:space="preserve" approved="no">
-        <source>Device authentication is not enabled. You can turn on SimpleX Lock via Settings, once you enable device authentication.</source>
+      <trans-unit id="Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication." xml:space="preserve" approved="no">
+        <source>Device authentication is not enabled. You can turn on PrivatelineX Lock via Settings, once you enable device authentication.</source>
         <target state="translated">你的裝置沒有啟動螢幕鎖定。你可以通過設定內啟動螢幕鎖定，當你啟動後就可以使用 SimpleX 鎖定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -1178,8 +1178,8 @@
         <target state="translated">私訊群組內的成員於這個群組內是禁用的。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Disable SimpleX Lock" xml:space="preserve" approved="no">
-        <source>Disable SimpleX Lock</source>
+      <trans-unit id="Disable PrivatelineX Lock" xml:space="preserve" approved="no">
+        <source>Disable PrivatelineX Lock</source>
         <target state="translated">關閉 SimpleX 鎖定</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -1238,8 +1238,8 @@
         <target state="translated">啟用</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable SimpleX Lock" xml:space="preserve" approved="no">
-        <source>Enable SimpleX Lock</source>
+      <trans-unit id="Enable PrivatelineX Lock" xml:space="preserve" approved="no">
+        <source>Enable PrivatelineX Lock</source>
         <target state="translated">啟用 SimpleX 鎖定</target>
         <note>authentication reason</note>
       </trans-unit>
@@ -1812,9 +1812,9 @@
         <target state="translated">錯誤的安全碼！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve" approved="no">
-        <source>Install [SimpleX Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
-        <target state="translated">下載[SimpleX Chat 的終端機版](https://github.com/simplex-chat/simplex-chat)</target>
+      <trans-unit id="Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)" xml:space="preserve" approved="no">
+        <source>Install [Privateline X-Chat for terminal](https://github.com/simplex-chat/simplex-chat)</source>
+        <target state="translated">下載[Privateline X-Chat 的終端機版](https://github.com/simplex-chat/simplex-chat)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant push notifications will be hidden!&#10;" xml:space="preserve" approved="no">
@@ -2830,42 +2830,42 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">顯示預覽</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Chat security was audited by Trail of Bits." xml:space="preserve">
-        <source>SimpleX Chat security was audited by Trail of Bits.</source>
-        <target state="translated">SimpleX Chat 的安全性由 Trail of Bits 審核。</target>
+      <trans-unit id="Privateline X-Chat security was audited by Trail of Bits." xml:space="preserve">
+        <source>Privateline X-Chat security was audited by Trail of Bits.</source>
+        <target state="translated">Privateline X-Chat 的安全性由 Trail of Bits 審核。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock" xml:space="preserve" approved="no">
-        <source>SimpleX Lock</source>
+      <trans-unit id="PrivatelineX Lock" xml:space="preserve" approved="no">
+        <source>PrivatelineX Lock</source>
         <target state="translated">SimpleX 鎖定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock turned on" xml:space="preserve" approved="no">
-        <source>SimpleX Lock turned on</source>
+      <trans-unit id="PrivatelineX Lock turned on" xml:space="preserve" approved="no">
+        <source>PrivatelineX Lock turned on</source>
         <target state="translated">已開啟SimpleX 鎖定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX contact address" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX contact address" xml:space="preserve" approved="no">
         <source>SimpleX contact address</source>
         <target state="translated">SimpleX 聯絡人地址</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX encrypted message or connection event" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX encrypted message or connection event" xml:space="preserve" approved="no">
         <source>SimpleX encrypted message or connection event</source>
         <target state="translated">SimpleX 加密訊息或連接事件</target>
         <note>notification</note>
       </trans-unit>
-      <trans-unit id="SimpleX group link" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX group link" xml:space="preserve" approved="no">
         <source>SimpleX group link</source>
         <target state="translated">SimpleX 群組連結</target>
         <note>simplex link type</note>
       </trans-unit>
-      <trans-unit id="SimpleX links" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX links" xml:space="preserve" approved="no">
         <source>SimpleX links</source>
         <target state="translated">SimpleX 連結</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX one-time invitation" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX one-time invitation" xml:space="preserve" approved="no">
         <source>SimpleX one-time invitation</source>
         <target state="translated">SimpleX 一次性邀請連結</target>
         <note>simplex link type</note>
@@ -2905,7 +2905,7 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">停止</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stop SimpleX" xml:space="preserve" approved="no">
+      <trans-unit id="Stop PrivatelineX" xml:space="preserve" approved="no">
         <source>Stop SimpleX</source>
         <target state="translated">停止 SimpleX</target>
         <note>authentication reason</note>
@@ -2925,9 +2925,9 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">停止對話？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Support SimpleX Chat" xml:space="preserve" approved="no">
-        <source>Support SimpleX Chat</source>
-        <target state="translated">幫助 SimpleX Chat</target>
+      <trans-unit id="Support Privateline X-Chat" xml:space="preserve" approved="no">
+        <source>Support Privateline X-Chat</source>
+        <target state="translated">幫助 Privateline X-Chat</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="System" xml:space="preserve" approved="no">
@@ -3000,9 +3000,9 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">測試失敗！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Thank you for installing SimpleX Chat!" xml:space="preserve" approved="no">
-        <source>Thank you for installing SimpleX Chat!</source>
-        <target state="translated">感謝你安裝SimpleX Chat！</target>
+      <trans-unit id="Thank you for installing Privateline X-Chat!" xml:space="preserve" approved="no">
+        <source>Thank you for installing Privateline X-Chat!</source>
+        <target state="translated">感謝你安裝Privateline X-Chat！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="No user identifiers." xml:space="preserve" approved="no">
@@ -3118,8 +3118,8 @@ We will be adding server redundancy to prevent lost messages.</source>
         <target state="translated">為了保護隱私，而不像是其他平台般需要提取和存儲用戶的 IDs 資料，SimpleX 平台有自家佇列的標識符，這對於你的每個聯絡人也是獨一無二的。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your information, turn on SimpleX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve" approved="no">
-        <source>To protect your information, turn on SimpleX Lock.
+      <trans-unit id="To protect your information, turn on PrivatelineX Lock.&#10;You will be prompted to complete authentication before this feature is enabled." xml:space="preserve" approved="no">
+        <source>To protect your information, turn on PrivatelineX Lock.
 You will be prompted to complete authentication before this feature is enabled.</source>
         <target state="translated">為了保護你的個人訊息，開啟 SimpleX 鎖定。
 在啟用此功能之前，系統將提示你完成螢幕鎖定的功能。</target>
@@ -3251,9 +3251,9 @@ To connect, please ask your contact to create another connection link and check 
         <target state="translated">使用 .onion 主機</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use SimpleX Chat servers?" xml:space="preserve" approved="no">
-        <source>Use SimpleX Chat servers?</source>
-        <target state="translated">使用 SimpleX Chat 伺服器？</target>
+      <trans-unit id="Use Privateline X-Chat servers?" xml:space="preserve" approved="no">
+        <source>Use Privateline X-Chat servers?</source>
+        <target state="translated">使用 Privateline X-Chat 伺服器？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Use chat" xml:space="preserve" approved="no">
@@ -3276,9 +3276,9 @@ To connect, please ask your contact to create another connection link and check 
         <target state="translated">使用 .onion 主機需要兼容 VPN 的提供者。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Using SimpleX Chat servers." xml:space="preserve" approved="no">
-        <source>Using SimpleX Chat servers.</source>
-        <target state="translated">使用 SimpleX Chat 伺服器。</target>
+      <trans-unit id="Using Privateline X-Chat servers." xml:space="preserve" approved="no">
+        <source>Using Privateline X-Chat servers.</source>
+        <target state="translated">使用 Privateline X-Chat 伺服器。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Verify connection security" xml:space="preserve" approved="no">
@@ -3785,9 +3785,9 @@ SimpleX 伺服器並不會看到你的個人檔案。</target>
         <target state="translated">完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="connect to SimpleX Chat developers." xml:space="preserve" approved="no">
-        <source>connect to SimpleX Chat developers.</source>
-        <target state="translated">連接至 SimpleX Chat的開發人員。</target>
+      <trans-unit id="connect to Privateline X-Chat developers." xml:space="preserve" approved="no">
+        <source>connect to Privateline X-Chat developers.</source>
+        <target state="translated">連接至 Privateline X-Chat的開發人員。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="connected" xml:space="preserve" approved="no">
@@ -4970,13 +4970,13 @@ Available in v5.1</source>
         <target state="translated">停止檔案</target>
         <note>cancel file action</note>
       </trans-unit>
-      <trans-unit id="SimpleX Address" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX Address" xml:space="preserve" approved="no">
         <source>SimpleX Address</source>
         <target state="translated">SimpleX 聯絡地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX address" xml:space="preserve" approved="no">
-        <source>SimpleX address</source>
+      <trans-unit id="PrivatelineX address" xml:space="preserve" approved="no">
+        <source>PrivatelineX address</source>
         <target state="translated">SimpleX 聯絡地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -5140,13 +5140,13 @@ Available in v5.1</source>
         <target state="translated">顯示開發者選項</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock mode" xml:space="preserve" approved="no">
-        <source>SimpleX Lock mode</source>
+      <trans-unit id="PrivatelineX Lock mode" xml:space="preserve" approved="no">
+        <source>PrivatelineX Lock mode</source>
         <target state="translated">SimpleX 鎖定模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SimpleX Lock not enabled!" xml:space="preserve" approved="no">
-        <source>SimpleX Lock not enabled!</source>
+      <trans-unit id="PrivatelineX Lock not enabled!" xml:space="preserve" approved="no">
+        <source>PrivatelineX Lock not enabled!</source>
         <target state="translated">未啟用 SimpleX 鎖定！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -5190,15 +5190,15 @@ Available in v5.1</source>
         <target state="translated">你可以在上鎖畫面接受通話，不需裝置和應用程式認證。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can hide or mute a user profile - swipe it to the right.&#10;SimpleX Lock must be enabled." xml:space="preserve" approved="no">
+      <trans-unit id="You can hide or mute a user profile - swipe it to the right.&#10;PrivatelineX Lock must be enabled." xml:space="preserve" approved="no">
         <source>You can hide or mute a user profile - swipe it to the right.
-SimpleX Lock must be enabled.</source>
+PrivatelineX Lock must be enabled.</source>
         <target state="translated">你可以隱藏或靜音用戶檔案 - 將它向右滑動。
 必須已啟用SimpleX 鎖定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You can turn on SimpleX Lock via Settings." xml:space="preserve" approved="no">
-        <source>You can turn on SimpleX Lock via Settings.</source>
+      <trans-unit id="You can turn on PrivatelineX Lock via Settings." xml:space="preserve" approved="no">
+        <source>You can turn on PrivatelineX Lock via Settings.</source>
         <target state="translated">你可以透過設定啟用 SimpleX 鎖定。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -5222,15 +5222,15 @@ SimpleX Lock must be enabled.</source>
         <target state="translated">使用密碼保護你的聊天資料！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve" approved="no">
+      <trans-unit id="&lt;p&gt;Hi!&lt;/p&gt;&#10;&lt;p&gt;&lt;a href=&quot;%@&quot;&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;" xml:space="preserve" approved="no">
         <source>&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt;Connect to me via SimpleX Chat&lt;/a&gt;&lt;/p&gt;</source>
+&lt;p&gt;&lt;a href="%@"&gt;Connect to me via Privateline X-Chat&lt;/a&gt;&lt;/p&gt;</source>
         <target state="translated">&lt;p&gt;你好！&lt;/p&gt;
-&lt;p&gt;&lt;a href="%@"&gt;來連接我透過SimpleX Chat&lt;/a&gt;&lt;/p&gt;</target>
+&lt;p&gt;&lt;a href="%@"&gt;來連接我透過Privateline X-Chat&lt;/a&gt;&lt;/p&gt;</target>
         <note>email text</note>
       </trans-unit>
-      <trans-unit id="About SimpleX address" xml:space="preserve" approved="no">
-        <source>About SimpleX address</source>
+      <trans-unit id="About PrivatelineX address" xml:space="preserve" approved="no">
+        <source>About PrivatelineX address</source>
         <target state="translated">關於 SimpleX 的聯絡地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -5244,8 +5244,8 @@ SimpleX Lock must be enabled.</source>
         <target state="translated">你的所有聯絡人會保持連接。更新了的個人檔案將傳送給你的聯絡人。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Create SimpleX address" xml:space="preserve" approved="no">
-        <source>Create SimpleX address</source>
+      <trans-unit id="Create PrivatelineX address" xml:space="preserve" approved="no">
+        <source>Create PrivatelineX address</source>
         <target state="translated">建立 SimpleX 的聯絡地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -5279,9 +5279,9 @@ SimpleX Lock must be enabled.</source>
         <target state="translated">如果你不能面對面接觸此聯絡人，可於視訊通話中出示你的二維碼，或者分享連結。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Let's talk in SimpleX Chat" xml:space="preserve" approved="no">
-        <source>Let's talk in SimpleX Chat</source>
-        <target state="translated">讓我們在 SimpleX Chat中聊天</target>
+      <trans-unit id="Let's talk in Privateline X-Chat" xml:space="preserve" approved="no">
+        <source>Let's talk in Privateline X-Chat</source>
+        <target state="translated">讓我們在 Privateline X-Chat中聊天</target>
         <note>email subject</note>
       </trans-unit>
       <trans-unit id="Sending file will be stopped." xml:space="preserve" approved="no">
@@ -5409,8 +5409,8 @@ SimpleX Lock must be enabled.</source>
         <target state="translated">當你在稍後刪除你的聯絡地址時，你並不會遺失你的聯絡人。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Your SimpleX address" xml:space="preserve" approved="no">
-        <source>Your SimpleX address</source>
+      <trans-unit id="Your PrivatelineX address" xml:space="preserve" approved="no">
+        <source>Your PrivatelineX address</source>
         <target state="translated">你的 SimpleX 聯絡地址</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -6112,7 +6112,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>Background</source>
         <target state="translated">後台</target>
       </trans-unit>
-      <trans-unit id="SimpleX links not allowed" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX links not allowed" xml:space="preserve" approved="no">
         <source>SimpleX links not allowed</source>
         <target state="translated">不允許 SimpleX 連結</target>
       </trans-unit>
@@ -6188,8 +6188,8 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>Set message expiration in chats.</source>
         <target state="translated">設定聊天中訊息期限。</target>
       </trans-unit>
-      <trans-unit id="Share SimpleX address on social media." xml:space="preserve" approved="no">
-        <source>Share SimpleX address on social media.</source>
+      <trans-unit id="Share PrivatelineX address on social media." xml:space="preserve" approved="no">
+        <source>Share PrivatelineX address on social media.</source>
         <target state="translated">在社交媒體上分享 SimpleX 聯絡地址。</target>
       </trans-unit>
       <trans-unit id="Storage" xml:space="preserve" approved="no">
@@ -6308,7 +6308,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>Review conditions</source>
         <target state="translated">檢視使用條款</target>
       </trans-unit>
-      <trans-unit id="Search or paste SimpleX link" xml:space="preserve" approved="no">
+      <trans-unit id="Search or paste PrivatelineX link" xml:space="preserve" approved="no">
         <source>Search or paste SimpleX link</source>
         <target state="translated">搜尋或貼上 SimpleX 連結</target>
       </trans-unit>
@@ -6316,7 +6316,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>Sent directly</source>
         <target state="translated">已直接發送</target>
       </trans-unit>
-      <trans-unit id="SimpleX links are prohibited." xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX links are prohibited." xml:space="preserve" approved="no">
         <source>SimpleX links are prohibited.</source>
         <target state="translated">這群組禁止 SimpleX 連結。</target>
       </trans-unit>
@@ -6412,7 +6412,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <source>Scan / Paste link</source>
         <target state="translated">掃描／貼上連結</target>
       </trans-unit>
-      <trans-unit id="SimpleX" xml:space="preserve" approved="no">
+      <trans-unit id="PrivatelineX" xml:space="preserve" approved="no">
         <source>SimpleX</source>
         <target state="translated">SimpleX</target>
       </trans-unit>
@@ -6514,7 +6514,7 @@ It can happen because of some bug or when the connection is compromised.</source
       </trans-unit>
     </body>
   </file>
-  <file original="SimpleX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hant" datatype="plaintext">
+  <file original="PrivatelineX NSE/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hant" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0" build-num="14A309"/>
     </header>
@@ -6530,8 +6530,8 @@ It can happen because of some bug or when the connection is compromised.</source
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve" approved="no">
-        <source>Copyright © 2022 SimpleX Chat. All rights reserved.</source>
-        <target state="translated">版權所有© 2022 SimpleX Chat。保留所有權利。</target>
+        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <target state="translated">版權所有© 2022 Privateline X-Chat。保留所有權利。</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>

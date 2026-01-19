@@ -1,10 +1,10 @@
 ---
-title: SimpleX Chat terminálová
+title: Privateline X-Chat terminálová
 revision: 31.01.2023
 ---
 | Aktualizováno 31.01.2023 | Jazyky: CZ, [EN](/docs/CLI.md), [FR](/docs/lang/fr/CLI.md), [PL](/docs/lang/pl/CLI.md) |
 
-# SimpleX Chat terminálová (konzolová) aplikace pro Linux/MacOS/Windows
+# Privateline X-Chat terminálová (konzolová) aplikace pro Linux/MacOS/Windows
 
 ## Obsah
 

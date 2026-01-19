@@ -1,12 +1,12 @@
 ---
-title: Join SimpleX Chat team
+title: Join Privateline X-Chat team
 permalink: /jobs/index.html
 layout: layouts/jobs.html
 ---
 
-# Join SimpleX Chat team
+# Join Privateline X-Chat team
 
-SimpleX Chat is a seed stage startup with a lot of user growth in 2022-2025, and a lot of exciting technical and product problems to solve to grow faster.
+Privateline X-Chat is a seed stage startup with a lot of user growth in 2022-2025, and a lot of exciting technical and product problems to solve to grow faster.
 
 We currently have 4 people in the team.
 
@@ -31,6 +31,6 @@ Please ONLY apply if you created and released your own apps (not as a job or con
 
 2. Also look through [GitHub issues](https://github.com/simplex-chat/simplex-chat/issues) submitted by the users to see what would you want to contribute as a test.
 
-3. [Connect to us](https://smp4.simplex.im/a#IWCurmcnKDvfOzGrQdqlXjKinqkvO10a2q__nWBVG6c) via SimpleX Chat to chat about what you want to contribute and about joining the team.
+3. [Connect to us](https://smp4.simplex.im/a#IWCurmcnKDvfOzGrQdqlXjKinqkvO10a2q__nWBVG6c) via Privateline X-Chat to chat about what you want to contribute and about joining the team.
 
 4. You can also email [jobs@simplex.chat](mailto:jobs@simplex.chat?subject=Join%20SimpleX%20Chat%20team)

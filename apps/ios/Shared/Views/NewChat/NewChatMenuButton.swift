@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by spaced4ndy on 28.11.2023.
-//  Copyright © 2023 SimpleX Chat. All rights reserved.
+//  Copyright © 2023 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -337,7 +337,7 @@ struct ContactsListSearchBar: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 16, height: 16)
-                TextField("Search or paste SimpleX link", text: $searchText)
+                TextField("Search or paste PrivatelineX link", text: $searchText)
                     .foregroundColor(searchShowingSimplexLink ? theme.colors.secondary : theme.colors.onBackground)
                     .disabled(searchShowingSimplexLink)
                     .focused($searchFocussed)

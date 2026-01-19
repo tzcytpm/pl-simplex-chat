@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: legally binding transparency, v5.7 released with better calls and messages"
+title: "PrivatelineX network: legally binding transparency, v5.7 released with better calls and messages"
 date: 2024-04-26
 previewBody: blog_previews/20240426.html
 image: images/20240426-profile.png
@@ -48,7 +48,7 @@ This release focus is improving the app usability, and preparing the foundation 
 
 <img src="./images/20240426-pq.png" width="288" class="float-right">
 
-We [wrote before](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md) about how quantum resistant encryption was added to SimpleX Chat and also about other properties of end-to-end encryption, possible attacks on its security and known mitigations.
+We [wrote before](./20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md) about how quantum resistant encryption was added to Privateline X-Chat and also about other properties of end-to-end encryption, possible attacks on its security and known mitigations.
 
 Quantum resistant encryption will now be enabled by default in all direct chats. For the new conversations it will be enabled from the beginning, and for the existing conversations it will be agreed after you exchange several messages with your contacts - you will see a notice in the conversation when it happens.
 
@@ -68,7 +68,7 @@ You can see and navigate to the original source of the message via the message i
 
 ### In-call sounds and switching sound sources
 
-This was the most frequent request of the users who use SimpleX Chat for audio and video calls - to add sound indication to the connection progress, as happens in all other apps. This release added these sounds and also vibration when call connects and disconnects.
+This was the most frequent request of the users who use Privateline X-Chat for audio and video calls - to add sound indication to the connection progress, as happens in all other apps. This release added these sounds and also vibration when call connects and disconnects.
 
 You can also switch between bluetooth headphones, speakerphone and earpiece via the new button in the call.
 
@@ -98,7 +98,7 @@ Please also see our [website](https://simplex.chat).
 
 ## Help us with donations
 
-Huge thank you to everybody who donates to SimpleX Chat!
+Huge thank you to everybody who donates to Privateline X-Chat!
 
 We are planning a 3rd party security audit for the protocols and cryptography design in July 2024, and also the security audit for an implementation in December 2024/January 2025, and it would hugely help us if some part of this $50,000+ expense is covered with donations.
 
@@ -114,4 +114,4 @@ Thank you,
 
 Evgeny
 
-SimpleX Chat founder
+Privateline X-Chat founder

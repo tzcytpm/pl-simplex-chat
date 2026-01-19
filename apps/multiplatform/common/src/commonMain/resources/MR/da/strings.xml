@@ -31,7 +31,7 @@
     <string name="onboarding_network_about_operators">Om operatører</string>
     <string name="about_simplex">Om SimpleX</string>
     <string name="learn_more_about_address">Om SimpleX-adressen</string>
-    <string name="about_simplex_chat">Om SimpleX Chat</string>
+    <string name="about_simplex_chat">Om Privateline X-Chat</string>
     <string name="above_then_preposition_continuation">over, så:</string>
     <string name="color_primary">Farveaccent</string>
     <string name="accept_contact_button">Acceptere</string>
@@ -370,14 +370,14 @@
     <string name="database_initialization_error_title">Kan ikke initialisere databasen</string>
     <string name="database_initialization_error_desc">Databasen fungerer ikke korrekt. Tryk for at få mere at vide.</string>
     <string name="xiaomi_ignore_battery_optimization"><![CDATA[<b>Xiaomi-enheder</b>: Aktiver venligst Autostart i systemindstillingerne for at notifikationer kan fungere.]]></string>
-    <string name="simplex_service_notification_title">SimpleX Chat-tjeneste</string>
+    <string name="simplex_service_notification_title">Privateline X-Chat-tjeneste</string>
     <string name="simplex_service_notification_text">Modtager beskeder…</string>
     <string name="call_service_notification_audio_call">Lydopkald</string>
     <string name="call_service_notification_video_call">Videoopkald</string>
     <string name="call_service_notification_end_call">Afslut opkald</string>
     <string name="hide_notification">Skjul</string>
-    <string name="ntf_channel_messages">SimpleX Chat beskeder</string>
-    <string name="ntf_channel_calls">SimpleX Chat opkalder</string>
+    <string name="ntf_channel_messages">Privateline X-Chat beskeder</string>
+    <string name="ntf_channel_calls">Privateline X-Chat opkalder</string>
     <string name="settings_notifications_mode_title">Notifikationstjeneste</string>
     <string name="settings_notification_preview_mode_title">Vis forhåndsvisning</string>
     <string name="settings_notification_preview_title">Forhåndsvisning af notifikationer</string>

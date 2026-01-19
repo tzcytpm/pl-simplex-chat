@@ -3,7 +3,7 @@
 //  SimpleX (iOS)
 //
 //  Created by Evgeny on 24/12/2022.
-//  Copyright © 2022 SimpleX Chat. All rights reserved.
+//  Copyright © 2022 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -48,7 +48,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "checkmark.shield",
                 title: "Security assessment",
-                description: "SimpleX Chat security was audited by Trail of Bits."
+                description: "Privateline X-Chat security was audited by Trail of Bits."
             )),
             .feature(Description(
                 icon: "person.2",
@@ -493,7 +493,7 @@ private let versionDescriptions: [VersionDescription] = [
             .feature(Description(
                 icon: "checkmark.shield",
                 title: "Better security ✅",
-                description: "SimpleX protocols reviewed by Trail of Bits."
+                description: "PrivatelineX protocols reviewed by Trail of Bits."
             )),
             .feature(Description(
                 icon: "video",
@@ -626,7 +626,7 @@ private let versionDescriptions: [VersionDescription] = [
             )),
             .view(FeatureView(
                 icon: nil,
-                title: "Short SimpleX address",
+                title: "Short PrivatelineX address",
                 view: { CreateUpdateAddressShortLink() }
             ))
         ]
@@ -675,7 +675,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
                     .symbolRenderingMode(.monochrome)
                     .foregroundColor(theme.colors.secondary)
                     .frame(minWidth: 30, alignment: .center)
-                Text("Short SimpleX address").font(.title3).bold()
+                Text("Short PrivatelineX address").font(.title3).bold()
             }
             Group {
                 if let addr = chatModel.userAddress {
@@ -699,7 +699,7 @@ fileprivate struct CreateUpdateAddressShortLink: View {
         .sheet(isPresented: $showAddressSheet) {
             NavigationView {
                 UserAddressView(autoCreate: true)
-                    .navigationTitle("SimpleX address")
+                    .navigationTitle("PrivatelineX address")
                     .navigationBarTitleDisplayMode(.large)
                     .modifier(ThemedBackground(grouped: true))
             }

@@ -1,4 +1,4 @@
-# Simple SimpleX Chat bot example
+# Simple Privateline X-Chat bot example
 
 This chat bot is a Haskell implementation of a REPL chat bot.
 

@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.html
-title: "SimpleX network: large groups and privacy-preserving content moderation"
+title: "PrivatelineX network: large groups and privacy-preserving content moderation"
 date: 2025-01-14
 preview: "This post explains how server operators can moderate end-to-end encrypted conversations without compromising user privacy or end-to-end encryption."
 image: images/20250114-locked-books.jpg
@@ -71,7 +71,7 @@ When we receive a user complaint about CSAM shared in any group, we remove the f
 
 How does it work? Let's go over the process step by step.
 
-1. A user discovered the link to join the group that distributes CSAM and sent a complaint to our support email address or via the app to [SimpleX Chat team](simplex:/contact#/?v=1&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FK1rslx-m5bpXVIdMZg9NLUZ_8JBm8xTt%23MCowBQYDK2VuAyEALDeVe-sG8mRY22LsXlPgiwTNs9dbiLrNuA7f3ZMAJ2w%3D) contact.
+1. A user discovered the link to join the group that distributes CSAM and sent a complaint to our support email address or via the app to [Privateline X-Chat team](simplex:/contact#/?v=1&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FK1rslx-m5bpXVIdMZg9NLUZ_8JBm8xTt%23MCowBQYDK2VuAyEALDeVe-sG8mRY22LsXlPgiwTNs9dbiLrNuA7f3ZMAJ2w%3D) contact.
 
 2. Once we received the link to join the group, we instruct our automated bot to join it. If the complaint is confirmed as valid, the bot sends the information about the files sent in this group to the servers that store these files.
 

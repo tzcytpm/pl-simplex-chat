@@ -1,38 +1,16 @@
-[![build](https://github.com/simplex-chat/simplex-chat/actions/workflows/build.yml/badge.svg?branch=stable)](https://github.com/simplex-chat/simplex-chat/actions/workflows/build.yml)
-[![GitHub downloads](https://img.shields.io/github/downloads/simplex-chat/simplex-chat/total)](https://github.com/simplex-chat/simplex-chat/releases)
-[![GitHub release](https://img.shields.io/github/v/release/simplex-chat/simplex-chat)](https://github.com/simplex-chat/simplex-chat/releases)
-[![Join on Reddit](https://img.shields.io/reddit/subreddit-subscribers/SimpleXChat?style=social)](https://www.reddit.com/r/SimpleXChat)
-<a rel="me" href="https://mastodon.social/@simplex">![Follow on Mastodon](https://img.shields.io/mastodon/follow/108619463746856738?domain=https%3A%2F%2Fmastodon.social&style=social)</a>
+# Privateline X-Chat - the first messaging platform that has no user identifiers of any kind - 100% private by design!
 
-| 30/03/2023 | EN, [FR](/docs/lang/fr/README.md), [CZ](/docs/lang/cs/README.md), [PL](/docs/lang/pl/README.md) |
-
-<img src="images/simplex-chat-logo.svg" alt="SimpleX logo" width="100%">
-
-# SimpleX - the first messaging platform that has no user identifiers of any kind - 100% private by design!
-
-[<img src="./images/trail-of-bits.jpg" height="80">](http://simplex.chat/blog/20221108-simplex-chat-v4.2-security-audit-new-website.html) &nbsp;&nbsp;&nbsp; [<img src="./images/privacy-guides.jpg" height="64">](https://www.privacyguides.org/en/real-time-communication/#simplex-chat) &nbsp;&nbsp;&nbsp; [<img src="./images/whonix-logo.jpg" height="64">](https://www.whonix.org/wiki/Chat#Recommendation) &nbsp;&nbsp;&nbsp; [<img src="./images/kuketz-blog.jpg" height="64">](https://www.kuketz-blog.de/simplex-eindruecke-vom-messenger-ohne-identifier/)
-
-## Welcome to SimpleX Chat!
+## Welcome to Privateline X-Chat!
 
 1. 📲 [Install the app](#install-the-app).
 2. ↔️ [Connect to the team](#connect-to-the-team), [join user groups](#join-user-groups) and [follow our updates](#follow-our-updates).
 3. 🤝 [Make a private connection](#make-a-private-connection) with a friend.
-4. 🔤 [Help translating SimpleX Chat](#help-translating-simplex-chat).
+4. 🔤 [Help translating Privateline X-Chat](#help-translating-simplex-chat).
 5. ⚡️ [Contribute](#contribute) and [support us with donations](#please-support-us-with-your-donations).
 
-[Learn more about SimpleX Chat](#contents).
+[Learn more about Privateline X-Chat](#contents).
 
 ## Install the app
-
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/apple_store.svg" alt="iOS app" height="42">](https://apps.apple.com/us/app/simplex-chat/id1605771084)
-&nbsp;
-[![Android app](https://github.com/simplex-chat/.github/blob/master/profile/images/google_play.svg)](https://play.google.com/store/apps/details?id=chat.simplex.app)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/f_droid.svg" alt="F-Droid" height="41">](https://app.simplex.chat)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/testflight.png" alt="iOS TestFlight" height="41">](https://testflight.apple.com/join/DWuT2LQu)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/apk_icon.png" alt="APK" height="41">](https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex.apk)
 
 - 🖲 Protects your messages and metadata - who you talk to and when.
 - 🔐 Double ratchet end-to-end encryption, with additional encryption layer.
@@ -42,7 +20,7 @@
 
 ## Connect to the team
 
-You can connect to the team via the app using "chat with the developers button" available when you have no conversations in the profile, "Send questions and ideas" in the app settings or via our [SimpleX address](https://simplex.chat/contact#/?v=1&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FK1rslx-m5bpXVIdMZg9NLUZ_8JBm8xTt%23%2F%3Fv%3D1%26dh%3DMCowBQYDK2VuAyEALDeVe-sG8mRY22LsXlPgiwTNs9dbiLrNuA7f3ZMAJ2w%253D%26srv%3Dbylepyau3ty4czmn77q4fglvperknl4bi2eb2fdy2bh4jxtf32kf73yd.onion). Please connect to:
+You can connect to the team via the app using "chat with the developers button" available when you have no conversations in the profile, "Send questions and ideas" in the app settings or via our [Privateline X-Chat address](https://simplex.chat/contact#/?v=1&smp=smp%3A%2F%2FPQUV2eL0t7OStZOoAsPEV2QYWt4-xilbakvGUGOItUo%3D%40smp6.simplex.im%2FK1rslx-m5bpXVIdMZg9NLUZ_8JBm8xTt%23%2F%3Fv%3D1%26dh%3DMCowBQYDK2VuAyEALDeVe-sG8mRY22LsXlPgiwTNs9dbiLrNuA7f3ZMAJ2w%253D%26srv%3Dbylepyau3ty4czmn77q4fglvperknl4bi2eb2fdy2bh4jxtf32kf73yd.onion). Please connect to:
 
 - to ask any questions
 - to suggest any improvements
@@ -56,13 +34,14 @@ If you are interested in helping us to integrate open-source language models, an
 
 You can join the groups created by other users via the new [directory service](https://simplex.chat/contact#/?v=1-4&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2FeXSPwqTkKyDO3px4fLf1wx3MvPdjdLW3%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAaiv6MkMH44L2TcYrt_CsX3ZvM11WgbMEUn0hkIKTOho%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion). We are not responsible for the content shared in these groups.
 
-**Please note**: The groups below are created for the users to be able to ask questions, make suggestions and ask questions about SimpleX Chat only.
+**Please note**: The groups below are created for the users to be able to ask questions, make suggestions and ask 
+questions about Privateline Chat only.
 
 You also can:
 - criticize the app, and make comparisons with other messengers.
 - share new messengers you think could be interesting for privacy, as long as you don't spam.
 - share some privacy related publications, infrequently.
-- having preliminary approved with the admin in direct message, share the link to a group you created, but only once. Once the group has more than 10 members it can be submitted to [SimpleX Directory Service](./docs/DIRECTORY.md) where the new users will be able to discover it.
+- having preliminary approved with the admin in direct message, share the link to a group you created, but only once. Once the group has more than 10 members it can be submitted to [Privateline X-Chat Directory Service](./docs/DIRECTORY.md) where the new users will be able to discover it.
 
 You must:
 - be polite to other users
@@ -72,35 +51,27 @@ You must:
 
 Messages not following these rules will be deleted, the right to send messages may be revoked, and the access to the new members to the group may be temporarily restricted, to prevent re-joining under a different name - our imperfect group moderation does not have a better solution at the moment.
 
-You can join an English-speaking users group if you want to ask any questions: [#SimpleX users group](https://smp4.simplex.im/g#hr4lvFeBmndWMKTwqiodPz3VBo_6UmdGWocXd1SupsM)
+You can join an English-speaking users group if you want to ask any questions: [#Privateline X-Chat users group](https://smp4.simplex.im/g#hr4lvFeBmndWMKTwqiodPz3VBo_6UmdGWocXd1SupsM)
 
-There is also a group [#simplex-devs](https://smp6.simplex.im/g#Drx3efC-n418AuSpzTspw9SER0iJwrQTmKBafQHwkKM) for developers who build on SimpleX platform:
+There is also a group [#simplex-devs](https://smp6.simplex.im/g#Drx3efC-n418AuSpzTspw9SER0iJwrQTmKBafQHwkKM) for developers who build on Privateline X-Chat platform:
 
 - chat bots and automations
 - integrations with other apps
 - social apps and services
 - etc.
 
-There are groups in other languages, that we have the apps interface translated into. These groups are for testing, and asking questions to other SimpleX Chat users:
+There are groups in other languages, that we have the apps interface translated into. These groups are for testing, and asking questions to other Privateline X-Chat users:
 
-[\#SimpleX-DE](https://smp6.simplex.im/g#V6tQ-lJqsdgJJdJiLPtP326oQFKHvwinIbgruZ9K2oU) (German-speaking), [\#SimpleX-ES](https://smp5.simplex.im/g#xJ5kwDLq2305O5FmpUzvgRIXXAcAJ9S5BItCd2Wmloc) (Spanish-speaking), [\#SimpleX-FR](https://smp6.simplex.im/g#cVOpB0CKd6hEf2aWQ6sJ22E2DVgQLtdHoiSdKxXeKqk) (French-speaking), [\#SimpleX-RU](https://smp5.simplex.im/g#vwXRdfG5SgtaG6aVcITiUGd--Ux0rY1IuH4QXYxlq3U) (Russian-speaking), [\#SimpleX-IT](https://smp5.simplex.im/g#BtRcjsl29ULFNBSE2OPhp1UwZfW7PW9gUYFQTKHdjqU) (Italian-speaking).
+[\#Privateline X-Chat-DE](https://smp6.simplex.im/g#V6tQ-lJqsdgJJdJiLPtP326oQFKHvwinIbgruZ9K2oU) (German-speaking), [\#Privateline X-Chat-ES](https://smp5.simplex.im/g#xJ5kwDLq2305O5FmpUzvgRIXXAcAJ9S5BItCd2Wmloc) (Spanish-speaking), [\#Privateline X-Chat-FR](https://smp6.simplex.im/g#cVOpB0CKd6hEf2aWQ6sJ22E2DVgQLtdHoiSdKxXeKqk) (French-speaking), [\#Privateline X-Chat-RU](https://smp5.simplex.im/g#vwXRdfG5SgtaG6aVcITiUGd--Ux0rY1IuH4QXYxlq3U) (Russian-speaking), [\#Privateline X-Chat-IT](https://smp5.simplex.im/g#BtRcjsl29ULFNBSE2OPhp1UwZfW7PW9gUYFQTKHdjqU) (Italian-speaking).
 
 You can join either by opening these links in the app or by opening them in a desktop browser and scanning the QR code.
 
 ## Follow our updates
-
-We publish our updates and releases via:
-
-- [Reddit](https://www.reddit.com/r/SimpleXChat/), [Twitter](https://twitter.com/SimpleXChat), [Lemmy](https://lemmy.ml/c/simplex), [Mastodon](https://mastodon.social/@simplex) and [Nostr](https://snort.social/p/npub1exv22uulqnmlluszc4yk92jhs2e5ajcs6mu3t00a6avzjcalj9csm7d828).
-- SimpleX Chat [team profile](#connect-to-the-team).
-- [blog](https://simplex.chat/blog/) and [RSS feed](https://simplex.chat/feed.rss).
-- [mailing list](https://simplex.chat/#join-simplex), very rarely.
-
 ## Make a private connection
 
 You need to share a link with your friend or scan a QR code from their phone, in person or during a video call, to make a connection and start messaging.
 
-The channel through which you share the link does not have to be secure - it is enough that you can confirm who sent you the message and that your SimpleX connection is established.
+The channel through which you share the link does not have to be secure - it is enough that you can confirm who sent you the message and that your Privateline X-Chat connection is established.
 
 <img src="https://github.com/simplex-chat/.github/blob/master/profile/images/app1.png" alt="Make a private connection" height="360"> <img src="https://github.com/simplex-chat/.github/blob/master/profile/images/arrow.png" height="360"> <img src="https://github.com/simplex-chat/.github/blob/master/profile/images/app2.png" alt="Conversation" height="360"> <img src="https://github.com/simplex-chat/.github/blob/master/profile/images/arrow.png" height="360"> <img src="https://github.com/simplex-chat/.github/blob/master/profile/images/app3.png" alt="Video call" height="360">
 
@@ -114,83 +85,28 @@ Read about the app features and settings in the new [User guide](./docs/guide/RE
 
 We would love to have you join the development! You can help us with:
 
-- [develop a chat bot](#develop-a-chat-bot) for SimpleX Chat!
+- [develop a chat bot](#develop-a-chat-bot) for Privateline X-Chat!
 - writing a tutorial or recipes about hosting servers, chat bots, etc.
 - developing features - please connect to us via chat so we can help you get started.
 
-## Help translating SimpleX Chat
+## Help translating Privateline X-Chat
 
-Thanks to our users and [Weblate](https://hosted.weblate.org/engage/simplex-chat/), SimpleX Chat apps, website and documents are translated to many other languages.
-
-Join our translators to help SimpleX grow!
-
-|locale|language |contributor|[Android](https://play.google.com/store/apps/details?id=chat.simplex.app) and [iOS](https://apps.apple.com/us/app/simplex-chat/id1605771084)|[website](https://simplex.chat)|Github docs|
-|:----:|:-------:|:---------:|:---------:|:---------:|:---------:|
-|🇬🇧 en|English   | |✓|✓|✓|✓|
-|ar|العربية   |[jermanuts](https://github.com/jermanuts)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/ar/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/ar/)<br>-|[![website](https://hosted.weblate.org/widgets/simplex-chat/ar/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/ar/)||
-|🇧🇬 bg|Български | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/bg/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/bg/)<br>[![ios app](https://hosted.weblate.org/widget/simplex-chat/ios/bg/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/bg/)|||
-|🇨🇿 cs|Čeština   |[zen0bit](https://github.com/zen0bit)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/cs/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/cs/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/cs/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/cs/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/cs/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/cs/)|[✓](https://github.com/simplex-chat/simplex-chat/tree/master/docs/lang/cs)|
-|🇩🇪 de|Deutsch   |[mlanp](https://github.com/mlanp)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/de/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/de/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/de/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/de/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/de/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/de/)||
-|🇪🇸 es|Español   |[Mateyhv](https://github.com/Mateyhv)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/es/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/es/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/es/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/es/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/es/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/es/)||
-|🇫🇮 fi|Suomi     | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/fi/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/fi/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/fi/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/fi/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/fi/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/fi/)||
-|🇫🇷 fr|Français  |[ishi_sama](https://github.com/ishi-sama)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/fr/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/fr/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/fr/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/fr/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/fr/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/fr/)|[✓](https://github.com/simplex-chat/simplex-chat/tree/master/docs/lang/fr)|
-|🇮🇱 he|עִברִית     | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/he/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/he/)<br>-|||
-|🇭🇺 hu|Magyar    | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/hu/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/hu/)<br>-|||
-|🇮🇹 it|Italiano  |[unbranched](https://github.com/unbranched)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/it/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/it/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/it/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/it/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/it/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/it/)||
-|🇯🇵 ja|日本語     | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/ja/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/ja/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/ja/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/ja/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/ja/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/ja/)||
-|🇳🇱 nl|Nederlands|[mika-nl](https://github.com/mika-nl)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/nl/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/nl/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/nl/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/nl/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/nl/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/nl/)||
-|🇵🇱 pl|Polski    |[BxOxSxS](https://github.com/BxOxSxS)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/pl/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/pl/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/pl/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/pl/)|||
-|🇧🇷 pt-BR|Português||[![android app](https://hosted.weblate.org/widgets/simplex-chat/pt_BR/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/pt_BR/)<br>-|[![website](https://hosted.weblate.org/widgets/simplex-chat/pt_BR/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/pt_BR/)||
-|🇷🇺 ru|Русский   ||[![android app](https://hosted.weblate.org/widgets/simplex-chat/ru/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/ru/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/ru/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/ru/)|||
-|🇹🇭 th|ภาษาไทย   |[titapa-punpun](https://github.com/titapa-punpun)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/th/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/th/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/th/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/th/)|||
-|🇹🇷 tr|Türkçe   | |[![android app](https://hosted.weblate.org/widgets/simplex-chat/tr/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/tr/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/tr/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/tr/)|||
-|🇺🇦 uk|Українська| |[![android app](https://hosted.weblate.org/widgets/simplex-chat/uk/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/uk/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/uk/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/uk/)|[![website](https://hosted.weblate.org/widgets/simplex-chat/uk/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/uk/)||
-|🇨🇳 zh-CHS|简体中文|[sith-on-mars](https://github.com/sith-on-mars)<br><br>[Float-hu](https://github.com/Float-hu)|[![android app](https://hosted.weblate.org/widgets/simplex-chat/zh_Hans/android/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/android/zh_Hans/)<br>[![ios app](https://hosted.weblate.org/widgets/simplex-chat/zh_Hans/ios/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/ios/zh_Hans/)<br>&nbsp;|<br><br>[![website](https://hosted.weblate.org/widgets/simplex-chat/zh_Hans/website/svg-badge.svg)](https://hosted.weblate.org/projects/simplex-chat/website/zh_Hans/)||
+Thanks to our users and [Weblate](https://hosted.weblate.org/engage/simplex-chat/), Privateline X-Chat apps, website and documents are translated to many other languages.
 
 Languages in progress: Arabic, Japanese, Korean, Portuguese and [others](https://hosted.weblate.org/projects/simplex-chat/#languages). We will be adding more languages as some of the already added are completed – please suggest new languages, review the [translation guide](./docs/TRANSLATIONS.md) and get in touch with us!
-
-## Please support us with your donations
-
-Huge thank you to everybody who donated to SimpleX Chat!
-
-We are prioritizing users privacy and security - it would be impossible without your support.
-
-Our pledge to our users is that SimpleX protocols are and will remain open, and in public domain, - so anybody can build the future implementations of the clients and the servers. We are building SimpleX platform based on the same principles as email and web, but much more private and secure.
-
-Your donations help us raise more funds - any amount, even the price of the cup of coffee, would make a big difference for us.
-
-It is possible to donate via:
-
-- [GitHub](https://github.com/sponsors/simplex-chat) (commission-free) or [OpenCollective](https://opencollective.com/simplex-chat) (~10% commission).
-- BTC: bc1q2gy6f02nn6vvcxs0pnu29tpnpyz0qf66505d4u
-- XMR: 8568eeVjaJ1RQ65ZUn9PRQ8ENtqeX9VVhcCYYhnVLxhV4JtBqw42so2VEUDQZNkFfsH5sXCuV7FN8VhRQ21DkNibTZP57Qt
-- BCH: bitcoincash:qq6c8vfvxqrk6rhdysgvkhqc24sggkfsx5nqvdlqcg
-- ETH: 0xD9ee7Db0AD0dc1Dfa7eD53290199ED06beA04692
-- USDT (Ethereum): 0xD9ee7Db0AD0dc1Dfa7eD53290199ED06beA04692
-- ZEC: t1fwjQW5gpFhDqXNhxqDWyF9j9WeKvVS5Jg
-- ZEC shielded: u16rnvkflumf5uw9frngc2lymvmzgdr2mmc9unyu0l44unwfmdcpfm0axujd2w34ct3ye709azxsqge45705lpvvqu264ltzvfay55ygyq
-- DOGE: D99pV4n9TrPxBPCkQGx4w4SMSa6QjRBxPf
-- SOL: 7JCf5m3TiHmYKZVr6jCu1KeZVtb9Y1jRMQDU69p5ARnu
-- please ask if you want to donate any other coins.
-
-Thank you,
-
-Evgeny
-
-SimpleX Chat founder
 
 ## Contents
 
 - [Why privacy matters](#why-privacy-matters)
-- [SimpleX approach to privacy and security](#simplex-approach-to-privacy-and-security)
+- [Privateline X-Chat approach to privacy and security](#simplex-approach-to-privacy-and-security)
   - [Complete privacy](#complete-privacy-of-your-identity-profile-contacts-and-metadata)
   - [Protection against spam and abuse](#the-best-protection-against-spam-and-abuse)
   - [Ownership and security of your data](#complete-ownership-control-and-security-of-your-data)
-  - [Users own SimpleX network](#users-own-simplex-network)
+  - [Users own Privateline X-Chat network](#users-own-simplex-network)
 - [Frequently asked questions](#frequently-asked-questions)
 - [News and updates](#news-and-updates)
 - [Quick installation of a terminal app](#zap-quick-installation-of-a-terminal-app)
-- [SimpleX Platform design](#simplex-platform-design)
+- [Privateline X-Chat Platform design](#simplex-platform-design)
 - [Privacy and security: technical details and limitations](#privacy-and-security-technical-details-and-limitations)
 - [For developers](#for-developers)
 - [Develop a chat bot](#develop-a-chat-bot)
@@ -205,63 +121,33 @@ One of the most shocking stories is the experience of [Mohamedou Ould Salahi](ht
 
 It is not enough to use an end-to-end encrypted messenger, we all should use the messengers that protect the privacy of our personal networks - who we are connected with.
 
-## SimpleX approach to privacy and security
+## Privateline X-Chat approach to privacy and security
 
 ### Complete privacy of your identity, profile, contacts and metadata
 
-**Unlike any other existing messaging platform, SimpleX has no identifiers assigned to the users** - not even random numbers. This protects the privacy of who are you communicating with, hiding it from SimpleX platform servers and from any observers. [Read more](./docs/SIMPLEX.md#full-privacy-of-your-identity-profile-contacts-and-metadata).
+**Unlike any other existing messaging platform, Privateline X-Chat has no identifiers assigned to the users** - not even random numbers. This protects the privacy of who are you communicating with, hiding it from Privateline X-Chat platform servers and from any observers. [Read more](./docs/SIMPLEX.md#full-privacy-of-your-identity-profile-contacts-and-metadata).
 
 ### The best protection against spam and abuse
 
-As you have no identifier on SimpleX platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address. [Read more](./docs/SIMPLEX.md#the-best-protection-against-spam-and-abuse).
+As you have no identifier on Privateline X-Chat platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address. [Read more](./docs/SIMPLEX.md#the-best-protection-against-spam-and-abuse).
 
 ### Complete ownership, control and security of your data
 
-SimpleX stores all user data on client devices, the messages are only held temporarily on SimpleX relay servers until they are received. [Read more](./docs/SIMPLEX.md#complete-ownership-control-and-security-of-your-data).
+Privateline X-Chat stores all user data on client devices, the messages are only held temporarily on Privateline X-Chat relay servers until they are received. [Read more](./docs/SIMPLEX.md#complete-ownership-control-and-security-of-your-data).
 
-### Users own SimpleX network
+### Users own Privateline X-Chat network
 
-You can use SimpleX with your own servers and still communicate with people using the servers that are pre-configured in the apps or any other SimpleX servers. [Read more](./docs/SIMPLEX.md#users-own-simplex-network).
+You can use Privateline X-Chat with your own servers and still communicate with people using the servers that are pre-configured in the apps or any other Privateline X-Chat servers. [Read more](./docs/SIMPLEX.md#users-own-simplex-network).
 
 ## Frequently asked questions
 
-1. _How SimpleX can deliver messages without any user identifiers?_ See [v2 release announcement](./blog/20220511-simplex-chat-v2-images-files.md#the-first-messaging-platform-without-user-identifiers) explaining how SimpleX works.
+1. _How Privateline X-Chat can deliver messages without any user identifiers?_ See [v2 release announcement](./blog/20220511-simplex-chat-v2-images-files.md#the-first-messaging-platform-without-user-identifiers) explaining how Privateline X-Chat works.
 
 2. _Why should I not just use Signal?_ Signal is a centralized platform that uses phone numbers to identify its users and their contacts. It means that while the content of your messages on Signal is protected with robust end-to-end encryption, there is a large amount of meta-data visible to Signal - who you talk with and when.
 
-3. _How is it different from Matrix, Session, Ricochet, Cwtch, etc., that also don't require user identities?_ Although these platforms do not require a _real identity_, they do rely on anonymous user identities to deliver messages – it can be, for example, an identity key or a random number. Using a persistent user identity, even anonymous, creates a risk that user's connection graph becomes known to the observers and/or service providers, and it can lead to de-anonymizing some users. If the same user profile is used to connect to two different people via any messenger other than SimpleX, these two people can confirm if they are connected to the same person - they would use the same user identifier in the messages. With SimpleX there is no meta-data in common between your conversations with different contacts - the quality that no other messaging platform has.
+3. _How is it different from Matrix, Session, Ricochet, Cwtch, etc., that also don't require user identities?_ Although these platforms do not require a _real identity_, they do rely on anonymous user identities to deliver messages – it can be, for example, an identity key or a random number. Using a persistent user identity, even anonymous, creates a risk that user's connection graph becomes known to the observers and/or service providers, and it can lead to de-anonymizing some users. If the same user profile is used to connect to two different people via any messenger other than Privateline X-Chat, these two people can confirm if they are connected to the same person - they would use the same user identifier in the messages. With Privateline X-Chat there is no meta-data in common between your conversations with different contacts - the quality that no other messaging platform has.
 
 ## News and updates
-
-Recent and important updates:
-
-[Jul 29, 2025 SimpleX Chat v6.4.1: welcome your contacts, review members to protect groups, and more.](./blog/20250729-simplex-chat-v6-4-1-welcome-contacts-protect-groups-app-security.md)
-
-[Jul 3, 2025 SimpleX network: new experience of connecting with people &mdash; available in SimpleX Chat v6.4-beta.4](./blog/20250703-simplex-network-protocol-extension-for-securely-connecting-people.md)
-
-[Mar 8, 2025. SimpleX Chat v6.3: new user experience and safety in public groups](./blog/20250308-simplex-chat-v6-3-new-user-experience-safety-in-public-groups.md)
-
-[Jan 14, 2025. SimpleX network: large groups and privacy-preserving content moderation](./blog/20250114-simplex-network-large-groups-privacy-preserving-content-moderation.md)
-
-[Dec 10, 2024. SimpleX network: preset servers operated by Flux, business chats and more with v6.2 of the apps](./20241210-simplex-network-v6-2-servers-by-flux-business-chats.md)
-
-[Oct 14, 2024. SimpleX network: security review of protocols design by Trail of Bits, v6.1 released with better calls and user experience.](./blog/20241014-simplex-network-v6-1-security-review-better-calls-user-experience.md)
-
-[Aug 14, 2024. SimpleX network: the investment from Jack Dorsey and Asymmetric, v6.0 released with the new user experience and private message routing](./blog/20240814-simplex-chat-vision-funding-v6-private-routing-new-user-experience.md)
-
-[Jun 4, 2024. SimpleX network: private message routing, v5.8 released with IP address protection and chat themes](./blog/20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md)
-
-[Mar 14, 2024. SimpleX Chat v5.6 beta: adding quantum resistance to Signal double ratchet algorithm.](./blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md)
-
-[Nov 25, 2023. SimpleX Chat v5.4 released: link mobile and desktop apps via quantum resistant protocol, and much better groups](./blog/20231125-simplex-chat-v5-4-link-mobile-desktop-quantum-resistant-better-groups.md).
-
-[Apr 22, 2023. SimpleX Chat: vision and funding, v5.0 released with videos and files up to 1gb](./blog/20230422-simplex-chat-vision-funding-v5-videos-files-passcode.md).
-
-[Mar 1, 2023. SimpleX File Transfer Protocol – send large files efficiently, privately and securely, soon to be integrated into SimpleX Chat apps.](./blog/20230301-simplex-file-transfer-protocol.md).
-
-[Nov 8, 2022. Security audit by Trail of Bits, the new website and v4.2 released](./blog/20221108-simplex-chat-v4.2-security-audit-new-website.md).
-
-[All updates](./blog)
 
 ## :zap: Quick installation of a terminal app
 
@@ -275,29 +161,29 @@ Once the chat client is installed, simply run `simplex-chat` from your terminal.
 
 Read more about [installing and using the terminal app](./docs/CLI.md).
 
-## SimpleX Platform design
+## Privateline X-Chat Platform design
 
-SimpleX is a client-server network with a unique network topology that uses redundant, disposable message relay nodes to asynchronously pass messages via unidirectional (simplex) message queues, providing recipient and sender anonymity.
+Privateline X-Chat is a client-server network with a unique network topology that uses redundant, disposable message relay nodes to asynchronously pass messages via unidirectional (simplex) message queues, providing recipient and sender anonymity.
 
-Unlike P2P networks, all messages are passed through one or several server nodes, that do not even need to have persistence. In fact, the current [SMP server implementation](https://github.com/simplex-chat/simplexmq#smp-server) uses in-memory message storage, persisting only the queue records. SimpleX provides better metadata protection than P2P designs, as no global participant identifiers are used to deliver messages, and avoids [the problems of P2P networks](./docs/SIMPLEX.md#comparison-with-p2p-messaging-protocols).
+Unlike P2P networks, all messages are passed through one or several server nodes, that do not even need to have persistence. In fact, the current [SMP server implementation](https://github.com/simplex-chat/simplexmq#smp-server) uses in-memory message storage, persisting only the queue records. Privateline X-Chat provides better metadata protection than P2P designs, as no global participant identifiers are used to deliver messages, and avoids [the problems of P2P networks](./docs/SIMPLEX.md#comparison-with-p2p-messaging-protocols).
 
-Unlike federated networks, the server nodes **do not have records of the users**, **do not communicate with each other** and **do not store messages** after they are delivered to the recipients. There is no way to discover the full list of servers participating in SimpleX network. This design avoids the problem of metadata visibility that all federated networks have and better protects from the network-wide attacks.
+Unlike federated networks, the server nodes **do not have records of the users**, **do not communicate with each other** and **do not store messages** after they are delivered to the recipients. There is no way to discover the full list of servers participating in Privateline X-Chat network. This design avoids the problem of metadata visibility that all federated networks have and better protects from the network-wide attacks.
 
 Only the client devices have information about users, their contacts and groups.
 
-See [SimpleX whitepaper](https://github.com/simplex-chat/simplexmq/blob/stable/protocol/overview-tjr.md) for more information on platform objectives and technical design.
+See [Privateline X-Chat whitepaper](https://github.com/simplex-chat/simplexmq/blob/stable/protocol/overview-tjr.md) for more information on platform objectives and technical design.
 
-See [SimpleX Chat Protocol](./docs/protocol/simplex-chat.md) for the format of messages sent between chat clients over [SimpleX Messaging Protocol](https://github.com/simplex-chat/simplexmq/blob/stable/protocol/simplex-messaging.md).
+See [Privateline X-Chat Protocol](./docs/protocol/simplex-chat.md) for the format of messages sent between chat clients over [Privateline X-Chat Messaging Protocol](https://github.com/simplex-chat/simplexmq/blob/stable/protocol/simplex-messaging.md).
 
 ## Privacy and security: technical details and limitations
 
-SimpleX Chat is a work in progress – we are releasing improvements as they are ready. You have to decide if the current state is good enough for your usage scenario.
+Privateline X-Chat is a work in progress – we are releasing improvements as they are ready. You have to decide if the current state is good enough for your usage scenario.
 
 We compiled a [glossary of terms](./docs/GLOSSARY.md) used to describe communication systems to help understand some terms below and to help compare advantages and disadvantages of various communication systems.
 
 What is already implemented:
 
-1. Instead of user profile identifiers used by all other platforms, even the most private ones, SimpleX uses [pairwise per-queue identifiers](./docs/GLOSSARY.md#pairwise-pseudonymous-identifier) (2 addresses for each unidirectional message queue, with an optional 3rd address for push notifications on iOS, 2 queues in each connection between the users). It makes observing the network graph on the application level more difficult, as for `n` users there can be up to `n * (n-1)` message queues.
+1. Instead of user profile identifiers used by all other platforms, even the most private ones, Privateline X-Chat uses [pairwise per-queue identifiers](./docs/GLOSSARY.md#pairwise-pseudonymous-identifier) (2 addresses for each unidirectional message queue, with an optional 3rd address for push notifications on iOS, 2 queues in each connection between the users). It makes observing the network graph on the application level more difficult, as for `n` users there can be up to `n * (n-1)` message queues.
 2. [End-to-end encryption](./docs/GLOSSARY.md#end-to-end-encryption) in each message queue using [NaCl cryptobox](https://nacl.cr.yp.to/box.html). This is added to allow redundancy in the future (passing each message via several servers), to avoid having the same ciphertext in different queues (that would only be visible to the attacker if TLS is compromised). The encryption keys used for this encryption are not rotated, instead we are planning to rotate the queues. Curve25519 keys are used for key negotiation.
 3. [Double ratchet](./docs/GLOSSARY.md#double-ratchet-algorithm) end-to-end encryption in each conversation between two users (or group members). This is the same algorithm that is used in Signal and many other messaging apps; it provides OTR messaging with [forward secrecy](./docs/GLOSSARY.md#forward-secrecy) (each message is encrypted by its own ephemeral key) and [break-in recovery](./docs/GLOSSARY.md#post-compromise-security) (the keys are frequently re-negotiated as part of the message exchange). Two pairs of Curve448 keys are used for the initial [key agreement](./docs/GLOSSARY.md#key-agreement-protocol), initiating party passes these keys via the connection link, accepting side - in the header of the confirmation message.
 4. [Post-quantum resistant key exchange](./docs/GLOSSARY.md#post-quantum-cryptography) in double ratchet protocol *on every ratchet step*. Read more in [this post](./blog/20240314-simplex-chat-v5-6-quantum-resistance-signal-double-ratchet-algorithm.md) and also see this [publication by Apple]( https://security.apple.com/blog/imessage-pq3/) explaining the need for post-quantum key rotation.
@@ -305,11 +191,11 @@ What is already implemented:
 6. Several levels of [content padding](./docs/GLOSSARY.md#message-padding) to frustrate message size attacks.
 7. All message metadata, including the time when the message was received by the server (rounded to a second) is sent to the recipients inside an encrypted envelope, so even if TLS is compromised it cannot be observed.
 8. Only TLS 1.2/1.3 are allowed for client-server connections, limited to cryptographic algorithms: CHACHA20POLY1305_SHA256, Ed25519/Ed448, Curve25519/Curve448.
-9. To protect against replay attacks SimpleX servers require [tlsunique channel binding](https://www.rfc-editor.org/rfc/rfc5929.html) as session ID in each client command signed with per-queue ephemeral key.
-10. To protect your IP address from unknown messaging relays, and for per-message transport anonymity (compared with Tor/VPN per-connection anonymity), from v6.0 all SimpleX Chat clients use private message routing by default. Read more in [this post](./blog/20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md#private-message-routing).
-11. To protect your IP address from unknown file relays, when SOCKS proxy is not enabled SimpleX Chat clients ask for a confirmation before downloading the files from unknown servers.
-12. To protect your IP address from known servers all SimpleX Chat clients support accessing messaging servers via Tor - see [v3.1 release announcement](./blog/20220808-simplex-chat-v3.1-chat-groups.md) for more details.
-13. Local database encryption with passphrase - your contacts, groups and all sent and received messages are stored encrypted. If you used SimpleX Chat before v4.0 you need to enable the encryption via the app settings.
+9. To protect against replay attacks Privateline X-Chat servers require [tlsunique channel binding](https://www.rfc-editor.org/rfc/rfc5929.html) as session ID in each client command signed with per-queue ephemeral key.
+10. To protect your IP address from unknown messaging relays, and for per-message transport anonymity (compared with Tor/VPN per-connection anonymity), from v6.0 all Privateline X-Chat clients use private message routing by default. Read more in [this post](./blog/20240604-simplex-chat-v5.8-private-message-routing-chat-themes.md#private-message-routing).
+11. To protect your IP address from unknown file relays, when SOCKS proxy is not enabled Privateline X-Chat clients ask for a confirmation before downloading the files from unknown servers.
+12. To protect your IP address from known servers all Privateline X-Chat clients support accessing messaging servers via Tor - see [v3.1 release announcement](./blog/20220808-simplex-chat-v3.1-chat-groups.md) for more details.
+13. Local database encryption with passphrase - your contacts, groups and all sent and received messages are stored encrypted. If you used Privateline X-Chat before v4.0 you need to enable the encryption via the app settings.
 14. Transport isolation - different TCP connections and Tor circuits are used for traffic of different user profiles, optionally - for different contacts and group member connections.
 15. Manual messaging queue rotations to move conversation to another SMP relay.
 16. Sending end-to-end encrypted files using [XFTP protocol](https://simplex.chat/blog/20230301-simplex-file-transfer-protocol.html).
@@ -329,26 +215,26 @@ You can:
 
 - [create chat bots and services](#develop-a-chat-bot).
 - run [simplex-chat terminal CLI](./docs/CLI.md) to execute individual chat commands, e.g. to send messages as part of shell script execution.
-- use SimpleX Chat library to integrate chat functionality into your mobile apps.
+- use Privateline X-Chat library to integrate chat functionality into your mobile apps.
 - create chat bots and services in Haskell - see [simple](./apps/simplex-bot/) and more [advanced chat bot example](./apps/simplex-bot-advanced/).
 
-If you are considering developing with SimpleX platform please get in touch for any advice and support.
+If you are considering developing with Privateline X-Chat platform please get in touch for any advice and support.
 
 Please also join [#simplex-devs](https://simplex.chat/contact#/?v=1-2&smp=smp%3A%2F%2Fu2dS9sG8nMNURyZwqASV4yROM28Er0luVTx5X1CsMrU%3D%40smp4.simplex.im%2F6eHqy7uAbZPOcA6qBtrQgQquVlt4Ll91%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAqV_pg3FF00L98aCXp4D3bOs4Sxv_UmSd-gb0juVoQVs%253D%26srv%3Do5vmywmrnaxalvz6wi3zicyftgio6psuvyniis6gco6bp6ekl4cqj4id.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22XonlixcHBIb2ijCehbZoiw%3D%3D%22%7D) group to ask any questions and share your success stories.
 
 ## Develop a chat bot
 
-You can create a chat bot or any chat-based service in any language running SimpleX Chat terminal CLI as a local WebSocket server.
+You can create a chat bot or any chat-based service in any language running Privateline X-Chat terminal CLI as a local WebSocket server.
 
 See [our new bot API reference](./bots/README.md). Most of it is automatically generated from core library types, so it stays up to date.
 
-Also see [TypeScript SimpleX Chat client](./packages/simplex-chat-client/) and [JavaScript chat bot example](./packages/simplex-chat-client/typescript/examples/squaring-bot.js).
+Also see [TypeScript Privateline X-Chat client](./packages/simplex-chat-client/) and [JavaScript chat bot example](./packages/simplex-chat-client/typescript/examples/squaring-bot.js).
 
 ## Roadmap
 
-- ✅ Easy to deploy SimpleX server with in-memory message storage, without any dependencies.
+- ✅ Easy to deploy Privateline X-Chat server with in-memory message storage, without any dependencies.
 - ✅ Terminal (console) client with groups and files support.
-- ✅ One-click SimpleX server deployment on Linode.
+- ✅ One-click Privateline X-Chat server deployment on Linode.
 - ✅ End-to-end encryption using double-ratchet protocol with additional encryption layer.
 - ✅ Mobile apps v1 for Android and iOS.
 - ✅ Private instant notifications for Android using background service.
@@ -418,13 +304,13 @@ Also see [TypeScript SimpleX Chat client](./packages/simplex-chat-client/) and [
 
 ## Disclaimers
 
-[SimpleX protocols and security model](https://github.com/simplex-chat/simplexmq/blob/master/protocol/overview-tjr.md) was reviewed, and had many breaking changes and improvements in v1.0.0.
+[Privateline X-Chat protocols and security model](https://github.com/simplex-chat/simplexmq/blob/master/protocol/overview-tjr.md) was reviewed, and had many breaking changes and improvements in v1.0.0.
 
-The implementation security assessment of SimpleX cryptography and networking was done in October 2022 by [Trail of Bits](https://www.trailofbits.com/about) – see [the announcement](./blog/20221108-simplex-chat-v4.2-security-audit-new-website.md).
+The implementation security assessment of Privateline X-Chat cryptography and networking was done in October 2022 by [Trail of Bits](https://www.trailofbits.com/about) – see [the announcement](./blog/20221108-simplex-chat-v4.2-security-audit-new-website.md).
 
-The cryptographic review of SimpleX protocols was done in July 2024 by Trail of Bits – see [the announcement](./blog/20241014-simplex-network-v6-1-security-review-better-calls-user-experience.md).
+The cryptographic review of Privateline X-Chat protocols was done in July 2024 by Trail of Bits – see [the announcement](./blog/20241014-simplex-network-v6-1-security-review-better-calls-user-experience.md).
 
-SimpleX Chat is still a relatively early stage platform (the mobile apps were released in March 2022), so you may discover some bugs and missing features. We would really appreciate if you let us know anything that needs to be fixed or improved.
+Privateline X-Chat is still a relatively early stage platform (the mobile apps were released in March 2022), so you may discover some bugs and missing features. We would really appreciate if you let us know anything that needs to be fixed or improved.
 
 The default servers configured in the app are provided on the best effort basis. We are currently not guaranteeing any SLAs, although historically our servers had over 99.9% uptime each.
 
@@ -442,14 +328,4 @@ Please do NOT report security vulnerabilities via GitHub issues.
 
 ## License
 
-This software is licensed under the GNU Affero General Public License version 3 (AGPLv3). See the [LICENSE](./LICENSE) file for details. The SimpleX and SimpleX Chat name, logo, and associated branding materials are not covered by this license and are subject to the terms outlined in the [TRADEMARK](./docs/TRADEMARK.md) file.
-
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/apple_store.svg" alt="iOS app" height="42">](https://apps.apple.com/us/app/simplex-chat/id1605771084)
-&nbsp;
-[![Android app](https://github.com/simplex-chat/.github/blob/master/profile/images/google_play.svg)](https://play.google.com/store/apps/details?id=chat.simplex.app)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/f_droid.svg" alt="F-Droid" height="41">](https://app.simplex.chat)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/testflight.png" alt="iOS TestFlight" height="41">](https://testflight.apple.com/join/DWuT2LQu)
-&nbsp;
-[<img src="https://github.com/simplex-chat/.github/blob/master/profile/images/apk_icon.png" alt="APK" height="41">](https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex.apk)
+This software is licensed under the GNU Affero General Public License version 3 (AGPLv3). See the [LICENSE](./LICENSE) file for details. The Privateline X-Chat and Privateline X-Chat name, logo, and associated branding materials are not covered by this license and are subject to the terms outlined in the [TRADEMARK](./docs/TRADEMARK.md) file.
