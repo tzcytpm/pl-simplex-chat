@@ -22,7 +22,7 @@ operatorSimpleXChat =
   ServerOperator
     { operatorId = DBNewEntity
     , operatorTag = Just OTSimplex
-    , Chat = "Smp Privateline X-Chat"
+    , tradeName = "Smp Privateline X-Chat"
     , legalName = Just "PrivateLine"
     , serverDomains = ["smp01.privateline.io", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
     , conditionsAcceptance = CARequired Nothing
