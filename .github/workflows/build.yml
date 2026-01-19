@@ -358,14 +358,14 @@ jobs:
           - os: macos-latest
             ghc: ${{ needs.variables.outputs.GHC_VER }}
             cli_asset_name: plx-chat-macos-aarch64
-            desktop_asset_name: plx-desktop-macos-aarch64.dmg
+            desktop_asset_name: plx-chat-desktop-macos-aarch64.dmg
             openssl_dir: "/opt/homebrew/opt"
             should_run: false
             should_test: false
           - os: macos-15-intel
             ghc: ${{ needs.variables.outputs.GHC_VER }}
             cli_asset_name: plx-chat-macos-x86-64
-            desktop_asset_name: plx-desktop-macos-x86_64.dmg
+            desktop_asset_name: plx-chat-desktop-macos-x86_64.dmg
             openssl_dir: "/usr/local/opt"
             should_run: true
             should_test: false
@@ -430,7 +430,7 @@ jobs:
           APPLE_SIMPLEX_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_SIMPLEX_NOTARIZATION_PASSWORD }}
         run: |
           scripts/ci/build-desktop-mac.sh
-          path=$(echo $PWD/apps/multiplatform/release/main/dmg/PLXChat-*.dmg)
+          path=$(echo $PWD/apps/multiplatform/release/main/dmg/PLX-Chat-*.dmg)
           echo "package_path=$path" >> $GITHUB_OUTPUT
           echo "package_hash=$(echo SHA2-256\(${{ matrix.desktop_asset_name }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
@@ -481,8 +481,8 @@ jobs:
         include:
           - os: windows-latest
             ghc: ${{ needs.variables.outputs.GHC_VER }}
-            cli_asset_name: simplex-chat-windows-x86-64
-            desktop_asset_name: simplex-desktop-windows-x86_64.msi
+            cli_asset_name: plx-chat-windows-x86-64
+            desktop_asset_name: plx-chat-desktop-windows-x86_64.msi
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
