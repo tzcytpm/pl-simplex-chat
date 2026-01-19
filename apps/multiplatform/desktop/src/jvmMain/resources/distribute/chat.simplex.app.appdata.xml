@@ -9,7 +9,7 @@
 
   <description>
     <p>Security assessment was done by Trail of Bits in November 2022.</p>
-    <p>SimpleX Chat features:</p>
+    <p>PLX-Chat features:</p>
     <ul>
       <li>end-to-end encrypted messages, with editing, replies and deletion of messages.</li>
       <li>sending end-to-end encrypted images and files.</li>
@@ -21,7 +21,7 @@
       <li>encrypted app database and files in the app storage (except videos).</li>
       <li>18 interface languages.</li>
     </ul>
-    <p>SimpleX Chat advantages:</p>
+    <p>PLX-Chat advantages:</p>
     <ul>
       <li><em>Full privacy of your identity, profile, contacts and metadata</em>: unlike any other existing messaging platform, SimpleX uses no phone numbers or any other identifiers assigned to the users - not even random numbers. This protects the privacy of who you are communicating with, hiding it from SimpleX platform servers and from any observers.</li>
       <li><em>Complete protection against spam and abuse</em>: as you have no identifier on SimpleX platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address.</li>
@@ -48,7 +48,7 @@
     </screenshot>
   </screenshots>
 
-  <url type="homepage">https://simplex.chat</url>
+  <url type="homepage">https://privateline.io</url>
   <url type="bugtracker">https://github.com/simplex-chat/simplex-chat/issues</url>
   <url type="translate">https://github.com/simplex-chat/simplex-chat#help-translating-simplex-chat</url>
   <url type="contact">https://simplex.chat/connect-team</url>
