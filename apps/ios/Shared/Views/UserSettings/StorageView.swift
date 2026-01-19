@@ -1,6 +1,6 @@
 //
 //  StorageView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Stanislav Dmitrenko on 13.01.2025.
 //  Copyright © 2025 Privateline X-Chat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  AppSettings.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Avently on 26.02.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ChatWallpaper.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Avently on 14.06.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

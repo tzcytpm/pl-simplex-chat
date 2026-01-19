@@ -2648,7 +2648,7 @@ We will be adding server redundancy to prevent lost messages.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="PrivatelineX contact address" xml:space="preserve" approved="no">
-        <source>SimpleX contact address</source>
+        <source>PrivatelineX contact address</source>
         <target state="translated">عنوان جهة أتصال SimpleX</target>
         <note>simplex link type</note>
       </trans-unit>
@@ -2884,8 +2884,8 @@ We will be adding server redundancy to prevent lost messages.</source>
         <source>To prevent the call interruption, enable Do Not Disturb mode.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your privacy, SimpleX uses separate IDs for each of your contacts." xml:space="preserve">
-        <source>To protect your privacy, SimpleX uses separate IDs for each of your contacts.</source>
+      <trans-unit id="To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." xml:space="preserve">
+        <source>To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="To protect timezone, image/voice files use UTC." xml:space="preserve">
@@ -3250,8 +3250,8 @@ To connect, please ask your contact to create another connection link and check 
         <source>Your SMP servers</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Your SimpleX contact address" xml:space="preserve">
-        <source>Your SimpleX contact address</source>
+      <trans-unit id="Your PrivatelineX contact address" xml:space="preserve">
+        <source>Your PrivatelineX contact address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Your calls" xml:space="preserve">
@@ -5871,7 +5871,7 @@ This is your own one-time link!</source>
         <note>Privacy - Camera Usage Description</note>
       </trans-unit>
       <trans-unit id="NSFaceIDUsageDescription" xml:space="preserve">
-        <source>SimpleX uses Face ID for local authentication</source>
+        <source>PrivatelineX uses Face ID for local authentication</source>
         <note>Privacy - Face ID Usage Description</note>
       </trans-unit>
       <trans-unit id="NSMicrophoneUsageDescription" xml:space="preserve">
@@ -5898,7 +5898,7 @@ This is your own one-time link!</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <source>Copyright © 2026 Privateline X-Chat. All rights reserved.</source>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>

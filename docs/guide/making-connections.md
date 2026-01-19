@@ -13,7 +13,7 @@ Private Connection — connect using an invitation link or QR code via video or 
 
 Group Chat — Users have the option to create a secret group, share their contact link [which can be deleted later on], or generate a one-time invitation link.
 
-## Your SimpleX contact address
+## Your PrivatelineX contact address
 
 You can [create an optional long term address](./app-settings.md#your-simplex-contact-address) for other people to connect with you. Unlike 1-time invitation links, these addresses can be used many times, that makes them good to share online, e.g. on social media platforms, or in email signatures. That helps more people discover Privateline X-Chat, so please do it!
 
@@ -21,13 +21,13 @@ When people connect to you via this address, you will receive a connection reque
 
 If you start receiving too many requests via this address it is always safe to remove it – all the connections you created via this address will remain active, as this address is not used to deliver the messages.
 
-### Comparison of 1-time invitation links and SimpleX Contact addresses
+### Comparison of 1-time invitation links and PrivatelineX contact addresses
 
 <table>
   <tr>
     <th></th>
     <th>1-time invitation link</th>
-    <th>SimpleX contact address</th>
+    <th>PrivatelineX contact address</th>
   </tr>
   <tr>
     <td>Can be used many times?</td>

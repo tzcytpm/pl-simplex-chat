@@ -1,6 +1,6 @@
 //
 //  MemberSupportChatToolbar.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 01.05.2025.
 //  Copyright © 2025 Privateline X-Chat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  EndlessScrollView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Stanislav Dmitrenko on 25.01.2025.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

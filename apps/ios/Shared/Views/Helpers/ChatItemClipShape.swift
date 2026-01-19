@@ -1,6 +1,6 @@
 //
 //  ChatItemClipShape.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Levitating Pineapple on 04/07/2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

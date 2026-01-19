@@ -1,9 +1,9 @@
 //
 //  SMPServerView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Evgeny on 15/11/2022.
-//  Copyright © 2022 Privateline X-Chat. All rights reserved.
+//  Copyright © 2026 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI

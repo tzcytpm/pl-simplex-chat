@@ -1,9 +1,9 @@
 //
 //  GroupChatInfoView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
-//  Created by JRoberts on 14.07.2022.
-//  Copyright © 2022 Privateline X-Chat. All rights reserved.
+//  Created by JRoberts on 14.07.2022. Thz fixed on 20.01.2025 Thz fixed on 20.01.2025
+//  Copyright © 2026 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI

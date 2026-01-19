@@ -1,6 +1,6 @@
 //
 //  GroupMentions.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Diogo Cunha on 30/01/2025.
 //  Copyright © 2025 Privateline X-Chat. All rights reserved.

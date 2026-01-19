@@ -1,6 +1,6 @@
 //
 //  CIRcvDecryptionError.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Evgeny on 15/04/2023.
 //  Copyright © 2023 Privateline X-Chat. All rights reserved.

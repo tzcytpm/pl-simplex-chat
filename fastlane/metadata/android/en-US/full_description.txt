@@ -12,7 +12,7 @@
 </ul>
 <p>Privateline X-Chat advantages:</p>
 <ul>
-  <li><strong>Full privacy of your identity, profile, contacts and metadata</strong>: unlike any other existing messaging platform, SimpleX uses no phone numbers or any other identifiers assigned to the users - not even random numbers. This protects the privacy of who you are communicating with, hiding it from SimpleX platform servers and from any observers.</li>
+  <li><strong>Full privacy of your identity, profile, contacts and metadata</strong>: unlike any other existing messaging platform, PrivatelineX uses no phone numbers or any other identifiers assigned to the users - not even random numbers. This protects the privacy of who you are communicating with, hiding it from SimpleX platform servers and from any observers.</li>
   <li><strong>Complete protection against spam and abuse</strong>: as you have no identifier on SimpleX platform, you cannot be contacted unless you share a one-time invitation link or an optional temporary user address.</li>
   <li><strong>Full ownership, control and security of your data</strong>: SimpleX stores all user data on client devices, the messages are only held temporarily on SimpleX relay servers until they are received.</li>
   <li><strong>Decentralized network</strong>: you can use SimpleX with your own servers and still communicate with people using the servers that are pre-configured in the apps or any other SimpleX servers.</li>

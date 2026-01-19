@@ -4110,7 +4110,7 @@ chat item action */
 "To protect your information, turn on PrivatelineX Lock.\nYou will be prompted to complete authentication before this feature is enabled." = "За да защитите информацията си, включете SimpleX заключване.\nЩе бъдете подканени да извършите идентификация, преди тази функция да бъде активирана.";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "За да се защити поверителността, вместо потребителски идентификатори, използвани от всички други платформи, SimpleX има идентификатори за опашки от съобщения, отделни за всеки от вашите контакти.";
+"To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." = "За да се защити поверителността, вместо потребителски идентификатори, използвани от всички други платформи, SimpleX има идентификатори за опашки от съобщения, отделни за всеки от вашите контакти.";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "За да запишете гласово съобщение, моля, дайте разрешение за използване на микрофон.";

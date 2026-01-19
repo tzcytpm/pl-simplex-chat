@@ -1,6 +1,6 @@
 //
 //  NavStackCompat.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Evgeny on 23/01/2023.
 //  Copyright © 2023 Privateline X-Chat. All rights reserved.

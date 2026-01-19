@@ -1,6 +1,6 @@
 //
 //  MailView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 01.05.2023.
 //  Copyright © 2023 Privateline X-Chat. All rights reserved.

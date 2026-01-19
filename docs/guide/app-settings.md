@@ -35,7 +35,7 @@ When "Incognito” is turned on, your current profile name and image are NOT sha
 
 Please read more in [this post](../../blog/20220901-simplex-chat-v3.2-incognito-mode.md#incognito-mode).
 
-### Your SimpleX contact address
+### Your PrivatelineX contact address
 
 <img src="../../blog/images/20221108-address1.png" width="288"> &nbsp;&nbsp; <img src="../../blog/images/20221108-address2.png" width="288">
 

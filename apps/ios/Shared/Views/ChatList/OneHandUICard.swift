@@ -1,6 +1,6 @@
 //
 //  OneHandUICard.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by EP on 06/08/2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

@@ -1,9 +1,9 @@
 //
 //  HowItWorks.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Evgeny on 08/05/2022.
-//  Copyright © 2022 Privateline X-Chat. All rights reserved.
+//  Copyright © 2026 Privateline X-Chat. All rights reserved.
 //
 
 import SwiftUI
@@ -23,7 +23,7 @@ struct HowItWorks: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Group {
-                        Text("To protect your privacy, SimpleX uses separate IDs for each of your contacts.")
+                        Text("To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.")
                         Text("Only client devices store user profiles, contacts, groups, and messages.")
                         Text("All messages and files are sent **end-to-end encrypted**, with post-quantum security in direct messages.")
                         if !onboarding {

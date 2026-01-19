@@ -1,6 +1,6 @@
 //
 //  ChooseServerOperators.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 31.10.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ChatItemForwardingView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 12.04.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

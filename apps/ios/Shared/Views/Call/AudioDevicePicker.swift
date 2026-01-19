@@ -1,6 +1,6 @@
 //
 //  MPVolumeView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Avently on 24.04.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

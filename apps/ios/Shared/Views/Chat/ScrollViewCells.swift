@@ -1,6 +1,6 @@
 //
 //  ScrollViewCells.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Stanislav Dmitrenko on 27.01.2025.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

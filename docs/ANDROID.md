@@ -7,7 +7,7 @@ revision: 07.02.2023
 
 # Accessing files in Android app
 
-SimpleX uses databases and stores its preferences inside private data directory in Android. The directory contains:
+PrivatelineX uses databases and stores its preferences inside private data directory in Android. The directory contains:
 - databases
 - sent and received files
 - temporary files that will be deleted when not needed

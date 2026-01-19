@@ -2846,7 +2846,7 @@ We will be adding server redundancy to prevent lost messages.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="PrivatelineX contact address" xml:space="preserve" approved="no">
-        <source>SimpleX contact address</source>
+        <source>PrivatelineX contact address</source>
         <target state="translated">SimpleX 聯絡人地址</target>
         <note>simplex link type</note>
       </trans-unit>
@@ -3113,8 +3113,8 @@ We will be adding server redundancy to prevent lost messages.</source>
         <source>To prevent the call interruption, enable Do Not Disturb mode.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your privacy, SimpleX uses separate IDs for each of your contacts." xml:space="preserve" approved="no">
-        <source>To protect your privacy, SimpleX uses separate IDs for each of your contacts.</source>
+      <trans-unit id="To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." xml:space="preserve" approved="no">
+        <source>To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.</source>
         <target state="translated">為了保護隱私，而不像是其他平台般需要提取和存儲用戶的 IDs 資料，SimpleX 平台有自家佇列的標識符，這對於你的每個聯絡人也是獨一無二的。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -3550,8 +3550,8 @@ To connect, please ask your contact to create another connection link and check 
         <target state="translated">你的 SMP 伺服器</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Your SimpleX contact address" xml:space="preserve">
-        <source>Your SimpleX contact address</source>
+      <trans-unit id="Your PrivatelineX contact address" xml:space="preserve">
+        <source>Your PrivatelineX contact address</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Your calls" xml:space="preserve" approved="no">
@@ -6498,7 +6498,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <note>Privacy - Camera Usage Description</note>
       </trans-unit>
       <trans-unit id="NSFaceIDUsageDescription" xml:space="preserve" approved="no">
-        <source>SimpleX uses Face ID for local authentication</source>
+        <source>PrivatelineX uses Face ID for local authentication</source>
         <target state="translated">SimpleX 用 Face ID 去進行本機認證</target>
         <note>Privacy - Face ID Usage Description</note>
       </trans-unit>
@@ -6530,7 +6530,7 @@ It can happen because of some bug or when the connection is compromised.</source
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve" approved="no">
-        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <source>Copyright © 2026 Privateline X-Chat. All rights reserved.</source>
         <target state="translated">版權所有© 2022 Privateline X-Chat。保留所有權利。</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>

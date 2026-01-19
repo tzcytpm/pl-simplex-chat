@@ -1,9 +1,9 @@
 //
 //  CallController.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Evgeny on 21/05/2022.
-//  Copyright © 2022 Privateline X-Chat. All rights reserved.
+//  Copyright © 2026 Privateline X-Chat. All rights reserved.
 //
 
 import Foundation

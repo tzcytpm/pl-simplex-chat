@@ -7303,7 +7303,7 @@ chat item action</note>
         <note>simplex link type</note>
       </trans-unit>
       <trans-unit id="PrivatelineX contact address" xml:space="preserve">
-        <source>SimpleX contact address</source>
+        <source>PrivatelineX contact address</source>
         <target>SimpleX адрес за контакт</target>
         <note>simplex link type</note>
       </trans-unit>
@@ -7942,8 +7942,8 @@ You will be prompted to complete authentication before this feature is enabled.<
 Ще бъдете подканени да извършите идентификация, преди тази функция да бъде активирана.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your privacy, SimpleX uses separate IDs for each of your contacts." xml:space="preserve">
-        <source>To protect your privacy, SimpleX uses separate IDs for each of your contacts.</source>
+      <trans-unit id="To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." xml:space="preserve">
+        <source>To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.</source>
         <target>За да се защити поверителността, вместо потребителски идентификатори, използвани от всички други платформи, SimpleX има идентификатори за опашки от съобщения, отделни за всеки от вашите контакти.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -10145,12 +10145,12 @@ last received msg: %2$@</source>
         <note>Privacy - Camera Usage Description</note>
       </trans-unit>
       <trans-unit id="NSFaceIDUsageDescription" xml:space="preserve">
-        <source>SimpleX uses Face ID for local authentication</source>
+        <source>PrivatelineX uses Face ID for local authentication</source>
         <target>SimpleX използва Face ID за локалнa идентификация</target>
         <note>Privacy - Face ID Usage Description</note>
       </trans-unit>
       <trans-unit id="NSLocalNetworkUsageDescription" xml:space="preserve">
-        <source>SimpleX uses local network access to allow using user chat profile via desktop app on the same network.</source>
+        <source>PrivatelineX uses local network access to allow using user chat profile via desktop app on the same network.</source>
         <target>SimpleX използва достъп до локална мрежа, за да позволи използването на потребителския чат профил чрез настолно приложение в същата мрежа.</target>
         <note>Privacy - Local Network Usage Description</note>
       </trans-unit>
@@ -10182,7 +10182,7 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <source>Copyright © 2026 Privateline X-Chat. All rights reserved.</source>
         <target>Авторско право © 2022 Privateline X-Chat. Всички права запазени.</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>

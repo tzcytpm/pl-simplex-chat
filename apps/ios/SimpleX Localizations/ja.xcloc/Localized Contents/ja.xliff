@@ -7026,7 +7026,7 @@ chat item action</note>
         <note>simplex link type</note>
       </trans-unit>
       <trans-unit id="PrivatelineX contact address" xml:space="preserve">
-        <source>SimpleX contact address</source>
+        <source>PrivatelineX contact address</source>
         <target>SimpleX連絡先アドレス</target>
         <note>simplex link type</note>
       </trans-unit>
@@ -7648,8 +7648,8 @@ You will be prompted to complete authentication before this feature is enabled.<
 オンにするには、認証ステップが行われます。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your privacy, SimpleX uses separate IDs for each of your contacts." xml:space="preserve">
-        <source>To protect your privacy, SimpleX uses separate IDs for each of your contacts.</source>
+      <trans-unit id="To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." xml:space="preserve">
+        <source>To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.</source>
         <target>プライバシーを保護するために、SimpleX には、他のすべてのプラットフォームで使用されるユーザー ID の代わりに、連絡先ごとに個別のメッセージ キューの識別子があります。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -9778,12 +9778,12 @@ last received msg: %2$@</source>
         <note>Privacy - Camera Usage Description</note>
       </trans-unit>
       <trans-unit id="NSFaceIDUsageDescription" xml:space="preserve">
-        <source>SimpleX uses Face ID for local authentication</source>
+        <source>PrivatelineX uses Face ID for local authentication</source>
         <target>SimpleXはローカル認証にFace IDを使用します</target>
         <note>Privacy - Face ID Usage Description</note>
       </trans-unit>
       <trans-unit id="NSLocalNetworkUsageDescription" xml:space="preserve">
-        <source>SimpleX uses local network access to allow using user chat profile via desktop app on the same network.</source>
+        <source>PrivatelineX uses local network access to allow using user chat profile via desktop app on the same network.</source>
         <note>Privacy - Local Network Usage Description</note>
       </trans-unit>
       <trans-unit id="NSMicrophoneUsageDescription" xml:space="preserve">
@@ -9814,8 +9814,8 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
-        <target>Copyright © 2022 Privateline X-Chat. All rights reserved.</target>
+        <source>Copyright © 2026 Privateline X-Chat. All rights reserved.</source>
+        <target>Copyright © 2026 Privateline X-Chat. All rights reserved.</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>
     </body>

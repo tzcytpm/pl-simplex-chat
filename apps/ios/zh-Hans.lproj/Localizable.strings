@@ -4980,7 +4980,7 @@ chat item action */
 "To protect your IP address, private routing uses your SMP servers to deliver messages." = "为了保护您的 IP 地址，私有路由使用您的 SMP 服务器来传递邮件。";
 
 /* No comment provided by engineer. */
-"To protect your privacy, SimpleX uses separate IDs for each of your contacts." = "为了保护隐私，SimpleX使用针对消息队列的标识符，而不是所有其他平台使用的用户ID，每个联系人都有独立的标识符。";
+"To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." = "为了保护隐私，SimpleX使用针对消息队列的标识符，而不是所有其他平台使用的用户ID，每个联系人都有独立的标识符。";
 
 /* No comment provided by engineer. */
 "To record voice message please grant permission to use Microphone." = "请授权使用麦克风以录制语音消息。";

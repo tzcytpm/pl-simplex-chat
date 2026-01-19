@@ -7566,7 +7566,7 @@ chat item action</note>
         <note>simplex link type</note>
       </trans-unit>
       <trans-unit id="PrivatelineX contact address" xml:space="preserve">
-        <source>SimpleX contact address</source>
+        <source>PrivatelineX contact address</source>
         <target>SimpleX 联系地址</target>
         <note>simplex link type</note>
       </trans-unit>
@@ -8226,8 +8226,8 @@ You will be prompted to complete authentication before this feature is enabled.<
 在启用此功能之前，系统将提示您完成身份验证。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="To protect your privacy, SimpleX uses separate IDs for each of your contacts." xml:space="preserve">
-        <source>To protect your privacy, SimpleX uses separate IDs for each of your contacts.</source>
+      <trans-unit id="To protect your privacy, PrivatelineX uses separate IDs for each of your contacts." xml:space="preserve">
+        <source>To protect your privacy, PrivatelineX uses separate IDs for each of your contacts.</source>
         <target>为了保护隐私，SimpleX使用针对消息队列的标识符，而不是所有其他平台使用的用户ID，每个联系人都有独立的标识符。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -10474,12 +10474,12 @@ last received msg: %2$@</source>
         <note>Privacy - Camera Usage Description</note>
       </trans-unit>
       <trans-unit id="NSFaceIDUsageDescription" xml:space="preserve">
-        <source>SimpleX uses Face ID for local authentication</source>
+        <source>PrivatelineX uses Face ID for local authentication</source>
         <target>SimpleX 使用Face ID进行本地身份验证</target>
         <note>Privacy - Face ID Usage Description</note>
       </trans-unit>
       <trans-unit id="NSLocalNetworkUsageDescription" xml:space="preserve">
-        <source>SimpleX uses local network access to allow using user chat profile via desktop app on the same network.</source>
+        <source>PrivatelineX uses local network access to allow using user chat profile via desktop app on the same network.</source>
         <target>SimpleX 使用本地网络访问，允许通过同一网络上的桌面应用程序使用用户聊天配置文件。</target>
         <note>Privacy - Local Network Usage Description</note>
       </trans-unit>
@@ -10511,7 +10511,7 @@ last received msg: %2$@</source>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
-        <source>Copyright © 2022 Privateline X-Chat. All rights reserved.</source>
+        <source>Copyright © 2026 Privateline X-Chat. All rights reserved.</source>
         <target>版权所有 © 2022 Privateline X-Chat。保留所有权利。</target>
         <note>Copyright (human-readable)</note>
       </trans-unit>

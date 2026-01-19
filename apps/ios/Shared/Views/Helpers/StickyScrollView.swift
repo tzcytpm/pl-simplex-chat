@@ -1,6 +1,6 @@
 //
 //  StickyScrollView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by user on 20/09/2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

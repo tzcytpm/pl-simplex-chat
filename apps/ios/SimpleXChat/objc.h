@@ -1,6 +1,6 @@
 //
 //  objc.h
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by Stanislav Dmitrenko on 09.09.2024.
 //  Copyright © 2024 Privateline X-Chat. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  SecondaryChatView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 29.04.2025.
 //  Copyright © 2025 Privateline X-Chat. All rights reserved.

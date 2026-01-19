@@ -1,6 +1,6 @@
 //
 //  ContextContactRequestActionsView.swift
-//  SimpleX (iOS)
+//  PrivatelineX (iOS)
 //
 //  Created by spaced4ndy on 02.05.2025.
 //  Copyright © 2025 Privateline X-Chat. All rights reserved.
