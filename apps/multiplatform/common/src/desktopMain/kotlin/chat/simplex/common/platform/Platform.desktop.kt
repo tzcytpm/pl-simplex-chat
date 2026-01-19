@@ -11,7 +11,7 @@ val desktopPlatform = detectDesktopPlatform()
 enum class DesktopPlatform(val libExtension: String, val configPath: String, val dataPath: String, val githubAssetName: String) {
   LINUX_X86_64("so", unixConfigPath, unixDataPath, "plx-chat-desktop-x86_64.AppImage"),
   LINUX_AARCH64("so", unixConfigPath, unixDataPath, " plx-chat-desktop-aarch64.AppImage"),
-  WINDOWS_X86_64("dll", System.getenv("AppData") + File.separator + "SimpleX", System.getenv("AppData") + File.separator + "PLX-Chat", "plx-chat-desktop-windows-x86_64.msi"),
+  WINDOWS_X86_64("dll", System.getenv("AppData") + File.separator + "PLX-Chat", System.getenv("AppData") + File.separator + "PLX-Chat", "plx-chat-desktop-windows-x86_64.msi"),
   MAC_X86_64("dylib", unixConfigPath, unixDataPath, "plx-chat-desktop-macos-x86_64.dmg"),
   MAC_AARCH64("dylib", unixConfigPath, unixDataPath, "plx-chat-desktop-macos-aarch64.dmg");
 
