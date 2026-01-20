@@ -82,7 +82,7 @@ compose {
               sign.set(true)
               this.identity.set(identity)
               this.keychain.set(keychain)
-            }chat
+            }
             notarization {
               this.appleID.set(appleId)
               this.password.set(password)
