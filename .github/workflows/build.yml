@@ -560,7 +560,7 @@ jobs:
           cd apps/multiplatform
           ./gradlew packageMsi
           rm -rf dist-newstyle/src/direct-sq*
-          path=$(echo $PWD/release/main/msi/*imple*.msi | sed 's#/\([a-z]\)#\1:#' | sed 's#/#\\#g')
+          path=$(echo $PWD/release/main/msi/*rivateline*.msi | sed 's#/\([a-z]\)#\1:#' | sed 's#/#\\#g')
           echo "package_path=$path" >> $GITHUB_OUTPUT
           echo "package_hash=$(echo SHA2-256\(${{ matrix.desktop_asset_name }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
