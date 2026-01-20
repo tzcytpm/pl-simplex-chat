@@ -24,7 +24,7 @@ operatorSimpleXChat =
     , operatorTag = Just OTSimplex
     , tradeName = "Smp Privateline X-Chat"
     , legalName = Just "PrivateLine"
-    , serverDomains = ["smp01.privateline.io", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
+    , serverDomains = ["smp01.privateline.io"]
     , conditionsAcceptance = CARequired Nothing
     , enabled = True
     , smpRoles = allRoles
@@ -39,9 +39,9 @@ operatorFlux =
     , operatorTag = Just OTFlux
     , tradeName = "Privateline X-Chat"
     , legalName = Just "Privateline"
-    , serverDomains = ["smp01.privateline.io", "smpx01.privateline.dev", "xftp01.privateline.dev", "smpx02.privateline.dev", "xftp02.privateline.dev" ]
+    , serverDomains = ["smp01.privateline.io" ]
     , conditionsAcceptance = CARequired Nothing
-    , enabled = True
+    , enabled = False
     , smpRoles = ServerRoles { storage = False, proxy = True }
     , xftpRoles = ServerRoles { storage = False, proxy = True }
     }
@@ -73,7 +73,7 @@ enabledSimplexChatSMPServers =
 -- We do NOT include it in allPresetServers nor simplexChatSMPServers to avoid duplicates.
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
 disabledSimplexChatSMPServers =
-  [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.dev"
+  [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.io"
   ]
 
 -- =====================================================================
@@ -93,5 +93,5 @@ fluxSMPServers = map (presetServer' True) (L.toList fluxSMPServers_)
 
 fluxSMPServers_ :: NonEmpty SMPServer
 fluxSMPServers_ =
-  [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx02.privateline.dev"
+  [ "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=@smp01.privateline.io"
   ]
