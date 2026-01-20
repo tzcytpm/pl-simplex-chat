@@ -248,10 +248,10 @@ jobs:
         if: inputs.cli && matrix.should_run == true
         shell: bash
         run: |
-          docker cp builder:/out/simplex-chat ./simplex-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}
-          path="${{ github.workspace }}/simplex-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}"
+          docker cp builder:/out/simplex-chat ./privateline-x-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}
+          path="${{ github.workspace }}/privateline-x-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}"
           echo "bin_path=$path" >> $GITHUB_OUTPUT
-          echo "bin_hash=$(echo SHA2-256\(simplex-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
+          echo "bin_hash=$(echo SHA2-256\(privateline-x-chat-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
       - name: Upload CLI
         if: inputs.cli && matrix.should_run == true
@@ -274,17 +274,17 @@ jobs:
         if: matrix.should_run == true
         shell: bash
         run: |
-          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/deb/simplex_${{ matrix.arch }}.deb )
+          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/deb/privateline-x-chat${{ matrix.arch }}.deb )
           echo "package_path=$path" >> $GITHUB_OUTPUT
-          echo "package_hash=$(echo SHA2-256\(simplex-desktop-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}.deb\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
+          echo "package_hash=$(echo SHA2-256\(privateline-x-chat-desktop-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}.deb\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
       - name: Upload Desktop
         uses: ./.github/actions/prepare-release
         if: matrix.should_run == true
         with:
           bin_path: ${{ steps.linux_desktop_build.outputs.package_path }}
-          bin_name: simplex-desktop-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}.deb
-          bin_hash: ${{ steps.linux_desktop_build.outputs.package_hash }}
+          bin_name: privateline-x-chat-desktop-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}.deb
+          bin_hash: ${{ steps.linux_desktop_build.outputs.package_hash }} 
           github_ref: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -299,16 +299,16 @@ jobs:
         if: matrix.os == '22.04' && matrix.should_run == true
         shell: bash
         run: |
-          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/*imple*.AppImage)
+          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/*rivateline*.AppImage)
           echo "appimage_path=$path" >> $GITHUB_OUTPUT
-          echo "appimage_hash=$(echo SHA2-256\(simplex-desktop-${{ matrix.arch }}.AppImage\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
+          echo "appimage_hash=$(echo SHA2-256\(privateline-x-chat-desktop-${{ matrix.arch }}.AppImage\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
       - name: Upload AppImage
         if: matrix.os == '22.04' && matrix.should_run == true
         uses: ./.github/actions/prepare-release
         with:
           bin_path: ${{ steps.linux_appimage_build.outputs.appimage_path }}
-          bin_name: "simplex-desktop-${{ matrix.arch }}.AppImage"
+          bin_name: "privateline-x-chat-desktop-${{ matrix.arch }}.AppImage"
           bin_hash: ${{ steps.linux_appimage_build.outputs.appimage_hash }}
           github_ref: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
