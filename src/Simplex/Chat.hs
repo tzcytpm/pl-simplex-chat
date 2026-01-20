@@ -74,13 +74,6 @@ defaultChatConfig =
                     useSMP = 4,
                     xftp = map (presetServer True) $ L.toList defaultXFTPServers,
                     useXFTP = 3
-                  },
-                PresetOperator
-                  { operator = Just operatorFlux,
-                    smp = fluxSMPServers,
-                    useSMP = 3,
-                    xftp = fluxXFTPServers,
-                    useXFTP = 3
                   }
               ],
             ntf = _defaultNtfServers,

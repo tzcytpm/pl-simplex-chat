@@ -31,21 +31,6 @@ operatorSimpleXChat =
     , xftpRoles = allRoles
     }
 
--- Keep Flux operator disabled; set domain to your private zone for safety.
-operatorFlux :: NewServerOperator
-operatorFlux =
-  ServerOperator
-    { operatorId = DBNewEntity
-    , operatorTag = Just OTFlux
-    , tradeName = "Privateline X-Chat"
-    , legalName = Just "Privateline"
-    , serverDomains = ["smp01.privateline.io" ]
-    , conditionsAcceptance = CARequired Nothing
-    , enabled = False
-    , smpRoles = ServerRoles { storage = False, proxy = True }
-    , xftpRoles = ServerRoles { storage = False, proxy = True }
-    }
-
 -- =====================================================================
 -- SMP servers (ONLY your private one)
 -- =====================================================================
@@ -74,24 +59,4 @@ enabledSimplexChatSMPServers =
 disabledSimplexChatSMPServers :: NonEmpty SMPServer
 disabledSimplexChatSMPServers =
   [ "smp://PW6GmzrkQP3OdKz1x3lTO67z-c0R_IKaMWQ31gxaUlo=@smpx03.privateline.io"
-  ]
-
--- =====================================================================
--- XFTP servers (ONLY your private one)
--- =====================================================================
-
--- Some clients expect XFTP presets under Flux naming; keep the binding but point to your server.
-fluxXFTPServers :: [NewUserServer 'PXFTP]
-fluxXFTPServers =
-  presetServer True <$>
-    [ "xftp://oJH7jdmfSr4C9fC8ONYIFNabnP_VatrHvjxq8nNXtMc=@smp01.privateline.io"
-    ]
-
--- Keep these symbols for compatibility but make them inert:
-fluxSMPServers :: [NewUserServer 'PSMP]
-fluxSMPServers = map (presetServer' True) (L.toList fluxSMPServers_)
-
-fluxSMPServers_ :: NonEmpty SMPServer
-fluxSMPServers_ =
-  [ "smp://EVXgC1uEZppwb1kP-7tcusaCjHt4xiius-v1MgXfpAk=@smp01.privateline.io"
   ]
