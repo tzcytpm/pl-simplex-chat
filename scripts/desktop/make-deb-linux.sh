@@ -35,12 +35,12 @@ cd apps/multiplatform
 
 export SOURCE_DATE_EPOCH=1704067200
 
-dpkg-deb -R ./release/main/deb/simplex*.deb ./extracted
+dpkg-deb -R ./release/main/deb/privateline-x-chat*.deb ./extracted
 
 rm -f ./extracted/opt/*imple*/lib/app/*skiko-awt-runtime-linux*
 sed -i -e '/skiko-awt-runtime-linux/d' ./extracted/opt/*imple*/lib/app/simplex.cfg
 find ./extracted/ -exec touch -d "@$SOURCE_DATE_EPOCH" {} +
 
-dpkg-deb --build --root-owner-group --uniform-compression ./extracted ./release/main/deb/simplex_${ARCH}.deb
+dpkg-deb --build --root-owner-group --uniform-compression ./extracted ./release/main/deb/privateline-x-chat_${ARCH}.deb
 
-strip-nondeterminism ./release/main/deb/simplex_${ARCH}.deb
+strip-nondeterminism ./release/main/deb/privateline-x-chat_${ARCH}.deb
