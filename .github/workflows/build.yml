@@ -274,7 +274,7 @@ jobs:
         if: matrix.should_run == true
         shell: bash
         run: |
-          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/deb/privateline-x-chat${{ matrix.arch }}.deb )
+          path=$(echo ${{ github.workspace }}/apps/multiplatform/release/main/deb/privateline-x-chat_${{ matrix.arch }}.deb )
           echo "package_path=$path" >> $GITHUB_OUTPUT
           echo "package_hash=$(echo SHA2-256\(privateline-x-chat-desktop-ubuntu-${{ matrix.os_underscore }}-${{ matrix.arch }}.deb\)= $(openssl sha256 $path | cut -d' ' -f 2))" >> $GITHUB_OUTPUT
 
