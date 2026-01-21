@@ -360,7 +360,7 @@ jobs:
             cli_asset_name: privateline-x-chat-macos-aarch64
             desktop_asset_name: privateline-x-chat-desktop-macos-aarch64.dmg
             openssl_dir: "/opt/homebrew/opt"
-            should_run: false
+            should_run: true
             should_test: false
           - os: macos-15-intel
             ghc: ${{ needs.variables.outputs.GHC_VER }}
