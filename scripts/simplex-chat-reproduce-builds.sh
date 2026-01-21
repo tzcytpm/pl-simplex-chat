@@ -103,7 +103,7 @@ for os in '22.04' '24.04'; do
 			# Appimage
 			docker exec \
 				-t "${container_name}" \
-				sh -c './scripts/desktop/make-appimage-linux.sh && mv ./apps/multiplatform/release/main/*imple*.AppImage ./apps/multiplatform/release/main/simplex.appimage'
+				sh -c './scripts/desktop/make-appimage-linux.sh && mv ./apps/multiplatform/release/main/*rivateline*.AppImage ./apps/multiplatform/release/main/simplex.appimage'
 
 			# Copy appimage
 			docker cp \
