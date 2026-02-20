@@ -30,12 +30,18 @@ jobs:
       - name: Set up Android SDK (for zipalign)
         uses: android-actions/setup-android@v3
 
+      - name: Accept Android SDK licenses
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Do NOT pipe `yes` under pipefail
+          sdkmanager --licenses <<<'y' >/dev/null || true
+
       - name: Install Android build-tools (zipalign)
         shell: bash
         run: |
           set -euo pipefail
       
-          # Determine SDK dir (setup-android commonly sets ANDROID_HOME)
           SDK_DIR="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
           if [[ -z "$SDK_DIR" ]]; then
             echo "ANDROID_HOME / ANDROID_SDK_ROOT not set"
@@ -43,19 +49,16 @@ jobs:
           fi
           echo "SDK_DIR=$SDK_DIR"
       
-          yes | sdkmanager --licenses >/dev/null
-      
-          # Install build-tools that contains zipalign
           sdkmanager --install "platform-tools" "build-tools;34.0.0"
       
-          # Add build-tools to PATH
           echo "$SDK_DIR/build-tools/34.0.0" >> "$GITHUB_PATH"
 
       - name: Verify zipalign
         shell: bash
         run: |
+          set -euo pipefail
           which zipalign
-          zipalign -h | head
+          zipalign -h | head -n 2
 
       - name: Install system deps (zip/unzip/curl)
         shell: bash
