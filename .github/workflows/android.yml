@@ -2,6 +2,35 @@ name: SimpleX Android - APK artifacts
 
 on:
   workflow_dispatch:
+    inputs:
+        mode:
+          description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
+          required: true
+          default: release
+          type: choice
+          options:
+            - nightly
+            - release
+        macos:
+            description: Build macOS
+            required: true
+            type: boolean
+            default: true
+        windows:
+            description: Build Windows
+            required: true
+            type: boolean
+            default: true
+        linux:
+            description: Build Linux
+            required: true
+            type: boolean
+            default: true
+        cli:
+            description: Build Cli App
+            required: true
+            type: boolean
+            default: true
 
 jobs:
   build-apk:
