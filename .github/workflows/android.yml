@@ -120,27 +120,30 @@ jobs:
           /usr/bin/nix --version
           command -v nix
           
-      - name: Make build-android.sh detect Nix correctly
+      - name: Make build-android.sh detect Nix correctly (no symlink)
         shell: bash
         run: |
           set -euo pipefail
       
-          # Ensure ~/.nix-profile points to the system profile used by nix-daemon installs
-          if [[ ! -e "$HOME/.nix-profile" ]]; then
-            ln -s /nix/var/nix/profiles/default "$HOME/.nix-profile"
+          # If ~/.nix-profile is a symlink (common in daemon installs), remove it
+          if [[ -L "$HOME/.nix-profile" ]]; then
+            rm -f "$HOME/.nix-profile"
           fi
       
-          # Ensure the exact file the script checks exists:
+          # Create a real directory that runner owns
           mkdir -p "$HOME/.nix-profile/etc/profile.d"
+      
+          # Create readable stub that sources nix-daemon profile if present
           cat > "$HOME/.nix-profile/etc/profile.d/nix.sh" <<'EOF'
-          # Stub for CI: satisfy SimpleX build-android.sh check
           if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
             . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           fi
           EOF
       
-          # sanity
-          test -f "$HOME/.nix-profile/etc/profile.d/nix.sh"
+          chmod 0644 "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      
+          # Sanity checks
+          ls -la "$HOME/.nix-profile/etc/profile.d/nix.sh"
           command -v nix
           nix --version
           
