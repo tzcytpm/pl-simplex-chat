@@ -120,17 +120,35 @@ jobs:
           /usr/bin/nix --version
           command -v nix
           
-      - name: Build APK
+      - name: Make build-android.sh detect Nix correctly
         shell: bash
         run: |
           set -euo pipefail
       
-          # Force PATH to include nix no matter what
-          export PATH="/usr/bin:/usr/local/bin:/nix/var/nix/profiles/default/bin:$PATH"
+          # Ensure ~/.nix-profile points to the system profile used by nix-daemon installs
+          if [[ ! -e "$HOME/.nix-profile" ]]; then
+            ln -s /nix/var/nix/profiles/default "$HOME/.nix-profile"
+          fi
       
+          # Ensure the exact file the script checks exists:
+          mkdir -p "$HOME/.nix-profile/etc/profile.d"
+          cat > "$HOME/.nix-profile/etc/profile.d/nix.sh" <<'EOF'
+          # Stub for CI: satisfy SimpleX build-android.sh check
+          if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+            . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+          fi
+          EOF
+      
+          # sanity
+          test -f "$HOME/.nix-profile/etc/profile.d/nix.sh"
           command -v nix
           nix --version
-      
+          
+      - name: Build APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="/nix/var/nix/profiles/default/bin:$PATH"
           chmod +x scripts/android/build-android.sh
           ./scripts/android/build-android.sh -s -g
 
