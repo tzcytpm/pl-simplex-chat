@@ -109,15 +109,24 @@ jobs:
           sudo ln -sf "$PWD/apps/multiplatform/gradlew" /usr/local/bin/gradle
           gradle --version
 
+      - name: Make nix globally visible
+        shell: bash
+        run: |
+          set -euo pipefail
+          NIX_BIN="$(command -v nix)"
+          echo "NIX_BIN=$NIX_BIN"
+          sudo ln -sf "$NIX_BIN" /usr/bin/nix
+          sudo ln -sf "$NIX_BIN" /usr/local/bin/nix
+          /usr/bin/nix --version
+          command -v nix
+          
       - name: Build APK
         shell: bash
         run: |
           set -euo pipefail
-          if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
-            . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-          elif [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-            . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-          fi
+      
+          # Force PATH to include nix no matter what
+          export PATH="/usr/bin:/usr/local/bin:/nix/var/nix/profiles/default/bin:$PATH"
       
           command -v nix
           nix --version
