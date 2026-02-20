@@ -2,9 +2,6 @@ name: SimpleX Android - APK artifacts
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "master", "stable" ]
-  pull_request:
 
 jobs:
   build-apk:
