@@ -54,11 +54,9 @@ jobs:
           echo "$SDK_DIR/build-tools/34.0.0" >> "$GITHUB_PATH"
 
       - name: Verify zipalign
-        shell: bash
         run: |
-          set -euo pipefail
           which zipalign
-          zipalign -h | head -n 2
+          zipalign 2>&1 | head -n 5
 
       - name: Install system deps (zip/unzip/curl)
         shell: bash
