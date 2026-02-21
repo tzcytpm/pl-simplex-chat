@@ -149,6 +149,8 @@ jobs:
           
       - name: Build APK
         shell: bash
+        env:
+          ARCHES: aarch64
         run: |
           set -euo pipefail
           export PATH="/nix/var/nix/profiles/default/bin:$PATH"
