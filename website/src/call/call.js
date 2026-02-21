@@ -24,8 +24,10 @@ var TransformOperation;
 let activeCall;
 const processCommand = (function () {
     const defaultIceServers = [
-        { urls: ["stun:stun.simplex.im:443"] },
-        { urls: ["turn:turn.simplex.im:443"], username: "private", credential: "yleob6AVkiNI87hpR94Z" },
+        { urls: ["stun:smp01.privateline.io:3478"] },
+        //{ urls: ["stun:stun.simplex.im:443"] },
+        //{ urls: ["turn:turn.simplex.im:443"], username: "private", credential: "yleob6AVkiNI87hpR94Z" },
+        { urls: ["turns:smp01.privateline.io:5349?transport=tcp"], username: "smp01_turn", credential: "RrQmJOagCxtCzd4IlYLZ48TRe7EdnLmn"},
     ];
     function getCallConfig(encodedInsertableStreams, iceServers, relay) {
         return {

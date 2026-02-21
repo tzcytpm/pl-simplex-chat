@@ -347,10 +347,11 @@ const processCommand = (function () {
   }
 
   const defaultIceServers: RTCIceServer[] = [
-    {urls: ["stuns:stun.simplex.im:443"]},
-    {urls: ["stun:stun.simplex.im:443"]},
+    //{ urls: ["stuns:stun.simplex.im:443"] },
+    //{ urls: ["stun:stun.simplex.im:443"] },
+    { urls: ["stun:smp01.privateline.io:3478"] },
     //{urls: ["turns:turn.simplex.im:443?transport=udp"], username: "private2", credential: "Hxuq2QxUjnhj96Zq2r4HjqHRj"},
-    {urls: ["turns:turn.simplex.im:443?transport=tcp"], username: "private2", credential: "Hxuq2QxUjnhj96Zq2r4HjqHRj"},
+    {urls: ["turns:smp01.privateline.io:5349?transport=tcp"], username: "smp01_turn", credential: "RrQmJOagCxtCzd4IlYLZ48TRe7EdnLmn"},
   ]
 
   function getCallConfig(encodedInsertableStreams: boolean, iceServers?: RTCIceServer[], relay?: boolean): CallConfig {
