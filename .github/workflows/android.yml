@@ -73,6 +73,23 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       # GitHub docs also recommend this action for Gradle CI. :contentReference[oaicite:1]{index=1}
 
+      - name: Ensure build-tools (zipalign) available
+        shell: bash
+        run: |
+          set -euo pipefail
+      
+          # Install build-tools that provide zipalign
+          "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
+            "build-tools;34.0.0"
+      
+          # Add the installed build-tools dir to PATH (don’t assume)
+          BT_DIR="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -n 1)"
+          echo "$BT_DIR" >> "$GITHUB_PATH"
+      
+          # Verify
+          command -v zipalign
+          zipalign -h >/dev/null
+    
       # Android SDK: install ONLY if missing (after first run it's instant)
       - name: Ensure Android cmdline-tools + build-tools present (zipalign)
         shell: bash
