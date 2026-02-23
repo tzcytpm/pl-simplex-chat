@@ -76,17 +76,31 @@ jobs:
       - name: Ensure build-tools (zipalign) available
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
       
-          # Install build-tools that provide zipalign
-          "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
+          echo "== Who am I / permissions =="
+          id
+          ls -ld "$ANDROID_SDK_ROOT" || true
+          mkdir -p "$ANDROID_SDK_ROOT" || true
+          touch "$ANDROID_SDK_ROOT/.write_test" || (echo "SDK root not writable" && exit 1)
+          rm -f "$ANDROID_SDK_ROOT/.write_test"
+      
+          echo "== Make sdkmanager happy in containers =="
+          mkdir -p "$HOME/.android"
+          touch "$HOME/.android/repositories.cfg" || true
+      
+          echo "== Install build-tools (zipalign) =="
+          SDKM="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          "$SDKM" --sdk_root="$ANDROID_SDK_ROOT" --licenses || true
+          "$SDKM" --sdk_root="$ANDROID_SDK_ROOT" \
+            "platform-tools" \
             "build-tools;34.0.0"
       
-          # Add the installed build-tools dir to PATH (don’t assume)
+          echo "== Put build-tools on PATH =="
           BT_DIR="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -n 1)"
           echo "$BT_DIR" >> "$GITHUB_PATH"
       
-          # Verify
+          echo "== Verify zipalign =="
           command -v zipalign
           zipalign -h >/dev/null
     
