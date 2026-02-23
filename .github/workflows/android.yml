@@ -3,154 +3,149 @@ name: SimpleX Android - APK artifacts
 on:
   workflow_dispatch:
     inputs:
-        mode:
-          description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
-          required: true
-          default: release
-          type: choice
-          options:
-            - nightly
-            - release
+      mode:
+        description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
+        required: true
+        default: release
+        type: choice
+        options:
+          - nightly
+          - release
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-apk:
-    runs-on: ubuntu-latest
+    # ✅ self-hosted runner labels (edit to match yours)
+    runs-on: [self-hosted, linux, x64]
+
+    # ✅ ubuntu-latest baseline is 24.04 now; pin for stability/speed
+    container:
+      image: ubuntu:24.04
+      options: --init
+      volumes:
+        # ✅ Persisted caches on the HOST (fastest)
+        - /opt/android-sdk:/opt/android-sdk
+        - /opt/gradle-cache:/opt/gradle-cache
+        # ✅ If you want Nix to be fast, persist /nix on the host
+        - /nix:/nix
+
+    env:
+      DEBIAN_FRONTEND: noninteractive
+
+      # Use host-mounted caches
+      ANDROID_SDK_ROOT: /opt/android-sdk
+      ANDROID_HOME: /opt/android-sdk
+      GRADLE_USER_HOME: /opt/gradle-cache
+
+      # Gradle speed knobs (safe defaults)
+      GRADLE_OPTS: >-
+        -Dorg.gradle.daemon=true
+        -Dorg.gradle.parallel=true
+        -Dorg.gradle.caching=true
+        -Dkotlin.incremental=true
+        -Dorg.gradle.jvmargs=-Xmx4g
+
+      # Your current build uses this
+      ARCHES: aarch64
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      # SimpleX Android build uses Gradle + Nix-built libs
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: "17"
+          fetch-depth: 1
 
-      - name: Set up Android SDK (for zipalign)
-        uses: android-actions/setup-android@v3
+      # Keep OS deps minimal; remove repeated installs elsewhere
+      - name: Install minimal OS deps
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            ca-certificates curl git unzip zip \
+            openjdk-17-jdk bash xz-utils
+          rm -rf /var/lib/apt/lists/*
 
-      - name: Accept Android SDK licenses
+      # Better Gradle caching/summary than manual actions/cache
+      # (Even with GRADLE_USER_HOME mounted, this helps with metadata + reporting.)
+      - name: Set up Gradle environment
+        uses: gradle/actions/setup-gradle@v4
+      # GitHub docs also recommend this action for Gradle CI. :contentReference[oaicite:1]{index=1}
+
+      # Android SDK: install ONLY if missing (after first run it's instant)
+      - name: Ensure Android cmdline-tools + build-tools present (zipalign)
         shell: bash
         run: |
           set -euo pipefail
-          # Do NOT pipe `yes` under pipefail
-          sdkmanager --licenses <<<'y' >/dev/null || true
 
-      - name: Install Android build-tools (zipalign)
-        shell: bash
-        run: |
-          set -euo pipefail
-      
-          SDK_DIR="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
-          if [[ -z "$SDK_DIR" ]]; then
-            echo "ANDROID_HOME / ANDROID_SDK_ROOT not set"
-            exit 1
+          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
+
+          if [ ! -x "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" ]; then
+            echo "Installing Android cmdline-tools (first run only)..."
+            cd /tmp
+            curl -L -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            unzip -q cmdline-tools.zip
+            mv cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+            rm -f cmdline-tools.zip
           fi
-          echo "SDK_DIR=$SDK_DIR"
-      
-          sdkmanager --install "platform-tools" "build-tools;34.0.0"
-      
-          echo "$SDK_DIR/build-tools/34.0.0" >> "$GITHUB_PATH"
 
-      - name: Verify zipalign
-        run: |
-          which zipalign
-          zipalign 2>&1 | head -n 5
+          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+          "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
+            "platform-tools" \
+            "build-tools;34.0.0"
 
-      - name: Install system deps (zip/unzip/curl)
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y zip unzip curl git
+          echo "$ANDROID_SDK_ROOT/build-tools/34.0.0" >> "$GITHUB_PATH"
+          zipalign -h >/dev/null
 
-      # Install Nix (SimpleX script uses nix build)
+      # Install Nix in the container but reuse /nix via host mount (huge speedup after first run)
       - name: Install Nix
         uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             experimental-features = nix-command flakes
-      
-      - name: Verify Nix is available
+            max-jobs = auto
+      # install-nix-action CI defaults and extra_nix_config behavior. :contentReference[oaicite:2]{index=2}
+
+      # Keep ONE nix visibility fix (your file had 2 overlapping steps)
+      - name: Ensure nix is on PATH for scripts
         shell: bash
         run: |
           set -euo pipefail
           command -v nix
           nix --version
+          ln -sf "$(command -v nix)" /usr/local/bin/nix || true
+          # Your script expects /nix profile in PATH sometimes:
+          export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+          command -v nix
 
-      - name: Expose nix in /usr/local/bin (avoid script re-install)
-        shell: bash
-        run: |
-          set -euo pipefail
-          NIX_BIN="$(command -v nix)"
-          echo "NIX_BIN=$NIX_BIN"
-          sudo ln -sf "$NIX_BIN" /usr/local/bin/nix
-          # sanity
-          /usr/local/bin/nix --version
-
-      # Cache Gradle to speed up builds
-      - name: Cache Gradle
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            gradle-${{ runner.os }}-
-
-      # The upstream script calls "gradle" (not ./gradlew).
-      # We shim "gradle" to the repo’s wrapper inside apps/multiplatform.
+      # Keep your gradle shim (script calls "gradle", not ./gradlew)
       - name: Shim gradle -> gradlew
         shell: bash
         run: |
           chmod +x apps/multiplatform/gradlew
-          sudo ln -sf "$PWD/apps/multiplatform/gradlew" /usr/local/bin/gradle
+          ln -sf "$PWD/apps/multiplatform/gradlew" /usr/local/bin/gradle
           gradle --version
 
-      - name: Make nix globally visible
+      # Keep your nix-profile hack, but only if needed
+      - name: Make build-android.sh detect Nix correctly (only if needed)
         shell: bash
         run: |
           set -euo pipefail
-          NIX_BIN="$(command -v nix)"
-          echo "NIX_BIN=$NIX_BIN"
-          sudo ln -sf "$NIX_BIN" /usr/bin/nix
-          sudo ln -sf "$NIX_BIN" /usr/local/bin/nix
-          /usr/bin/nix --version
-          command -v nix
-          
-      - name: Make build-android.sh detect Nix correctly (no symlink)
-        shell: bash
-        run: |
-          set -euo pipefail
-      
-          # If ~/.nix-profile is a symlink (common in daemon installs), remove it
           if [[ -L "$HOME/.nix-profile" ]]; then
             rm -f "$HOME/.nix-profile"
           fi
-      
-          # Create a real directory that runner owns
           mkdir -p "$HOME/.nix-profile/etc/profile.d"
-      
-          # Create readable stub that sources nix-daemon profile if present
           cat > "$HOME/.nix-profile/etc/profile.d/nix.sh" <<'EOF'
           if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
             . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           fi
           EOF
-      
           chmod 0644 "$HOME/.nix-profile/etc/profile.d/nix.sh"
-      
-          # Sanity checks
-          ls -la "$HOME/.nix-profile/etc/profile.d/nix.sh"
-          command -v nix
-          nix --version
-          
+
       - name: Build APK
         shell: bash
-        env:
-          ARCHES: aarch64
         run: |
           set -euo pipefail
           export PATH="/nix/var/nix/profiles/default/bin:$PATH"
