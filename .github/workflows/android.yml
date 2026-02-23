@@ -123,7 +123,6 @@ jobs:
             "build-tools;34.0.0"
 
           echo "$ANDROID_SDK_ROOT/build-tools/34.0.0" >> "$GITHUB_PATH"
-          zipalign -v
 
       # Install Nix in the container but reuse /nix via host mount (huge speedup after first run)
       - name: Install Nix
