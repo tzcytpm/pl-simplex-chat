@@ -123,6 +123,7 @@ jobs:
         run: |
           set -euo pipefail
           export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+          export NIX_CONFIG="show-trace = true"
           unset NIX_PATH || true
           chmod +x scripts/android/build-android.sh
           ./scripts/android/build-android.sh -s -g
