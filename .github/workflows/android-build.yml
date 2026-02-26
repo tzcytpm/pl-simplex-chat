@@ -110,25 +110,30 @@ jobs:
           # Verify zipalign (do NOT use -h)
           zipalign -v || true
 
-      - name: Install Nix (single-user, no-daemon)
+      - name: Install Nix (single-user, no-daemon, container safe)
         shell: bash
         run: |
           set -euo pipefail
-
-          # Install Nix 2.22.0 (same as you used previously)
+        
+          # Ensure /nix exists (installer tries to use sudo if missing)
+          mkdir -p /nix
+          chmod 0755 /nix
+          chown root:root /nix
+        
+          # Install Nix
           curl -L https://releases.nixos.org/nix/nix-2.22.0/install | bash -s -- --no-daemon
-
+        
           # Load nix env
           . /root/.nix-profile/etc/profile.d/nix.sh
-
-          # Configure nix for CI
+        
+          # CI-friendly nix config
           mkdir -p /root/.config/nix
           cat >/root/.config/nix/nix.conf <<'EOF'
           experimental-features = nix-command flakes
           max-jobs = auto
           sandbox = false
           EOF
-
+          
           nix --version
 
       - name: Shim gradle -> gradlew (project expects `gradle`)
