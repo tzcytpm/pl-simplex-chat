@@ -1,4 +1,4 @@
-name: SimpleX Android - APK artifacts
+name: SimpleX Android - Git-Runner
 
 on:
   workflow_dispatch:
