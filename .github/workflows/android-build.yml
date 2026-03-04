@@ -19,26 +19,20 @@ jobs:
     runs-on: self-hosted
     timeout-minutes: 180
 
-    # NOTE: container.image must be a real Docker image tag.
     container:
       image: ubuntu:24.04
       options: --init
 
     env:
       DEBIAN_FRONTEND: noninteractive
-
-      # Build script previously failed with USER unset
       USER: root
       HOME: /root
 
-      # Use workspace-local caches (optional; change to host-mounted paths if you want)
-      GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
-
-      # Android SDK location inside container
       ANDROID_SDK_ROOT: /opt/android-sdk
       ANDROID_HOME: /opt/android-sdk
 
-      # Gradle speed knobs (safe defaults)
+      GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
+
       GRADLE_OPTS: >-
         -Dorg.gradle.daemon=true
         -Dorg.gradle.parallel=true
@@ -46,7 +40,6 @@ jobs:
         -Dkotlin.incremental=true
         -Dorg.gradle.jvmargs=-Xmx4g
 
-      # keep same as your previous runs
       ARCHES: aarch64
 
     steps:
@@ -68,7 +61,6 @@ jobs:
             jq
           rm -rf /var/lib/apt/lists/*
 
-      # (Optional) Better Gradle caching metadata; still useful even with GRADLE_USER_HOME in workspace
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
@@ -88,52 +80,37 @@ jobs:
             rm -f cmdline-tools.zip
           fi
 
-          # sdkmanager sometimes wants this file present
           mkdir -p "$HOME/.android"
           : > "$HOME/.android/repositories.cfg" || true
 
           SDKM="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
-
-          # Accept licenses (non-fatal if already accepted)
           yes | "$SDKM" --sdk_root="$ANDROID_SDK_ROOT" --licenses >/dev/null || true
 
-          # Install required tools
           "$SDKM" --sdk_root="$ANDROID_SDK_ROOT" \
             "platform-tools" \
             "build-tools;34.0.0"
 
-          # Make zipalign available NOW + in later steps
           BT_DIR="$ANDROID_SDK_ROOT/build-tools/34.0.0"
           export PATH="$BT_DIR:$PATH"
           echo "$BT_DIR" >> "$GITHUB_PATH"
-
-          # Verify zipalign (do NOT use -h)
           zipalign -v || true
 
-      - name: Install Nix (single-user, no-daemon, container safe)
+      - name: Install Nix (single-user, no-daemon, no nixbld)
         shell: bash
         run: |
           set -euo pipefail
-        
-          # Ensure /nix exists (installer tries to use sudo if missing)
+
+          # Ensure /nix exists so installer won't try sudo
           mkdir -p /nix
           chmod 0755 /nix
           chown root:root /nix
-        
-          # Install Nix
+
+          # Force single-user config (avoid nixbld / multi-user assumptions)
+          export NIX_CONFIG=$'experimental-features = nix-command flakes\nsandbox = false\nbuild-users-group =\n'
+
           curl -L https://releases.nixos.org/nix/nix-2.22.0/install | bash -s -- --no-daemon
-        
-          # Load nix env
+
           . /root/.nix-profile/etc/profile.d/nix.sh
-        
-          # CI-friendly nix config
-          mkdir -p /root/.config/nix
-          cat >/root/.config/nix/nix.conf <<'EOF'
-          experimental-features = nix-command flakes
-          max-jobs = auto
-          sandbox = false
-          EOF
-          
           nix --version
 
       - name: Shim gradle -> gradlew (project expects `gradle`)
@@ -149,7 +126,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Make sure nix is available (prevents script from trying to install nix again)
+          # Ensure nix is available (prevents script from trying to install nix again)
           . /root/.nix-profile/etc/profile.d/nix.sh
           command -v nix
           nix --version
